@@ -13,6 +13,7 @@
 		953A64F42B6EDFA000651684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F22B6EDFA000651684 /* Main.storyboard */; };
 		953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
 		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
+		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +58,8 @@
 		953A64EB2B6EDFA000651684 /* MentalHealth */ = {
 			isa = PBXGroup;
 			children = (
+				953A65042B6EE8DB00651684 /* AccountScreen */,
+				953A65032B6EE8CE00651684 /* HomeScreen */,
 				953A64EC2B6EDFA000651684 /* AppDelegate.swift */,
 				953A64EE2B6EDFA000651684 /* SceneDelegate.swift */,
 				953A64F02B6EDFA000651684 /* ViewController.swift */,
@@ -65,6 +69,20 @@
 				953A64FA2B6EDFA200651684 /* Info.plist */,
 			);
 			path = MentalHealth;
+			sourceTree = "<group>";
+		};
+		953A65032B6EE8CE00651684 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		953A65042B6EE8DB00651684 /* AccountScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AccountScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +101,9 @@
 			dependencies = (
 			);
 			name = MentalHealth;
+			packageProductDependencies = (
+				953A65012B6EE67B00651684 /* Lottie */,
+			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 953A64E02B6EDFA000651684;
+			packageReferences = (
+				953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 953A64EA2B6EDFA000651684 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		953A65012B6EE67B00651684 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 953A64E12B6EDFA000651684 /* Project object */;
 }
