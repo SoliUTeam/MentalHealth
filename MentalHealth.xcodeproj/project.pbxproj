@@ -9,22 +9,28 @@
 /* Begin PBXBuildFile section */
 		953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EC2B6EDFA000651684 /* AppDelegate.swift */; };
 		953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EE2B6EDFA000651684 /* SceneDelegate.swift */; };
-		953A64F12B6EDFA000651684 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* ViewController.swift */; };
+		953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* HomeViewController.swift */; };
 		953A64F42B6EDFA000651684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F22B6EDFA000651684 /* Main.storyboard */; };
 		953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
 		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
+		957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */; };
+		95CEFFD02B6F34CF00C527D1 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEFFCF2B6F34CF00C527D1 /* LaunchScreenViewController.swift */; };
+		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		953A64E92B6EDFA000651684 /* MentalHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953A64EC2B6EDFA000651684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		953A64EE2B6EDFA000651684 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		953A64F02B6EDFA000651684 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		953A64F02B6EDFA000651684 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		953A64F32B6EDFA000651684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		953A64F52B6EDFA200651684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		953A64F82B6EDFA200651684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		953A64FA2B6EDFA200651684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
+		95CEFFCF2B6F34CF00C527D1 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +64,15 @@
 		953A64EB2B6EDFA000651684 /* MentalHealth */ = {
 			isa = PBXGroup;
 			children = (
+				957C02D02B6F77DD00DE21DE /* SurveyScreen */,
+				95CEFFD12B6F358D00C527D1 /* Assets */,
 				953A65042B6EE8DB00651684 /* AccountScreen */,
 				953A65032B6EE8CE00651684 /* HomeScreen */,
 				953A64EC2B6EDFA000651684 /* AppDelegate.swift */,
+				95CEFFD52B6F667A00C527D1 /* StoryBoard */,
 				953A64EE2B6EDFA000651684 /* SceneDelegate.swift */,
-				953A64F02B6EDFA000651684 /* ViewController.swift */,
-				953A64F22B6EDFA000651684 /* Main.storyboard */,
-				953A64F52B6EDFA200651684 /* Assets.xcassets */,
-				953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */,
 				953A64FA2B6EDFA200651684 /* Info.plist */,
+				95CEFFCF2B6F34CF00C527D1 /* LaunchScreenViewController.swift */,
 			);
 			path = MentalHealth;
 			sourceTree = "<group>";
@@ -74,6 +80,7 @@
 		953A65032B6EE8CE00651684 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				953A64F02B6EDFA000651684 /* HomeViewController.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -83,6 +90,40 @@
 			children = (
 			);
 			path = AccountScreen;
+			sourceTree = "<group>";
+		};
+		957C02D02B6F77DD00DE21DE /* SurveyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */,
+			);
+			path = SurveyScreen;
+			sourceTree = "<group>";
+		};
+		95CEFFD12B6F358D00C527D1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				95CEFFD22B6F35B000C527D1 /* Animations */,
+				953A64F52B6EDFA200651684 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		95CEFFD22B6F35B000C527D1 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		95CEFFD52B6F667A00C527D1 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				953A64F22B6EDFA000651684 /* Main.storyboard */,
+				953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +193,7 @@
 				953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */,
 				953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */,
 				953A64F42B6EDFA000651684 /* Main.storyboard in Resources */,
+				95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +204,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953A64F12B6EDFA000651684 /* ViewController.swift in Sources */,
+				953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */,
+				957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */,
 				953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */,
+				95CEFFD02B6F34CF00C527D1 /* LaunchScreenViewController.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,11 +355,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = MentalHealth/Assets/Assets.xcassets;
 				DEVELOPMENT_TEAM = M5Z7JPLW6N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MentalHealth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -343,11 +388,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = MentalHealth/Assets/Assets.xcassets;
 				DEVELOPMENT_TEAM = M5Z7JPLW6N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MentalHealth/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
