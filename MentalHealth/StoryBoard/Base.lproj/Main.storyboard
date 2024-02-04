@@ -297,7 +297,7 @@
             </objects>
             <point key="canvasLocation" x="3808.3969465648852" y="3.5211267605633805"/>
         </scene>
-        <!--Feedback-->
+        <!--Medical Reference-->
         <scene sceneID="Wo1-6e-5e7">
             <objects>
                 <viewController id="k9U-Dj-pGi" sceneMemberID="viewController">
@@ -307,7 +307,7 @@
                         <viewLayoutGuide key="safeArea" id="Z5E-kT-AN1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Feedback" id="uW1-ng-Nce"/>
+                    <navigationItem key="navigationItem" title="Medical Reference" id="uW1-ng-Nce"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jH1-w3-Z3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -329,7 +329,7 @@
             </objects>
             <point key="canvasLocation" x="5882" y="750"/>
         </scene>
-        <!--Medical Reference-->
+        <!--Feedback-->
         <scene sceneID="cY3-fZ-UIc">
             <objects>
                 <viewController id="PpS-ir-I1h" sceneMemberID="viewController">
@@ -339,7 +339,7 @@
                         <viewLayoutGuide key="safeArea" id="6zr-kP-dVg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Medical Reference" id="XaF-57-T3d"/>
+                    <navigationItem key="navigationItem" title="Feedback" id="XaF-57-T3d"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r4g-Qp-fSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

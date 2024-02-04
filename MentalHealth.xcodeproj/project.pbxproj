@@ -15,6 +15,7 @@
 		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 		957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */; };
+		95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */; };
 		95CEFFD02B6F34CF00C527D1 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEFFCF2B6F34CF00C527D1 /* LaunchScreenViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
+				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,7 @@
 			name = MentalHealth;
 			packageProductDependencies = (
 				953A65012B6EE67B00651684 /* Lottie */,
+				95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -175,6 +178,7 @@
 			mainGroup = 953A64E02B6EDFA000651684;
 			packageReferences = (
 				953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 953A64EA2B6EDFA000651684 /* Products */;
 			projectDirPath = "";
@@ -446,6 +450,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -453,6 +465,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

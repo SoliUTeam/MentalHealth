@@ -12,7 +12,8 @@ let package = Package(
             targets: ["MentalHealth"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.4.0")
+        .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.4.0"),
+        .package(url: "https://github.com/hackiftekhar/IQKeyboardManager.git", from: "7.0.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
