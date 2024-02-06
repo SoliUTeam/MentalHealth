@@ -184,6 +184,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Write a Review">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="Write:" destination="XeX-r6-TUv" eventType="touchUpInside" id="VRk-0w-Ism"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-8O-UCh">
                                         <rect key="frame" x="0.0" y="42.333333333333314" width="160.66666666666666" height="34.333333333333343"/>

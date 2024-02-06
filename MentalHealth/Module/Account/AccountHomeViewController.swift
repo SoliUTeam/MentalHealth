@@ -13,8 +13,13 @@ class AccountHomeViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func youtubeLink(_ sender: UIButton) {
+    @IBAction func soliuLink(_ sender: UIButton) {
         if let url = URL(string: "https://soliu.org") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    @IBAction func Write(_ sender: UIButton) {
+        if let url = URL(string: "https://www.apple.com/app-store/") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
