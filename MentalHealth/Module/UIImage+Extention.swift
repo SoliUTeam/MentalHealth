@@ -12,6 +12,7 @@ enum Image: String {
     case soliuLogo
     case survey_black
     case survey_white
+    case right
 }
 
 extension UIImage {
@@ -21,5 +22,17 @@ extension UIImage {
         }
         //TODO: This need to be proper error handling
         return UIImage()
+    }
+}
+
+extension UIImage {
+    func resizeTo(width: CGFloat, height: CGFloat) -> UIImage? {
+        let newSize = CGSize(width: width, height: height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
+        defer { UIGraphicsEndImageContext() }
+        
+        draw(in: CGRect(origin: .zero, size: newSize))
+        
+        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }

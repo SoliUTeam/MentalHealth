@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Hero
 
 class HomeViewController: UIViewController {
 
@@ -13,7 +14,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        surveyButton.setImage(.getImage(.survey_black), for: .normal)
+        self.isHeroEnabled = true
+        surveyButton.setImage(.getImage(.survey_black).resizeTo(width: 32, height: 32), for: .normal)
         surveyButton.setImage(.getImage(.survey_white), for: .selected)
     }
 
