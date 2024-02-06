@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icons8-survey-48 (1).png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
