@@ -18,6 +18,8 @@
 		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 		95733CB12BA823AF00FD2215 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB02BA823AF00FD2215 /* HomeTabBarController.swift */; };
+		95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB42BA8296300FD2215 /* UILabel+Extension.swift */; };
+		95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */; };
 		957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */; };
 		95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */; };
 		95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEFA2B6FD87600101423 /* FirebaseAnalytics */; };
@@ -47,6 +49,8 @@
 		953A64F82B6EDFA200651684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		953A64FA2B6EDFA200651684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95733CB02BA823AF00FD2215 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		95733CB42BA8296300FD2215 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspiringQuote.swift; sourceTree = "<group>"; };
 		957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
 		95B1CF072B6FE87500101423 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		95B1CF092B71E58B00101423 /* UIImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift"; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		953A64EB2B6EDFA000651684 /* MentalHealth */ = {
 			isa = PBXGroup;
 			children = (
+				95733CB22BA8292E00FD2215 /* Extension */,
 				95B1CF062B6FE83F00101423 /* Module */,
 				95CEFFD12B6F358D00C527D1 /* Assets */,
 				95CEFFD52B6F667A00C527D1 /* StoryBoard */,
@@ -119,8 +124,18 @@
 			isa = PBXGroup;
 			children = (
 				953A64F02B6EDFA000651684 /* HomeViewController.swift */,
+				95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		95733CB22BA8292E00FD2215 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				95B1CF092B71E58B00101423 /* UIImage+Extention.swift */,
+				95733CB42BA8296300FD2215 /* UILabel+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		957C02D02B6F77DD00DE21DE /* Survey */ = {
@@ -165,7 +180,6 @@
 				95B1CF042B6FE7DE00101423 /* Account */,
 				953A65032B6EE8CE00651684 /* Home */,
 				957C02D02B6F77DD00DE21DE /* Survey */,
-				95B1CF092B71E58B00101423 /* UIImage+Extention.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -296,6 +310,8 @@
 				95733CB12BA823AF00FD2215 /* HomeTabBarController.swift in Sources */,
 				95CEFFD02B6F34CF00C527D1 /* LaunchScreenViewController.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
+				95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */,
+				95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */,
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
