@@ -228,7 +228,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kah-le-cOT" customClass="TabBarWithCorners" customModule="MentalHealth" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="Color/soliuBlue"/>
                         <color key="barTintColor" name="Color/soliuBlue"/>
                         <userDefinedRuntimeAttributes>
@@ -431,7 +431,7 @@
         <image name="Icon/home" width="32" height="32"/>
         <image name="Icon/soliuLogo" width="500" height="197"/>
         <namedColor name="Color/soliuBlue">
-            <color red="0.0" green="0.72156862745098038" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.72200000286102295" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
