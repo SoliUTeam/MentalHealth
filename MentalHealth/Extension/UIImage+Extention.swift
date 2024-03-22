@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 enum Image: String {
+    case oldSoliuLogo
     case soliuLogo
     case survey_black
     case survey_white

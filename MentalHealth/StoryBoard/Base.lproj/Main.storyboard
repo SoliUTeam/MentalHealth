@@ -37,26 +37,12 @@
                                 <rect key="frame" x="154" y="188" width="85" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vN6-aT-Db1">
-                                <rect key="frame" x="181" y="674" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="0i3-aa-Efa"/>
-                                    <constraint firstAttribute="height" constant="45" id="VWA-ne-TxO"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=""/>
-                                <connections>
-                                    <segue destination="GDW-ek-fTk" kind="show" id="vBU-Qi-m5Z"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.42352941176470588" green="0.74509803921568629" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gHr-N8-eRp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="AO1-Lt-1kL"/>
                             <constraint firstItem="gHr-N8-eRp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MKW-0h-QcX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vN6-aT-Db1" secondAttribute="bottom" constant="50" id="Q73-xH-ljf"/>
-                            <constraint firstItem="vN6-aT-Db1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Unm-pf-q4w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gHr-N8-eRp" secondAttribute="trailing" constant="16" id="xIo-Wh-Cgm"/>
                         </constraints>
                     </view>
@@ -65,7 +51,6 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="surveyButton" destination="vN6-aT-Db1" id="v3W-0H-N9N"/>
                         <outlet property="wiseLabel" destination="gHr-N8-eRp" id="uSl-Zg-qL4"/>
                     </connections>
                 </viewController>
@@ -78,17 +63,17 @@
             <objects>
                 <viewController storyboardIdentifier="SurveyListDetailViewController" id="GDW-ek-fTk" customClass="SurveyListDetailViewController" customModule="MentalHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0K5-Ip-4Yt">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afa-vc-hgR">
-                                <rect key="frame" x="50" y="153" width="293" height="21"/>
+                                <rect key="frame" x="50" y="109" width="293" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNI-Gc-Olz">
-                                <rect key="frame" x="30" y="614" width="333" height="35"/>
+                                <rect key="frame" x="30" y="663" width="333" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next"/>
                                 <connections>
@@ -454,7 +439,7 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="soliuLogo" width="1864" height="1352"/>
+        <image name="soliuLogo" width="500" height="197"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
