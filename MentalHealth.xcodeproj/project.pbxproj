@@ -17,6 +17,7 @@
 		953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
 		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
+		9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */; };
 		95733CB12BA823AF00FD2215 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB02BA823AF00FD2215 /* HomeTabBarController.swift */; };
 		95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB42BA8296300FD2215 /* UILabel+Extension.swift */; };
 		95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */; };
@@ -28,11 +29,10 @@
 		95B1CF012B6FD87600101423 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CF002B6FD87600101423 /* FirebaseFirestore */; };
 		95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CF022B6FD87700101423 /* FirebaseStorage */; };
 		95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF072B6FE87500101423 /* FeedbackViewController.swift */; };
-		95B1CF0A2B71E58B00101423 /* UIImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF092B71E58B00101423 /* UIImage+Extention.swift */; };
+		95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF092B71E58B00101423 /* UIImage+Extension.swift */; };
 		95B1CF0D2B71EEC100101423 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CF0C2B71EEC100101423 /* Hero */; };
 		95B1CF0F2B71FC2600101423 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF0E2B71FC2600101423 /* SurveyViewController.swift */; };
 		95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF102B72023200101423 /* AccountHomeViewController.swift */; };
-		95CEFFD02B6F34CF00C527D1 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CEFFCF2B6F34CF00C527D1 /* LaunchScreenViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 /* End PBXBuildFile section */
 
@@ -48,15 +48,15 @@
 		953A64F52B6EDFA200651684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		953A64F82B6EDFA200651684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		953A64FA2B6EDFA200651684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		95733CB02BA823AF00FD2215 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		95733CB42BA8296300FD2215 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspiringQuote.swift; sourceTree = "<group>"; };
 		957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
 		95B1CF072B6FE87500101423 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
-		95B1CF092B71E58B00101423 /* UIImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift"; sourceTree = "<group>"; };
+		95B1CF092B71E58B00101423 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		95B1CF0E2B71FC2600101423 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		95B1CF102B72023200101423 /* AccountHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHomeViewController.swift; sourceTree = "<group>"; };
-		95CEFFCF2B6F34CF00C527D1 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,8 +114,6 @@
 				95B1CEF62B6FD57D00101423 /* Common */,
 				953A64FA2B6EDFA200651684 /* Info.plist */,
 				67F064962B9D121A00400013 /* GoogleService-Info.plist */,
-				95CEFFCF2B6F34CF00C527D1 /* LaunchScreenViewController.swift */,
-				95733CB02BA823AF00FD2215 /* HomeTabBarController.swift */,
 			);
 			path = MentalHealth;
 			sourceTree = "<group>";
@@ -124,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				953A64F02B6EDFA000651684 /* HomeViewController.swift */,
+				95733CB02BA823AF00FD2215 /* HomeTabBarController.swift */,
 				95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */,
 			);
 			path = Home;
@@ -132,8 +131,9 @@
 		95733CB22BA8292E00FD2215 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				95B1CF092B71E58B00101423 /* UIImage+Extention.swift */,
+				95B1CF092B71E58B00101423 /* UIImage+Extension.swift */,
 				95733CB42BA8296300FD2215 /* UILabel+Extension.swift */,
+				9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */,
-				95B1CF0A2B71E58B00101423 /* UIImage+Extention.swift in Sources */,
+				95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */,
 				953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */,
 				95B1CF0F2B71FC2600101423 /* SurveyViewController.swift in Sources */,
 				95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */,
@@ -308,7 +308,7 @@
 				957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */,
 				953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */,
 				95733CB12BA823AF00FD2215 /* HomeTabBarController.swift in Sources */,
-				95CEFFD02B6F34CF00C527D1 /* LaunchScreenViewController.swift in Sources */,
+				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
 				95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */,
 				95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */,

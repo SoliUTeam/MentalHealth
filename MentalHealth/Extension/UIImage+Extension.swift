@@ -1,5 +1,5 @@
 //
-//  UIImage+Extention.swift
+//  UIImage+Extension.swift
 //  MentalHealth
 //
 //  Created by JungpyoHong on 2/5/24.
@@ -14,6 +14,8 @@ enum Image: String {
     case survey_black
     case survey_white
     case right
+    case home
+    case account
 }
 
 extension UIImage {

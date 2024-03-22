@@ -30,8 +30,8 @@ class HomeTabBarController: UITabBarController {
         if !isFirstTime{
             upperLineView.removeFromSuperview()
         }
-        upperLineView = UIView(frame: CGRect(x: tabView.frame.minX + spacing, y: tabView.frame.minY + 0.1, width: tabView.frame.size.width - spacing * 2, height: 4))
-        upperLineView.backgroundColor = UIColor.systemBlue
+        upperLineView = UIView(frame: CGRect(x: tabView.frame.minX + spacing, y: tabView.frame.minY + 0.1, width: tabView.frame.size.width - spacing * 2, height: 2))
+        upperLineView.backgroundColor = UIColor.soliuBlue
         tabBar.addSubview(upperLineView)
     }
 
@@ -82,7 +82,7 @@ extension HomeTabBarController: UITabBarControllerDelegate {
             cornerRadii: CGSize(width: radii, height: 0.0))
         return path.cgPath
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.isTranslucent = true
