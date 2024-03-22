@@ -34,7 +34,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soliuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pp6-zf-D6N">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon/soliuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="pp6-zf-D6N">
                                 <rect key="frame" x="154" y="188" width="85" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -114,7 +114,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soliuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lru-Q3-Dvk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/soliuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lru-Q3-Dvk">
                                 <rect key="frame" x="146.66666666666666" y="50" width="100" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="1iq-1b-GXM"/>
@@ -429,7 +429,7 @@
     <resources>
         <image name="Icon/account" width="32" height="32"/>
         <image name="Icon/home" width="32" height="32"/>
-        <image name="soliuLogo" width="500" height="197"/>
+        <image name="Icon/soliuLogo" width="500" height="197"/>
         <namedColor name="Color/soliuBlue">
             <color red="0.0" green="0.72156862745098038" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
