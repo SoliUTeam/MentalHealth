@@ -27,6 +27,15 @@ class HomeViewController: UIViewController {
         }
         return quoteArray
     }
+    
+    @IBAction func displaySurveyListViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            if let detailViewController = storyboard.instantiateViewController(identifier: "SurveyListDetailViewController") as? SurveyListDetailViewController {
+                navigationController?.pushViewController(detailViewController, animated: true)
+            } else {
+                print("Can't find storyboard")
+            }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

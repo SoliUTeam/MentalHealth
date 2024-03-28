@@ -24,3 +24,8 @@ struct TestQuestion: Codable {
         case question
     }
 }
+
+struct SurveyData: Codable {
+    var userId: String
+    var resultScore: [Int]
+}

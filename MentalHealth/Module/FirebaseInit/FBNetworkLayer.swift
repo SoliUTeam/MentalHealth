@@ -11,13 +11,47 @@ import FirebaseDatabase
 
 class FBNetworkLayer {
     var ref: DatabaseReference!
-
+    var db: Firestore!
+    
+    let testUser1 = User (
+        demographicInformation: DemographicInfo(gender: "Female", firstName: "Jane", lastName: "Doe"),
+        surveyResult: [
+            SurveyResult(surveyDate: "2024-03-27", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
+            SurveyResult(surveyDate: "2024-03-28", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
+            SurveyResult(surveyDate: "2024-03-29", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+        ]
+    )
+    
     init() {
         ref = Database.database().reference()
+        db = Firestore.firestore()
+    }
+    
+    func fetchUserInformation(userInfo: User, completion: @escaping (Error?) -> Void) {
+        let userData: [String: Any] = [
+            "demographicInformation": [
+                "gender": userInfo.demographicInformation.gender,
+                "firstName": userInfo.demographicInformation.firstName,
+                "lastName": userInfo.demographicInformation.lastName
+            ],
+            "surveyResults": userInfo.surveyResult.map { surveyResult in
+                [
+                    "surveyDate": surveyResult.surveyDate,
+                    "surveyAnswer": surveyResult.surveyAnswer
+                ]
+            }
+        ]
+        
+        db.collection("Users").addDocument(data: userData) { error in
+            if let error = error {
+                completion(error) // Call completion with error if there's an issue
+            } else {
+                completion(nil) // Call completion with nil when data is successfully added
+            }
+        }
     }
     
     func fetchMentalHealthQuestions(completion: @escaping (MentalHealthQuestion?, Error?) -> Void) {
-        let db = Firestore.firestore()
         db.collection("MentalHealthQuestion").getDocuments { (querySnapshot, err) in
                     if let err = err {
                         completion(nil, err)
@@ -36,5 +70,22 @@ class FBNetworkLayer {
                     }
                 }
     }
+    
+//    func addSurvey(surveyData: SurveyData, completion: @escaping (Error?) -> Void) {
+//        var user
+//        let db = Firestore.firestore()
+//        let userSurveyRef = db.collection("Users").document(userId).collection("Surveys")
+//        // Once Login, I need to add user id
+//        var surveyDict: [String: Any] = [
+//            "answers": surveyData.resultScore
+//        ]
+//        
+//        // Add a timestamp if needed
+//        surveyDict["timestamp"] = FieldValue.serverTimestamp()
+//        
+//        userSurveyRef.addDocument(data: surveyDict) { error in
+//            completion(error)
+//        }
+//    }
     
 }
