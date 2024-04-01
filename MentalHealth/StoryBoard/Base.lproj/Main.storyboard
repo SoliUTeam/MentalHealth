@@ -73,35 +73,23 @@
         <!--Health Test-->
         <scene sceneID="KZi-cR-mPH">
             <objects>
-                <viewController storyboardIdentifier="SurveyListDetailViewController" id="GDW-ek-fTk" customClass="SurveyListDetailViewController" customModule="MentalHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SurveyListViewController" id="GDW-ek-fTk" customClass="SurveyListViewController" customModule="MentalHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0K5-Ip-4Yt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afa-vc-hgR">
-                                <rect key="frame" x="50" y="109" width="293" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNI-Gc-Olz">
-                                <rect key="frame" x="30" y="663" width="333" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
-                                <connections>
-                                    <action selector="submitResult" destination="GDW-ek-fTk" eventType="touchUpInside" id="SYE-4A-dhI"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ETH-Jd-5uV">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QSd-1b-iJj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TNI-Gc-Olz" firstAttribute="leading" secondItem="QSd-1b-iJj" secondAttribute="leading" constant="30" id="5FU-NL-MSb"/>
-                            <constraint firstItem="Afa-vc-hgR" firstAttribute="top" secondItem="QSd-1b-iJj" secondAttribute="top" constant="50" id="Y9D-Ah-odI"/>
-                            <constraint firstItem="QSd-1b-iJj" firstAttribute="trailing" secondItem="TNI-Gc-Olz" secondAttribute="trailing" constant="30" id="b8k-yD-OfZ"/>
-                            <constraint firstItem="Afa-vc-hgR" firstAttribute="leading" secondItem="QSd-1b-iJj" secondAttribute="leading" constant="50" id="eTN-DN-vXS"/>
-                            <constraint firstItem="QSd-1b-iJj" firstAttribute="bottom" secondItem="TNI-Gc-Olz" secondAttribute="bottom" constant="120" id="eqH-MV-lY6"/>
-                            <constraint firstItem="QSd-1b-iJj" firstAttribute="trailing" secondItem="Afa-vc-hgR" secondAttribute="trailing" constant="50" id="xKT-56-aR2"/>
+                            <constraint firstItem="ETH-Jd-5uV" firstAttribute="top" secondItem="QSd-1b-iJj" secondAttribute="top" id="GUa-de-Mjg"/>
+                            <constraint firstItem="QSd-1b-iJj" firstAttribute="trailing" secondItem="ETH-Jd-5uV" secondAttribute="trailing" id="K4w-B7-fYp"/>
+                            <constraint firstItem="ETH-Jd-5uV" firstAttribute="leading" secondItem="QSd-1b-iJj" secondAttribute="leading" id="dsM-EJ-0EQ"/>
+                            <constraint firstItem="QSd-1b-iJj" firstAttribute="bottom" secondItem="ETH-Jd-5uV" secondAttribute="bottom" id="dtz-8D-udm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Health Test" id="852-Jw-XZg"/>
@@ -110,7 +98,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="heroModalAnimationTypeString" value="3"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="questionsLabel" destination="Afa-vc-hgR" id="rgH-yy-eAy"/>
+                        <outlet property="tableView" destination="ETH-Jd-5uV" id="4tw-MX-XZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1k-1c-MCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -432,11 +420,6 @@
             <point key="canvasLocation" x="6665" y="4"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="kah-le-cOT">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Icon/account" width="32" height="32"/>
         <image name="Icon/home" width="32" height="32"/>

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		679D23862BB52015004CAA61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D23852BB52015004CAA61 /* User.swift */; };
+		67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */; };
+		67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253F2BBA262B00C27F21 /* TestingInformation.swift */; };
+		67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525412BBA285200C27F21 /* CellReusable+Extension.swift */; };
+		67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */; };
+		67E525472BBA29BD00C27F21 /* SurveyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */; };
 		67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064942B9D0DE200400013 /* FBNetworkLayer.swift */; };
 		67F064972B9D121A00400013 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67F064962B9D121A00400013 /* GoogleService-Info.plist */; };
 		67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */; };
@@ -38,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		679D23852BB52015004CAA61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewCell.swift; sourceTree = "<group>"; };
+		67E5253F2BBA262B00C27F21 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
+		67E525412BBA285200C27F21 /* CellReusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
+		67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyNextButtonCell.swift; sourceTree = "<group>"; };
+		67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyListViewCell.xib; sourceTree = "<group>"; };
 		67F064942B9D0DE200400013 /* FBNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkLayer.swift; sourceTree = "<group>"; };
 		67F064962B9D121A00400013 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthQuestion.swift; sourceTree = "<group>"; };
@@ -79,6 +89,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67E5253E2BBA260E00C27F21 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				67E5253F2BBA262B00C27F21 /* TestingInformation.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		67E525432BBA286900C27F21 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */,
+				67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */,
+				67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		67F064932B9D0D9000400013 /* FirebaseInit */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +162,7 @@
 				95B1CF092B71E58B00101423 /* UIImage+Extension.swift */,
 				95733CB42BA8296300FD2215 /* UILabel+Extension.swift */,
 				9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */,
+				67E525412BBA285200C27F21 /* CellReusable+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,6 +170,7 @@
 		957C02D02B6F77DD00DE21DE /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				67E525432BBA286900C27F21 /* Cell */,
 				957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */,
 				95B1CF0E2B71FC2600101423 /* SurveyViewController.swift */,
 			);
@@ -176,6 +206,7 @@
 		95B1CF062B6FE83F00101423 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				67E5253E2BBA260E00C27F21 /* Testing */,
 				67F064932B9D0D9000400013 /* FirebaseInit */,
 				95B1CF042B6FE7DE00101423 /* Account */,
 				953A65032B6EE8CE00651684 /* Home */,
@@ -287,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E525472BBA29BD00C27F21 /* SurveyListViewCell.xib in Resources */,
 				953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */,
 				953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */,
 				67F064972B9D121A00400013 /* GoogleService-Info.plist in Resources */,
@@ -309,13 +341,17 @@
 				95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */,
 				95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */,
 				957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */,
+				67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */,
 				953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */,
+				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
 				95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */,
 				95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */,
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
+				67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */,
+				67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

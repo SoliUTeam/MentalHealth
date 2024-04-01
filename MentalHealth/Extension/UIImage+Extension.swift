@@ -16,6 +16,16 @@ enum Image: String {
     case right
     case home
     case account
+    case unmarkedVRare
+    case unmarkedRare
+    case unmarkedSometimes
+    case unmarkedOften
+    case unmarkedVOften
+    case markedVRare
+    case markedRare
+    case markedSometimes
+    case markedOften
+    case markedVOften
 }
 
 extension UIImage {

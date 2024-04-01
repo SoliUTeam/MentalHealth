@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
     
     @IBAction func displaySurveyListViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            if let detailViewController = storyboard.instantiateViewController(identifier: "SurveyListDetailViewController") as? SurveyListDetailViewController {
-                navigationController?.pushViewController(detailViewController, animated: true)
+            if let surveyListVC = storyboard.instantiateViewController(identifier: "SurveyListViewController") as? SurveyListViewController {
+                navigationController?.pushViewController(surveyListVC, animated: true)
             } else {
                 print("Can't find storyboard")
             }
