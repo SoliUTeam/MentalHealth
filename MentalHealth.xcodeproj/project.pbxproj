@@ -23,6 +23,7 @@
 		953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
 		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
+		95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A072BBE69810003C584 /* UIViewController+Extension.swift */; };
 		9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */; };
 		95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB42BA8296300FD2215 /* UILabel+Extension.swift */; };
 		95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */; };
@@ -58,6 +59,7 @@
 		953A64F52B6EDFA200651684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		953A64F82B6EDFA200651684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		953A64FA2B6EDFA200651684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95433A072BBE69810003C584 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		95733CB42BA8296300FD2215 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspiringQuote.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				95733CB42BA8296300FD2215 /* UILabel+Extension.swift */,
 				9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */,
 				67E525412BBA285200C27F21 /* CellReusable+Extension.swift */,
+				95433A072BBE69810003C584 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
+				95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
 				95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */,
 				95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */,

@@ -14,8 +14,16 @@ class HomeViewController: UIViewController {
             wiseLabel.animate(newTexts: changeWiseLabelString())
         }
     }
+    @IBOutlet weak var myDiaryView: UIView!
+    @IBOutlet weak var testView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        applyBoader(testView)
+        applyBoader(myDiaryView)
+        testView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(displaySurveyListViewController))
+        tap.numberOfTapsRequired = 1
+        testView.addGestureRecognizer(tap)
     }
 
     func changeWiseLabelString() -> [String] {
@@ -26,7 +34,8 @@ class HomeViewController: UIViewController {
         return quoteArray
     }
     
-    @IBAction func displaySurveyListViewController() {
+    @objc
+    func displaySurveyListViewController(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             if let surveyListVC = storyboard.instantiateViewController(identifier: "SurveyListViewController") as? SurveyListViewController {
                 navigationController?.pushViewController(surveyListVC, animated: true)

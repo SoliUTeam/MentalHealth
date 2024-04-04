@@ -10,10 +10,12 @@ import UIKit
 
 enum Image: String {
     case oldSoliuLogo
+    case selfTest
     case soliuLogo
     case survey_black
     case survey_white
     case right
+    case rightArrow
     case home
     case account
     case unmarkedVRare
