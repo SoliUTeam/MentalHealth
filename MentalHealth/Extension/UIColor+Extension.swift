@@ -10,11 +10,13 @@ import UIKit
 enum Color: String {
     case soliuBlue = "#00B8F1"
     case viewBorder = "#63DAFF"
+    case tabBarBorder = "#CBCBCB"
 }
 
 extension UIColor {
     static let soliuBlue = UIColor(hex: Color.soliuBlue.rawValue, alpha: 1)
     static let viewBorder = UIColor(hex: Color.viewBorder.rawValue, alpha: 1)
+    static let tabBarBorder = UIColor(hex: Color.tabBarBorder.rawValue, alpha: 1)
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
