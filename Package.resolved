@@ -73,15 +73,6 @@
       }
     },
     {
-      "identity" : "hero",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/HeroTransitions/Hero.git",
-      "state" : {
-        "revision" : "b307e2d48d582118e5101d04f5187c91595a1095",
-        "version" : "1.6.3"
-      }
-    },
-    {
       "identity" : "interop-ios-for-google-sdks",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/interop-ios-for-google-sdks.git",

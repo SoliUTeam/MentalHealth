@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Hero
 
 class SurveyListViewController: UIViewController {
     
@@ -31,7 +30,6 @@ class SurveyListViewController: UIViewController {
         fetchQuestions()
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
         self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forHeaderFooterViewReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
-        self.isHeroEnabled = true
         self.title = ""
     }
     

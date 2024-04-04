@@ -35,7 +35,6 @@
 		95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CF022B6FD87700101423 /* FirebaseStorage */; };
 		95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF072B6FE87500101423 /* FeedbackViewController.swift */; };
 		95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF092B71E58B00101423 /* UIImage+Extension.swift */; };
-		95B1CF0D2B71EEC100101423 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CF0C2B71EEC100101423 /* Hero */; };
 		95B1CF0F2B71FC2600101423 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF0E2B71FC2600101423 /* SurveyViewController.swift */; };
 		95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF102B72023200101423 /* AccountHomeViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
@@ -77,7 +76,6 @@
 			files = (
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
 				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
-				95B1CF0D2B71EEC100101423 /* Hero in Frameworks */,
 				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
 				95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */,
 				95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */,
@@ -265,7 +263,6 @@
 				95B1CEFE2B6FD87600101423 /* FirebaseDatabase */,
 				95B1CF002B6FD87600101423 /* FirebaseFirestore */,
 				95B1CF022B6FD87700101423 /* FirebaseStorage */,
-				95B1CF0C2B71EEC100101423 /* Hero */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -302,7 +299,6 @@
 				953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				95B1CF0B2B71EEC100101423 /* XCRemoteSwiftPackageReference "Hero" */,
 			);
 			productRefGroup = 953A64EA2B6EDFA000651684 /* Products */;
 			projectDirPath = "";
@@ -607,14 +603,6 @@
 				minimumVersion = 10.0.0;
 			};
 		};
-		95B1CF0B2B71EEC100101423 /* XCRemoteSwiftPackageReference "Hero" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.3.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -652,11 +640,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
-		};
-		95B1CF0C2B71EEC100101423 /* Hero */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 95B1CF0B2B71EEC100101423 /* XCRemoteSwiftPackageReference "Hero" */;
-			productName = Hero;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Hero
 
 class HomeViewController: UIViewController {
 
@@ -17,7 +16,6 @@ class HomeViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.isHeroEnabled = true
     }
 
     func changeWiseLabelString() -> [String] {
