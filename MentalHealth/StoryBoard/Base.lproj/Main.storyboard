@@ -196,7 +196,7 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="Write:" destination="XeX-r6-TUv" eventType="touchUpInside" id="VRk-0w-Ism"/>
+                                            <action selector="writeReview:" destination="XeX-r6-TUv" eventType="touchUpInside" id="Bfc-bl-5iW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-8O-UCh">
@@ -248,7 +248,7 @@
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="youtubeLink:" destination="XeX-r6-TUv" eventType="touchUpInside" id="idA-nF-vJ7"/>
+                                            <action selector="soliuLink:" destination="XeX-r6-TUv" eventType="touchUpInside" id="b6h-YL-A7C"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -306,7 +306,7 @@
             </objects>
             <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
         </scene>
-        <!--Day-->
+        <!--View Controller-->
         <scene sceneID="cW8-lw-DRT">
             <objects>
                 <viewController id="Ts4-jF-aiH" sceneMemberID="viewController">
@@ -316,7 +316,7 @@
                         <viewLayoutGuide key="safeArea" id="MiR-dB-tlM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Day" id="3iK-hN-QV3"/>
+                    <tabBarItem key="tabBarItem" title="" image="Icon/dayButton" id="3iK-hN-QV3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoD-i4-eSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -473,6 +473,7 @@
     </scenes>
     <resources>
         <image name="Icon/account" width="32" height="32"/>
+        <image name="Icon/dayButton" width="62" height="62"/>
         <image name="Icon/home" width="32" height="32"/>
         <image name="Icon/rightArrow" width="19" height="19"/>
         <image name="Icon/selfTest" width="141" height="169"/>

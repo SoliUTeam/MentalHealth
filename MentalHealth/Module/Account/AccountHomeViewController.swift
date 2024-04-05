@@ -18,7 +18,7 @@ class AccountHomeViewController: UIViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-    @IBAction func Write(_ sender: UIButton) {
+    @IBAction func writeReview(_ sender: UIButton) {
         if let url = URL(string: "https://www.apple.com/app-store/") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
