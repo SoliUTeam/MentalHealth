@@ -25,6 +25,7 @@
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 		95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A072BBE69810003C584 /* UIViewController+Extension.swift */; };
 		95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 95433A0A2BBF77C40003C584 /* DGCharts */; };
+		95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A0D2BBF98C10003C584 /* DayViewController.swift */; };
 		9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */; };
 		95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB42BA8296300FD2215 /* UILabel+Extension.swift */; };
 		95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */; };
@@ -61,6 +62,7 @@
 		953A64F82B6EDFA200651684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		953A64FA2B6EDFA200651684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95433A072BBE69810003C584 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		95433A0D2BBF98C10003C584 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		95733CB42BA8296300FD2215 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspiringQuote.swift; sourceTree = "<group>"; };
@@ -158,6 +160,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		95433A0C2BBF98AE0003C584 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				95433A0D2BBF98C10003C584 /* DayViewController.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
 		95733CB22BA8292E00FD2215 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 		95B1CF062B6FE83F00101423 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				95433A0C2BBF98AE0003C584 /* Day */,
 				67E5253E2BBA260E00C27F21 /* Testing */,
 				67F064932B9D0D9000400013 /* FirebaseInit */,
 				95B1CF042B6FE7DE00101423 /* Account */,
@@ -348,6 +359,7 @@
 				953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
+				95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */,
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
 				95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
