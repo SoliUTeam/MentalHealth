@@ -24,6 +24,7 @@
 		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 		95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A072BBE69810003C584 /* UIViewController+Extension.swift */; };
+		95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 95433A0A2BBF77C40003C584 /* DGCharts */; };
 		9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */; };
 		95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB42BA8296300FD2215 /* UILabel+Extension.swift */; };
 		95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */,
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
 				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
 				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
@@ -266,6 +268,7 @@
 				95B1CEFE2B6FD87600101423 /* FirebaseDatabase */,
 				95B1CF002B6FD87600101423 /* FirebaseFirestore */,
 				95B1CF022B6FD87700101423 /* FirebaseStorage */,
+				95433A0A2BBF77C40003C584 /* DGCharts */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -302,6 +305,7 @@
 				953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 953A64EA2B6EDFA000651684 /* Products */;
 			projectDirPath = "";
@@ -591,6 +595,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -614,6 +626,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		95433A0A2BBF77C40003C584 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 		95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
