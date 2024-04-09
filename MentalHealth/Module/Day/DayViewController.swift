@@ -16,8 +16,10 @@ class DayViewController: UIViewController {
     @IBOutlet weak var fridayView: UIView!
     @IBOutlet weak var saturdayView: UIView!
     
+    @IBOutlet weak var welcomeView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeCircleShape(welcomeView)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.tabBarBorder)
     }
 }

@@ -43,8 +43,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KV-iu-unp">
                                 <rect key="frame" x="20" y="584" width="165" height="165"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self-Test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-Dr-5jv">
-                                        <rect key="frame" x="15" y="15" width="60" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self-Diagnose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-Dr-5jv">
+                                        <rect key="frame" x="15" y="15" width="94" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -697,12 +697,43 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yk-Yq-8R7">
+                                <rect key="frame" x="51.666666666666657" y="332" width="290" height="290"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-Ql-TIE">
+                                        <rect key="frame" x="36" y="113.99999999999999" width="218" height="62.333333333333329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, Dennis!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-iR-D2r">
+                                                <rect key="frame" x="26.333333333333329" y="0.0" width="165.33333333333337" height="38.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSa-of-as7">
+                                                <rect key="frame" x="0.0" y="38.333333333333314" width="218" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GVl-Ql-TIE" firstAttribute="centerY" secondItem="7Yk-Yq-8R7" secondAttribute="centerY" id="5fI-Gr-P4y"/>
+                                    <constraint firstAttribute="height" constant="290" id="Cim-GR-mAU"/>
+                                    <constraint firstItem="GVl-Ql-TIE" firstAttribute="centerX" secondItem="7Yk-Yq-8R7" secondAttribute="centerX" id="GLW-gL-a5o"/>
+                                    <constraint firstAttribute="width" constant="290" id="aWR-9O-o1q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MiR-dB-tlM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7Yk-Yq-8R7" firstAttribute="top" secondItem="2Af-26-ZHT" secondAttribute="bottom" constant="150" id="Enc-us-WLm"/>
                             <constraint firstItem="2Af-26-ZHT" firstAttribute="top" secondItem="MiR-dB-tlM" secondAttribute="top" constant="30" id="VxM-2T-52b"/>
                             <constraint firstItem="2Af-26-ZHT" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="lwP-Lj-BF4"/>
+                            <constraint firstItem="7Yk-Yq-8R7" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="ozj-Aw-33u"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Icon/dayButton" id="3iK-hN-QV3"/>
@@ -714,6 +745,7 @@
                         <outlet property="thursdayView" destination="oOG-xd-k4e" id="B4a-5v-e3h"/>
                         <outlet property="tuesdayView" destination="PtR-cF-SQJ" id="qgC-yV-INT"/>
                         <outlet property="wednesdayView" destination="kye-8b-RaI" id="5Ll-NA-IaE"/>
+                        <outlet property="welcomeView" destination="7Yk-Yq-8R7" id="ATa-jl-GTV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoD-i4-eSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
