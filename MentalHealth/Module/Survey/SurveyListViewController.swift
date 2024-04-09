@@ -153,9 +153,16 @@ class SurveyListViewController: UIViewController {
 }
 extension SurveyListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return surveyQuestion.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let testQuestion = self.surveyQuestion[indexPath.row]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SurveyListViewCell.reuseIdentifier, for: indexPath) as? SurveyListViewCell else {
+            return UITableViewCell()
+        }
+        cell.populate(testQuestion: testQuestion)
+        return cell
     }
+    
 }

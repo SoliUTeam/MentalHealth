@@ -18,6 +18,10 @@ enum Image: String {
     case rightArrow
     case home
     case account
+    
+}
+
+enum SurveyImage: String {
     case unmarkedVRare
     case unmarkedRare
     case unmarkedSometimes
@@ -30,13 +34,31 @@ enum Image: String {
     case markedVOften
 }
 
+
+
 extension UIImage {
     static func getImage(_ image: Image) -> UIImage {
         if let image = UIImage(named: image.rawValue) {
             return image
         }
         //TODO: This need to be proper error handling
+        print("Can't load image")
         return UIImage()
+    }
+    
+    convenience init?(assetIdentifier: SurveyImage) {
+        let imagePath = "Icon/\(assetIdentifier.rawValue)"
+        self.init(named: imagePath)
+    }
+    
+    func resized(toScale scale: CGFloat) -> UIImage {
+           let newSize = CGSize(width: self.size.width * scale, height: self.size.height * scale)
+           UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+           self.draw(in: CGRect(origin: .zero, size: newSize))
+           let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+           UIGraphicsEndImageContext()
+           
+           return resizedImage ?? self
     }
 }
 
