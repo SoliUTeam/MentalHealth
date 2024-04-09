@@ -315,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2Af-26-ZHT">
-                                <rect key="frame" x="21" y="89" width="351" height="93"/>
+                                <rect key="frame" x="21" y="93" width="351" height="93"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6du-gF-q7v">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="93"/>
@@ -698,7 +698,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yk-Yq-8R7">
-                                <rect key="frame" x="51.666666666666657" y="252" width="290" height="290"/>
+                                <rect key="frame" x="51.666666666666657" y="256" width="290" height="290"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-Ql-TIE">
                                         <rect key="frame" x="36" y="113.99999999999999" width="218" height="62.333333333333329"/>
@@ -727,13 +727,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log your feeling!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbE-2R-peh">
-                                <rect key="frame" x="139" y="582" width="115.33333333333331" height="17"/>
+                                <rect key="frame" x="139" y="586" width="115.33333333333331" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOt-7w-Yqg">
-                                <rect key="frame" x="21.666666666666657" y="609" width="350" height="72"/>
+                                <rect key="frame" x="21.666666666666657" y="613" width="350" height="72"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="Qz9-Ss-Lqk">
                                         <rect key="frame" x="10" y="6" width="330" height="60"/>
@@ -774,6 +774,12 @@
                                     <constraint firstItem="Qz9-Ss-Lqk" firstAttribute="centerY" secondItem="UOt-7w-Yqg" secondAttribute="centerY" id="STK-v0-fOY"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2P-dp-dpS">
+                                <rect key="frame" x="136" y="59" width="121.33333333333331" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MiR-dB-tlM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -782,16 +788,19 @@
                             <constraint firstItem="sbE-2R-peh" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="8qg-QG-njD"/>
                             <constraint firstItem="7Yk-Yq-8R7" firstAttribute="top" secondItem="2Af-26-ZHT" secondAttribute="bottom" constant="70" id="Enc-us-WLm"/>
                             <constraint firstItem="UOt-7w-Yqg" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="FlF-3M-v4v"/>
-                            <constraint firstItem="2Af-26-ZHT" firstAttribute="top" secondItem="MiR-dB-tlM" secondAttribute="top" constant="30" id="VxM-2T-52b"/>
+                            <constraint firstItem="Q2P-dp-dpS" firstAttribute="top" secondItem="MiR-dB-tlM" secondAttribute="top" id="Kvc-Wx-te9"/>
+                            <constraint firstItem="Q2P-dp-dpS" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="UoP-tX-7TJ"/>
                             <constraint firstItem="MiR-dB-tlM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UOt-7w-Yqg" secondAttribute="trailing" constant="20" id="YLI-Xo-RVu"/>
                             <constraint firstItem="2Af-26-ZHT" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="lwP-Lj-BF4"/>
                             <constraint firstItem="UOt-7w-Yqg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MiR-dB-tlM" secondAttribute="leading" constant="20" id="maF-Zd-nsR"/>
+                            <constraint firstItem="2Af-26-ZHT" firstAttribute="top" secondItem="Q2P-dp-dpS" secondAttribute="bottom" constant="10" id="nZp-Ys-iiS"/>
                             <constraint firstItem="7Yk-Yq-8R7" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="ozj-Aw-33u"/>
                             <constraint firstItem="sbE-2R-peh" firstAttribute="top" secondItem="7Yk-Yq-8R7" secondAttribute="bottom" constant="40" id="wnP-U2-dQG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Icon/dayButton" id="3iK-hN-QV3"/>
                     <connections>
+                        <outlet property="currentDate" destination="Q2P-dp-dpS" id="3Mm-gO-Aty"/>
                         <outlet property="feelingOptionView" destination="UOt-7w-Yqg" id="801-6y-S8D"/>
                         <outlet property="fridayView" destination="7f8-uW-fap" id="bHW-uA-8Jn"/>
                         <outlet property="mondayView" destination="Zdr-eY-HOb" id="XDB-0n-KVg"/>

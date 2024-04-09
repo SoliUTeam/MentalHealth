@@ -14,11 +14,11 @@ enum Image: String {
     case soliuLogo
     case survey_black
     case survey_white
+    case star
     case right
     case rightArrow
     case home
     case account
-    
 }
 
 enum SurveyImage: String {

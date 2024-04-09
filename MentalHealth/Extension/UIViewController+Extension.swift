@@ -27,4 +27,21 @@ extension UIViewController {
     func makeCircleShape(_ view: UIView) {
         view.layer.cornerRadius = view.layer.frame.size.width/2
     }
+
+    func getCurrentMonthAndDate() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        let monthName = dateFormatter.string(from: currentDate)
+        let calendar = Calendar.current
+        let day = calendar.component(.day, from: currentDate)
+        return "\(monthName) \(day)"
+    }
+
+    func getCurrentDate() -> String {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let day = calendar.component(.day, from: currentDate)
+        return "\(day)"
+    }
 }
