@@ -538,6 +538,15 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Icon/dayButton" id="3iK-hN-QV3"/>
+                    <connections>
+                        <outlet property="fridayView" destination="7f8-uW-fap" id="bHW-uA-8Jn"/>
+                        <outlet property="mondayView" destination="Zdr-eY-HOb" id="XDB-0n-KVg"/>
+                        <outlet property="saturdayView" destination="PFx-rC-5R8" id="Fam-av-RE1"/>
+                        <outlet property="sundayView" destination="bgh-fn-gKD" id="tih-QY-u5d"/>
+                        <outlet property="thursdayView" destination="oOG-xd-k4e" id="B4a-5v-e3h"/>
+                        <outlet property="tuesdayView" destination="PtR-cF-SQJ" id="qgC-yV-INT"/>
+                        <outlet property="wednesdayView" destination="kye-8b-RaI" id="5Ll-NA-IaE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IoD-i4-eSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
