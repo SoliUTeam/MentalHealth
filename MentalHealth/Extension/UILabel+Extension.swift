@@ -42,3 +42,30 @@ extension UILabel {
         }
     }
 }
+
+enum LabelStyle {
+    case title
+    case subtitle
+    case body
+    case surveyQuestion
+
+    func apply(to label: UILabel) {
+        switch self {
+        case .title:
+            label.font = UIFont.boldSystemFont(ofSize: 24)
+            label.textColor = .black
+
+        case .subtitle:
+            label.font = UIFont.italicSystemFont(ofSize: 18)
+            label.textColor = .darkGray
+
+        case .body:
+            label.font = UIFont.systemFont(ofSize: 16)
+            label.textColor = .black
+
+        case .surveyQuestion:
+            label.font = UIFont.systemFont(ofSize: 12)
+            label.textColor = .lightGray
+        }
+    }
+}
