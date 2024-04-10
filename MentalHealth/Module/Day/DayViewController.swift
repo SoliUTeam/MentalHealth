@@ -42,19 +42,21 @@ class DayViewController: UIViewController {
     
     lazy var progressBar: UIProgressView = {
         let progressView = UIProgressView()
-        progressView.progress = 0.7
+        progressView.progress = getStarCount().floatValue / 100
         progressView.progressTintColor = UIColor.progressBar
         progressView.trackTintColor = UIColor.progressTrackBar
-        progressView.layer.cornerRadius = progressView.frame.width / 2
+        progressView.layer.cornerRadius = 6
+        progressView.layer.borderColor = UIColor.progressBarBorder.cgColor
+        progressView.layer.borderWidth = 0.5
         progressView.clipsToBounds = true
-        progressView.transform = CGAffineTransform(rotationAngle: .pi / 2)
+        progressView.transform = CGAffineTransform(rotationAngle: .pi / -2)
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
 
     lazy var starIcon: UIImageView = {
         let starIcon = UIImageView()
-        starIcon.image = UIImage.getImage(.star)
+        starIcon.image = UIImage(emotionAssetIdentifier: .star)
         starIcon.frame.size = CGSize(width: 11, height: 11)
         starIcon.translatesAutoresizingMaskIntoConstraints = false
         return starIcon
@@ -64,7 +66,8 @@ class DayViewController: UIViewController {
         let label = UILabel()
         label.text = getStarCount()
         label.textColor = UIColor.soliuBlack
-        label.font.withSize(10)
+        label.font = UIFont.systemFont(ofSize: 12.0)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -72,10 +75,22 @@ class DayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(progressBar)
-        progressBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
-        progressBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
+        self.view.addSubview(starIcon)
+        self.view.addSubview(starCountLabel)
+        
+        progressBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15).isActive = true
+        progressBar.centerYAnchor.constraint(equalTo: welcomeView.centerYAnchor).isActive = true
         progressBar.widthAnchor.constraint(equalToConstant: 12).isActive = true
         progressBar.heightAnchor.constraint(equalToConstant: welcomeView.frame.height).isActive = true
+        
+        starIcon.topAnchor.constraint(equalTo: progressBar.bottomAnchor, constant: 5).isActive = true
+        starIcon.centerXAnchor.constraint(equalTo: progressBar.centerXAnchor).isActive = true
+
+        starCountLabel.topAnchor.constraint(equalTo: starIcon.bottomAnchor, constant: 3).isActive = true
+        starCountLabel.centerXAnchor.constraint(equalTo: progressBar.centerXAnchor).isActive = true
+        starCountLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        starCountLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+
         makeCircleShape(welcomeView)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.tabBarBorder)
         applyStyle(feelingOptionView)

@@ -12,13 +12,14 @@ enum Image: String {
     case oldSoliuLogo
     case selfTest
     case soliuLogo
-    case survey_black
-    case survey_white
-    case star
     case right
     case rightArrow
     case home
     case account
+}
+
+enum Emotion: String {
+    case star
 }
 
 enum SurveyImage: String {
@@ -51,6 +52,11 @@ extension UIImage {
         self.init(named: imagePath)
     }
     
+    convenience init?(emotionAssetIdentifier: Emotion) {
+        let imagePath = "Icon/Emotion/\(emotionAssetIdentifier.rawValue)"
+        self.init(named: imagePath)
+    }
+
     func resized(toScale scale: CGFloat) -> UIImage {
            let newSize = CGSize(width: self.size.width * scale, height: self.size.height * scale)
            UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
@@ -60,9 +66,7 @@ extension UIImage {
            
            return resizedImage ?? self
     }
-}
 
-extension UIImage {
     func resizeTo(width: CGFloat, height: CGFloat) -> UIImage? {
         let newSize = CGSize(width: width, height: height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, UIScreen.main.scale)
