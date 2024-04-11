@@ -16,6 +16,7 @@ enum Image: String {
     case rightArrow
     case home
     case account
+    case dayButton
 }
 
 enum Emotion: String {
@@ -48,6 +49,11 @@ extension UIImage {
     }
     
     convenience init?(assetIdentifier: SurveyImage) {
+        let imagePath = "Icon/\(assetIdentifier.rawValue)"
+        self.init(named: imagePath)
+    }
+    
+    convenience init?(assetIdentifier: Image) {
         let imagePath = "Icon/\(assetIdentifier.rawValue)"
         self.init(named: imagePath)
     }

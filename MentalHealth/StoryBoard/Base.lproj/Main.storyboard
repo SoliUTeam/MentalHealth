@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Bd-R2-YYp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Bd-R2-YYp">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -29,7 +29,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="JUt-Og-1IG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -676,13 +676,13 @@
             </objects>
             <point key="canvasLocation" x="4733.5877862595416" y="750"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home Tab Bar Controller-->
         <scene sceneID="WhH-8I-BHG">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4Bd-R2-YYp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="4Bd-R2-YYp" customClass="HomeTabBarController" customModule="MentalHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UII-rd-CBP"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kah-le-cOT" customClass="TabBarWithCorners" customModule="MentalHealth" customModuleProvider="target">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kah-le-cOT" customClass="MyTabBar" customModule="MentalHealth" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1196,7 +1196,7 @@
                             <constraint firstItem="sbE-2R-peh" firstAttribute="top" secondItem="7Yk-Yq-8R7" secondAttribute="bottom" constant="40" id="wnP-U2-dQG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Icon/dayButton" id="3iK-hN-QV3"/>
+                    <tabBarItem key="tabBarItem" title="" id="3iK-hN-QV3"/>
                     <connections>
                         <outlet property="currentDate" destination="Q2P-dp-dpS" id="3Mm-gO-Aty"/>
                         <outlet property="feelingOptionView" destination="UOt-7w-Yqg" id="801-6y-S8D"/>
@@ -1388,9 +1388,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fs1-9c-Upa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="-673"/>
+            <point key="canvasLocation" x="1028" y="-694"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="kah-le-cOT">
+            <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Icon/Emotion/badIcon" width="46" height="46"/>
         <image name="Icon/Emotion/decentIcon" width="46" height="46"/>
@@ -1400,7 +1405,6 @@
         <image name="Icon/Emotion/sadIcon" width="46" height="46"/>
         <image name="Icon/Emotion/star" width="12" height="11"/>
         <image name="Icon/account" width="32" height="32"/>
-        <image name="Icon/dayButton" width="62" height="62"/>
         <image name="Icon/home" width="32" height="32"/>
         <image name="Icon/rightArrow" width="19" height="19"/>
         <image name="Icon/selfTest" width="141" height="169"/>

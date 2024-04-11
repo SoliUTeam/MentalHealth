@@ -29,8 +29,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var testView: UIView!
     
     override func viewDidLoad() {
-        self.tabBarController?.tabBar.layer.borderWidth = 1
-        self.tabBarController?.tabBar.layer.borderColor = UIColor.tabBarBorder.cgColor
         super.viewDidLoad()
         applyBoader(testView)
         applyBoader(myDiaryView)
