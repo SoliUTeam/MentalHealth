@@ -18,6 +18,15 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
     @IBOutlet var surveyAnswerImage5: UIImageView!
     
     private var imageMappings: [UIImageView: (unmarked: UIImage?, marked: UIImage?)] = [:]
+    private var testQuestion: TestQuestion?
+    private var selectedValue: Int?
+    weak var delegate: SurveyListViewCellDelegate?
+
+    
+    func populate(testQuestion: TestQuestion) {
+        self.testQuestion = testQuestion
+        surveyQuestionLabel.text = testQuestion.question
+    }
 
     private func setupImageMappings() {
         imageMappings[surveyAnswerImage1] = (UIImage(assetIdentifier: .unmarkedVRare), UIImage(assetIdentifier: .markedVRare))
@@ -29,14 +38,15 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
     
     private var surveyImageView: [UIImageView] {
             return [surveyAnswerImage1, surveyAnswerImage2, surveyAnswerImage3, surveyAnswerImage4, surveyAnswerImage5]
-       }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
         setupGestureRecognizers()
         initialImageSetup()
-        setupImageMappings() // Setup the image mappings
+        setupImageMappings()
     }
     
     private func initialImageSetup() {
@@ -45,11 +55,6 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
         surveyAnswerImage3.image = UIImage(assetIdentifier:.unmarkedSometimes)
         surveyAnswerImage4.image = UIImage(assetIdentifier:.unmarkedOften)
         surveyAnswerImage5.image = UIImage(assetIdentifier:.unmarkedVOften)
-        print("Image setup done")
-    }
-    
-    func populate(testQuestion: TestQuestion) {
-        surveyQuestionLabel.text = testQuestion.question
     }
     
     private func setupGestureRecognizers() {
@@ -62,7 +67,13 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
         guard let selectedImageView = sender.view as? UIImageView else { return }
-            resetImages(except: selectedImageView)
+        guard let testQuestion = testQuestion else { return }
+        if let selectedIndex = surveyImageView.firstIndex(of: selectedImageView) {
+                selectedValue = selectedIndex
+                delegate?.mappingSelectedValue(questionID: testQuestion.questionId, value:selectedIndex)
+                print("Selected Image \(selectedValue)")
+                resetImages(except: selectedImageView)
+           }
     }
     
     private func resetImages(except selectedImageView: UIImageView) {
@@ -79,3 +90,8 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
         }
     }
 }
+
+protocol SurveyListViewCellDelegate: AnyObject {
+    func mappingSelectedValue(questionID: Int , value: Int)
+}
+

@@ -18,10 +18,12 @@ class SurveyListViewController: UIViewController {
     }
 
 
-    var surveyQuestion: [TestQuestion] = []
+    var allSurveyQuestion: [TestQuestion] = []
+    var selectedSurveyQuestion: [TestQuestion] = []
     var testAnswers: [Int] = []
-    var selectedQuestionType = 0
-    
+    var selectedQuestionId: Int = 0
+    var readyToSubmit = false
+    var surveyResultRecord:[Int: Int] = [:]
     lazy var fbLayer = FBNetworkLayer()
     
     
@@ -34,8 +36,12 @@ class SurveyListViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed() {
-        selectedQuestionType = selectedQuestionType + 1
-       
+        selectedQuestionId = selectedQuestionId + 1
+        if selectedQuestionId == 4 {
+            readyToSubmit = true
+        }
+        reorderQuestion()
+        
     }
     
 
@@ -74,17 +80,72 @@ class SurveyListViewController: UIViewController {
 //                }
 //            }
         }
-//    @IBAction func surveyButtonPressed(_ sender: UIButton) {
-//        print(sender.tag)
-//        var answerNumber = sender.tag
-//        testAnswers.append(answerNumber)
-//        nextButtonTapped()
-//    }
-    
+    private func reorderQuestion() {
+        selectedSurveyQuestion = allSurveyQuestion.filter { testQuestion in
+             selectedQuestionId == testQuestion.id
+        }
+        tableView.reloadData()
+    }
     private func fetchQuestions() {
-    surveyQuestion = TestingInformation().createTestingSurveyQuestion()
-    tableView.reloadData()
+        allSurveyQuestion = TestingInformation().createTestingSurveyQuestion()
+        reorderQuestion()
+    }
         
+
+}
+extension SurveyListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return selectedSurveyQuestion.count + 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row  == selectedSurveyQuestion.count {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SurveyNextButtonCell.reuseIdentifier) as? SurveyNextButtonCell else {
+                return UITableViewCell()
+            }
+            cell.populate(readySubmit: readyToSubmit)
+            return cell
+        }
+        
+        else {
+            let testQuestion = self.selectedSurveyQuestion[indexPath.row]
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SurveyListViewCell.reuseIdentifier, for: indexPath) as? SurveyListViewCell else {
+                return UITableViewCell()
+            }
+            cell.delegate = self
+            cell.populate(testQuestion: testQuestion)
+            return cell
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if surveyResultRecord.count != 5 {
+            readyToSubmit = false
+        }
+        if indexPath.row == selectedSurveyQuestion.count {
+            nextButtonPressed()
+        }
+        
+        if readyToSubmit == true && indexPath.row  == selectedSurveyQuestion.count  {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+                    navigationController?.pushViewController(surveyResultVC, animated: true)
+                } else {
+                    print("Can't find storyboard")
+                }
+        }
+        return
+    }
+}
+extension SurveyListViewController: SurveyListViewCellDelegate {
+    func mappingSelectedValue(questionID: Int , value: Int) {
+        surveyResultRecord[questionID] = value
+        print("Value Notified \(surveyResultRecord)")
+    }
+}
+
+
+
+
 //  Later work on.
 //            fbLayer.fetchMentalHealthQuestions { [weak self] healthQuestion, error in
 //                guard let self = self else { return }
@@ -98,71 +159,6 @@ class SurveyListViewController: UIViewController {
 //                    self.displayQuestion()
 //                }
 //            }
-        }
+//        }
         
-//       func nextButtonTapped() {
-//            if selectedIndex < testInfoArray.count - 1 {
-//                selectedIndex += 1
-//            } else {
-//                selectedIndex = 0 // Reset to first question if we've reached the end
-//            }
-//            displayQuestion()
 //        }
-    
-//    @IBAction func submitResult() {
-//        let testUser1 = User(
-//            demographicInformation: DemographicInfo(gender: "Female", firstName: "Jane", lastName: "Doe"),
-//            surveyResult: [
-//                SurveyResult(surveyDate: "2024-03-27", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
-//                SurveyResult(surveyDate: "2024-03-28", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
-//                SurveyResult(surveyDate: "2024-03-29", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
-//            ]
-//        )
-//        fbLayer.fetchUserInformation(userInfo: testUser1) { [weak self] error in
-//            guard let self = self else { return }
-//            DispatchQueue.main.async {
-//                if let error = error {
-//                    print("Error submit getting error: \(error)")
-//                    return
-//                }
-//            }
-//            print("Fetch")
-//        }
-//        
-//        fbLayer.fetchMentalHealthQuestions { [weak self] healthQuestion, error in
-//            guard let self = self else { return }
-//            DispatchQueue.main.async {
-//                if let error = error {
-//                    print("Error fetching questions: \(error)")
-//                    self.questionsLabel.text = "Error fetching questions"
-//                    return
-//                }
-//                self.testInfoArray = healthQuestion?.testQuestions ?? []
-//                self.displayQuestion()
-//            }
-//        }
-//    }
-//        
-//        private func displayQuestion() {
-//            guard !testInfoArray.isEmpty else {
-//                questionsLabel.text = "Question is Empty"
-//                return
-//            }
-//            questionsLabel.text = testInfoArray[selectedIndex].question
-//        }
-}
-extension SurveyListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return surveyQuestion.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let testQuestion = self.surveyQuestion[indexPath.row]
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SurveyListViewCell.reuseIdentifier, for: indexPath) as? SurveyListViewCell else {
-            return UITableViewCell()
-        }
-        cell.populate(testQuestion: testQuestion)
-        return cell
-    }
-    
-}
