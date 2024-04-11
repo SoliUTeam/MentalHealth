@@ -14,14 +14,28 @@ class HomeViewController: UIViewController {
             wiseLabel.animate(newTexts: changeWiseLabelString())
         }
     }
+    @IBOutlet weak var sundayView: UIView!
+    @IBOutlet weak var mondayView: UIView!
+    @IBOutlet weak var tuesdayView: UIView!
+    @IBOutlet weak var wednesdayView: UIView!
+    @IBOutlet weak var thursdayView: UIView!
+    @IBOutlet weak var fridayView: UIView!
+    @IBOutlet weak var saturdayView: UIView!
+    
+    @IBOutlet weak var questionBannerView: UIView!
+    @IBOutlet weak var chartContainerView: UIView!
+    @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var myDiaryView: UIView!
     @IBOutlet weak var testView: UIView!
+    
     override func viewDidLoad() {
         self.tabBarController?.tabBar.layer.borderWidth = 1
         self.tabBarController?.tabBar.layer.borderColor = UIColor.tabBarBorder.cgColor
         super.viewDidLoad()
         applyBoader(testView)
         applyBoader(myDiaryView)
+        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.tabBarBorder)
+        applyBoader(chartContainerView, backgroundColor: UIColor.chartBackground)
         testView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(displaySurveyListViewController))
         tap.numberOfTapsRequired = 1

@@ -10,6 +10,7 @@ import UIKit
 enum Color: String {
     case soliuBlue = "#00B8F1"
     case soliuBlack = "#2E2E2E"
+    case chartBackground = "#26CCFF"
     case viewBorder = "#63DAFF"
     case tabBarBorder = "#CBCBCB"
     case progressBar = "#FFE500"
@@ -20,6 +21,7 @@ enum Color: String {
 extension UIColor {
     static let soliuBlue = UIColor(hex: Color.soliuBlue.rawValue, alpha: 1)
     static let soliuBlack = UIColor(hex: Color.soliuBlack.rawValue, alpha: 1)
+    static let chartBackground = UIColor(hex: Color.chartBackground.rawValue, alpha: 1)
     static let viewBorder = UIColor(hex: Color.viewBorder.rawValue, alpha: 1)
     static let tabBarBorder = UIColor(hex: Color.tabBarBorder.rawValue, alpha: 1)
     static let progressBar = UIColor(hex: Color.progressBar.rawValue, alpha: 1)
