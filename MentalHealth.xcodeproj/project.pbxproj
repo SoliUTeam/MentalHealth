@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */; };
 		679D23862BB52015004CAA61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D23852BB52015004CAA61 /* User.swift */; };
+		67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */; };
 		67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */; };
 		67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253F2BBA262B00C27F21 /* TestingInformation.swift */; };
 		67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525412BBA285200C27F21 /* CellReusable+Extension.swift */; };
@@ -40,13 +42,14 @@
 		95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CF022B6FD87700101423 /* FirebaseStorage */; };
 		95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF072B6FE87500101423 /* FeedbackViewController.swift */; };
 		95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF092B71E58B00101423 /* UIImage+Extension.swift */; };
-		95B1CF0F2B71FC2600101423 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF0E2B71FC2600101423 /* SurveyViewController.swift */; };
 		95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF102B72023200101423 /* AccountHomeViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		679D23852BB52015004CAA61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
 		67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewCell.swift; sourceTree = "<group>"; };
 		67E5253F2BBA262B00C27F21 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
 		67E525412BBA285200C27F21 /* CellReusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
 		95B1CF072B6FE87500101423 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		95B1CF092B71E58B00101423 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		95B1CF0E2B71FC2600101423 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		95B1CF102B72023200101423 /* AccountHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHomeViewController.swift; sourceTree = "<group>"; };
 		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 				67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */,
 				67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */,
 				67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */,
+				675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -198,7 +201,7 @@
 			children = (
 				67E525432BBA286900C27F21 /* Cell */,
 				957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */,
-				95B1CF0E2B71FC2600101423 /* SurveyViewController.swift */,
+				67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */,
 			);
 			path = Survey;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */,
 				953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */,
 				67F064972B9D121A00400013 /* GoogleService-Info.plist in Resources */,
+				675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */,
 				953A64F42B6EDFA000651684 /* Main.storyboard in Resources */,
 				95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */,
 			);
@@ -366,7 +370,6 @@
 				95433A102BC63A860003C584 /* String+Extension.swift in Sources */,
 				95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */,
 				953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */,
-				95B1CF0F2B71FC2600101423 /* SurveyViewController.swift in Sources */,
 				95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */,
 				95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */,
 				957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */,
@@ -375,6 +378,7 @@
 				95433A132BC6558C0003C584 /* LoginViewController.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
+				67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */,
 				95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */,
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
 				95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */,
