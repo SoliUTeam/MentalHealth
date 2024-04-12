@@ -16,6 +16,7 @@ enum Color: String {
     case progressBar = "#FFE500"
     case progressTrackBar = "#F5F5F5"
     case progressBarBorder = "#E4E4E4"
+    case homepageBackground = "#E5E5E5"
 }
 
 extension UIColor {
@@ -27,6 +28,7 @@ extension UIColor {
     static let progressBar = UIColor(hex: Color.progressBar.rawValue, alpha: 1)
     static let progressTrackBar = UIColor(hex: Color.progressTrackBar.rawValue, alpha: 1)
     static let progressBarBorder = UIColor(hex: Color.progressBarBorder.rawValue, alpha: 1)
+    static let homepageBackground = UIColor(hex: Color.homepageBackground.rawValue, alpha: 1)
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()

@@ -30,10 +30,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        applyBoader(testView)
-        applyBoader(myDiaryView)
+        self.view.backgroundColor = UIColor.homepageBackground
+        applyBoader([testView, myDiaryView, chartContainerView], with: .clear, backgroundColor: .white)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.tabBarBorder)
-        applyBoader(chartContainerView, backgroundColor: UIColor.chartBackground)
+        
+        // Navigate to Survey View
         testView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(displaySurveyListViewController))
         tap.numberOfTapsRequired = 1
