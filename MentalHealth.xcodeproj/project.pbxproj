@@ -35,6 +35,7 @@
 		95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */; };
 		957720472BC7AA3C0026DC91 /* HomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957720462BC7AA3C0026DC91 /* HomeTabBar.swift */; };
 		957720492BC7AC280026DC91 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957720482BC7AC280026DC91 /* HomeTabBarController.swift */; };
+		9577204C2BC8CB4B0026DC91 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 9577204B2BC8CB4B0026DC91 /* FSCalendar */; };
 		957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */; };
 		95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */; };
 		95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEFA2B6FD87600101423 /* FirebaseAnalytics */; };
@@ -93,6 +94,7 @@
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
 				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
 				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
+				9577204C2BC8CB4B0026DC91 /* FSCalendar in Frameworks */,
 				95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */,
 				95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */,
 				95B1CEFD2B6FD87600101423 /* FirebaseAuth in Frameworks */,
@@ -303,6 +305,7 @@
 				95B1CF002B6FD87600101423 /* FirebaseFirestore */,
 				95B1CF022B6FD87700101423 /* FirebaseStorage */,
 				95433A0A2BBF77C40003C584 /* DGCharts */,
+				9577204B2BC8CB4B0026DC91 /* FSCalendar */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -340,6 +343,7 @@
 				95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */,
+				9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 953A64EA2B6EDFA000651684 /* Products */;
 			projectDirPath = "";
@@ -643,6 +647,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 		95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -671,6 +683,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
+		};
+		9577204B2BC8CB4B0026DC91 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
