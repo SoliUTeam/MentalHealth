@@ -9,11 +9,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var backgroundView: UIView! {
+        didSet {
+            backgroundView.layer.cornerRadius = 12
+            backgroundView.backgroundColor = UIColor.chartBackground
+        }
+    }
     @IBOutlet weak var wiseLabel: UILabel! {
         didSet {
             wiseLabel.animate(newTexts: changeWiseLabelString())
         }
     }
+    @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var mondayView: UIView!
     @IBOutlet weak var tuesdayView: UIView!
@@ -32,7 +39,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.homepageBackground
         applyBoader([testView, myDiaryView, chartContainerView], with: .clear, backgroundColor: .white)
-        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.tabBarBorder)
+        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.clear, backgroundColor: UIColor.white)
         
         // Navigate to Survey View
         testView.isUserInteractionEnabled = true
