@@ -13,6 +13,11 @@ class AccountHomeViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     @IBAction func soliuLink(_ sender: UIButton) {
         if let url = URL(string: "https://soliu.org") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)

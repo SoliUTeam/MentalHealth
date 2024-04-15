@@ -35,6 +35,10 @@ class SurveyListViewController: UIViewController {
         self.title = ""
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     @IBAction func nextButtonPressed() {
         selectedQuestionId = selectedQuestionId + 1
         if selectedQuestionId == 4 {

@@ -74,6 +74,7 @@ class DayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.navigationController?.navigationBar.isHidden = true
         self.view.addSubview(progressBar)
         self.view.addSubview(starIcon)
         self.view.addSubview(starCountLabel)
@@ -94,6 +95,11 @@ class DayViewController: UIViewController {
         makeCircleShape(welcomeView)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.tabBarBorder)
         applyStyle(feelingOptionView)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidLayoutSubviews() {

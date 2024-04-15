@@ -29,7 +29,7 @@
 		95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 95433A0A2BBF77C40003C584 /* DGCharts */; };
 		95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A0D2BBF98C10003C584 /* DayViewController.swift */; };
 		95433A102BC63A860003C584 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A0F2BC63A860003C584 /* String+Extension.swift */; };
-		95433A132BC6558C0003C584 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A122BC6558C0003C584 /* LoginViewController.swift */; };
+		95433A132BC6558C0003C584 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A122BC6558C0003C584 /* SignUpViewController.swift */; };
 		9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */; };
 		95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB42BA8296300FD2215 /* UILabel+Extension.swift */; };
 		95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */; };
@@ -72,7 +72,7 @@
 		95433A072BBE69810003C584 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		95433A0D2BBF98C10003C584 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		95433A0F2BC63A860003C584 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		95433A122BC6558C0003C584 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		95433A122BC6558C0003C584 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		95733CB42BA8296300FD2215 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspiringQuote.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		95433A112BC655750003C584 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				95433A122BC6558C0003C584 /* LoginViewController.swift */,
+				95433A122BC6558C0003C584 /* SignUpViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 				957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */,
 				67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */,
 				953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */,
-				95433A132BC6558C0003C584 /* LoginViewController.swift in Sources */,
+				95433A132BC6558C0003C584 /* SignUpViewController.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */,
