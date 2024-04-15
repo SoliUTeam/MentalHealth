@@ -47,6 +47,7 @@
 		95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF092B71E58B00101423 /* UIImage+Extension.swift */; };
 		95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF102B72023200101423 /* AccountHomeViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
+		95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A12BCD038200017E03 /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		95B1CF092B71E58B00101423 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		95B1CF102B72023200101423 /* AccountHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHomeViewController.swift; sourceTree = "<group>"; };
 		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
+		95D293A12BCD038200017E03 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				95433A122BC6558C0003C584 /* SignUpViewController.swift */,
+				95D293A12BCD038200017E03 /* LogInViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */,
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
 				67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */,
+				95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */,
 				67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

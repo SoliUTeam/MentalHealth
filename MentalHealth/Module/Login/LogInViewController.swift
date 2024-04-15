@@ -1,18 +1,14 @@
 //
-//  SignUpViewController.swift
+//  LogInViewController.swift
 //  MentalHealth
 //
-//  Created by JungpyoHong on 4/10/24.
+//  Created by JungpyoHong on 4/15/24.
 //
 
 import Foundation
 import UIKit
 
-class SignUpViewController: UIViewController {
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var continueAsGuestButton: UIButton!
+class LogInViewController: UIViewController {
     @IBAction func tapAsGuest(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeViewController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
@@ -22,19 +18,18 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func navigateToLogin(_ sender: Any) {
+    @IBAction func navigateToSignUp(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let homeViewController = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController {
+        if let homeViewController = storyboard.instantiateViewController(identifier: "SignUpViewController") as? SignUpViewController {
             navigationController?.pushViewController(homeViewController, animated: true)
         } else {
-            print("Can't find LogInViewController")
+            print("Can't find SignUpViewController")
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
