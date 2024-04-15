@@ -48,6 +48,7 @@
 		95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF102B72023200101423 /* AccountHomeViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 		95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A12BCD038200017E03 /* LogInViewController.swift */; };
+		95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A32BCD0CB800017E03 /* LoginManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		95B1CF102B72023200101423 /* AccountHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHomeViewController.swift; sourceTree = "<group>"; };
 		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 		95D293A12BCD038200017E03 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		95D293A32BCD0CB800017E03 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				95B1CEF62B6FD57D00101423 /* Common */,
 				953A64FA2B6EDFA200651684 /* Info.plist */,
 				67F064962B9D121A00400013 /* GoogleService-Info.plist */,
+				95D293A32BCD0CB800017E03 /* LoginManager.swift */,
 			);
 			path = MentalHealth;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */,
 				953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */,
 				957720472BC7AA3C0026DC91 /* HomeTabBar.swift in Sources */,
+				95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */,
 				95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */,
 				95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */,
 				957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */,
