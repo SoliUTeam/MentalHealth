@@ -49,6 +49,7 @@
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 		95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A12BCD038200017E03 /* LogInViewController.swift */; };
 		95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A32BCD0CB800017E03 /* LoginManager.swift */; };
+		95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95D293A62BCE347100017E03 /* SwiftEntryKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 			files = (
 				95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */,
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
+				95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */,
 				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
 				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
 				9577204C2BC8CB4B0026DC91 /* FSCalendar in Frameworks */,
@@ -312,6 +314,7 @@
 				95B1CF022B6FD87700101423 /* FirebaseStorage */,
 				95433A0A2BBF77C40003C584 /* DGCharts */,
 				9577204B2BC8CB4B0026DC91 /* FSCalendar */,
+				95D293A62BCE347100017E03 /* SwiftEntryKit */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -350,6 +353,7 @@
 				95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */,
 				9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				95D293A52BCE347100017E03 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
 			);
 			productRefGroup = 953A64EA2B6EDFA000651684 /* Products */;
 			projectDirPath = "";
@@ -679,6 +683,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		95D293A52BCE347100017E03 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -726,6 +738,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		95D293A62BCE347100017E03 /* SwiftEntryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95D293A52BCE347100017E03 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
+			productName = SwiftEntryKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
