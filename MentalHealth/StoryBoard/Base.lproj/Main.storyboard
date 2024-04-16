@@ -584,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1k-1c-MCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5660.3053435114498" y="-727.46478873239437"/>
+            <point key="canvasLocation" x="7726" y="-713"/>
         </scene>
         <!--My Page-->
         <scene sceneID="F9v-zP-ijq">
@@ -1359,7 +1359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxn-Rh-BJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6692.3664122137397" y="-727.46478873239437"/>
+            <point key="canvasLocation" x="8758" y="-713"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="KmP-6I-s2W">
@@ -1668,6 +1668,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQC-jH-4yF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-882" y="-685"/>
+        </scene>
+        <!--My Diary View Controller-->
+        <scene sceneID="mUw-JQ-7XE">
+            <objects>
+                <viewController storyboardIdentifier="MyDiaryViewController" id="5G7-Fj-dYd" customClass="MyDiaryViewController" customModule="MentalHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYw-DZ-gog">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4ux-1v-q9V"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oaQ-pt-KT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7726" y="401"/>
         </scene>
     </scenes>
     <designables>

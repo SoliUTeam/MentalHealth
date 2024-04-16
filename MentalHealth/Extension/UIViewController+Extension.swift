@@ -45,3 +45,12 @@ extension UIViewController {
         return "\(day)"
     }
 }
+
+extension UIViewController {
+    func tapAction(_ view: UIView, selector: Selector) {
+        view.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer.init(target: self, action: selector)
+        tap.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tap)
+    }
+}

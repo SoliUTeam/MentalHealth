@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 class HomeViewController: UIViewController {
 
@@ -35,17 +36,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var myDiaryView: UIView!
     @IBOutlet weak var testView: UIView!
     
+    /// Swift Entry Kit Declaration
+    var attributes = EKAttributes()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.homepageBackground
         applyBoader([testView, myDiaryView, chartContainerView], with: .clear, backgroundColor: .white)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.clear, backgroundColor: UIColor.white)
         
-        // Navigate to Survey View
-        testView.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer.init(target: self, action: #selector(displaySurveyListViewController))
-        tap.numberOfTapsRequired = 1
-        testView.addGestureRecognizer(tap)
+        // Navigation
+        tapAction(testView, selector: #selector(displaySurveyListViewController))
+        tapAction(myDiaryView, selector: #selector(displayMyDiaryViewController))
     }
 
     func changeWiseLabelString() -> [String] {
@@ -59,13 +61,23 @@ class HomeViewController: UIViewController {
     @objc
     func displaySurveyListViewController(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            if let surveyListVC = storyboard.instantiateViewController(identifier: "SurveyListViewController") as? SurveyListViewController {
-                navigationController?.pushViewController(surveyListVC, animated: true)
-            } else {
-                print("Can't find storyboard")
-            }
+        if let surveyListVC = storyboard.instantiateViewController(identifier: "SurveyListViewController") as? SurveyListViewController {
+            navigationController?.pushViewController(surveyListVC, animated: true)
+        } else {
+            print("Can't find storyboard")
+        }
     }
 
+    @objc
+    func displayMyDiaryViewController(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let surveyListVC = storyboard.instantiateViewController(identifier: "MyDiaryViewController") as? MyDiaryViewController {
+            navigationController?.pushViewController(surveyListVC, animated: true)
+        } else {
+            print("Can't find MyDiaryViewController")
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)

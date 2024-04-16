@@ -50,6 +50,7 @@
 		95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A12BCD038200017E03 /* LogInViewController.swift */; };
 		95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A32BCD0CB800017E03 /* LoginManager.swift */; };
 		95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95D293A62BCE347100017E03 /* SwiftEntryKit */; };
+		95D293AC2BCE36B000017E03 /* MyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 		95D293A12BCD038200017E03 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		95D293A32BCD0CB800017E03 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 		95B1CF062B6FE83F00101423 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				95D293AA2BCE369B00017E03 /* Diary */,
 				95433A112BC655750003C584 /* Login */,
 				95433A0C2BBF98AE0003C584 /* Day */,
 				67E5253E2BBA260E00C27F21 /* Testing */,
@@ -286,6 +289,14 @@
 				953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		95D293AA2BCE369B00017E03 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +421,7 @@
 				95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */,
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
 				67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */,
+				95D293AC2BCE36B000017E03 /* MyDiaryViewController.swift in Sources */,
 				95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */,
 				67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */,
 			);
