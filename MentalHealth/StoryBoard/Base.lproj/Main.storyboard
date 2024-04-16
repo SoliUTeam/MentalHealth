@@ -494,6 +494,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Icon/calendar"/>
+                                <connections>
+                                    <action selector="didTapCalendarButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="WmH-4l-c8C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -535,7 +538,7 @@
                     <navigationItem key="navigationItem" id="SSY-I9-4TY"/>
                     <connections>
                         <outlet property="backgroundView" destination="s6h-ip-aNA" id="8Qe-p9-caW"/>
-                        <outlet property="calendarButton" destination="cdx-S8-WxJ" id="d0z-86-98w"/>
+                        <outlet property="calendarButton" destination="cdx-S8-WxJ" id="T6y-1L-cwr"/>
                         <outlet property="chartContainerView" destination="uDx-J1-n71" id="app-6J-WAW"/>
                         <outlet property="chartView" destination="tl4-Cd-8OA" id="NWt-cJ-5Ad"/>
                         <outlet property="fridayView" destination="Azd-h4-cmN" id="tVf-77-2mc"/>

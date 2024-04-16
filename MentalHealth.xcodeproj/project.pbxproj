@@ -51,6 +51,8 @@
 		95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A32BCD0CB800017E03 /* LoginManager.swift */; };
 		95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95D293A62BCE347100017E03 /* SwiftEntryKit */; };
 		95D293AC2BCE36B000017E03 /* MyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */; };
+		95D293AE2BCE397C00017E03 /* CalendarPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293AD2BCE397C00017E03 /* CalendarPopUpView.swift */; };
+		95D293B12BCE39F800017E03 /* CalendarPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D293B02BCE39F800017E03 /* CalendarPopUpView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		95D293A12BCD038200017E03 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		95D293A32BCD0CB800017E03 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryViewController.swift; sourceTree = "<group>"; };
+		95D293AD2BCE397C00017E03 /* CalendarPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopUpView.swift; sourceTree = "<group>"; };
+		95D293B02BCE39F800017E03 /* CalendarPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarPopUpView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 		953A65032B6EE8CE00651684 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				95D293AF2BCE39D300017E03 /* View */,
 				953A64F02B6EDFA000651684 /* HomeViewController.swift */,
 				95733CB62BA82B5A00FD2215 /* InspiringQuote.swift */,
 				957720462BC7AA3C0026DC91 /* HomeTabBar.swift */,
@@ -299,6 +304,15 @@
 			path = Diary;
 			sourceTree = "<group>";
 		};
+		95D293AF2BCE39D300017E03 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95D293AD2BCE397C00017E03 /* CalendarPopUpView.swift */,
+				95D293B02BCE39F800017E03 /* CalendarPopUpView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,6 +401,7 @@
 				675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */,
 				953A64F42B6EDFA000651684 /* Main.storyboard in Resources */,
 				95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */,
+				95D293B12BCE39F800017E03 /* CalendarPopUpView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +427,7 @@
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */,
+				95D293AE2BCE397C00017E03 /* CalendarPopUpView.swift in Sources */,
 				957720492BC7AC280026DC91 /* HomeTabBarController.swift in Sources */,
 				95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */,
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,

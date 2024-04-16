@@ -36,6 +36,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var myDiaryView: UIView!
     @IBOutlet weak var testView: UIView!
     
+    @IBAction func didTapCalendarButton() {
+        showCalendarPopUpView()
+    }
+
     /// Swift Entry Kit Declaration
     var attributes = EKAttributes()
     
@@ -48,6 +52,54 @@ class HomeViewController: UIViewController {
         // Navigation
         tapAction(testView, selector: #selector(displaySurveyListViewController))
         tapAction(myDiaryView, selector: #selector(displayMyDiaryViewController))
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    private func showAlert(message: String) {
+        var attributes = EKAttributes.centerFloat
+        attributes.entryBackground = .color(color: .white)
+//        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: .infinity), scale: .init(from: .infinity, to: .infinity, duration: .infinity)))
+        attributes.displayDuration = .infinity
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
+    }
+    
+    private func showCalendarPopUpView() {
+        var attributes = EKAttributes.centerFloat
+        attributes.entryBackground = .color(color: .white)
+//        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: .infinity), scale: .init(from: .infinity, to: .infinity, duration: .infinity)))
+        attributes.displayDuration = .infinity
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
+        // Set its background to white
+
+        // Animate in and out using default translation
+//        attributes.entranceAnimation = .translation
+//        attributes.exitAnimation = .translation
+        //let contentView = UIView()
+        let title = EKProperty.LabelContent(text: "titleText", style: .init(font: .boldSystemFont(ofSize: 16), color: .black))
+        let description = EKProperty.LabelContent(text: "descText", style: .init(font: .boldSystemFont(ofSize: 16), color: .black))
+        let image = EKProperty.ImageContent(image: UIImage(emotionAssetIdentifier: .star)!, size: CGSize(width: 35, height: 35))
+        let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
+        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
+        let contentView = EKNotificationMessageView(with: notificationMessage)
+        /*
+        ... Customize the view as you like ...
+        */
+
+        // Display the view with the configuration
+        SwiftEntryKit.display(entry: contentView, using: attributes)
+//        let customView = UIView(frame: CGRect(x: 100, y: 300, width: 300, height: 300))
+//        customView.backgroundColor = .black
+//        SwiftEntryKit.display(entry: customView, using: attributes)
     }
 
     func changeWiseLabelString() -> [String] {
@@ -76,11 +128,6 @@ class HomeViewController: UIViewController {
         } else {
             print("Can't find MyDiaryViewController")
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 }
 
