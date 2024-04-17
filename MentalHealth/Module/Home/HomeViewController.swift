@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftEntryKit
+import FSCalendar
 
 class HomeViewController: UIViewController {
 
@@ -40,12 +41,19 @@ class HomeViewController: UIViewController {
         showCalendarPopUpView()
     }
 
+    private lazy var calendar: FSCalendar = {
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
+        return calendar
+    }()
+    
     /// Swift Entry Kit Declaration
     var attributes = EKAttributes()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.homepageBackground
+        calendar.delegate = self
+        calendar.dataSource = self
         applyBoader([testView, myDiaryView, chartContainerView], with: .clear, backgroundColor: .white)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.clear, backgroundColor: UIColor.white)
         
@@ -59,45 +67,42 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    private func showAlert(message: String) {
-        var attributes = EKAttributes.centerFloat
-        attributes.entryBackground = .color(color: .white)
-//        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: .infinity), scale: .init(from: .infinity, to: .infinity, duration: .infinity)))
-        attributes.displayDuration = .infinity
-        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
-        attributes.statusBar = .dark
-        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
-        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
-    }
-    
     private func showCalendarPopUpView() {
-        var attributes = EKAttributes.centerFloat
-        attributes.entryBackground = .color(color: .white)
-//        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: .infinity), scale: .init(from: .infinity, to: .infinity, duration: .infinity)))
-        attributes.displayDuration = .infinity
-        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
-        attributes.statusBar = .dark
-        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
-        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
-        // Set its background to white
-
-        // Animate in and out using default translation
+//        self.view.addSubview(calendar)
+//        calendar.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+//        calendar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
+//        var attributes = EKAttributes.centerFloat
+//        attributes.entryBackground = .color(color: .white)
+////        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: .infinity), scale: .init(from: .infinity, to: .infinity, duration: .infinity)))
+//        attributes.displayDuration = .infinity
+//        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+//        attributes.statusBar = .dark
+//        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+//
+//        var attributes = EKAttributes.pop
+//
+//        // Set its background to white
+//        attributes.entryBackground = .color(color: .black)
+//
+//        // Animate in and out using default translation
 //        attributes.entranceAnimation = .translation
 //        attributes.exitAnimation = .translation
-        //let contentView = UIView()
-        let title = EKProperty.LabelContent(text: "titleText", style: .init(font: .boldSystemFont(ofSize: 16), color: .black))
-        let description = EKProperty.LabelContent(text: "descText", style: .init(font: .boldSystemFont(ofSize: 16), color: .black))
-        let image = EKProperty.ImageContent(image: UIImage(emotionAssetIdentifier: .star)!, size: CGSize(width: 35, height: 35))
-        let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
-        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
-        let contentView = EKNotificationMessageView(with: notificationMessage)
+
+        let customView = UIView(frame: CGRect(x: 100, y: 100, width: 300, height: 320))
         /*
         ... Customize the view as you like ...
         */
 
         // Display the view with the configuration
-        SwiftEntryKit.display(entry: contentView, using: attributes)
-//        let customView = UIView(frame: CGRect(x: 100, y: 300, width: 300, height: 300))
+        SwiftEntryKit.display(entry: customView, using: attributes)
+        /*
+        ... Customize the view as you like ...
+        */
+        //let contentView = UIView
+        // Display the view with the configuration
+//        let conte = CalendarPopUpView()
+        
 //        customView.backgroundColor = .black
 //        SwiftEntryKit.display(entry: customView, using: attributes)
     }
@@ -130,4 +135,9 @@ class HomeViewController: UIViewController {
         }
     }
 }
-
+extension HomeViewController: FSCalendarDelegate {
+    
+}
+extension HomeViewController: FSCalendarDataSource {
+    
+}

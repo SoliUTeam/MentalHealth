@@ -10,6 +10,7 @@ import UIKit
 
 class LogInViewController: UIViewController {
     @IBAction func tapAsGuest(_ sender: Any) {
+        showAlert(title: "Success", description: "Continue as guest")
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeViewController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
             navigationController?.pushViewController(homeViewController, animated: true)
@@ -30,6 +31,7 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)

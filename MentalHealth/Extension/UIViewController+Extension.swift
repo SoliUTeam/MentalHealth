@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftEntryKit
 
 extension UIViewController {
     func applyBoader(_ view: [UIView], with color: UIColor = UIColor.viewBorder, backgroundColor: UIColor = .clear) {
@@ -52,5 +53,25 @@ extension UIViewController {
         let tap = UITapGestureRecognizer.init(target: self, action: selector)
         tap.numberOfTapsRequired = 1
         view.addGestureRecognizer(tap)
+    }
+}
+
+extension UIViewController {
+    func showAlert(title: String, description: String) {
+        var attributes = EKAttributes.topFloat
+        attributes.entryBackground = .color(color: .white)
+        attributes.displayDuration = 3
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
+        
+        let title = EKProperty.LabelContent(text: title, style: .init(font: .boldSystemFont(ofSize: 16), color: .black))
+        let description = EKProperty.LabelContent(text: description, style: .init(font: .boldSystemFont(ofSize: 16), color: .black))
+        let image = EKProperty.ImageContent(image: UIImage(assetIdentifier: .soliuLogoOnly)!, size: CGSize(width: 30, height: 35))
+        let simpleMessage = EKSimpleMessage(image: image, title: title, description: description)
+        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
+        let contentView = EKNotificationMessageView(with: notificationMessage)
+        
+        SwiftEntryKit.display(entry: contentView, using: attributes)
     }
 }

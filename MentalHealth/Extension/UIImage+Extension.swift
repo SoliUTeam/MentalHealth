@@ -10,6 +10,7 @@ import UIKit
 
 enum Image: String {
     case oldSoliuLogo
+    case soliuLogoOnly
     case selfTest
     case soliuLogo
     case right
