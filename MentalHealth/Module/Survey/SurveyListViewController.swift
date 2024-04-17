@@ -31,7 +31,8 @@ class SurveyListViewController: UIViewController {
         super.viewDidLoad()
         fetchQuestions()
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
-        self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forHeaderFooterViewReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
+        self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
+        
         self.title = ""
     }
     
@@ -122,22 +123,30 @@ extension SurveyListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if surveyResultRecord.count != 5 {
-            readyToSubmit = false
-        }
-        if indexPath.row == selectedSurveyQuestion.count {
-            nextButtonPressed()
-        }
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+                navigationController?.pushViewController(surveyResultVC, animated: true)
+            } else {
+                print("Can't find storyboard")
+            }
         
-        if readyToSubmit == true && indexPath.row  == selectedSurveyQuestion.count  {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
-                    navigationController?.pushViewController(surveyResultVC, animated: true)
-                } else {
-                    print("Can't find storyboard")
-                }
-        }
-        return
+        
+//        if surveyResultRecord.count != 5 {
+//            readyToSubmit = true
+//        }
+//        if indexPath.row == selectedSurveyQuestion.count {
+//            nextButtonPressed()
+//        }
+//        
+//        if readyToSubmit == true && indexPath.row  == selectedSurveyQuestion.count  {
+//            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//                if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+//                    navigationController?.pushViewController(surveyResultVC, animated: true)
+//                } else {
+//                    print("Can't find storyboard")
+//                }
+//        }
+//        return
     }
 }
 extension SurveyListViewController: SurveyListViewCellDelegate {
