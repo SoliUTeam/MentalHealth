@@ -449,9 +449,44 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oz-rD-trH">
                                 <rect key="frame" x="20" y="273" width="353" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was dopamine detox successful?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htW-rj-0VW">
+                                        <rect key="frame" x="20" y="16.666666666666686" width="220" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tv5-lf-Tf1">
+                                        <rect key="frame" x="262" y="11" width="71" height="28"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-fg-H3P">
+                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="28" id="2hy-zC-rHt"/>
+                                                    <constraint firstAttribute="height" constant="28" id="6zz-ap-hTk"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="Icon/yesButton"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgW-Hl-c1C">
+                                                <rect key="frame" x="43" y="0.0" width="28" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="Rkm-Bf-PKZ"/>
+                                                    <constraint firstAttribute="width" constant="28" id="j1X-lt-RCG"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Icon/noButton"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tv5-lf-Tf1" secondAttribute="trailing" constant="20" id="5wa-Ji-PNC"/>
                                     <constraint firstAttribute="height" constant="50" id="TaN-ad-8Uy"/>
+                                    <constraint firstItem="htW-rj-0VW" firstAttribute="centerY" secondItem="8oz-rD-trH" secondAttribute="centerY" id="mqv-s4-tpn"/>
+                                    <constraint firstItem="htW-rj-0VW" firstAttribute="leading" secondItem="8oz-rD-trH" secondAttribute="leading" constant="20" id="sOu-kj-M7a"/>
+                                    <constraint firstItem="tv5-lf-Tf1" firstAttribute="centerY" secondItem="8oz-rD-trH" secondAttribute="centerY" id="uDv-Rf-bcB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDx-J1-n71" userLabel="ChartContainerView">
@@ -541,17 +576,34 @@
                         <outlet property="calendarButton" destination="cdx-S8-WxJ" id="T6y-1L-cwr"/>
                         <outlet property="chartContainerView" destination="uDx-J1-n71" id="app-6J-WAW"/>
                         <outlet property="chartView" destination="tl4-Cd-8OA" id="NWt-cJ-5Ad"/>
+                        <outlet property="fridayDate" destination="zeW-MG-4eJ" id="bXo-fi-57b"/>
+                        <outlet property="fridayLabel" destination="Hfk-z2-cc3" id="aqC-Os-hln"/>
                         <outlet property="fridayView" destination="Azd-h4-cmN" id="tVf-77-2mc"/>
+                        <outlet property="mondayDate" destination="5rS-do-LfS" id="eQR-Pf-D4f"/>
+                        <outlet property="mondayLabel" destination="M61-BR-JEX" id="N1z-1T-l7s"/>
                         <outlet property="mondayView" destination="Dq1-bm-S3V" id="2Gl-rV-vRG"/>
                         <outlet property="myDiaryView" destination="6TJ-JC-9cc" id="ffv-Bh-Tjy"/>
+                        <outlet property="noButton" destination="xgW-Hl-c1C" id="exE-GH-6s4"/>
                         <outlet property="questionBannerView" destination="8oz-rD-trH" id="EDb-tQ-TBl"/>
+                        <outlet property="questionLabel" destination="htW-rj-0VW" id="TB0-Rt-Edi"/>
+                        <outlet property="saturdayDate" destination="dq2-wK-Nul" id="6Vb-a3-E1P"/>
+                        <outlet property="saturdayLabel" destination="GGy-Gt-s35" id="P7A-4e-2Ra"/>
                         <outlet property="saturdayView" destination="Z3j-hF-ACw" id="shm-om-Z0b"/>
+                        <outlet property="sundayDate" destination="bit-MJ-1ci" id="4XK-nY-G6V"/>
+                        <outlet property="sundayLabel" destination="UBO-5q-Kpz" id="sgi-Pc-PDL"/>
                         <outlet property="sundayView" destination="LCe-bJ-FF6" id="0h9-dw-8pO"/>
                         <outlet property="testView" destination="3KV-iu-unp" id="lSx-jO-uTT"/>
+                        <outlet property="thursdayDate" destination="xck-g4-9cD" id="atZ-5y-x72"/>
+                        <outlet property="thursdayLabel" destination="zuD-qd-ZXD" id="Fmt-kc-vQd"/>
                         <outlet property="thursdayView" destination="0D5-d9-Sjf" id="dMQ-zY-1qS"/>
+                        <outlet property="tuesdayDate" destination="CEC-Er-8cd" id="7hT-KG-Uyn"/>
+                        <outlet property="tuesdayLabel" destination="Lpg-mE-ERc" id="laf-z0-phR"/>
                         <outlet property="tuesdayView" destination="ivZ-dU-A6u" id="pub-5r-paD"/>
+                        <outlet property="wednesdayDate" destination="ztm-BN-SFu" id="Who-Dk-K2X"/>
+                        <outlet property="wednesdayLabel" destination="130-Uz-pqI" id="4hz-gr-T3b"/>
                         <outlet property="wednesdayView" destination="Bsv-b5-FOK" id="FZt-7p-PHl"/>
                         <outlet property="wiseLabel" destination="gHr-N8-eRp" id="uSl-Zg-qL4"/>
+                        <outlet property="yesButton" destination="jXm-fg-H3P" id="JaW-SD-KTL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1704,10 +1756,12 @@
         <image name="Icon/account" width="32" height="32"/>
         <image name="Icon/calendar" width="24" height="24"/>
         <image name="Icon/home" width="32" height="32"/>
+        <image name="Icon/noButton" width="28" height="28"/>
         <image name="Icon/rightArrow" width="19" height="19"/>
         <image name="Icon/selfTest" width="141" height="169"/>
         <image name="Icon/soliuLogo" width="500" height="197"/>
         <image name="Icon/soliuLogoOnly" width="104" height="144"/>
+        <image name="Icon/yesButton" width="28" height="28"/>
         <namedColor name="Color/soliuBlue">
             <color red="0.0" green="0.72200000286102295" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

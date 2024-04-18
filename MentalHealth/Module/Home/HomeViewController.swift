@@ -31,6 +31,30 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var fridayView: UIView!
     @IBOutlet weak var saturdayView: UIView!
     
+    @IBOutlet weak var sundayDate: UILabel!
+    @IBOutlet weak var mondayDate: UILabel!
+    @IBOutlet weak var tuesdayDate: UILabel!
+    @IBOutlet weak var wednesdayDate: UILabel!
+    @IBOutlet weak var thursdayDate: UILabel!
+    @IBOutlet weak var fridayDate: UILabel!
+    @IBOutlet weak var saturdayDate: UILabel!
+    
+    @IBOutlet weak var sundayLabel: UILabel!
+    @IBOutlet weak var mondayLabel: UILabel!
+    @IBOutlet weak var tuesdayLabel: UILabel!
+    @IBOutlet weak var wednesdayLabel: UILabel!
+    @IBOutlet weak var thursdayLabel: UILabel!
+    @IBOutlet weak var fridayLabel: UILabel!
+    @IBOutlet weak var saturdayLabel: UILabel!
+    
+    @IBOutlet weak var questionLabel: UILabel! {
+        didSet {
+            self.questionLabel.text = getQuestionLabelText()
+        }
+    }
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+    
     @IBOutlet weak var questionBannerView: UIView!
     @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var chartView: UIView!
@@ -40,23 +64,20 @@ class HomeViewController: UIViewController {
     @IBAction func didTapCalendarButton() {
         showCalendarPopUpView()
     }
-
-    private lazy var calendar: FSCalendar = {
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
-        return calendar
-    }()
     
     /// Swift Entry Kit Declaration
     var attributes = EKAttributes()
     
+    private var dayArry: [UILabel: [UIView : UILabel]] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.homepageBackground
-        calendar.delegate = self
-        calendar.dataSource = self
+        dayArry = [sundayDate: [sundayView: sundayLabel], mondayDate: [mondayView: mondayLabel], tuesdayDate: [tuesdayView: tuesdayLabel], wednesdayDate: [wednesdayView: wednesdayLabel], thursdayDate: [thursdayView: thursdayLabel], fridayDate: [fridayView: fridayLabel], saturdayDate: [saturdayView: saturdayLabel]]
         applyBoader([testView, myDiaryView, chartContainerView], with: .clear, backgroundColor: .white)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.clear, backgroundColor: UIColor.white)
-        
+        updateTodayView()
+
         // Navigation
         tapAction(testView, selector: #selector(displaySurveyListViewController))
         tapAction(myDiaryView, selector: #selector(displayMyDiaryViewController))
@@ -65,6 +86,23 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    func updateTodayView() {
+        let today = getCurrentDate()
+        var index = -1
+        for (day, view) in dayArry {
+            for (dayView, dayLabel) in view {
+                day.text = "\(Int(today)! + index)"
+                if day.text == today {
+                    applyBoader(dayView, with: .white)
+                    day.textColor = .white
+                    dayLabel.textColor = .white
+                    loadViewIfNeeded()
+                }
+            }
+            index += 1
+        }
     }
     
     private func showCalendarPopUpView() {
@@ -149,6 +187,11 @@ class HomeViewController: UIViewController {
         return quoteArray
     }
     
+    func getQuestionLabelText() -> String {
+        // can be fetch data from backend
+        return "Was dopamine detox successful?"
+    }
+    
     @objc
     func displaySurveyListViewController(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -169,9 +212,4 @@ class HomeViewController: UIViewController {
         }
     }
 }
-extension HomeViewController: FSCalendarDelegate {
-    
-}
-extension HomeViewController: FSCalendarDataSource {
-    
-}
+

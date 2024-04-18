@@ -45,6 +45,11 @@ extension UIViewController {
         let day = calendar.component(.day, from: currentDate)
         return "\(day)"
     }
+
+    func getCurrentWeekday() -> String {
+        let index = Calendar.current.component(.weekday, from: Date())
+        return String(Calendar.current.weekdaySymbols[index].first!)
+    }
 }
 
 extension UIViewController {
