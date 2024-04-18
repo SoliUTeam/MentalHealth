@@ -18,6 +18,7 @@ public class RadarMarkerView: MarkerView {
     }
     
     public override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
+        print("Entry \(entry)")
         label.text = String.init(format: "%d %%", Int(round(entry.y)))
         layoutIfNeeded()
     }

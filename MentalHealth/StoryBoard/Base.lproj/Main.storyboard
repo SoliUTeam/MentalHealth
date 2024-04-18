@@ -1345,26 +1345,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb8-AY-0i5">
-                                <rect key="frame" x="30.000000000000004" y="89" width="47.333333333333343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYG-Vm-TR4" customClass="RadarChartView" customModule="DGCharts">
-                                <rect key="frame" x="50" y="160" width="293" height="608"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l2e-ce-1rp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZYG-Vm-TR4" firstAttribute="top" secondItem="Qb8-AY-0i5" secondAttribute="bottom" constant="50" id="CY8-0F-LxO"/>
-                            <constraint firstItem="Qb8-AY-0i5" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="30" id="EPV-iB-LSQ"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="50" id="FtX-di-CVq"/>
-                            <constraint firstItem="Qb8-AY-0i5" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" constant="30" id="Ng0-FN-tPR"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="ZYG-Vm-TR4" secondAttribute="trailing" constant="50" id="reB-Ch-huj"/>
-                            <constraint firstItem="ZYG-Vm-TR4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="50" id="tu8-yw-bRz"/>
+                            <constraint firstItem="ZYG-Vm-TR4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" id="AHm-BC-w2P"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="ZYG-Vm-TR4" secondAttribute="trailing" id="XjZ-Qo-X84"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" id="rUC-5o-vTI"/>
+                            <constraint firstItem="ZYG-Vm-TR4" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" id="wbz-pW-S04"/>
                         </constraints>
                     </view>
                     <connections>

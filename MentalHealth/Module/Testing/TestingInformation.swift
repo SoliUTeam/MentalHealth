@@ -40,5 +40,21 @@ class TestingInformation {
     func createTestingSurveyQuestion() -> [TestQuestion] {
         return testInfoArray
     }
+    
+    func exampleSurveyList() -> [Int:Int] {
+        var results = [Int: Int]()
+            for key in 0...24 {
+                results[key] = Int.random(in: 1...5)
+            }
+            return results
+    }
+    
+    func exampleAllSurveyDict() -> [Int:Int] {
+        var results = [Int: Int]()
+            for key in 0...24 {
+                results[key] = 4
+            }
+            return results
+    }
 
 }

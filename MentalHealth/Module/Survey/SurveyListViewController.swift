@@ -138,18 +138,20 @@ extension SurveyListViewController: SurveyListViewCellDelegate {
 extension SurveyListViewController: SurveyNextButtonCellDelegate {
     func nextButtonClicked() {
         self.nextButtonPressed()
+////      Display SurveyListViewController
         if surveyResultRecord.count == 25 { // Make sure all questions are answered
                 self.submitResult()
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+                    surveyResultVC.myTestResult = surveyResultRecord
                     navigationController?.pushViewController(surveyResultVC, animated: true)
+                    
                 } else {
                     print("Can't find storyboard")
                 }
             } else {
                 print("Survey not complete")
             }
-        
     }
 }
 
