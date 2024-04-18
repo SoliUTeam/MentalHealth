@@ -27,6 +27,9 @@
                             </backgroundConfiguration>
                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="nextButtonClicked" destination="L7l-X3-pk9" eventType="touchUpInside" id="6v4-xq-uVB"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -37,9 +40,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="nextButton" destination="3vg-ct-8Tk" id="p2b-q9-tHV"/>
+                <outlet property="nextButton" destination="3vg-ct-8Tk" id="r6A-fK-2tP"/>
             </connections>
-            <point key="canvasLocation" x="172" y="13"/>
+            <point key="canvasLocation" x="171.75572519083968" y="12.67605633802817"/>
         </tableViewCell>
     </objects>
     <resources>
