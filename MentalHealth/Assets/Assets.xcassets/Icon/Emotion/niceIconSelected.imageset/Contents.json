@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "niceIconSelected.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

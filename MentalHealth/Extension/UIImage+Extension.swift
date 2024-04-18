@@ -24,6 +24,21 @@ enum Image: String {
 
 enum Emotion: String {
     case star
+    case badIcon
+    case badIconBig
+    case badIconSelected
+    case sadIcon
+    case sadIconBig
+    case sadIconSelected
+    case decentIcon
+    case decentIconBig
+    case decentIconSelected
+    case goodIcon
+    case goodIconBig
+    case goodIconSelected
+    case niceIcon
+    case niceIconBig
+    case niceIconSelected
 }
 
 enum SurveyImage: String {
