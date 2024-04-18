@@ -68,43 +68,77 @@ class HomeViewController: UIViewController {
     }
     
     private func showCalendarPopUpView() {
-//        self.view.addSubview(calendar)
-//        calendar.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-//        calendar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        
-//        var attributes = EKAttributes.centerFloat
-//        attributes.entryBackground = .color(color: .white)
-////        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: .infinity), scale: .init(from: .infinity, to: .infinity, duration: .infinity)))
-//        attributes.displayDuration = .infinity
-//        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
-//        attributes.statusBar = .dark
-//        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
-//
-//        var attributes = EKAttributes.pop
-//
-//        // Set its background to white
-//        attributes.entryBackground = .color(color: .black)
-//
-//        // Animate in and out using default translation
-//        attributes.entranceAnimation = .translation
-//        attributes.exitAnimation = .translation
-
-        let customView = UIView(frame: CGRect(x: 100, y: 100, width: 300, height: 320))
-        /*
-        ... Customize the view as you like ...
-        */
-
-        // Display the view with the configuration
-        SwiftEntryKit.display(entry: customView, using: attributes)
-        /*
-        ... Customize the view as you like ...
-        */
-        //let contentView = UIView
-        // Display the view with the configuration
-//        let conte = CalendarPopUpView()
-        
-//        customView.backgroundColor = .black
-//        SwiftEntryKit.display(entry: customView, using: attributes)
+        attributes = .bottomNote
+//        attributes.displayMode = displayMode
+        attributes.hapticFeedbackType = .success
+        attributes.displayDuration = 3
+        attributes.screenBackground = .clear
+        attributes.entryBackground = .clear
+        attributes.screenInteraction = .forward
+        attributes.entryInteraction = .absorbTouches
+        attributes.entranceAnimation = .init(
+            translate: .init(
+                duration: 0.5,
+                spring: .init(damping: 0.9, initialVelocity: 0)
+            ),
+            scale: .init(
+                from: 0.8,
+                to: 1,
+                duration: 0.5,
+                spring: .init(damping: 0.8, initialVelocity: 0)
+            ),
+            fade: .init(
+                from: 0.7,
+                to: 1,
+                duration: 0.3
+            )
+        )
+        attributes.exitAnimation = .init(
+            translate: .init(
+                duration: 0.5
+            ),
+            scale: .init(
+                from: 1,
+                to: 0.8,
+                duration: 0.5
+            ),
+            fade: .init(
+                from: 1,
+                to: 0,
+                duration: 0.5
+            )
+        )
+        attributes.popBehavior = .animated(
+            animation: .init(
+                translate: .init(
+                    duration: 0.3
+                ),
+                scale: .init(
+                    from: 1,
+                    to: 0.8,
+                    duration: 0.3
+                )
+            )
+        )
+        attributes.shadow = .active(
+            with: .init(
+                color: .black,
+                opacity: 0.3,
+                radius: 6
+            )
+        )
+        attributes.positionConstraints.verticalOffset = 10
+        attributes.positionConstraints.size = .init(
+            width: .offset(value: 20),
+            height: .intrinsic
+        )
+        attributes.positionConstraints.maxSize = .init(
+            width: .constant(value: UIScreen.main.bounds.width),
+            height: .intrinsic
+        )
+        attributes.statusBar = .ignored
+        let myCustomView: CalendarPopUpView = CalendarPopUpView.fromNib()
+        SwiftEntryKit.display(entry: CalendarPopUpViewController(with: myCustomView), using: attributes)
     }
 
     func changeWiseLabelString() -> [String] {
