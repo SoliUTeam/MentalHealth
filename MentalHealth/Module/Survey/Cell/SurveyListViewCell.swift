@@ -57,6 +57,14 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
         surveyAnswerImage5.image = UIImage(assetIdentifier:.unmarkedVOften)
     }
     
+    func resetImagesToUnmarked() {
+        surveyImageView.forEach { imageView in
+            if let unmarkedImage = imageMappings[imageView]?.unmarked {
+                imageView.image = unmarkedImage
+            }
+        }
+    }
+    
     private func setupGestureRecognizers() {
         surveyImageView.forEach { imageView in
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -70,7 +78,7 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
         guard let testQuestion = testQuestion else { return }
         if let selectedIndex = surveyImageView.firstIndex(of: selectedImageView) {
                 selectedValue = selectedIndex
-                delegate?.mappingSelectedValue(questionID: testQuestion.questionId, value:selectedIndex)
+                delegate?.mappingSelectedValue(id: testQuestion.id, questionNumber: testQuestion.questionNumber, value:selectedIndex)
                 print("Selected Image \(selectedValue)")
                 resetImages(except: selectedImageView)
            }
@@ -92,6 +100,6 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
 }
 
 protocol SurveyListViewCellDelegate: AnyObject {
-    func mappingSelectedValue(questionID: Int , value: Int)
+    func mappingSelectedValue(id: Int, questionNumber: Int , value: Int)
 }
 
