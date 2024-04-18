@@ -14,14 +14,14 @@ struct MentalHealthQuestion: Codable {
 }
 
 struct TestQuestion: Codable {
-    var questionId: Int
     var id: Int
+    var questionNumber: Int
     var type: String
     var question: String
    
     enum CodingKeys: String, CodingKey {
-        case questionId
         case id
+        case questionNumber
         case type
         case question
     }

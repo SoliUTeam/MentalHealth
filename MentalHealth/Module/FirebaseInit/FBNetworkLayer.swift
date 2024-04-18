@@ -89,3 +89,35 @@ class FBNetworkLayer {
 //    }
     
 }
+
+//            let testUser1 = User(
+//                demographicInformation: DemographicInfo(gender: "Female", firstName: "Jane", lastName: "Doe"),
+//                surveyResult: [
+//                    SurveyResult(surveyDate: "2024-03-27", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
+//                    SurveyResult(surveyDate: "2024-03-28", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
+//                    SurveyResult(surveyDate: "2024-03-29", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+//                ]
+//            )
+//            fbLayer.fetchUserInformation(userInfo: testUser1) { [weak self] error in
+//                guard let self = self else { return }
+//                DispatchQueue.main.async {
+//                    if let error = error {
+//                        print("Error submit getting error: \(error)")
+//                        return
+//                    }
+//                }
+//                print("Fetch")
+//            }
+//
+//            fbLayer.fetchMentalHealthQuestions { [weak self] healthQuestion, error in
+//                guard let self = self else { return }
+//                DispatchQueue.main.async {
+//                    if let error = error {
+//                        print("Error fetching questions: \(error)")
+//                        self.questionsLabel.text = "Error fetching questions"
+//                        return
+//                    }
+//                    self.testInfoArray = healthQuestion?.testQuestions ?? []
+//                    self.displayQuestion()
+//                }
+//            }
