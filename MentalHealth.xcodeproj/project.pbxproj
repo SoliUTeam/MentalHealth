@@ -16,7 +16,6 @@
 		67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */; };
 		67E525472BBA29BD00C27F21 /* SurveyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */; };
 		67ED8A372BCF81B000E37950 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 67ED8A362BCF81B000E37950 /* DGCharts */; };
-		67ED8A392BCF81B000E37950 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 67ED8A382BCF81B000E37950 /* DGChartsDynamic */; };
 		67ED8A3B2BCF886700E37950 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */; };
 		67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */; };
 		67ED8A3F2BCF8ACC00E37950 /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */; };
@@ -119,7 +118,6 @@
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
 				95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */,
 				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
-				67ED8A392BCF81B000E37950 /* DGChartsDynamic in Frameworks */,
 				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
 				9577204C2BC8CB4B0026DC91 /* FSCalendar in Frameworks */,
 				95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */,
@@ -355,7 +353,6 @@
 				9577204B2BC8CB4B0026DC91 /* FSCalendar */,
 				95D293A62BCE347100017E03 /* SwiftEntryKit */,
 				67ED8A362BCF81B000E37950 /* DGCharts */,
-				67ED8A382BCF81B000E37950 /* DGChartsDynamic */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -747,10 +744,6 @@
 		67ED8A362BCF81B000E37950 /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DGCharts;
-		};
-		67ED8A382BCF81B000E37950 /* DGChartsDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DGChartsDynamic;
 		};
 		953A65012B6EE67B00651684 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
