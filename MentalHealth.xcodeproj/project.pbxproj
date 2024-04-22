@@ -50,6 +50,10 @@
 		95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF072B6FE87500101423 /* FeedbackViewController.swift */; };
 		95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF092B71E58B00101423 /* UIImage+Extension.swift */; };
 		95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF102B72023200101423 /* AccountHomeViewController.swift */; };
+		95C72BE32BD63F0000ED178F /* LoginGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE22BD63F0000ED178F /* LoginGenderViewController.swift */; };
+		95C72BE52BD63FAA00ED178F /* LoginStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE42BD63FAA00ED178F /* LoginStatusViewController.swift */; };
+		95C72BE72BD6400700ED178F /* LoginEthnicityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE62BD6400700ED178F /* LoginEthnicityViewController.swift */; };
+		95C72BE92BD6404E00ED178F /* LoginConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE82BD6404E00ED178F /* LoginConfirmViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 		95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A12BCD038200017E03 /* LogInViewController.swift */; };
 		95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A32BCD0CB800017E03 /* LoginManager.swift */; };
@@ -98,6 +102,10 @@
 		95B1CF072B6FE87500101423 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		95B1CF092B71E58B00101423 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		95B1CF102B72023200101423 /* AccountHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHomeViewController.swift; sourceTree = "<group>"; };
+		95C72BE22BD63F0000ED178F /* LoginGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGenderViewController.swift; sourceTree = "<group>"; };
+		95C72BE42BD63FAA00ED178F /* LoginStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStatusViewController.swift; sourceTree = "<group>"; };
+		95C72BE62BD6400700ED178F /* LoginEthnicityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEthnicityViewController.swift; sourceTree = "<group>"; };
+		95C72BE82BD6404E00ED178F /* LoginConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewController.swift; sourceTree = "<group>"; };
 		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 		95D293A12BCD038200017E03 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		95D293A32BCD0CB800017E03 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
@@ -218,6 +226,10 @@
 			children = (
 				95433A122BC6558C0003C584 /* SignUpViewController.swift */,
 				95D293A12BCD038200017E03 /* LogInViewController.swift */,
+				95C72BE22BD63F0000ED178F /* LoginGenderViewController.swift */,
+				95C72BE42BD63FAA00ED178F /* LoginStatusViewController.swift */,
+				95C72BE62BD6400700ED178F /* LoginEthnicityViewController.swift */,
+				95C72BE82BD6404E00ED178F /* LoginConfirmViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -429,10 +441,12 @@
 				95D293B72BCF9C6700017E03 /* NSObject+Extension.swift in Sources */,
 				67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */,
 				95D293BB2BCF9CAF00017E03 /* CalendarPopUpView.swift in Sources */,
+				95C72BE92BD6404E00ED178F /* LoginConfirmViewController.swift in Sources */,
 				95433A102BC63A860003C584 /* String+Extension.swift in Sources */,
 				95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */,
 				953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */,
 				957720472BC7AA3C0026DC91 /* HomeTabBar.swift in Sources */,
+				95C72BE32BD63F0000ED178F /* LoginGenderViewController.swift in Sources */,
 				95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */,
 				95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */,
 				95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */,
@@ -441,6 +455,7 @@
 				67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */,
 				953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */,
 				95433A132BC6558C0003C584 /* SignUpViewController.swift in Sources */,
+				95C72BE52BD63FAA00ED178F /* LoginStatusViewController.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */,
@@ -450,6 +465,7 @@
 				95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */,
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
 				95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */,
+				95C72BE72BD6400700ED178F /* LoginEthnicityViewController.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
 				95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */,
 				95733CB72BA82B5A00FD2215 /* InspiringQuote.swift in Sources */,
