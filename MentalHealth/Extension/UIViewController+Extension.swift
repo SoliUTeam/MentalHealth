@@ -80,3 +80,17 @@ extension UIViewController {
         SwiftEntryKit.display(entry: contentView, using: attributes)
     }
 }
+
+extension UIViewController {
+    func addSubView(_ view: [UIView]) {
+        view.forEach { view in
+            view.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(view)
+        }
+    }
+    
+    func addSubView(_ view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(view)
+    }
+}

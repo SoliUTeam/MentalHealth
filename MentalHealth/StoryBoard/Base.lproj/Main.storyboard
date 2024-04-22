@@ -1174,6 +1174,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tA2-aW-aO2">
+                                <rect key="frame" x="51.666666666666657" y="256" width="290" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="3bt-NU-ceb"/>
+                                    <constraint firstAttribute="width" constant="290" id="JZc-P9-WO7"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yk-Yq-8R7">
                                 <rect key="frame" x="51.666666666666657" y="256" width="290" height="290"/>
                                 <subviews>
@@ -1194,20 +1201,13 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tA2-aW-aO2">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="GVl-Ql-TIE" firstAttribute="centerY" secondItem="7Yk-Yq-8R7" secondAttribute="centerY" id="5fI-Gr-P4y"/>
-                                    <constraint firstAttribute="trailing" secondItem="tA2-aW-aO2" secondAttribute="trailing" id="8Qn-N1-Tfg"/>
                                     <constraint firstAttribute="height" constant="290" id="Cim-GR-mAU"/>
                                     <constraint firstItem="GVl-Ql-TIE" firstAttribute="centerX" secondItem="7Yk-Yq-8R7" secondAttribute="centerX" id="GLW-gL-a5o"/>
-                                    <constraint firstItem="tA2-aW-aO2" firstAttribute="leading" secondItem="7Yk-Yq-8R7" secondAttribute="leading" id="MmQ-n6-JVz"/>
-                                    <constraint firstAttribute="bottom" secondItem="tA2-aW-aO2" secondAttribute="bottom" id="a7o-zE-xFu"/>
                                     <constraint firstAttribute="width" constant="290" id="aWR-9O-o1q"/>
-                                    <constraint firstItem="tA2-aW-aO2" firstAttribute="top" secondItem="7Yk-Yq-8R7" secondAttribute="top" id="ivq-Eb-n4h"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log your feeling!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbE-2R-peh">
@@ -1228,6 +1228,7 @@
                                                     <constraint firstAttribute="height" constant="46" id="Cbm-a6-0s9"/>
                                                     <constraint firstAttribute="width" constant="46" id="lEV-jU-Oma"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="" image="Icon/Emotion/badIcon"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Icon/Emotion/badIcon" title=""/>
@@ -1241,7 +1242,9 @@
                                                     <constraint firstAttribute="width" constant="46" id="1ZW-cJ-y4U"/>
                                                     <constraint firstAttribute="height" constant="46" id="KZz-r1-TS2"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="" image="Icon/Emotion/sadIcon"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Icon/Emotion/sadIcon" title=""/>
                                                 <connections>
                                                     <action selector="buttonTapped:" destination="Ts4-jF-aiH" eventType="touchUpInside" id="EmY-Xq-aX5"/>
@@ -1253,6 +1256,7 @@
                                                     <constraint firstAttribute="height" constant="46" id="fCk-yw-chc"/>
                                                     <constraint firstAttribute="width" constant="46" id="rSM-44-LGM"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Icon/Emotion/decentIcon" title=""/>
                                                 <connections>
@@ -1265,6 +1269,7 @@
                                                     <constraint firstAttribute="width" constant="46" id="FT2-Nw-puh"/>
                                                     <constraint firstAttribute="height" constant="46" id="aTi-HC-k5z"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Icon/Emotion/goodIcon" title=""/>
                                                 <connections>
@@ -1277,6 +1282,7 @@
                                                     <constraint firstAttribute="width" constant="46" id="1AC-tC-fgH"/>
                                                     <constraint firstAttribute="height" constant="46" id="Wng-GA-V7E"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="Icon/Emotion/niceIcon" title=""/>
                                                 <connections>
@@ -1305,12 +1311,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UOt-7w-Yqg" firstAttribute="top" secondItem="sbE-2R-peh" secondAttribute="bottom" constant="10" id="1ph-bg-mCO"/>
+                            <constraint firstItem="tA2-aW-aO2" firstAttribute="top" secondItem="2Af-26-ZHT" secondAttribute="bottom" constant="70" id="3Pf-hS-Dza"/>
                             <constraint firstItem="sbE-2R-peh" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="8qg-QG-njD"/>
                             <constraint firstItem="7Yk-Yq-8R7" firstAttribute="top" secondItem="2Af-26-ZHT" secondAttribute="bottom" constant="70" id="Enc-us-WLm"/>
                             <constraint firstItem="UOt-7w-Yqg" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="FlF-3M-v4v"/>
                             <constraint firstItem="Q2P-dp-dpS" firstAttribute="top" secondItem="MiR-dB-tlM" secondAttribute="top" id="Kvc-Wx-te9"/>
                             <constraint firstItem="Q2P-dp-dpS" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="UoP-tX-7TJ"/>
                             <constraint firstItem="MiR-dB-tlM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UOt-7w-Yqg" secondAttribute="trailing" constant="20" id="YLI-Xo-RVu"/>
+                            <constraint firstItem="tA2-aW-aO2" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="iSs-Ce-Ajo"/>
+                            <constraint firstItem="7Yk-Yq-8R7" firstAttribute="top" secondItem="2Af-26-ZHT" secondAttribute="bottom" constant="70" id="lJq-ct-kri"/>
                             <constraint firstItem="2Af-26-ZHT" firstAttribute="centerX" secondItem="FDN-WQ-fnS" secondAttribute="centerX" id="lwP-Lj-BF4"/>
                             <constraint firstItem="UOt-7w-Yqg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MiR-dB-tlM" secondAttribute="leading" constant="20" id="maF-Zd-nsR"/>
                             <constraint firstItem="2Af-26-ZHT" firstAttribute="top" secondItem="Q2P-dp-dpS" secondAttribute="bottom" constant="10" id="nZp-Ys-iiS"/>

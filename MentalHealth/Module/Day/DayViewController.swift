@@ -92,7 +92,6 @@ class DayViewController: UIViewController {
         progressView.layer.borderWidth = 0.5
         progressView.clipsToBounds = true
         progressView.transform = CGAffineTransform(rotationAngle: .pi / -2)
-        progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
 
@@ -100,7 +99,6 @@ class DayViewController: UIViewController {
         let starIcon = UIImageView()
         starIcon.image = UIImage(emotionAssetIdentifier: .star)
         starIcon.frame.size = CGSize(width: 11, height: 11)
-        starIcon.translatesAutoresizingMaskIntoConstraints = false
         return starIcon
     }()
 
@@ -110,42 +108,49 @@ class DayViewController: UIViewController {
         label.textColor = UIColor.soliuBlack
         label.font = UIFont.systemFont(ofSize: 12.0)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var submitButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 78, height: 24))
+        button.setTitle("Submit", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = button.layer.frame.height / 2
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        button.backgroundColor = UIColor.submitButtonBackground
+        button.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
+        return button
     }()
     
     @IBAction private func buttonTapped(_ sender: UIButton) {
         
-        switch sender {
-        case badButton:
-            
-            badButton.setImage(UIImage(emotionAssetIdentifier: .badIconSelected), for: .selected)
-            bigIconImageView.image = UIImage(emotionAssetIdentifier: .badIconBig)
-            bigIconImageView.contentMode = .scaleAspectFill
-            badButton.backgroundColor = .clear
-            changeButtonState(button: badButton)
-        case sadButton:
-            
-            sadButton.setImage(UIImage(emotionAssetIdentifier: .sadIconSelected), for: .selected)
-            bigIconImageView.image = UIImage(emotionAssetIdentifier: .sadIconBig)
-            changeButtonState(button: sadButton)
-        case decentButton:
-      
-            decentButton.setImage(UIImage(emotionAssetIdentifier: .decentIconSelected), for: .selected)
-            bigIconImageView.image = UIImage(emotionAssetIdentifier: .decentIconBig)
-            changeButtonState(button: decentButton)
-        case goodButton:
-            
-            goodButton.setImage(UIImage(emotionAssetIdentifier: .goodIconSelected), for: .selected)
-            bigIconImageView.image = UIImage(emotionAssetIdentifier: .goodIconBig)
-            changeButtonState(button: goodButton)
-        case niceButton:
-        
-            niceButton.setImage(UIImage(emotionAssetIdentifier: .niceIconSelected), for: .selected)
-            bigIconImageView.image = UIImage(emotionAssetIdentifier: .niceIconBig)
-            changeButtonState(button: niceButton)
-        default:
-            return
+        if !isUserFinishedAction() {
+            switch sender {
+            case badButton:
+                badButton.setImage(UIImage(emotionAssetIdentifier: .badIconSelected), for: .selected)
+                bigIconImageView.image = UIImage(emotionAssetIdentifier: .badIconBig)
+                bigIconImageView.contentMode = .scaleAspectFill
+                badButton.backgroundColor = .clear
+                changeButtonState(button: badButton)
+            case sadButton:
+                sadButton.setImage(UIImage(emotionAssetIdentifier: .sadIconSelected), for: .selected)
+                bigIconImageView.image = UIImage(emotionAssetIdentifier: .sadIconBig)
+                changeButtonState(button: sadButton)
+            case decentButton:
+                decentButton.setImage(UIImage(emotionAssetIdentifier: .decentIconSelected), for: .selected)
+                bigIconImageView.image = UIImage(emotionAssetIdentifier: .decentIconBig)
+                changeButtonState(button: decentButton)
+            case goodButton:
+                goodButton.setImage(UIImage(emotionAssetIdentifier: .goodIconSelected), for: .selected)
+                bigIconImageView.image = UIImage(emotionAssetIdentifier: .goodIconBig)
+                changeButtonState(button: goodButton)
+            case niceButton:
+                niceButton.setImage(UIImage(emotionAssetIdentifier: .niceIconSelected), for: .selected)
+                bigIconImageView.image = UIImage(emotionAssetIdentifier: .niceIconBig)
+                changeButtonState(button: niceButton)
+            default:
+                return
+            }
         }
     }
     
@@ -154,9 +159,7 @@ class DayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.navigationController?.navigationBar.isHidden = true
-        self.view.addSubview(progressBar)
-        self.view.addSubview(starIcon)
-        self.view.addSubview(starCountLabel)
+        addSubView([progressBar, starIcon, starCountLabel, submitButton])
         
         progressBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15).isActive = true
         progressBar.centerYAnchor.constraint(equalTo: welcomeView.centerYAnchor).isActive = true
@@ -170,6 +173,12 @@ class DayViewController: UIViewController {
         starCountLabel.centerXAnchor.constraint(equalTo: progressBar.centerXAnchor).isActive = true
         starCountLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
         starCountLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+
+        submitButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        submitButton.widthAnchor.constraint(equalToConstant: 78).isActive = true
+        submitButton.trailingAnchor.constraint(equalTo: feelingOptionView.trailingAnchor).isActive = true
+        submitButton.topAnchor.constraint(equalTo: feelingOptionView.bottomAnchor, constant: 5).isActive = true
+        submitButton.isHidden = true
 
         makeCircleShape(welcomeView)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.tabBarBorder)
@@ -191,9 +200,9 @@ class DayViewController: UIViewController {
     
     func getStarCount() -> String {
         if loginManager.isLoggedIn() {
-            return "0"
-        } else {
             return "10"
+        } else {
+            return "0"
         }
     }
     
@@ -204,8 +213,22 @@ class DayViewController: UIViewController {
         goodButton.isSelected = false
         niceButton.isSelected = false
         button.isSelected = true
+        welcomeView.isHidden = true
+        submitButton.isHidden = false
     }
-    
+
+    @objc
+    func submitButtonTapped() {
+        //send backend that user finished for today
+    }
+
+    func isUserFinishedAction()  -> Bool {
+        // need a function that if user already did for today or not
+        // true -> if user already finished for today
+        // false -> user didnt finish for today
+        return false
+    }
+
     func applyStyle(_ view: UIView) {
         view.layer.cornerRadius = view.layer.frame.height / 2
         view.layer.backgroundColor = UIColor.white.cgColor
