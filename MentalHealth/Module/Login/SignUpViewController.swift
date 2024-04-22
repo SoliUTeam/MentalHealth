@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var continueAsGuestButton: UIButton!
     @IBAction func tapAsGuest(_ sender: Any) {
         showAlert(title: "Success", description: "Continue as guest")
+        LoginManager.shared.setLoggedIn(false)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeViewController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
             navigationController?.pushViewController(homeViewController, animated: true)

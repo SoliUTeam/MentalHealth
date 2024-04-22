@@ -34,14 +34,56 @@ class DayViewController: UIViewController {
     @IBOutlet weak var welcomeView: UIView!
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
-            self.nameLabel.text = "Hi Nickname!"
+            if LoginManager.shared.isLoggedIn() {
+                self.nameLabel.text = LoginManager.shared.getNickName()
+            } else {
+                self.nameLabel.text = "Hi Guest!"
+            }
+        }
+    }
+    @IBOutlet weak var bigIconImageView: UIImageView!
+    
+    @IBOutlet weak var feelingOptionView: UIView!
+
+    @IBOutlet weak var badButton: UIButton! {
+        didSet {
+            if !badButton.isSelected {
+                self.badButton.setImage(UIImage(emotionAssetIdentifier: .badIcon), for: .normal)
+            }
+        }
+    }
+    @IBOutlet weak var sadButton: UIButton! {
+        didSet {
+            if !sadButton.isSelected {
+                self.sadButton.setImage(UIImage(emotionAssetIdentifier: .sadIcon), for: .normal)
+            }
+        }
+    }
+    @IBOutlet weak var decentButton: UIButton! {
+        didSet {
+            if !decentButton.isSelected {
+                self.decentButton.setImage(UIImage(emotionAssetIdentifier: .decentIcon), for: .normal)
+            }
+        }
+    }
+    @IBOutlet weak var goodButton: UIButton! {
+        didSet {
+            if !goodButton.isSelected {
+                self.goodButton.setImage(UIImage(emotionAssetIdentifier: .goodIcon), for: .normal)
+            }
+        }
+    }
+    @IBOutlet weak var niceButton: UIButton! {
+        didSet {
+            if !niceButton.isSelected {
+                self.niceButton.setImage(UIImage(emotionAssetIdentifier: .niceIcon), for: .normal)
+            }
         }
     }
     
-    @IBOutlet weak var feelingOptionView: UIView!
-    
     lazy var progressBar: UIProgressView = {
         let progressView = UIProgressView()
+        // Default max star value is 100
         progressView.progress = getStarCount().floatValue / 100
         progressView.progressTintColor = UIColor.progressBar
         progressView.trackTintColor = UIColor.progressTrackBar
@@ -71,6 +113,43 @@ class DayViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    @IBAction private func buttonTapped(_ sender: UIButton) {
+        
+        switch sender {
+        case badButton:
+            
+            badButton.setImage(UIImage(emotionAssetIdentifier: .badIconSelected), for: .selected)
+            bigIconImageView.image = UIImage(emotionAssetIdentifier: .badIconBig)
+            bigIconImageView.contentMode = .scaleAspectFill
+            badButton.backgroundColor = .clear
+            changeButtonState(button: badButton)
+        case sadButton:
+            
+            sadButton.setImage(UIImage(emotionAssetIdentifier: .sadIconSelected), for: .selected)
+            bigIconImageView.image = UIImage(emotionAssetIdentifier: .sadIconBig)
+            changeButtonState(button: sadButton)
+        case decentButton:
+      
+            decentButton.setImage(UIImage(emotionAssetIdentifier: .decentIconSelected), for: .selected)
+            bigIconImageView.image = UIImage(emotionAssetIdentifier: .decentIconBig)
+            changeButtonState(button: decentButton)
+        case goodButton:
+            
+            goodButton.setImage(UIImage(emotionAssetIdentifier: .goodIconSelected), for: .selected)
+            bigIconImageView.image = UIImage(emotionAssetIdentifier: .goodIconBig)
+            changeButtonState(button: goodButton)
+        case niceButton:
+        
+            niceButton.setImage(UIImage(emotionAssetIdentifier: .niceIconSelected), for: .selected)
+            bigIconImageView.image = UIImage(emotionAssetIdentifier: .niceIconBig)
+            changeButtonState(button: niceButton)
+        default:
+            return
+        }
+    }
+    
+    private var loginManager = LoginManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,8 +190,20 @@ class DayViewController: UIViewController {
     }
     
     func getStarCount() -> String {
-        // need to call it from backend
-        return "10"
+        if loginManager.isLoggedIn() {
+            return "0"
+        } else {
+            return "10"
+        }
+    }
+    
+    func changeButtonState(button: UIButton) {
+        badButton.isSelected = false
+        sadButton.isSelected = false
+        decentButton.isSelected = false
+        goodButton.isSelected = false
+        niceButton.isSelected = false
+        button.isSelected = true
     }
     
     func applyStyle(_ view: UIView) {
