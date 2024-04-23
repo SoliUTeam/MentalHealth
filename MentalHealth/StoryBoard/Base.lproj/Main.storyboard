@@ -1898,6 +1898,9 @@
                             <constraint firstItem="weF-sJ-9xf" firstAttribute="centerX" secondItem="SFJ-zS-Kk2" secondAttribute="centerX" id="efI-eH-CMx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="weF-sJ-9xf" id="a0X-Ly-Oxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVG-yv-vgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
