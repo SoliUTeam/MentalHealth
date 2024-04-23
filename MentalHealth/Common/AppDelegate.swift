@@ -14,12 +14,15 @@ import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let barButtonAppearance = UIBarButtonItem.appearance()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.resignOnTouchOutside = true
+        let backButton = UIImage(assetIdentifier: .backArrow)?.resizeTo(width: 28, height: 28)
         return true
     }
 

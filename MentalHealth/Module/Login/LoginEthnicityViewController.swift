@@ -20,6 +20,7 @@ class LoginEthnicityViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        setCustomBackNavigationButton()
         super.viewDidLoad()
     }
 }

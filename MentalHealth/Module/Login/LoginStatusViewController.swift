@@ -12,7 +12,7 @@ class LoginStatusViewController: UIViewController {
     
     @IBAction func navigateToEthnicityScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let loginEthnicityViewController = storyboard.instantiateViewController(identifier: "LoginEthnicityViewController") as? LoginEthnicityViewController {
+        if let loginEthnicityViewController = storyboard.instantiateViewController(identifier: "LoginEthnicityViewController") as? LoginConfirmViewController {
             navigationController?.pushViewController(loginEthnicityViewController, animated: true)
         } else {
             print("Can't find LoginEthnicityViewController")
@@ -20,6 +20,7 @@ class LoginStatusViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        setCustomBackNavigationButton()
         super.viewDidLoad()
     }
 }

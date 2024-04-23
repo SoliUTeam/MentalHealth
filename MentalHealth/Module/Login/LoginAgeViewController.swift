@@ -1,5 +1,5 @@
 //
-//  LoginConfirmViewController.swift
+//  LoginAgeViewController.swift
 //  MentalHealth
 //
 //  Created by JungpyoHong on 4/22/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginConfirmViewController: UIViewController {
+class LoginAgeViewController: UIViewController {
     
     @IBAction func navigateToEthnicityScreen() {
         showAlert(title: "Success", description: "Login Successfull!")

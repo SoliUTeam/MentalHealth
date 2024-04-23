@@ -94,3 +94,13 @@ extension UIViewController {
         self.view.addSubview(view)
     }
 }
+
+extension UIViewController {
+    func setCustomBackNavigationButton(_ selector: Selector = #selector(UINavigationController.popViewController(animated:))) {
+        let backButton = UIBarButtonItem(image: UIImage(assetIdentifier: .backArrow),
+                                      style: .plain,
+                                      target: navigationController,
+                                      action: selector)
+        navigationItem.leftBarButtonItem = backButton
+    }
+}

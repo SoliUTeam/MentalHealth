@@ -33,6 +33,15 @@ class SignUpViewController: UIViewController {
         }
     }
 
+    @IBAction func navigateToGenderScreen(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let loginGenderViewController = storyboard.instantiateViewController(identifier: "LoginGenderViewController") as? LoginGenderViewController {
+            navigationController?.pushViewController(loginGenderViewController, animated: true)
+        } else {
+            print("Can't find loginGenderViewController")
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
