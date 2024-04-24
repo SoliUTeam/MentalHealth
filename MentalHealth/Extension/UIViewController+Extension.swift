@@ -80,13 +80,18 @@ extension UIViewController {
         SwiftEntryKit.display(entry: contentView, using: attributes)
     }
     
-    func createSelectButton(label: [String], spacing: CGFloat, constraintWith view: UIView) {
+    func createSelectButton(label: [String], spacing: CGFloat, constraintWith view: UIView, buttonTappedCallback: ((Int) -> Void)? = nil) -> Int {
         var buttons: [UIButton] = []
         var userClicked = false
+        var index = 0
 
         for count in 0...label.count - 1 {
-            let customButton = CustomButton(titleString: label[count]) { clicked in
-                userClicked = clicked
+//            let customButton = CustomButton(titleString: label[count]) { clicked in
+//                userClicked = clicked
+//            }
+            let customButton = CustomButton(titleString: label[count], index: count) { buttonIndex in
+                index = buttonIndex
+                buttonTappedCallback?(index)
             }
             customButton.frame.size.height = 50
             buttons.append(customButton)
@@ -106,30 +111,28 @@ extension UIViewController {
         func calculateStackViewHeight(count: Int, buttonHeight height: Int = 40) -> CGFloat {
             CGFloat((count * height) + (10 * (count - 1)))
         }
-        //return userClicked
+        return index
     }
 }
 
 class CustomButton: UIButton {
-    
-    var defaultTitleColor: UIColor = .tabBarBorder
-    var selectedTitleColor: UIColor = .soliuBlue
     var checkmarkImageView: UIImageView?
-    
-    private var buttonTappedCallback: ((Bool) -> Void)?
+    var index: Int
+    private var buttonTappedCallback: ((Int) -> Void)?
 
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.height / 2
     }
     
-    required init(titleString: String, buttonTappedCallback: ((Bool) -> Void)? = nil) {
+    required init(titleString: String, index: Int, buttonTappedCallback: ((Int) -> Void)? = nil) {
+        self.index = index
         super.init(frame: .zero)
         self.buttonTappedCallback = buttonTappedCallback
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.tabBarBorder.cgColor
         backgroundColor = .white
-        setTitleColor(defaultTitleColor, for: .normal)
+        setTitleColor(UIColor.soliuBlack, for: .normal)
         
         setTitle(titleString, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
@@ -151,10 +154,10 @@ class CustomButton: UIButton {
         } else {
             // Select the button
             isSelected = true
-            buttonTappedCallback?(isSelected)
+            buttonTappedCallback?(index)
             layer.borderWidth = 1.5
-            layer.borderColor = selectedTitleColor.cgColor
-            setTitleColor(selectedTitleColor, for: .normal)
+            layer.borderColor = UIColor.soliuBlue.cgColor
+            setTitleColor(UIColor.soliuBlue, for: .normal)
             
             // Add checkmark image
             addCheckmarkImage()
@@ -172,7 +175,7 @@ class CustomButton: UIButton {
     func defaultButtonSet() {
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.tabBarBorder.cgColor
-        setTitleColor(defaultTitleColor, for: .normal)
+        setTitleColor(UIColor.soliuBlack, for: .normal)
     }
     
     func addCheckmarkImage() {
