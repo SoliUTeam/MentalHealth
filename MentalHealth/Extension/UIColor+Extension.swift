@@ -10,7 +10,6 @@ import UIKit
 enum Color: String {
     case soliuBlue = "#00B8F1"
     case soliuBlack = "#2E2E2E"
-    case chartBackground = "#26CCFF"
     case viewBorder = "#63DAFF"
     case tabBarBorder = "#CBCBCB"
     case progressBar = "#FFE500"
@@ -18,12 +17,16 @@ enum Color: String {
     case progressBarBorder = "#E4E4E4"
     case homepageBackground = "#E5E5E5"
     case submitButtonBackground = "#232323"
+    
+//  Survey Result Color
+    case chartBackground = "#26CCFF"
+    case chartAverageBorder = "#1271FF"
+    
 }
 
 extension UIColor {
     static let soliuBlue = UIColor(hex: Color.soliuBlue.rawValue, alpha: 1)
     static let soliuBlack = UIColor(hex: Color.soliuBlack.rawValue, alpha: 1)
-    static let chartBackground = UIColor(hex: Color.chartBackground.rawValue, alpha: 1)
     static let viewBorder = UIColor(hex: Color.viewBorder.rawValue, alpha: 1)
     static let tabBarBorder = UIColor(hex: Color.tabBarBorder.rawValue, alpha: 1)
     static let progressBar = UIColor(hex: Color.progressBar.rawValue, alpha: 1)
@@ -31,6 +34,9 @@ extension UIColor {
     static let progressBarBorder = UIColor(hex: Color.progressBarBorder.rawValue, alpha: 1)
     static let homepageBackground = UIColor(hex: Color.homepageBackground.rawValue, alpha: 1)
     static let submitButtonBackground = UIColor(hex: Color.submitButtonBackground.rawValue, alpha: 1)
+//  Survey Result Color
+    static let chartBackground = UIColor(hex: Color.chartBackground.rawValue, alpha: 1)
+    static let chartAverageBorder = UIColor(hex: Color.chartAverageBorder.rawValue, alpha: 1)
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()

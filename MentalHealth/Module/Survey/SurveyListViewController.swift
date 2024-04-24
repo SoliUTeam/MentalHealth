@@ -53,6 +53,8 @@ class SurveyListViewController: UIViewController {
             title = "Test \(selectedQuestionId + 1): Loneliness"
         case 4:
             title = "Test \(selectedQuestionId + 1): Social Media Addiction"
+        case 5:
+            title = "Test \(selectedQuestionId + 1): HRQOL"
         default:
             title = ""
             
@@ -138,21 +140,33 @@ extension SurveyListViewController: SurveyListViewCellDelegate {
 extension SurveyListViewController: SurveyNextButtonCellDelegate {
     func nextButtonClicked() {
         self.nextButtonPressed()
-////      Display SurveyListViewController
-        if surveyResultRecord.count == 25 { // Make sure all questions are answered
-                self.submitResult()
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
-                    surveyResultVC.myTestResult = surveyResultRecord
-                    navigationController?.pushViewController(surveyResultVC, animated: true)
-                    
-                } else {
-                    print("Can't find storyboard")
-                }
-            } else {
-                print("Survey not complete")
-            }
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+//            surveyResultVC.myTestScore = surveyResultRecord
+//          Example Testing
+            surveyResultVC.myTestScore =  TestingInformation().exampleSurveyList()
+            navigationController?.pushViewController(surveyResultVC, animated: true)
+            
+        } else {
+            print("Can't find storyboard")
+        }
     }
+        
+////      Display SurveyListViewController
+//        if surveyResultRecord.count == 25 { // Make sure all questions are answered
+//                self.submitResult()
+//                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//                if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+//                    surveyResultVC.myTestResult = surveyResultRecord
+//                    navigationController?.pushViewController(surveyResultVC, animated: true)
+//                    
+//                } else {
+//                    print("Can't find storyboard")
+//                }
+//            } else {
+//                print("Survey not complete")
+//            }
+//    }
 }
 
 

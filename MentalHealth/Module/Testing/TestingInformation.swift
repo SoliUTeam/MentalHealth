@@ -8,6 +8,9 @@
 import Foundation
 
 class TestingInformation {
+    
+    var testCount: Int = 30
+    
     var testInfoArray: [TestQuestion] = [
         TestQuestion(id: 0, questionNumber: 0, type: "Depression", question: "I felt downhearted and blue."),
         TestQuestion(id: 0, questionNumber: 1, type: "Depression", question: "I felt that I had nothing to look forward to."),
@@ -29,12 +32,18 @@ class TestingInformation {
         TestQuestion(id: 3, questionNumber: 17, type: "Loneliness", question: "I am no longer close to anyone."),
         TestQuestion(id: 3, questionNumber: 18, type: "Loneliness", question: "My interests and ideas are not shared by those around me."),
         TestQuestion(id: 3, questionNumber: 19, type: "Loneliness", question: "My social relationships are superficial."),
+        
         TestQuestion(id: 4, questionNumber: 20, type: "Social Media Addiction", question: "You spend a lot of time thinking about social media or planning how to use it."),
         TestQuestion(id: 4, questionNumber: 21, type: "Social Media Addiction", question: "You feel an urge to use social media more and more."),
         TestQuestion(id: 4, questionNumber: 22, type: "Social Media Addiction", question: "You use social media in order to forget about personal problems."),
         TestQuestion(id: 4, questionNumber: 23, type: "Social Media Addiction", question: "You become restless or troubled if you are prohibited from using social media."),
-        TestQuestion(id: 4, questionNumber: 24, type: "Social Media Addiction", question: "You use social media so much that it has had a negative impact on your job/studies.")
-
+        TestQuestion(id: 4, questionNumber: 24, type: "Social Media Addiction", question: "You use social media so much that it has had a negative impact on your job/studies."),
+        
+         TestQuestion(id: 5, questionNumber: 25, type: "HQ", question: "Would you say that in general your health is excellent, very good, good, fair, or poor?"),
+         TestQuestion(id: 5, questionNumber: 26, type: "Social Media Addiction", question: "Now thinking about your physical health, which includes physical illness and injury, how many days during the past 30 days was your physical health not good?"),
+         TestQuestion(id: 5, questionNumber: 27, type: "Social Media Addiction", question: "Now thinking about your mental health, which includes stress, depression, and problems with emotions, how many days during the past 30 days was your mental health not good?"),
+         TestQuestion(id: 5, questionNumber: 28, type: "Social Media Addiction", question: "During the past 30 days, approximately how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?"),
+         TestQuestion(id: 5, questionNumber: 29, type: "Social Media Addiction", question: "During the past 30 days, approximately how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?")
     ]
     
     func createTestingSurveyQuestion() -> [TestQuestion] {
@@ -43,15 +52,15 @@ class TestingInformation {
     
     func exampleSurveyList() -> [Int:Int] {
         var results = [Int: Int]()
-            for key in 0...24 {
-                results[key] = Int.random(in: 1...5)
+            for key in 0..<testCount {
+                results[key] = (Int.random(in: 1..<5))
             }
             return results
     }
     
     func exampleAllSurveyDict() -> [Int:Int] {
         var results = [Int: Int]()
-            for key in 0...24 {
+            for key in 0..<testCount {
                 results[key] = 4
             }
             return results

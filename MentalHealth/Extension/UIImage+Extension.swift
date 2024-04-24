@@ -53,6 +53,13 @@ enum SurveyImage: String {
     case markedSometimes
     case markedOften
     case markedVOften
+    
+    case depressionIcon
+    case anxietyIcon
+    case stressIcon
+    case socialmediaIcon
+    case lonelinessIcon
+    case hrqolIcon
 }
 
 
