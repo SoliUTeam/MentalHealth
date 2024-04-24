@@ -9,6 +9,7 @@ import UIKit
 
 class MyDiaryViewController: UIViewController {
     override func viewDidLoad() {
+        setCustomBackNavigationButton()
         super.viewDidLoad()
     }
 

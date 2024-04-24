@@ -29,6 +29,7 @@ class SurveyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchQuestions()
+        setCustomBackNavigationButton()
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
         self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
         updateTitle()

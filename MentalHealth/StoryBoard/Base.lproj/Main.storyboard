@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56i-1v-EJv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56i-1v-EJv">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -59,10 +59,10 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/selfTest" translatesAutoresizingMaskIntoConstraints="NO" id="WHB-Zu-Il3">
-                                        <rect key="frame" x="22.666666666666657" y="22.666666666666629" width="120" height="120"/>
+                                        <rect key="frame" x="45" y="27.666666666666629" width="110" height="110"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="K2j-j6-Vgf"/>
-                                            <constraint firstAttribute="width" constant="120" id="ahK-ob-FfS"/>
+                                            <constraint firstAttribute="height" constant="110" id="K2j-j6-Vgf"/>
+                                            <constraint firstAttribute="width" constant="110" id="ahK-ob-FfS"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -73,9 +73,9 @@
                                     <constraint firstItem="Gvk-Dr-5jv" firstAttribute="leading" secondItem="3KV-iu-unp" secondAttribute="leading" constant="15" id="RCL-My-cCs"/>
                                     <constraint firstAttribute="bottom" secondItem="F2m-EN-eDI" secondAttribute="bottom" constant="15" id="StG-nW-LbV"/>
                                     <constraint firstItem="Gvk-Dr-5jv" firstAttribute="top" secondItem="3KV-iu-unp" secondAttribute="top" constant="15" id="c1A-qB-NoG"/>
+                                    <constraint firstAttribute="trailing" secondItem="WHB-Zu-Il3" secondAttribute="trailing" constant="10" id="e6e-a1-PQM"/>
                                     <constraint firstAttribute="height" constant="165" id="oJO-m8-tev"/>
                                     <constraint firstItem="WHB-Zu-Il3" firstAttribute="centerY" secondItem="3KV-iu-unp" secondAttribute="centerY" id="ufb-X2-5Fd"/>
-                                    <constraint firstItem="WHB-Zu-Il3" firstAttribute="centerX" secondItem="3KV-iu-unp" secondAttribute="centerX" id="wn4-hn-qyf"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TJ-JC-9cc">
@@ -94,6 +94,13 @@
                                             <constraint firstAttribute="width" constant="19" id="x15-ds-bnJ"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/myDiary" translatesAutoresizingMaskIntoConstraints="NO" id="6ke-BK-tei">
+                                        <rect key="frame" x="35" y="22.666666666666629" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="6SX-tS-kt0"/>
+                                            <constraint firstAttribute="height" constant="120" id="YnI-Yl-bgj"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
@@ -103,6 +110,8 @@
                                     <constraint firstItem="SfZ-xA-K58" firstAttribute="top" secondItem="6TJ-JC-9cc" secondAttribute="top" constant="15" id="Pdz-1a-dTF"/>
                                     <constraint firstAttribute="trailing" secondItem="eou-og-CTa" secondAttribute="trailing" constant="15" id="Qj0-sx-cLo"/>
                                     <constraint firstAttribute="height" constant="165" id="XMb-Wc-DTG"/>
+                                    <constraint firstItem="6ke-BK-tei" firstAttribute="centerY" secondItem="6TJ-JC-9cc" secondAttribute="centerY" id="cEO-XT-DRu"/>
+                                    <constraint firstAttribute="trailing" secondItem="6ke-BK-tei" secondAttribute="trailing" constant="10" id="kHU-Dk-FzY"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-P5-J9e">
@@ -2288,9 +2297,10 @@ the following data</string>
         <image name="Icon/calendar" width="24" height="24"/>
         <image name="Icon/depressionIcon" width="26" height="26"/>
         <image name="Icon/home" width="32" height="32"/>
+        <image name="Icon/myDiary" width="149" height="142"/>
         <image name="Icon/noButton" width="28" height="28"/>
         <image name="Icon/rightArrow" width="19" height="19"/>
-        <image name="Icon/selfTest" width="141" height="169"/>
+        <image name="Icon/selfTest" width="138" height="134"/>
         <image name="Icon/soliuLogo" width="500" height="197"/>
         <image name="Icon/soliuLogoOnly" width="104" height="144"/>
         <image name="Icon/yesButton" width="28" height="28"/>

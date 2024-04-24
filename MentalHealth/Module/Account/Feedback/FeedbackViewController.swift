@@ -11,6 +11,7 @@ import UIKit
 class FeedbackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCustomBackNavigationButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
