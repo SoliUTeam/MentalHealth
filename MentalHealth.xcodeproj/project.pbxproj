@@ -10,15 +10,6 @@
 		675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */; };
 		679D23862BB52015004CAA61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D23852BB52015004CAA61 /* User.swift */; };
 		67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */; };
-		67D6EC932BD8C83C00477C54 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC8A2BD8C83C00477C54 /* Inter-Light.ttf */; };
-		67D6EC942BD8C83C00477C54 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC8B2BD8C83C00477C54 /* Inter-Medium.ttf */; };
-		67D6EC952BD8C83C00477C54 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC8C2BD8C83C00477C54 /* Inter-Regular.ttf */; };
-		67D6EC962BD8C83C00477C54 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC8D2BD8C83C00477C54 /* Inter-Bold.ttf */; };
-		67D6EC972BD8C83C00477C54 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC8E2BD8C83C00477C54 /* Inter-ExtraLight.ttf */; };
-		67D6EC982BD8C83C00477C54 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC8F2BD8C83C00477C54 /* Inter-Thin.ttf */; };
-		67D6EC992BD8C83C00477C54 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC902BD8C83C00477C54 /* Inter-Black.ttf */; };
-		67D6EC9A2BD8C83C00477C54 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC912BD8C83C00477C54 /* Inter-SemiBold.ttf */; };
-		67D6EC9B2BD8C83C00477C54 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67D6EC922BD8C83C00477C54 /* Inter-ExtraBold.ttf */; };
 		67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */; };
 		67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253F2BBA262B00C27F21 /* TestingInformation.swift */; };
 		67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525412BBA285200C27F21 /* CellReusable+Extension.swift */; };
@@ -80,15 +71,6 @@
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		679D23852BB52015004CAA61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
-		67D6EC8A2BD8C83C00477C54 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Light.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Light.ttf"; sourceTree = "<group>"; };
-		67D6EC8B2BD8C83C00477C54 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Medium.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Medium.ttf"; sourceTree = "<group>"; };
-		67D6EC8C2BD8C83C00477C54 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; };
-		67D6EC8D2BD8C83C00477C54 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Bold.ttf"; sourceTree = "<group>"; };
-		67D6EC8E2BD8C83C00477C54 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraLight.ttf"; path = "../../../../../Downloads/Inter/static/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
-		67D6EC8F2BD8C83C00477C54 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Thin.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Thin.ttf"; sourceTree = "<group>"; };
-		67D6EC902BD8C83C00477C54 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Black.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Black.ttf"; sourceTree = "<group>"; };
-		67D6EC912BD8C83C00477C54 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-SemiBold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
-		67D6EC922BD8C83C00477C54 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraBold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewCell.swift; sourceTree = "<group>"; };
 		67E5253F2BBA262B00C27F21 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
 		67E525412BBA285200C27F21 /* CellReusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
@@ -159,22 +141,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67D6EC892BD8C7DD00477C54 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				67D6EC902BD8C83C00477C54 /* Inter-Black.ttf */,
-				67D6EC8D2BD8C83C00477C54 /* Inter-Bold.ttf */,
-				67D6EC922BD8C83C00477C54 /* Inter-ExtraBold.ttf */,
-				67D6EC8E2BD8C83C00477C54 /* Inter-ExtraLight.ttf */,
-				67D6EC8A2BD8C83C00477C54 /* Inter-Light.ttf */,
-				67D6EC8B2BD8C83C00477C54 /* Inter-Medium.ttf */,
-				67D6EC8C2BD8C83C00477C54 /* Inter-Regular.ttf */,
-				67D6EC912BD8C83C00477C54 /* Inter-SemiBold.ttf */,
-				67D6EC8F2BD8C83C00477C54 /* Inter-Thin.ttf */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
 		67E5253E2BBA260E00C27F21 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +189,6 @@
 		953A64EB2B6EDFA000651684 /* MentalHealth */ = {
 			isa = PBXGroup;
 			children = (
-				67D6EC892BD8C7DD00477C54 /* Font */,
 				95733CB22BA8292E00FD2215 /* Extension */,
 				95B1CF062B6FE83F00101423 /* Module */,
 				95CEFFD12B6F358D00C527D1 /* Assets */,
@@ -457,23 +422,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67D6EC9A2BD8C83C00477C54 /* Inter-SemiBold.ttf in Resources */,
-				67D6EC932BD8C83C00477C54 /* Inter-Light.ttf in Resources */,
 				67E525472BBA29BD00C27F21 /* SurveyListViewCell.xib in Resources */,
 				953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */,
-				67D6EC972BD8C83C00477C54 /* Inter-ExtraLight.ttf in Resources */,
-				67D6EC962BD8C83C00477C54 /* Inter-Bold.ttf in Resources */,
 				67ED8A3F2BCF8ACC00E37950 /* RadarMarkerView.xib in Resources */,
 				953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */,
-				67D6EC992BD8C83C00477C54 /* Inter-Black.ttf in Resources */,
 				67F064972B9D121A00400013 /* GoogleService-Info.plist in Resources */,
-				67D6EC982BD8C83C00477C54 /* Inter-Thin.ttf in Resources */,
-				67D6EC9B2BD8C83C00477C54 /* Inter-ExtraBold.ttf in Resources */,
 				675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */,
 				953A64F42B6EDFA000651684 /* Main.storyboard in Resources */,
 				95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */,
-				67D6EC942BD8C83C00477C54 /* Inter-Medium.ttf in Resources */,
-				67D6EC952BD8C83C00477C54 /* Inter-Regular.ttf in Resources */,
 				95D293B52BCF9C0A00017E03 /* CalendarPopUpView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
