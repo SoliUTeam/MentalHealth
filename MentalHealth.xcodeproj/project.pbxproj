@@ -56,6 +56,7 @@
 		95C72BE92BD6404E00ED178F /* LoginConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE82BD6404E00ED178F /* LoginConfirmViewController.swift */; };
 		95C72BEB2BD753B900ED178F /* LoginAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BEA2BD753B900ED178F /* LoginAgeViewController.swift */; };
 		95C804372BD9BA0C00743FA5 /* CustomSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C804362BD9BA0C00743FA5 /* CustomSelectButton.swift */; };
+		95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C804382BD9C8F400743FA5 /* LoginNickNameViewController.swift */; };
 		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 		95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A12BCD038200017E03 /* LogInViewController.swift */; };
 		95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A32BCD0CB800017E03 /* LoginManager.swift */; };
@@ -110,6 +111,7 @@
 		95C72BE82BD6404E00ED178F /* LoginConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewController.swift; sourceTree = "<group>"; };
 		95C72BEA2BD753B900ED178F /* LoginAgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAgeViewController.swift; sourceTree = "<group>"; };
 		95C804362BD9BA0C00743FA5 /* CustomSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectButton.swift; sourceTree = "<group>"; };
+		95C804382BD9C8F400743FA5 /* LoginNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNickNameViewController.swift; sourceTree = "<group>"; };
 		95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LaunchAnimation.json; sourceTree = "<group>"; };
 		95D293A12BCD038200017E03 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		95D293A32BCD0CB800017E03 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				95C72BEA2BD753B900ED178F /* LoginAgeViewController.swift */,
 				95C72BE42BD63FAA00ED178F /* LoginStatusViewController.swift */,
 				95C72BE62BD6400700ED178F /* LoginEthnicityViewController.swift */,
+				95C804382BD9C8F400743FA5 /* LoginNickNameViewController.swift */,
 				95C72BE82BD6404E00ED178F /* LoginConfirmViewController.swift */,
 				95C804362BD9BA0C00743FA5 /* CustomSelectButton.swift */,
 			);
@@ -466,6 +469,7 @@
 				95C72BE52BD63FAA00ED178F /* LoginStatusViewController.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
+				95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */,
 				67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */,
 				67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */,
 				957720492BC7AC280026DC91 /* HomeTabBarController.swift in Sources */,

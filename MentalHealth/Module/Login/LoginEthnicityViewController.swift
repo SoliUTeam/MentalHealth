@@ -17,17 +17,17 @@ class LoginEthnicityViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.white, for: .disabled)
         button.backgroundColor = .loginNextDisabled
-        button.addTarget(self, action: #selector(navigateToConfirmScreen), for: .touchUpInside)
+        button.addTarget(self, action: #selector(navigateToNickNameScreen), for: .touchUpInside)
         return button
     }()
     
     @objc
-    func navigateToConfirmScreen() {
+    func navigateToNickNameScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let loginConfirmViewController = storyboard.instantiateViewController(identifier: "LoginConfirmViewController") as? LoginConfirmViewController {
-            navigationController?.pushViewController(loginConfirmViewController, animated: true)
+        if let loginNickNameViewController = storyboard.instantiateViewController(identifier: "LoginNickNameViewController") as? LoginNickNameViewController {
+            navigationController?.pushViewController(loginNickNameViewController, animated: true)
         } else {
-            print("Can't find loginConfirmViewController")
+            print("Can't find loginNickNameViewController")
         }
     }
     
