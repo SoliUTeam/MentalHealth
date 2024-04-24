@@ -18,4 +18,4 @@ jobs:
     - name: Build project
       run: |
         chmod +x build_and_check.sh
-        ./build_and_check.sh
+        ../build_and_check.sh
