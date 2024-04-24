@@ -80,10 +80,14 @@ extension UIViewController {
         SwiftEntryKit.display(entry: contentView, using: attributes)
     }
     
-    func createSelectButton(buttonCount: Int, label: [String], spacing: CGFloat, constraintWith view: UIView) {
+    func createSelectButton(label: [String], spacing: CGFloat, constraintWith view: UIView) {
         var buttons: [UIButton] = []
-        for count in 0...buttonCount - 1 {
-            let customButton = CustomButton(titleString: label[count])
+        var userClicked = false
+
+        for count in 0...label.count - 1 {
+            let customButton = CustomButton(titleString: label[count]) { clicked in
+                userClicked = clicked
+            }
             customButton.frame.size.height = 50
             buttons.append(customButton)
         }
@@ -95,13 +99,14 @@ extension UIViewController {
         
         stackView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 50).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: calculateStackViewHeight(count: buttonCount)).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: calculateStackViewHeight(count: label.count)).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -50).isActive = true
         
         //Set Button Height to 40
         func calculateStackViewHeight(count: Int, buttonHeight height: Int = 40) -> CGFloat {
             CGFloat((count * height) + (10 * (count - 1)))
         }
+        //return userClicked
     }
 }
 
@@ -109,16 +114,18 @@ class CustomButton: UIButton {
     
     var defaultTitleColor: UIColor = .tabBarBorder
     var selectedTitleColor: UIColor = .soliuBlue
-
     var checkmarkImageView: UIImageView?
     
+    private var buttonTappedCallback: ((Bool) -> Void)?
+
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.height / 2
     }
     
-    required init(titleString: String) {
+    required init(titleString: String, buttonTappedCallback: ((Bool) -> Void)? = nil) {
         super.init(frame: .zero)
+        self.buttonTappedCallback = buttonTappedCallback
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.tabBarBorder.cgColor
         backgroundColor = .white
@@ -144,6 +151,7 @@ class CustomButton: UIButton {
         } else {
             // Select the button
             isSelected = true
+            buttonTappedCallback?(isSelected)
             layer.borderWidth = 1.5
             layer.borderColor = selectedTitleColor.cgColor
             setTitleColor(selectedTitleColor, for: .normal)

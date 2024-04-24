@@ -9,17 +9,20 @@ import UIKit
 
 class LoginAgeViewController: UIViewController {
     
-    @IBAction func navigateToEthnicityScreen() {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBAction func navigateToStatusScreen() {
         showAlert(title: "Success", description: "Login Successfull!")
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let homeViewController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
-            navigationController?.pushViewController(homeViewController, animated: true)
+        if let loginStatusViewController = storyboard.instantiateViewController(identifier: "LoginStatusViewController") as? LoginStatusViewController {
+            navigationController?.pushViewController(loginStatusViewController, animated: true)
         } else {
-            print("Can't find HomeViewController")
+            print("Can't find loginStatusViewController")
         }
     }
 
     override func viewDidLoad() {
+        
         setCustomBackNavigationButton()
         super.viewDidLoad()
     }

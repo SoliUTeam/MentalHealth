@@ -9,7 +9,7 @@ import UIKit
 
 class LoginConfirmViewController: UIViewController {
     
-    @IBAction func navigateToEthnicityScreen() {
+    @IBAction func navigateToHomeScreen() {
         showAlert(title: "Success", description: "Login Successfull!")
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeViewController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
