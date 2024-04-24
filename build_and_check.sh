@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ..
 # Set the path to your Xcode project
-PROJECT_PATH="MentalHealth.xcodeproj"
+PROJECT_PATH="./MentalHealth.xcodeproj"
 
 # Set the scheme name
 SCHEME_NAME="MentalHealth"
