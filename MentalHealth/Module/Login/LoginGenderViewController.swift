@@ -15,17 +15,17 @@ class LoginGenderViewController: UIViewController, UIGestureRecognizerDelegate {
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.white, for: .disabled)
         button.backgroundColor = .loginNextDisabled
-        button.addTarget(self, action: #selector(navigateToStatusScreen), for: .touchUpInside)
+        button.addTarget(self, action: #selector(navigateToAgeScreen), for: .touchUpInside)
         return button
     }()
     
     @objc
-    func navigateToStatusScreen() {
+    func navigateToAgeScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let loginAgeViewController = storyboard.instantiateViewController(identifier: "LoginAgeViewController") as? LoginAgeViewController {
             navigationController?.pushViewController(loginAgeViewController, animated: true)
         } else {
-            print("Can't find LoginStatusViewController")
+            print("Can't find loginAgeViewController")
         }
     }
     

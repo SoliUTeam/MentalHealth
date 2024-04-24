@@ -7,6 +7,30 @@
 
 import Foundation
 
+enum Gender: String {
+    case male
+    case female
+    case other
+}
+
+enum WorkStatus: String {
+    case student
+    case employed
+    case other
+}
+
+enum Ethnicity: String {
+    case americanIndian
+    case alaskaNative
+    case asian
+    case black
+    case africanAmerican
+    case nativeHawaiian
+    case otherPacificIslander
+    case white
+    case other
+}
+
 ///Usage: LoginManager.shared.checkLoggedIn
 ///
 public class LoginManager {
@@ -16,6 +40,8 @@ public class LoginManager {
     private var logInState: Bool = false
     private var nickName: String = "Default"
     private var gender: Gender = .other
+    private var workStatus: WorkStatus = .other
+    private var ethnicity: Ethnicity = .other
 
     func setLoggedIn(_ loggedIn: Bool) {
         logInState = loggedIn
@@ -40,16 +66,20 @@ public class LoginManager {
     func getGender() -> String {
         return gender.rawValue
     }
-}
+    
+    func setWorkStatus(_ workStatus: WorkStatus) {
+        self.workStatus = workStatus
+    }
+    
+    func getWorkStatus() -> String {
+        return workStatus.rawValue
+    }
 
-enum Gender: String {
-    case male
-    case female
-    case other
-}
-
-enum WorkStatus: String {
-    case student
-    case employed
-    case other
+    func setEthnicity(_ ethnicity: Ethnicity) {
+        self.ethnicity = ethnicity
+    }
+    
+    func getEthnicity() -> String {
+        return ethnicity.rawValue
+    }
 }
