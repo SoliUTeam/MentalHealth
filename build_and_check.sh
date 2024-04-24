@@ -1,5 +1,4 @@
 #!/bin/bash
-cd ..
 # Set the path to your Xcode project
 PROJECT_PATH="./MentalHealth.xcodeproj"
 
