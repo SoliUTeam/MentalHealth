@@ -2083,40 +2083,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecc-Tt-eld">
-                                <rect key="frame" x="50" y="743" width="293" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="87h-Ie-998"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next">
-                                    <backgroundConfiguration key="background" cornerRadius="62">
-                                        <color key="backgroundColor" red="0.0" green="0.72156862749999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="navigateToStatusScreen" destination="K0z-ul-j9x" eventType="touchUpInside" id="rw2-3a-G4w"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i4b-US-kA1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ecc-Tt-eld" firstAttribute="leading" secondItem="i4b-US-kA1" secondAttribute="leading" constant="50" id="3Az-1Q-9qw"/>
                             <constraint firstItem="i4b-US-kA1" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="weF-sJ-9xf" secondAttribute="trailing" constant="30" id="4Db-be-Ao2"/>
-                            <constraint firstItem="Ecc-Tt-eld" firstAttribute="centerX" secondItem="SFJ-zS-Kk2" secondAttribute="centerX" id="Sh7-fk-aLi"/>
                             <constraint firstItem="weF-sJ-9xf" firstAttribute="top" secondItem="i4b-US-kA1" secondAttribute="top" constant="50" id="TOJ-Vb-vFr"/>
-                            <constraint firstItem="Ecc-Tt-eld" firstAttribute="centerX" secondItem="SFJ-zS-Kk2" secondAttribute="centerX" id="aUz-Qg-ZRy"/>
                             <constraint firstItem="weF-sJ-9xf" firstAttribute="leading" secondItem="i4b-US-kA1" secondAttribute="leading" constant="30" id="bI0-gt-QYF"/>
                             <constraint firstItem="weF-sJ-9xf" firstAttribute="centerX" secondItem="SFJ-zS-Kk2" secondAttribute="centerX" id="efI-eH-CMx"/>
-                            <constraint firstItem="i4b-US-kA1" firstAttribute="trailing" secondItem="Ecc-Tt-eld" secondAttribute="trailing" constant="50" id="q9h-YJ-7oS"/>
-                            <constraint firstItem="i4b-US-kA1" firstAttribute="bottom" secondItem="Ecc-Tt-eld" secondAttribute="bottom" constant="30" id="yN4-zZ-HFi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="Ecc-Tt-eld" id="H0K-VP-xWC"/>
                         <outlet property="titleLabel" destination="weF-sJ-9xf" id="a0X-Ly-Oxb"/>
                     </connections>
                 </viewController>

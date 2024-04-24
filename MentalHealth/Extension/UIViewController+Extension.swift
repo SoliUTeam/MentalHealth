@@ -80,18 +80,16 @@ extension UIViewController {
         SwiftEntryKit.display(entry: contentView, using: attributes)
     }
     
-    func createSelectButton(label: [String], spacing: CGFloat, constraintWith view: UIView, buttonTappedCallback: ((Int) -> Void)? = nil) -> Int {
+    func createSelectButton(label: [String], spacing: CGFloat, constraintWith view: UIView, buttonTappedCallback: ((Int, Bool) -> Void)? = nil) {
         var buttons: [UIButton] = []
         var userClicked = false
         var index = 0
 
         for count in 0...label.count - 1 {
-//            let customButton = CustomButton(titleString: label[count]) { clicked in
-//                userClicked = clicked
-//            }
-            let customButton = CustomButton(titleString: label[count], index: count) { buttonIndex in
+            let customButton = CustomSelectButton(titleString: label[count], index: count) { buttonIndex, isEnabled in
                 index = buttonIndex
-                buttonTappedCallback?(index)
+                userClicked = isEnabled
+                buttonTappedCallback?(index, userClicked)
             }
             customButton.frame.size.height = 50
             buttons.append(customButton)
@@ -111,83 +109,6 @@ extension UIViewController {
         func calculateStackViewHeight(count: Int, buttonHeight height: Int = 40) -> CGFloat {
             CGFloat((count * height) + (10 * (count - 1)))
         }
-        return index
-    }
-}
-
-class CustomButton: UIButton {
-    var checkmarkImageView: UIImageView?
-    var index: Int
-    private var buttonTappedCallback: ((Int) -> Void)?
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        layer.cornerRadius = bounds.height / 2
-    }
-    
-    required init(titleString: String, index: Int, buttonTappedCallback: ((Int) -> Void)? = nil) {
-        self.index = index
-        super.init(frame: .zero)
-        self.buttonTappedCallback = buttonTappedCallback
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.tabBarBorder.cgColor
-        backgroundColor = .white
-        setTitleColor(UIColor.soliuBlack, for: .normal)
-        
-        setTitle(titleString, for: .normal)
-        titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc func buttonTapped(_ sender: UIButton) {
-        if isSelected {
-            // Deselect the button
-            isSelected = false
-            defaultButtonSet()
-            
-            // Remove checkmark image
-            checkmarkImageView?.removeFromSuperview()
-        } else {
-            // Select the button
-            isSelected = true
-            buttonTappedCallback?(index)
-            layer.borderWidth = 1.5
-            layer.borderColor = UIColor.soliuBlue.cgColor
-            setTitleColor(UIColor.soliuBlue, for: .normal)
-            
-            // Add checkmark image
-            addCheckmarkImage()
-            
-            // Disable all other buttons
-            guard let stackView = superview as? UIStackView else { return }
-            for case let button as CustomButton in stackView.arrangedSubviews where button != self {
-                button.isSelected = false
-                button.defaultButtonSet()
-                button.checkmarkImageView?.removeFromSuperview()
-            }
-        }
-    }
-    
-    func defaultButtonSet() {
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.tabBarBorder.cgColor
-        setTitleColor(UIColor.soliuBlack, for: .normal)
-    }
-    
-    func addCheckmarkImage() {
-        let imageSize: CGFloat = 16
-        let image = UIImage(assetIdentifier: .buttonCheck)
-        
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: bounds.width - imageSize - 15, y: (bounds.height - imageSize) / 2, width: imageSize, height: imageSize)
-        addSubview(imageView)
-        
-        checkmarkImageView = imageView
     }
 }
 

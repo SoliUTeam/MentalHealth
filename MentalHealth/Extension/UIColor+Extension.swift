@@ -17,6 +17,8 @@ enum Color: String {
     case progressBarBorder = "#E4E4E4"
     case homepageBackground = "#E5E5E5"
     case submitButtonBackground = "#232323"
+    case loginNextBackground = "#1CBDEF"
+    case loginNextDisabled = "#ECECEC"
     
 //  Survey Result Color
     case chartBackground = "#26CCFF"
@@ -34,6 +36,8 @@ extension UIColor {
     static let progressBarBorder = UIColor(hex: Color.progressBarBorder.rawValue, alpha: 1)
     static let homepageBackground = UIColor(hex: Color.homepageBackground.rawValue, alpha: 1)
     static let submitButtonBackground = UIColor(hex: Color.submitButtonBackground.rawValue, alpha: 1)
+    static let loginNextBackground = UIColor(hex: Color.loginNextBackground.rawValue, alpha: 1)
+    static let loginNextDisabled = UIColor(hex: Color.loginNextDisabled.rawValue, alpha: 1)
 //  Survey Result Color
     static let chartBackground = UIColor(hex: Color.chartBackground.rawValue, alpha: 1)
     static let chartAverageBorder = UIColor(hex: Color.chartAverageBorder.rawValue, alpha: 1)
