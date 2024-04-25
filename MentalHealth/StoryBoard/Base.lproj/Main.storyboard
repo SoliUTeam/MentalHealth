@@ -2252,6 +2252,9 @@ the following data</string>
                             <constraint firstItem="NDx-tV-cnE" firstAttribute="top" secondItem="VYx-dQ-QXc" secondAttribute="top" constant="50" id="cnJ-ls-kCp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="NDx-tV-cnE" id="cD6-8Y-fHk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vlj-dS-Q9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
