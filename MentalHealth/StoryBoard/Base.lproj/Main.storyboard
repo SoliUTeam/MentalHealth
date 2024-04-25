@@ -2181,6 +2181,52 @@ the following data</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RoO-bQ-Gx4">
+                                <rect key="frame" x="30" y="285.66666666666669" width="333" height="250.00000000000006"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="7wK-jH-tPh">
+                                        <rect key="frame" x="146.33333333333334" y="50.666666666666629" width="40.666666666666657" height="148.66666666666666"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9p-2b-baQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="40.666666666666664" height="19.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCc-sq-72X">
+                                                <rect key="frame" x="0.0" y="32.333333333333371" width="40.666666666666664" height="19.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvv-jY-ZWB">
+                                                <rect key="frame" x="0.0" y="64.666666666666686" width="40.666666666666664" height="19.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7M-mn-zcF">
+                                                <rect key="frame" x="0.0" y="97" width="40.666666666666664" height="19.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xs0-v4-pct">
+                                                <rect key="frame" x="0.0" y="129.33333333333337" width="40.666666666666664" height="19.333333333333343"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstItem="7wK-jH-tPh" firstAttribute="centerX" secondItem="RoO-bQ-Gx4" secondAttribute="centerX" id="1xm-Ru-rov"/>
+                                    <constraint firstItem="7wK-jH-tPh" firstAttribute="centerY" secondItem="RoO-bQ-Gx4" secondAttribute="centerY" id="Tja-06-hJh"/>
+                                    <constraint firstAttribute="height" constant="250" id="wkf-vr-UbA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g9z-ME-KGz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2188,13 +2234,25 @@ the following data</string>
                             <constraint firstItem="AhN-dS-bTV" firstAttribute="centerX" secondItem="UFi-wU-lZc" secondAttribute="centerX" id="2B3-as-Jwb"/>
                             <constraint firstItem="g9z-ME-KGz" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="AhN-dS-bTV" secondAttribute="trailing" constant="30" id="DO0-ju-YzI"/>
                             <constraint firstItem="AhN-dS-bTV" firstAttribute="leading" secondItem="g9z-ME-KGz" secondAttribute="leading" constant="30" id="QiI-Ph-vWq"/>
+                            <constraint firstItem="RoO-bQ-Gx4" firstAttribute="centerX" secondItem="UFi-wU-lZc" secondAttribute="centerX" id="Ywy-iG-zZY"/>
+                            <constraint firstItem="RoO-bQ-Gx4" firstAttribute="leading" secondItem="g9z-ME-KGz" secondAttribute="leading" constant="30" id="dyv-Ck-ttP"/>
+                            <constraint firstItem="g9z-ME-KGz" firstAttribute="trailing" secondItem="RoO-bQ-Gx4" secondAttribute="trailing" constant="30" id="eQR-L7-RgQ"/>
+                            <constraint firstItem="RoO-bQ-Gx4" firstAttribute="top" secondItem="AhN-dS-bTV" secondAttribute="bottom" constant="100" id="heG-G8-ga1"/>
                             <constraint firstItem="AhN-dS-bTV" firstAttribute="top" secondItem="g9z-ME-KGz" secondAttribute="top" constant="50" id="qF1-RD-lQn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="Qvv-jY-ZWB" id="Ygv-FI-dbE"/>
+                        <outlet property="containerView" destination="RoO-bQ-Gx4" id="w5H-7h-Nwj"/>
+                        <outlet property="ethnicityLabel" destination="xs0-v4-pct" id="oOQ-QZ-Cal"/>
+                        <outlet property="genderLabel" destination="ZCc-sq-72X" id="O2S-ai-NnX"/>
+                        <outlet property="nickNameLabel" destination="w9p-2b-baQ" id="ZEy-kF-T1O"/>
+                        <outlet property="statusLabel" destination="g7M-mn-zcF" id="YAa-Hs-D0h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPc-ff-EwO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1813" y="4"/>
+            <point key="canvasLocation" x="1812.9770992366412" y="3.5211267605633805"/>
         </scene>
         <!--Login Age View Controller-->
         <scene sceneID="muV-P5-fKL">
@@ -2302,6 +2360,9 @@ the following data</string>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

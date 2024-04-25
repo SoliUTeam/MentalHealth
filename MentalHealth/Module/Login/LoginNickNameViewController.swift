@@ -15,6 +15,7 @@ class LoginNickNameViewController: UIViewController {
         let textField = UITextField()
         textField.placeholder = "Enter your nickname"
         textField.borderStyle = .roundedRect
+        textField.autocorrectionType = .no
         return textField
     }()
 

@@ -47,7 +47,7 @@ class LoginEthnicityViewController: UIViewController {
     override func viewDidLoad() {
         button.isEnabled = false
         addSubView(button)
-        createSelectButton(label: buttonOption.map { $0.rawValue.capitalized }, spacing: 10, constraintWith: titleLabel) { selectedButton, buttonEnabled in
+        createSelectButton(label: buttonOption.map { $0.rawValue.capitalizedEachWord() }, spacing: 10, constraintWith: titleLabel) { selectedButton, buttonEnabled in
             self.selectedButtonIndex = selectedButton
             self.button.isEnabled = buttonEnabled
             LoginManager.shared.setEthnicity(self.buttonOption[self.selectedButtonIndex])

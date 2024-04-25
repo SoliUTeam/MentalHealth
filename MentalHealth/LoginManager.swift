@@ -20,13 +20,13 @@ enum WorkStatus: String {
 }
 
 enum Ethnicity: String {
-    case americanIndian
-    case alaskaNative
+    case americanIndian = "American Indian"
+    case alaskaNative = "Alaska Native"
     case asian
     case black
-    case africanAmerican
-    case nativeHawaiian
-    case otherPacificIslander
+    case africanAmerican = "African American"
+    case nativeHawaiian = "Native Hawaiian"
+    case otherPacificIslander = "Other Pacific Islander"
     case white
     case other
 }
@@ -40,6 +40,7 @@ public class LoginManager {
     private var logInState: Bool = false
     private var nickName: String = "Default"
     private var gender: Gender = .other
+    private var age: Int = 0
     private var workStatus: WorkStatus = .other
     private var ethnicity: Ethnicity = .other
 
@@ -64,7 +65,15 @@ public class LoginManager {
     }
     
     func getGender() -> String {
-        return gender.rawValue
+        return gender.rawValue.capitalizedEachWord()
+    }
+    
+    func setAge(_ age: Int) {
+        self.age = age
+    }
+    
+    func getAge() -> String {
+        return "\(age)"
     }
     
     func setWorkStatus(_ workStatus: WorkStatus) {
@@ -72,7 +81,7 @@ public class LoginManager {
     }
     
     func getWorkStatus() -> String {
-        return workStatus.rawValue
+        return workStatus.rawValue.capitalizedEachWord()
     }
 
     func setEthnicity(_ ethnicity: Ethnicity) {
@@ -80,6 +89,6 @@ public class LoginManager {
     }
     
     func getEthnicity() -> String {
-        return ethnicity.rawValue
+        return ethnicity.rawValue.capitalizedEachWord()
     }
 }

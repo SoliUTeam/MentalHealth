@@ -8,6 +8,38 @@
 import UIKit
 
 class LoginConfirmViewController: UIViewController {
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            self.containerView.backgroundColor = .white
+            self.containerView.addBorderAndColor(color: .soliuBlue, width: 1, corner_radius: 20)
+        }
+    }
+    @IBOutlet weak var nickNameLabel: UILabel! {
+        didSet {
+            self.nickNameLabel.text = "Nickname: \(loginManager.getNickName())"
+        }
+    }
+    @IBOutlet weak var genderLabel: UILabel! {
+        didSet {
+            self.genderLabel.text = "Gender: \(loginManager.getGender())"
+        }
+    }
+    @IBOutlet weak var ageLabel: UILabel! {
+        didSet {
+            self.ageLabel.text = "Age: \(loginManager.getAge())"
+        }
+    }
+    @IBOutlet weak var statusLabel: UILabel! {
+        didSet {
+            self.statusLabel.text = "Status: \(loginManager.getWorkStatus())"
+        }
+    }
+    @IBOutlet weak var ethnicityLabel: UILabel! {
+        didSet {
+            self.ethnicityLabel.text = "Ethnicity: \(loginManager.getEthnicity())"
+        }
+    }
+
     private lazy var button: UIButton = {
         let button = UIButton()
         button.setTitle("Confirm", for: .normal)
@@ -19,9 +51,9 @@ class LoginConfirmViewController: UIViewController {
     
     @objc
     func navigateToHomeScreen() {
-        showAlert(title: "Success", description: "Login Successfull!")
-        //send data to backend
-//        LoginManager.shared.setEthnicity()
+        showAlert(title: "Success", description: "Welcome \(loginManager.getNickName())!")
+        loginManager.setLoggedIn(true)
+        sendUserInfo()
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
             navigationController?.pushViewController(homeTabBarController, animated: true)
@@ -29,6 +61,8 @@ class LoginConfirmViewController: UIViewController {
             print("Can't find homeTabBarController")
         }
     }
+    
+    private var loginManager = LoginManager.shared
     
     override func viewDidLoad() {
         addSubView(button)
@@ -49,5 +83,20 @@ class LoginConfirmViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    // Format: ["Dennis", "male", "29", "employed", "Asian"]
+    func createUserData() -> [String] {
+        var userInfo: [String] = []
+        userInfo.append(loginManager.getNickName())
+        userInfo.append(loginManager.getGender())
+        userInfo.append(loginManager.getAge())
+        userInfo.append(loginManager.getWorkStatus())
+        userInfo.append(loginManager.getEthnicity())
+        return userInfo
+    }
+    
+    func sendUserInfo() {
+        createUserData()
     }
 }
