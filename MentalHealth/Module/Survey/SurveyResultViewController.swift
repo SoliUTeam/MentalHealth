@@ -8,35 +8,39 @@
 import UIKit
 import DGCharts
 
-class SurveyResultViewController: DemoBaseViewController {
+class SurveyResultViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet var chartView: RadarChartView!
     
+    // Image Views
     @IBOutlet var depressionImageView: UIImageView!
-    @IBOutlet var depressionTitleLabel: UILabel!
-    @IBOutlet var depressionScoreLabel: UILabel!
-
     @IBOutlet var anxietyImageView: UIImageView!
-    @IBOutlet var anxietyTitleLabel: UILabel!
-    @IBOutlet var anxietyScoreLabel: UILabel!
-
     @IBOutlet var stressImageView: UIImageView!
-    @IBOutlet var stressTitleLabel: UILabel!
-    @IBOutlet var stressScoreLabel: UILabel!
-
     @IBOutlet var socialMediaAddictionImageView: UIImageView!
-    @IBOutlet var socialMediaAddictionTitleLabel: UILabel!
-    @IBOutlet var socialMediaAddictionScoreLabel: UILabel!
-
     @IBOutlet var lonelinessImageView: UIImageView!
-    @IBOutlet var lonelinessTitleLabel: UILabel!
-    @IBOutlet var lonelinessScoreLabel: UILabel!
-
     @IBOutlet var hrqolImageView: UIImageView!
+
+    // Title Labels
+    @IBOutlet var depressionTitleLabel: UILabel!
+    @IBOutlet var anxietyTitleLabel: UILabel!
+    @IBOutlet var stressTitleLabel: UILabel!
+    @IBOutlet var socialMediaAddictionTitleLabel: UILabel!
+    @IBOutlet var lonelinessTitleLabel: UILabel!
     @IBOutlet var hrqolTitleLabel: UILabel!
+
+    // Score Labels
+    @IBOutlet var depressionScoreLabel: UILabel!
+    @IBOutlet var anxietyScoreLabel: UILabel!
+    @IBOutlet var stressScoreLabel: UILabel!
+    @IBOutlet var socialMediaAddictionScoreLabel: UILabel!
+    @IBOutlet var lonelinessScoreLabel: UILabel!
     @IBOutlet var hrqolScoreLabel: UILabel!
+    
     var myTestScore: [Int:Int] = TestingInformation().exampleSurveyList()
     var allUsersAverageResult: [Int: Int] = TestingInformation().exampleAllSurveyDict()
+    let categories = [0: "Depression", 5: "Anxiety", 10: "Stress", 15: "Loneliness", 20: "Social Media Addiction", 25: "HRQOL"]
+    var shouldHideData = false
+    
     
     private func imageSetup() {
         depressionImageView.image = UIImage(assetIdentifier: .depressionIcon)
@@ -47,31 +51,84 @@ class SurveyResultViewController: DemoBaseViewController {
         hrqolImageView.image = UIImage(assetIdentifier: .hrqolIcon)
     }
     
+    private func labelSetup() {
+        LabelStyle.surveyResultTitle(color: .depressionColor).apply(to: depressionTitleLabel)
+        LabelStyle.surveyResultTitle(color: .anxietyColor).apply(to: anxietyTitleLabel)
+        LabelStyle.surveyResultTitle(color: .stressColor).apply(to: stressTitleLabel)
+        LabelStyle.surveyResultTitle(color: .socialMediaColor).apply(to: socialMediaAddictionTitleLabel)
+        LabelStyle.surveyResultTitle(color: .lonelinessColor).apply(to: lonelinessTitleLabel)
+        LabelStyle.surveyResultTitle(color: .hrqolColor).apply(to: hrqolTitleLabel)
+    }
+    
+    private func colorMapping(category: String) -> UIColor {
+        switch category {
+        case "Depression":
+            return .depressionColor
+        case "Anxiety":
+            return .anxietyColor
+        case "Stress":
+            return .stressColor
+        case "Loneliness":
+            return .lonelinessColor
+        case "Social Media Addiction":
+            return .socialMediaColor
+        case "HRQOL":
+            return .hrqolColor
+        default:
+            return .black
+        }
+    }
+    
+    private func labelResultSetup() {
+        var resultTable: [String: NSAttributedString] = [:]
+        var blackResultString: [NSAttributedString.Key: Any] = [
+            .font: UIFont.boldSystemFont(ofSize: 14),
+            .foregroundColor: UIColor.black
+        ]
+        
+        for (startKey, category) in categories {
+            let range = startKey..<startKey + 5
+            let sum1 = range.reduce(0) { $0 + (myTestScore[$1] ?? 0) }
+            let sum2 = range.reduce(0) { $0 + (allUsersAverageResult[$1] ?? 0) }
+            let avg1 = Double(sum1) / 5.0
+            let avg2 = Double(sum2) / 5.0
+            
+            var combinedString = NSMutableAttributedString()
+            let colorResultString: [NSAttributedString.Key: Any] = [
+                .font: UIFont.boldSystemFont(ofSize: 14),
+                .foregroundColor: self.colorMapping(category: category)
+            ]
+            let partOne = NSAttributedString(string: "\(avg1):", attributes: colorResultString)
+            let partTwo = NSAttributedString(string: "\(avg2)", attributes: blackResultString)
+            
+            combinedString.append(partOne)
+            combinedString.append(partTwo)
+
+            resultTable[category] = combinedString
+        }
+        
+        
+        depressionScoreLabel.attributedText = resultTable["Depression"]
+        anxietyScoreLabel.attributedText = resultTable["Anxiety"]
+        stressScoreLabel.attributedText = resultTable["Stress"]
+        socialMediaAddictionScoreLabel.attributedText = resultTable["Social Media Addiction"]
+        lonelinessScoreLabel.attributedText = resultTable["Loneliness"]
+        hrqolScoreLabel.attributedText = resultTable["HRQOL"]
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "Radar Chart"
         self.imageSetup()
-        
-        //        self.options = [.toggleValues,
-        //                        .toggleHighlight,
-        //                        .toggleHighlightCircle,
-        //                        .toggleXLabels,
-        //                        .toggleYLabels,
-        //                        .toggleRotate,
-        //                        .toggleFilled,
-        //                        .animateX,
-        //                        .animateY,
-        //                        .animateXY,
-        //                        .spin,
-        //                        .saveToGallery,
-        //                        .toggleData]
+        self.labelSetup()
+        labelResultSetup()
         
         chartView.delegate = self
         
         chartView.chartDescription.enabled = false
-        chartView.webLineWidth = 2
-        chartView.innerWebLineWidth = 1
+        chartView.webLineWidth = 0
+        chartView.innerWebLineWidth = 2
         chartView.webColor = .soliuBlack
         chartView.innerWebColor = .lightGray
         chartView.webAlpha = 1
@@ -97,23 +154,13 @@ class SurveyResultViewController: DemoBaseViewController {
         chartView.yAxis.enabled = false
         chartView.legend.enabled = false
         
-//        let l = chartView.legend
-//        l.horizontalAlignment = .left
-//        l.verticalAlignment = .bottom
-//        l.orientation = .horizontal
-//        l.drawInside = false
-//        l.font = .systemFont(ofSize: 10, weight: .light)
-//        l.xEntrySpace = 50
-//        l.yEntrySpace = 50
-//        l.textColor = .black
-        //        chartView.legend = l
         
         self.updateChartData()
         chartView.rotationEnabled = false
         chartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutBack)
     }
     
-    override func updateChartData() {
+     func updateChartData() {
         if self.shouldHideData {
             chartView.data = nil
             return
@@ -123,11 +170,10 @@ class SurveyResultViewController: DemoBaseViewController {
     }
     
     func setChartData() {
-        let categories = [0: "Depression", 5: "Anxiety", 10: "Stress", 15: "Loneliness", 20: "Social Media Addiction", 25: "HRQOL"]
         
         var myResultEntry = [RadarChartDataEntry]()
         var averageResultEntry = [RadarChartDataEntry]()
-        
+
         for (startKey, category) in categories {
             let range = startKey..<startKey + 5
             let sum1 = range.reduce(0) { $0 + (myTestScore[$1] ?? 0) }
@@ -159,53 +205,6 @@ class SurveyResultViewController: DemoBaseViewController {
         data.setValueTextColor(.black)
         
         chartView.data = data
-    }
-    
-    override func optionTapped(_ option: Option) {
-        guard let data = chartView.data else { return }
-        
-        //        switch option {
-        //        case .toggleXLabels:
-        //            chartView.xAxis.drawLabelsEnabled = !chartView.xAxis.drawLabelsEnabled
-        //            chartView.data?.notifyDataChanged()
-        //            chartView.notifyDataSetChanged()
-        //            chartView.setNeedsDisplay()
-        //
-        //        case .toggleYLabels:
-        //            chartView.yAxis.drawLabelsEnabled = !chartView.yAxis.drawLabelsEnabled
-        //            chartView.setNeedsDisplay()
-        //
-        //        case .toggleRotate:
-        //            chartView.rotationEnabled = !chartView.rotationEnabled
-        //
-        //        case .toggleFilled:
-        //            for case let set as RadarChartDataSet in data {
-        //                set.drawFilledEnabled = !set.drawFilledEnabled
-        //            }
-        //
-        //            chartView.setNeedsDisplay()
-        //
-        //        case .toggleHighlightCircle:
-        //            for case let set as RadarChartDataSet in data {
-        //                set.drawHighlightCircleEnabled = !set.drawHighlightCircleEnabled
-        //            }
-        //            chartView.setNeedsDisplay()
-        //
-        //        case .animateX:
-        //            chartView.animate(xAxisDuration: 1.4)
-        //
-        //        case .animateY:
-        //            chartView.animate(yAxisDuration: 1.4)
-        //
-        //        case .animateXY:
-        //            chartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4)
-        //
-        //        case .spin:
-        //            chartView.spin(duration: 2, fromAngle: chartView.rotationAngle, toAngle: chartView.rotationAngle + 360, easingOption: .easeInCubic)
-        //
-        //        default:
-        //            super.handleOption(option, forChartView: chartView)
-        //        }
     }
 }
 

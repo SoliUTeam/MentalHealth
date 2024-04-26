@@ -48,6 +48,7 @@ enum LabelStyle {
     case subtitle
     case body
     case surveyQuestion
+    case surveyResultTitle(color: UIColor)
 
     func apply(to label: UILabel) {
         switch self {
@@ -66,6 +67,11 @@ enum LabelStyle {
         case .surveyQuestion:
             label.font = UIFont.systemFont(ofSize: 12)
             label.textColor = .lightGray
+        
+        case .surveyResultTitle(let color):
+            label.font = UIFont(name: "Roboto-Regular", size: 14)
+            label.textColor = color
         }
     }
 }
+

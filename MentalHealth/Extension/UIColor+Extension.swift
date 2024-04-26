@@ -23,6 +23,12 @@ enum Color: String {
 //  Survey Result Color
     case chartBackground = "#26CCFF"
     case chartAverageBorder = "#1271FF"
+    case depressionColor = "#5D6CF3"
+    case anxietyColor = "#31BC82"
+    case stressColor = "#EC674A"
+    case socialMediaColor = "#783BFA"
+    case lonelinessColor = "#EC9B3C"
+    case hrqolColor = "#EC1C4E"
     
 }
 
@@ -41,6 +47,13 @@ extension UIColor {
 //  Survey Result Color
     static let chartBackground = UIColor(hex: Color.chartBackground.rawValue, alpha: 1)
     static let chartAverageBorder = UIColor(hex: Color.chartAverageBorder.rawValue, alpha: 1)
+    static let depressionColor = UIColor(hex: Color.depressionColor.rawValue, alpha:1)
+    static let anxietyColor = UIColor(hex: Color.anxietyColor.rawValue, alpha:1)
+    static let stressColor = UIColor(hex: Color.stressColor.rawValue, alpha:1)
+    static let socialMediaColor = UIColor(hex: Color.socialMediaColor.rawValue, alpha:1)
+    static let lonelinessColor = UIColor(hex: Color.lonelinessColor.rawValue, alpha:1)
+    static let hrqolColor = UIColor(hex: Color.hrqolColor.rawValue, alpha:1)
+    
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
