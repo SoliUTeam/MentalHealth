@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56i-1v-EJv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56i-1v-EJv">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1474,9 +1474,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwr-Nq-toU">
-                                <rect key="frame" x="16" y="741" width="361" height="61"/>
+                                <rect key="frame" x="16" y="742.33333333333337" width="361" height="59.666666666666629"/>
                                 <string key="text">If your score exceeds the average score in each category, it’s important to examine your weaker areas across the six indicators.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1672,12 +1672,24 @@
                     </view>
                     <connections>
                         <outlet property="anxietyImageView" destination="ky3-8L-0I1" id="bvI-Z9-2RB"/>
+                        <outlet property="anxietyScoreLabel" destination="l0v-xK-tcs" id="hsl-l3-D6P"/>
+                        <outlet property="anxietyTitleLabel" destination="dvV-y2-Yss" id="DEh-yo-bQn"/>
                         <outlet property="chartView" destination="ZYG-Vm-TR4" id="oCA-Ad-tGV"/>
                         <outlet property="depressionImageView" destination="NpY-yy-aNk" id="5sH-ef-lQ3"/>
+                        <outlet property="depressionScoreLabel" destination="foy-p8-oWS" id="r06-99-6Zc"/>
+                        <outlet property="depressionTitleLabel" destination="JW9-Ji-hge" id="Ati-Sj-2dh"/>
                         <outlet property="hrqolImageView" destination="TJy-is-a3j" id="XET-oA-iTK"/>
+                        <outlet property="hrqolScoreLabel" destination="8cn-WB-AHY" id="lwf-DG-eZL"/>
+                        <outlet property="hrqolTitleLabel" destination="0SX-f7-8WD" id="w5A-ma-9lY"/>
                         <outlet property="lonelinessImageView" destination="qEK-kO-vTB" id="RGY-yi-ypB"/>
+                        <outlet property="lonelinessScoreLabel" destination="9oH-sz-Eeh" id="mQv-Ib-YOU"/>
+                        <outlet property="lonelinessTitleLabel" destination="Op8-m2-yKo" id="19N-ee-7pv"/>
                         <outlet property="socialMediaAddictionImageView" destination="V2F-DJ-QTE" id="VHK-wr-rtp"/>
+                        <outlet property="socialMediaAddictionScoreLabel" destination="A1P-yg-YjX" id="f1R-8W-fGm"/>
+                        <outlet property="socialMediaAddictionTitleLabel" destination="Bb7-78-cDs" id="qpl-tP-80a"/>
                         <outlet property="stressImageView" destination="4ie-bd-AO3" id="xDT-y5-G9w"/>
+                        <outlet property="stressScoreLabel" destination="dBW-Ld-Fby" id="ioo-qH-rg1"/>
+                        <outlet property="stressTitleLabel" destination="XkJ-tU-b4Q" id="iTz-JC-osg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxn-Rh-BJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2350,22 +2362,22 @@ the following data</string>
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
