@@ -20,7 +20,6 @@
 		67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */; };
 		67ED8A3F2BCF8ACC00E37950 /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */; };
 		67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064942B9D0DE200400013 /* FBNetworkLayer.swift */; };
-		67F064972B9D121A00400013 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67F064962B9D121A00400013 /* GoogleService-Info.plist */; };
 		67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */; };
 		953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EC2B6EDFA000651684 /* AppDelegate.swift */; };
 		953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EE2B6EDFA000651684 /* SceneDelegate.swift */; };
@@ -82,7 +81,6 @@
 		67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
 		67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
 		67F064942B9D0DE200400013 /* FBNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkLayer.swift; sourceTree = "<group>"; };
-		67F064962B9D121A00400013 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthQuestion.swift; sourceTree = "<group>"; };
 		953A64E92B6EDFA000651684 /* MentalHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953A64EC2B6EDFA000651684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 				95CEFFD52B6F667A00C527D1 /* StoryBoard */,
 				95B1CEF62B6FD57D00101423 /* Common */,
 				953A64FA2B6EDFA200651684 /* Info.plist */,
-				67F064962B9D121A00400013 /* GoogleService-Info.plist */,
 				95D293A32BCD0CB800017E03 /* LoginManager.swift */,
 			);
 			path = MentalHealth;
@@ -432,7 +429,6 @@
 				953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */,
 				67ED8A3F2BCF8ACC00E37950 /* RadarMarkerView.xib in Resources */,
 				953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */,
-				67F064972B9D121A00400013 /* GoogleService-Info.plist in Resources */,
 				675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */,
 				953A64F42B6EDFA000651684 /* Main.storyboard in Resources */,
 				95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */,
