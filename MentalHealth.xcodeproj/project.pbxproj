@@ -7,26 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */; };
+		6700875B2BDF4E94000EB39C /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6700875A2BDF4E94000EB39C /* UIFont+Extension.swift */; };
+		670087AA2BDF637E000EB39C /* CalendarPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D293B42BCF9C0A00017E03 /* CalendarPopUpView.xib */; };
+		670087AB2BDF637E000EB39C /* SurveyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */; };
+		670087AC2BDF637E000EB39C /* SurveyNextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */; };
+		670087AD2BDF637E000EB39C /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */; };
+		670087B22BDF637E000EB39C /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
+		670087B32BDF637E000EB39C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
+		670087B42BDF637E000EB39C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F22B6EDFA000651684 /* Main.storyboard */; };
+		670087B52BDF637E000EB39C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
+		670087C52BDF6754000EB39C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 670087C12BDF6754000EB39C /* Roboto-Black.ttf */; };
+		670087C62BDF6754000EB39C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 670087C22BDF6754000EB39C /* Roboto-Regular.ttf */; };
+		670087C72BDF6754000EB39C /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 670087C32BDF6754000EB39C /* Roboto-Medium.ttf */; };
+		670087C82BDF6754000EB39C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 670087C42BDF6754000EB39C /* Roboto-Bold.ttf */; };
 		679D23862BB52015004CAA61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D23852BB52015004CAA61 /* User.swift */; };
 		67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */; };
 		67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */; };
 		67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253F2BBA262B00C27F21 /* TestingInformation.swift */; };
 		67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525412BBA285200C27F21 /* CellReusable+Extension.swift */; };
 		67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */; };
-		67E525472BBA29BD00C27F21 /* SurveyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */; };
 		67ED8A372BCF81B000E37950 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 67ED8A362BCF81B000E37950 /* DGCharts */; };
 		67ED8A3B2BCF886700E37950 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */; };
 		67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */; };
-		67ED8A3F2BCF8ACC00E37950 /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */; };
 		67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064942B9D0DE200400013 /* FBNetworkLayer.swift */; };
 		67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */; };
 		953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EC2B6EDFA000651684 /* AppDelegate.swift */; };
 		953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EE2B6EDFA000651684 /* SceneDelegate.swift */; };
 		953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* HomeViewController.swift */; };
-		953A64F42B6EDFA000651684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F22B6EDFA000651684 /* Main.storyboard */; };
-		953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
-		953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 		95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A072BBE69810003C584 /* UIViewController+Extension.swift */; };
 		95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 95433A0A2BBF77C40003C584 /* DGCharts */; };
@@ -56,19 +63,22 @@
 		95C72BEB2BD753B900ED178F /* LoginAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BEA2BD753B900ED178F /* LoginAgeViewController.swift */; };
 		95C804372BD9BA0C00743FA5 /* CustomSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C804362BD9BA0C00743FA5 /* CustomSelectButton.swift */; };
 		95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C804382BD9C8F400743FA5 /* LoginNickNameViewController.swift */; };
-		95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 		95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A12BCD038200017E03 /* LogInViewController.swift */; };
 		95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293A32BCD0CB800017E03 /* LoginManager.swift */; };
 		95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95D293A62BCE347100017E03 /* SwiftEntryKit */; };
 		95D293AC2BCE36B000017E03 /* MyDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */; };
 		95D293B32BCF976000017E03 /* CalendarPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293B22BCF976000017E03 /* CalendarPopUpViewController.swift */; };
-		95D293B52BCF9C0A00017E03 /* CalendarPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D293B42BCF9C0A00017E03 /* CalendarPopUpView.xib */; };
 		95D293B72BCF9C6700017E03 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293B62BCF9C6600017E03 /* NSObject+Extension.swift */; };
 		95D293B92BCF9C8E00017E03 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293B82BCF9C8E00017E03 /* UIView+Extention.swift */; };
 		95D293BB2BCF9CAF00017E03 /* CalendarPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D293BA2BCF9CAF00017E03 /* CalendarPopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6700875A2BDF4E94000EB39C /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		670087C12BDF6754000EB39C /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "../../../../../../Downloads/Roboto/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		670087C22BDF6754000EB39C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		670087C32BDF6754000EB39C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../../../Downloads/Roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		670087C42BDF6754000EB39C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../../../Downloads/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		679D23852BB52015004CAA61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +153,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		670087C02BDF666F000EB39C /* FontList */ = {
+			isa = PBXGroup;
+			children = (
+				670087C12BDF6754000EB39C /* Roboto-Black.ttf */,
+				670087C42BDF6754000EB39C /* Roboto-Bold.ttf */,
+				670087C32BDF6754000EB39C /* Roboto-Medium.ttf */,
+				670087C22BDF6754000EB39C /* Roboto-Regular.ttf */,
+			);
+			path = FontList;
+			sourceTree = "<group>";
+		};
 		67E5253E2BBA260E00C27F21 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +274,7 @@
 				95D293B82BCF9C8E00017E03 /* UIView+Extention.swift */,
 				67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */,
 				67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */,
+				6700875A2BDF4E94000EB39C /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -312,6 +334,7 @@
 		95CEFFD12B6F358D00C527D1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				670087C02BDF666F000EB39C /* FontList */,
 				95CEFFD22B6F35B000C527D1 /* Animations */,
 				953A64F52B6EDFA200651684 /* Assets.xcassets */,
 			);
@@ -352,7 +375,7 @@
 			buildPhases = (
 				953A64E52B6EDFA000651684 /* Sources */,
 				953A64E62B6EDFA000651684 /* Frameworks */,
-				953A64E72B6EDFA000651684 /* Resources */,
+				670087A92BDF6360000EB39C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -421,18 +444,22 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		953A64E72B6EDFA000651684 /* Resources */ = {
+		670087A92BDF6360000EB39C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E525472BBA29BD00C27F21 /* SurveyListViewCell.xib in Resources */,
-				953A64F92B6EDFA200651684 /* LaunchScreen.storyboard in Resources */,
-				67ED8A3F2BCF8ACC00E37950 /* RadarMarkerView.xib in Resources */,
-				953A64F62B6EDFA200651684 /* Assets.xcassets in Resources */,
-				675D54412BC5A59C00756AD4 /* SurveyNextButtonCell.xib in Resources */,
-				953A64F42B6EDFA000651684 /* Main.storyboard in Resources */,
-				95CEFFD42B6F365600C527D1 /* LaunchAnimation.json in Resources */,
-				95D293B52BCF9C0A00017E03 /* CalendarPopUpView.xib in Resources */,
+				670087AA2BDF637E000EB39C /* CalendarPopUpView.xib in Resources */,
+				670087AB2BDF637E000EB39C /* SurveyListViewCell.xib in Resources */,
+				670087C82BDF6754000EB39C /* Roboto-Bold.ttf in Resources */,
+				670087C62BDF6754000EB39C /* Roboto-Regular.ttf in Resources */,
+				670087AC2BDF637E000EB39C /* SurveyNextButtonCell.xib in Resources */,
+				670087AD2BDF637E000EB39C /* RadarMarkerView.xib in Resources */,
+				670087B22BDF637E000EB39C /* LaunchAnimation.json in Resources */,
+				670087C52BDF6754000EB39C /* Roboto-Black.ttf in Resources */,
+				670087B32BDF637E000EB39C /* Assets.xcassets in Resources */,
+				670087C72BDF6754000EB39C /* Roboto-Medium.ttf in Resources */,
+				670087B42BDF637E000EB39C /* Main.storyboard in Resources */,
+				670087B52BDF637E000EB39C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +507,7 @@
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
 				67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */,
 				95D293AC2BCE36B000017E03 /* MyDiaryViewController.swift in Sources */,
+				6700875B2BDF4E94000EB39C /* UIFont+Extension.swift in Sources */,
 				95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */,
 				67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */,
 				95D293B32BCF976000017E03 /* CalendarPopUpViewController.swift in Sources */,
@@ -632,7 +660,7 @@
 				DEVELOPMENT_ASSET_PATHS = MentalHealth/Assets/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MentalHealth/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MentalHealth/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -666,7 +694,7 @@
 				DEVELOPMENT_ASSET_PATHS = MentalHealth/Assets/Assets.xcassets;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MentalHealth/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MentalHealth/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;

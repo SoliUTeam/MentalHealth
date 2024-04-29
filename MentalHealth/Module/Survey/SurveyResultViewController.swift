@@ -98,7 +98,7 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
                 .font: UIFont.boldSystemFont(ofSize: 14),
                 .foregroundColor: self.colorMapping(category: category)
             ]
-            let partOne = NSAttributedString(string: "\(avg1):", attributes: colorResultString)
+            let partOne = NSAttributedString(string: "\(avg1) : ", attributes: colorResultString)
             let partTwo = NSAttributedString(string: "\(avg2)", attributes: blackResultString)
             
             combinedString.append(partOne)
