@@ -662,7 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = MentalHealth/Assets/Assets.xcassets;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M5Z7JPLW6N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MentalHealth/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
@@ -696,7 +696,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = MentalHealth/Assets/Assets.xcassets;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = M5Z7JPLW6N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/MentalHealth/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
