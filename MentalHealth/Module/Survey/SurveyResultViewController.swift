@@ -41,6 +41,13 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
     let categories = [0: "Depression", 5: "Anxiety", 10: "Stress", 15: "Loneliness", 20: "Social Media Addiction", 25: "HRQOL"]
     var shouldHideData = false
     
+    override func viewDidLayoutSubviews() {
+//        chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -100).isActive = true
+//            chartView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100).isActive = true
+//            chartView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -100).isActive = true
+//            chartView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+    }
+    
     
     private func imageSetup() {
         depressionImageView.image = UIImage(assetIdentifier: .depressionIcon)

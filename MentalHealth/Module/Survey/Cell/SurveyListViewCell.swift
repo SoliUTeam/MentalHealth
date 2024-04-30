@@ -12,9 +12,36 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
     
     @IBOutlet var surveyQuestionLabel: UILabel! {
         didSet {
-            surveyQuestionLabel.font = UIFont.customFont(fontType: .bold, size: 20)
+            surveyQuestionLabel.font = .surveyQuestionTitle
         }
     }
+    
+    @IBOutlet var surveyAnswerLabel1: UILabel! {
+        didSet{
+            surveyAnswerLabel1.font = .surveyAnswerFont
+        }
+    }
+    @IBOutlet var surveyAnswerLabel2: UILabel! {
+        didSet{
+            surveyAnswerLabel2.font = .surveyAnswerFont
+        }
+    }
+    @IBOutlet var surveyAnswerLabel3: UILabel! {
+        didSet{
+            surveyAnswerLabel3.font = .surveyAnswerFont
+        }
+    }
+    @IBOutlet var surveyAnswerLabel4: UILabel! {
+        didSet{
+            surveyAnswerLabel4.font = .surveyAnswerFont
+        }
+    }
+    @IBOutlet var surveyAnswerLabel5: UILabel! {
+        didSet{
+            surveyAnswerLabel5.font = .surveyAnswerFont
+        }
+    }
+    
     @IBOutlet var surveyAnswerImage1: UIImageView!
     @IBOutlet var surveyAnswerImage2: UIImageView!
     @IBOutlet var surveyAnswerImage3: UIImageView!
@@ -30,6 +57,32 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
     func populate(testQuestion: TestQuestion) {
         self.testQuestion = testQuestion
         surveyQuestionLabel.text = testQuestion.question
+        setupSureyAnswer(testQuestion.questionNumber)
+        
+    }
+    
+    private func setupSureyAnswer(_ testquestionNumber: Int) {
+        switch testquestionNumber {
+        case 25:
+            surveyAnswerLabel1.text = "Poor"
+            surveyAnswerLabel2.text = "Fair"
+            surveyAnswerLabel3.text = "Good"
+            surveyAnswerLabel4.text = "Very good"
+            surveyAnswerLabel5.text = "Excellent"
+            
+        case 26...29:
+            surveyAnswerLabel1.text = "Very frequently\n(21-30 days)"
+            surveyAnswerLabel2.text = "Frequently\n(11-20 days)"
+            surveyAnswerLabel3.text = "Occasionally\n(6-10 days)"
+            surveyAnswerLabel4.text = "Rarely\n(1-5 days)"
+            surveyAnswerLabel5.text = "Never\n(0 days)"
+        default:
+            surveyAnswerLabel1.text = "Very Rarely"
+            surveyAnswerLabel2.text = "Rarely"
+            surveyAnswerLabel3.text = "Sometimes"
+            surveyAnswerLabel4.text = "Often"
+            surveyAnswerLabel5.text = "Very Often"
+        }
     }
 
     private func setupImageMappings() {

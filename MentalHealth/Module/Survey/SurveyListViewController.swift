@@ -30,6 +30,7 @@ class SurveyListViewController: UIViewController {
         super.viewDidLoad()
         fetchQuestions()
         setCustomBackNavigationButton()
+        customizeNavigationBar()
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
         self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
         updateTitle()
@@ -38,6 +39,23 @@ class SurveyListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    private func customizeNavigationBar() {
+        navigationController?.navigationBar.barTintColor = .soliuBlue
+        navigationController?.navigationBar.tintColor = .white
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.backgroundColor = .soliuBlue
+        let backButtonImage = UIImage(assetIdentifier: .whiteBackButton)
+        navigationController?.navigationBar.backIndicatorImage = backButtonImage
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        let maskLayer = CAShapeLayer()
+           maskLayer.path = UIBezierPath(roundedRect: navigationController!.navigationBar.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10.0, height: 10.0)).cgPath
+           navigationController?.navigationBar.layer.mask = maskLayer
+
     }
     
     private func updateTitle() {
@@ -64,11 +82,11 @@ class SurveyListViewController: UIViewController {
     }
     
     private func nextButtonPressed() {
-        if selectedQuestionId == 4 {
+        if selectedQuestionId == 5 {
             return
         }
         selectedQuestionId = selectedQuestionId + 1
-        if selectedQuestionId == 4 {
+        if selectedQuestionId == 5 {
             readyToSubmit = true
         }
         reorderQuestion()
@@ -143,31 +161,16 @@ extension SurveyListViewController: SurveyNextButtonCellDelegate {
         self.nextButtonPressed()
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
-//            surveyResultVC.myTestScore = surveyResultRecord
-//          Example Testing
-            surveyResultVC.myTestScore =  TestingInformation().exampleSurveyList()
+            surveyResultVC.myTestScore = surveyResultRecord
             navigationController?.pushViewController(surveyResultVC, animated: true)
+//            if (surveyResultRecord.count  == 30) {
+//                navigationController?.pushViewController(surveyResultVC, animated: true)
+//            }
             
         } else {
             print("Can't find storyboard")
         }
     }
-        
-////      Display SurveyListViewController
-//        if surveyResultRecord.count == 25 { // Make sure all questions are answered
-//                self.submitResult()
-//                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//                if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
-//                    surveyResultVC.myTestResult = surveyResultRecord
-//                    navigationController?.pushViewController(surveyResultVC, animated: true)
-//                    
-//                } else {
-//                    print("Can't find storyboard")
-//                }
-//            } else {
-//                print("Survey not complete")
-//            }
-//    }
 }
 
 

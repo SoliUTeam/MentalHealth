@@ -40,10 +40,10 @@ class TestingInformation {
         TestQuestion(id: 4, questionNumber: 24, type: "Social Media Addiction", question: "You use social media so much that it has had a negative impact on your job/studies."),
         
          TestQuestion(id: 5, questionNumber: 25, type: "HQ", question: "Would you say that in general your health is excellent, very good, good, fair, or poor?"),
-         TestQuestion(id: 5, questionNumber: 26, type: "Social Media Addiction", question: "Now thinking about your physical health, which includes physical illness and injury, how many days during the past 30 days was your physical health not good?"),
-         TestQuestion(id: 5, questionNumber: 27, type: "Social Media Addiction", question: "Now thinking about your mental health, which includes stress, depression, and problems with emotions, how many days during the past 30 days was your mental health not good?"),
-         TestQuestion(id: 5, questionNumber: 28, type: "Social Media Addiction", question: "During the past 30 days, approximately how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?"),
-         TestQuestion(id: 5, questionNumber: 29, type: "Social Media Addiction", question: "During the past 30 days, approximately how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?")
+         TestQuestion(id: 5, questionNumber: 26, type: "HQ", question: "Now thinking about your physical health, which includes physical illness and injury, how many days during the past 30 days was your physical health not good?"),
+         TestQuestion(id: 5, questionNumber: 27, type: "HQ", question: "Now thinking about your mental health, which includes stress, depression, and problems with emotions, how many days during the past 30 days was your mental health not good?"),
+         TestQuestion(id: 5, questionNumber: 28, type: "HQ", question: "During the past 30 days, approximately how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?"),
+         TestQuestion(id: 5, questionNumber: 29, type: "HQ", question: "During the past 30 days, approximately how many days did poor physical or mental health keep you from doing your usual activities, such as self-care, work, or recreation?")
     ]
     
     func createTestingSurveyQuestion() -> [TestQuestion] {

@@ -60,6 +60,8 @@ enum SurveyImage: String {
     case socialmediaIcon
     case lonelinessIcon
     case hrqolIcon
+    
+    case whiteBackButton
 }
 
 

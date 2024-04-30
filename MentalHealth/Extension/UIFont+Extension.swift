@@ -18,6 +18,9 @@ enum RobotoFont: String {
 
 extension UIFont {
     
+    static let surveyAnswerFont = customFont(fontType: .regular, size: 10)
+    static let surveyQuestionTitle = customFont(fontType: .bold, size: 16)
+    
     static func customFont(fontType: RobotoFont, size: CGFloat, fallbackFont: UIFont = .systemFont(ofSize: 10)) -> UIFont {
         guard let font = UIFont(name: fontType.rawValue, size: size) else {
             print("Failed to load font: \(fontType.rawValue). Reverting to system font.")
