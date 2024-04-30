@@ -10,7 +10,11 @@ import UIKit
 
 class SurveyListViewCell: UITableViewCell, CellReusable {
     
-    @IBOutlet var surveyQuestionLabel: UILabel!
+    @IBOutlet var surveyQuestionLabel: UILabel! {
+        didSet {
+            surveyQuestionLabel.font = UIFont.customFont(fontType: .bold, size: 20)
+        }
+    }
     @IBOutlet var surveyAnswerImage1: UIImageView!
     @IBOutlet var surveyAnswerImage2: UIImageView!
     @IBOutlet var surveyAnswerImage3: UIImageView!
