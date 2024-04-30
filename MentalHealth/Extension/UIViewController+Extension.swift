@@ -8,27 +8,8 @@
 import UIKit
 import SwiftEntryKit
 
+/// General Extension
 extension UIViewController {
-    func applyBoader(_ view: [UIView], with color: UIColor = UIColor.viewBorder, backgroundColor: UIColor = .clear) {
-        view.forEach { view in
-            view.layer.borderColor = color.cgColor
-            view.layer.cornerRadius = 12
-            view.layer.borderWidth = 1
-            view.backgroundColor = backgroundColor
-        }
-    }
-
-    func applyBoader(_ view: UIView, with color: UIColor = UIColor.viewBorder, backgroundColor: UIColor = .clear) {
-        view.layer.borderColor = color.cgColor
-        view.layer.cornerRadius = 12
-        view.layer.borderWidth = 1
-        view.backgroundColor = backgroundColor
-    }
-
-    func makeCircleShape(_ view: UIView) {
-        view.layer.cornerRadius = view.layer.frame.size.width/2
-    }
-
     func getCurrentMonthAndDate() -> String {
         let currentDate = Date()
         let dateFormatter = DateFormatter()
@@ -52,6 +33,7 @@ extension UIViewController {
     }
 }
 
+/// Navigation Extension
 extension UIViewController {
     func tapAction(_ view: UIView, selector: Selector) {
         view.isUserInteractionEnabled = true
@@ -61,7 +43,28 @@ extension UIViewController {
     }
 }
 
+/// UI Extension
 extension UIViewController {
+    func applyBoader(_ view: [UIView], with color: UIColor = UIColor.viewBorder, backgroundColor: UIColor = .clear) {
+        view.forEach { view in
+            view.layer.borderColor = color.cgColor
+            view.layer.cornerRadius = 12
+            view.layer.borderWidth = 1
+            view.backgroundColor = backgroundColor
+        }
+    }
+
+    func applyBoader(_ view: UIView, with color: UIColor = UIColor.viewBorder, backgroundColor: UIColor = .clear) {
+        view.layer.borderColor = color.cgColor
+        view.layer.cornerRadius = 12
+        view.layer.borderWidth = 1
+        view.backgroundColor = backgroundColor
+    }
+
+    func makeCircleShape(_ view: UIView) {
+        view.layer.cornerRadius = view.layer.frame.size.width/2
+    }
+
     func showAlert(title: String, description: String) {
         var attributes = EKAttributes.topFloat
         attributes.entryBackground = .color(color: .white)
@@ -126,6 +129,7 @@ extension UIViewController {
     }
 }
 
+/// Set Navigation Back Button Extension
 extension UIViewController {
     func setCustomBackNavigationButton(_ selector: Selector = #selector(UINavigationController.popViewController(animated:))) {
         let backButton = UIBarButtonItem(image: UIImage(assetIdentifier: .backArrow),

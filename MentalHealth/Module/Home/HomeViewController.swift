@@ -19,7 +19,9 @@ class HomeViewController: UIViewController {
     }
     @IBOutlet weak var wiseLabel: UILabel! {
         didSet {
-            wiseLabel.animate(newTexts: changeWiseLabelString())
+            if let quote = getRandomQuote() {
+                wiseLabel.animate(newTexts: quote)
+            }
         }
     }
     @IBOutlet weak var calendarButton: UIButton!
@@ -177,14 +179,6 @@ class HomeViewController: UIViewController {
         attributes.statusBar = .ignored
         let myCustomView: CalendarPopUpView = CalendarPopUpView.fromNib()
         SwiftEntryKit.display(entry: CalendarPopUpViewController(with: myCustomView), using: attributes)
-    }
-
-    func changeWiseLabelString() -> [String] {
-        var quoteArray = [String]()
-        for text in InspiringQuote.allCases {
-            quoteArray.append(text.rawValue)
-        }
-        return quoteArray
     }
     
     func getQuestionLabelText() -> String {
