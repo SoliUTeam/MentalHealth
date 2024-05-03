@@ -61,7 +61,7 @@ class TestingInformation {
     func exampleAllSurveyDict() -> [Int:Int] {
         var results = [Int: Int]()
             for key in 0..<testCount {
-                results[key] = 4
+                results[key] = (Int.random(in: 1..<5))
             }
             return results
     }

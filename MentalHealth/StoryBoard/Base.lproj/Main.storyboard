@@ -1472,8 +1472,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYG-Vm-TR4" customClass="RadarChartView" customModule="DGCharts">
-                                <rect key="frame" x="0.0" y="59" width="393" height="359"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYG-Vm-TR4" customClass="TKRadarChart" customModule="MentalHealth" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="409"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwr-Nq-toU">
@@ -1484,7 +1484,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zDo-Yw-Ja4">
-                                <rect key="frame" x="16" y="426" width="361" height="166"/>
+                                <rect key="frame" x="16" y="476" width="361" height="166"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfD-qC-GHr">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="26"/>
@@ -1668,7 +1668,7 @@
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="Otf-79-cuH"/>
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="top" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="8" id="Ryo-LA-iKZ"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="ZYG-Vm-TR4" secondAttribute="trailing" id="XjZ-Qo-X84"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="400" id="iTy-eZ-U6t"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="350" id="iTy-eZ-U6t"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="vwr-Nq-toU" secondAttribute="bottom" constant="32" id="io4-sQ-iFq"/>
                             <constraint firstItem="vwr-Nq-toU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="16" id="qYK-rI-dzN"/>
                         </constraints>
@@ -1677,7 +1677,7 @@
                         <outlet property="anxietyImageView" destination="ky3-8L-0I1" id="bvI-Z9-2RB"/>
                         <outlet property="anxietyScoreLabel" destination="l0v-xK-tcs" id="hsl-l3-D6P"/>
                         <outlet property="anxietyTitleLabel" destination="dvV-y2-Yss" id="DEh-yo-bQn"/>
-                        <outlet property="chartView" destination="ZYG-Vm-TR4" id="oCA-Ad-tGV"/>
+                        <outlet property="chart" destination="ZYG-Vm-TR4" id="vyq-St-Hy3"/>
                         <outlet property="depressionImageView" destination="NpY-yy-aNk" id="5sH-ef-lQ3"/>
                         <outlet property="depressionScoreLabel" destination="foy-p8-oWS" id="r06-99-6Zc"/>
                         <outlet property="depressionTitleLabel" destination="JW9-Ji-hge" id="Ati-Sj-2dh"/>

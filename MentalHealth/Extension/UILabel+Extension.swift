@@ -67,7 +67,7 @@ enum LabelStyle {
             label.textColor = .lightGray
             
         case .surveyResultTitle(let color):
-            label.font = UIFont(name: "Roboto-Regular", size: 14)
+            label.font = UIFont(name: "Roboto-Bold", size: 14)
             label.textColor = color
         }
     }

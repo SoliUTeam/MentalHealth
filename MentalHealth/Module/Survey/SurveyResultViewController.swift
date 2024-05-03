@@ -6,11 +6,17 @@
 //
 
 import UIKit
-import DGCharts
 
-class SurveyResultViewController: UIViewController, ChartViewDelegate {
+class SurveyResultViewController: UIViewController {
     
-    @IBOutlet var chartView: RadarChartView!
+    @IBOutlet var chart: TKRadarChart! {
+        didSet{
+            chart.configuration.borderWidth = 3
+            chart.configuration.lineWidth = 0.5
+            chart.configuration.showBorder = true
+            chart.configuration.showBgLine = true
+        }
+    }
     @IBOutlet var stackView: UIStackView!
     
     // Image Views
@@ -41,14 +47,28 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
     var allUsersAverageResult: [Int: Int] = TestingInformation().exampleAllSurveyDict()
     let categories = [0: "Depression", 5: "Anxiety", 10: "Stress", 15: "Loneliness", 20: "Social Media Addiction", 25: "HRQOL"]
     var shouldHideData = false
+    var scoreResults: [Int: [Double]] = [:]
+
     
-    override func viewDidLayoutSubviews() {
-//        chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -100).isActive = true
-//            chartView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100).isActive = true
-//            chartView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -100).isActive = true
-//            chartView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
-    }
     
+    private func stringForValue(_ index: Int) -> String {
+            switch index {
+            case 0:
+                return "Depression"
+            case 1:
+                return "Anxiety"
+            case 2:
+                return "Stress"
+            case 3:
+                return "Loneliness"
+            case 4:
+                return "Addiction"
+            case 5:
+                return "HRQOL"
+            default:
+                return ""
+            }
+        }
     
     private func imageSetup() {
         depressionImageView.image = UIImage(assetIdentifier: .depressionIcon)
@@ -59,6 +79,19 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
         hrqolImageView.image = UIImage(assetIdentifier: .hrqolIcon)
     }
     
+    private func setupScoreResult() {
+        scoreResults[0] = []
+        scoreResults[1] = []
+        for (startKey, category) in categories {
+            let range = startKey..<startKey + 5
+            let sum1 = range.reduce(0) { $0 + (myTestScore[$1] ?? 0) }
+            let sum2 = range.reduce(0) { $0 + (allUsersAverageResult[$1] ?? 0) }
+            let myAvg1 = Double(sum1) / 5.0
+            let allAvg1 = Double(sum2) / 5.0
+            scoreResults[0]?.append(myAvg1)
+            scoreResults[1]?.append(allAvg1)
+        }
+    }
     private func labelSetup() {
         LabelStyle.surveyResultTitle(color: .depressionColor).apply(to: depressionTitleLabel)
         LabelStyle.surveyResultTitle(color: .anxietyColor).apply(to: anxietyTitleLabel)
@@ -115,111 +148,81 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
         hrqolScoreLabel.attributedText = resultTable["HRQOL"]
     }
     
+    private func chartSetup() {
+        let w = view.bounds.width
+        chart.configuration.radius = w/3
+        chart.dataSource = self
+        chart.delegate = self
+        chart.center = view.center
+        chart.reloadData()
+        view.addSubview(chart)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupScoreResult()
         self.title = "Test Result"
         self.imageSetup()
         self.labelSetup()
         labelResultSetup()
-        
-        chartView.delegate = self
-        chartView.draw(CGRect(x: 0, y: 0, width: 400, height: 400))
-        chartView.chartDescription.enabled = false
-        chartView.webLineWidth = 0
-        chartView.innerWebLineWidth = 2
-        chartView.webColor = .soliuBlack
-        chartView.innerWebColor = .lightGray
-        chartView.webAlpha = 1
-        chartView.minOffset = 0
-       
-        
-        let marker = RadarMarkerView.viewFromXib()!
-        marker.chartView = chartView
-        chartView.marker = marker
-        
-        let xAxis = chartView.xAxis
-        xAxis.labelFont = .customFont(fontType: .bold, size: 12)
-        xAxis.xOffset = 0
-        xAxis.yOffset = 0
-        xAxis.valueFormatter = self
-        xAxis.labelTextColor = .black
-        
-        chartView.yAxis.enabled = false
-        chartView.legend.enabled = false
-        
-        
-        self.updateChartData()
-        chartView.rotationEnabled = false
-        chartView.animate(xAxisDuration: 1.4, yAxisDuration: 1.4, easingOption: .easeOutBack)
-    }
-    
-     func updateChartData() {
-        if self.shouldHideData {
-            chartView.data = nil
-            return
-        }
-        
-        self.setChartData()
-    }
-    
-    func setChartData() {
-        
-        var myResultEntry = [RadarChartDataEntry]()
-        var averageResultEntry = [RadarChartDataEntry]()
-
-        for (startKey, category) in categories {
-            let range = startKey..<startKey + 5
-            let sum1 = range.reduce(0) { $0 + (myTestScore[$1] ?? 0) }
-            let sum2 = range.reduce(0) { $0 + (allUsersAverageResult[$1] ?? 0) }
-            let avg1 = Double(sum1) / 5.0
-            let avg2 = Double(sum2) / 5.0
-            myResultEntry.append(RadarChartDataEntry(value: avg1))
-            averageResultEntry.append(RadarChartDataEntry(value: avg2))
-        }
-        
-        let set1 = RadarChartDataSet(entries: myResultEntry, label: "My Result")
-        set1.setColor(.chartBackground)
-        set1.fillColor = .chartBackground
-        set1.drawFilledEnabled = true
-        set1.lineWidth = 2
-        set1.drawHighlightCircleEnabled = true
-        set1.setDrawHighlightIndicators(false)
-        
-        let set2 = RadarChartDataSet(entries: averageResultEntry, label: "Average")
-        set2.setColor(.chartAverageBorder)
-        set2.drawFilledEnabled = false
-        set2.lineWidth = 3
-        set2.drawHighlightCircleEnabled = true
-        set2.setDrawHighlightIndicators(false)
-        
-        let data: RadarChartData = RadarChartData(dataSets: [set1, set2])
-        data.setValueFont(.systemFont(ofSize: 8, weight: .light))
-        data.setDrawValues(true)
-        data.setValueTextColor(.black)
-        
-        chartView.data = data
+        chartSetup()
     }
 }
 
-extension SurveyResultViewController: AxisValueFormatter {
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        let index = Int(value)
-        switch index {
-        case 0:
-            return "Depression"
-        case 1:
-            return "Anxiety"
-        case 2:
-            return "Stress"
-        case 3:
-            return "Loneliness"
-        case 4:
-            return "Social Media Addiction"
-        case 5:
-            return "HRQOL"
-        default:
-            return ""
+extension SurveyResultViewController: TKRadarChartDataSource, TKRadarChartDelegate, UITableViewDelegate {
+    func numberOfStepForRadarChart(_ radarChart: TKRadarChart) -> Int {
+//      Max value
+        return 5
+    }
+    func numberOfRowForRadarChart(_ radarChart: TKRadarChart) -> Int {
+//      Row value
+        return 6
+    }
+    
+    func numberOfSectionForRadarChart(_ radarChart: TKRadarChart) -> Int {
+        return 2
+    }
+
+    func titleOfRowForRadarChart(_ radarChart: TKRadarChart, row: Int) -> String {
+        return stringForValue(row)
+    }
+
+    func valueOfSectionForRadarChart(withRow row: Int, section: Int) -> CGFloat {
+        if let averages = scoreResults[section], row < averages.count {
+                return CGFloat(averages[row])
+            } else {
+                // Return a default value or handle the error as appropriate.
+                return 0.0
+            }
+    }
+
+
+    func colorOfLineForRadarChart(_ radarChart: TKRadarChart) -> UIColor {
+        return .gray.withAlphaComponent(0.7)
+    }
+
+    func colorOfFillStepForRadarChart(_ radarChart: TKRadarChart, step: Int) -> UIColor {
+        return UIColor.clear
+    }
+
+    func colorOfSectionFillForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor {
+        if section == 0 {
+            return .chartMyScoreFill.withAlphaComponent(0.60)
+        } else {
+            return UIColor.clear
         }
+    }
+
+    func colorOfSectionBorderForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor {
+        if section == 0 {
+            return UIColor.clear
+        } else {
+            return .red
+        }
+    }
+
+    func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont {
+        return UIFont.boldSystemFont(ofSize: 12)
     }
 }
