@@ -11,6 +11,7 @@ import DGCharts
 class SurveyResultViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet var chartView: RadarChartView!
+    @IBOutlet var stackView: UIStackView!
     
     // Image Views
     @IBOutlet var depressionImageView: UIImageView!
@@ -67,23 +68,14 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
         LabelStyle.surveyResultTitle(color: .hrqolColor).apply(to: hrqolTitleLabel)
     }
     
-    private func colorMapping(category: String) -> UIColor {
-        switch category {
-        case "Depression":
-            return .depressionColor
-        case "Anxiety":
-            return .anxietyColor
-        case "Stress":
-            return .stressColor
-        case "Loneliness":
-            return .lonelinessColor
-        case "Social Media Addiction":
-            return .socialMediaColor
-        case "HRQOL":
-            return .hrqolColor
-        default:
-            return .black
+    private func colorMapping(myScore: Double, averageScore: Double) -> UIColor {
+        if myScore > averageScore {
+            return .surveyResultRed
         }
+        else if myScore < averageScore {
+            return .surveyResultGreen
+        }
+        return .black
     }
     
     private func labelResultSetup() {
@@ -103,7 +95,7 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
             var combinedString = NSMutableAttributedString()
             let colorResultString: [NSAttributedString.Key: Any] = [
                 .font: UIFont.boldSystemFont(ofSize: 14),
-                .foregroundColor: self.colorMapping(category: category)
+                .foregroundColor: self.colorMapping(myScore: avg1, averageScore: avg2)
             ]
             let partOne = NSAttributedString(string: "\(avg1) : ", attributes: colorResultString)
             let partTwo = NSAttributedString(string: "\(avg2)", attributes: blackResultString)
@@ -121,42 +113,37 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
         socialMediaAddictionScoreLabel.attributedText = resultTable["Social Media Addiction"]
         lonelinessScoreLabel.attributedText = resultTable["Loneliness"]
         hrqolScoreLabel.attributedText = resultTable["HRQOL"]
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "Radar Chart"
+        self.title = "Test Result"
         self.imageSetup()
         self.labelSetup()
         labelResultSetup()
         
         chartView.delegate = self
-        
+        chartView.draw(CGRect(x: 0, y: 0, width: 400, height: 400))
         chartView.chartDescription.enabled = false
         chartView.webLineWidth = 0
         chartView.innerWebLineWidth = 2
         chartView.webColor = .soliuBlack
         chartView.innerWebColor = .lightGray
         chartView.webAlpha = 1
+        chartView.minOffset = 0
+       
         
         let marker = RadarMarkerView.viewFromXib()!
         marker.chartView = chartView
         chartView.marker = marker
         
         let xAxis = chartView.xAxis
-        xAxis.labelFont = .systemFont(ofSize: 9, weight: .light)
+        xAxis.labelFont = .customFont(fontType: .bold, size: 12)
         xAxis.xOffset = 0
         xAxis.yOffset = 0
         xAxis.valueFormatter = self
         xAxis.labelTextColor = .black
-        
-//        let yAxis = chartView.yAxis
-//        yAxis.labelFont = .systemFont(ofSize: 9, weight: .light)
-//        yAxis.labelCount = 5
-//        yAxis.axisMinimum = 0
-//        yAxis.axisMaximum = 5
-//        yAxis.drawLabelsEnabled = true
         
         chartView.yAxis.enabled = false
         chartView.legend.enabled = false
@@ -200,9 +187,9 @@ class SurveyResultViewController: UIViewController, ChartViewDelegate {
         set1.setDrawHighlightIndicators(false)
         
         let set2 = RadarChartDataSet(entries: averageResultEntry, label: "Average")
-        set2.setColor(.red)
+        set2.setColor(.chartAverageBorder)
         set2.drawFilledEnabled = false
-        set2.lineWidth = 2
+        set2.lineWidth = 3
         set2.drawHighlightCircleEnabled = true
         set2.setDrawHighlightIndicators(false)
         

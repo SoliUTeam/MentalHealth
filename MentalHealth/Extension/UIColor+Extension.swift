@@ -30,6 +30,8 @@ enum Color: String {
     case lonelinessColor = "#EC9B3C"
     case hrqolColor = "#EC1C4E"
     
+    case surveyResultGreen = "#00D67C"
+    case surveyResultRed = "#FF003D"
 }
 
 extension UIColor {
@@ -54,6 +56,8 @@ extension UIColor {
     static let lonelinessColor = UIColor(hex: Color.lonelinessColor.rawValue, alpha:1)
     static let hrqolColor = UIColor(hex: Color.hrqolColor.rawValue, alpha:1)
     
+    static let surveyResultGreen = UIColor(hex: Color.surveyResultGreen.rawValue, alpha: 1)
+    static let surveyResultRed = UIColor(hex: Color.surveyResultRed.rawValue, alpha: 1)
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()

@@ -13,6 +13,9 @@
         <array key="Inter-Regular.ttf">
             <string>Inter-Regular</string>
         </array>
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home-->
@@ -1470,14 +1473,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYG-Vm-TR4" customClass="RadarChartView" customModule="DGCharts">
-                                <rect key="frame" x="-50" y="59" width="493" height="359"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="359"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwr-Nq-toU">
-                                <rect key="frame" x="16" y="742.33333333333337" width="361" height="59.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwr-Nq-toU">
+                                <rect key="frame" x="16" y="736.66666666666663" width="361" height="49.333333333333371"/>
                                 <string key="text">If your score exceeds the average score in each category, it’s important to examine your weaker areas across the six indicators.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                                <color key="textColor" name="Color/soliuBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zDo-Yw-Ja4">
@@ -1659,14 +1662,14 @@
                         <constraints>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="vwr-Nq-toU" secondAttribute="trailing" constant="16" id="2z4-W1-707"/>
                             <constraint firstItem="vwr-Nq-toU" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="4mq-em-Fb6"/>
-                            <constraint firstItem="ZYG-Vm-TR4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="-50" id="AHm-BC-w2P"/>
+                            <constraint firstItem="ZYG-Vm-TR4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" id="AHm-BC-w2P"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="zDo-Yw-Ja4" secondAttribute="trailing" constant="16" id="GIf-jg-njK"/>
                             <constraint firstItem="ZYG-Vm-TR4" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" id="Jca-MY-J96"/>
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="Otf-79-cuH"/>
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="top" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="8" id="Ryo-LA-iKZ"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="ZYG-Vm-TR4" secondAttribute="trailing" constant="-50" id="XjZ-Qo-X84"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="ZYG-Vm-TR4" secondAttribute="trailing" id="XjZ-Qo-X84"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="400" id="iTy-eZ-U6t"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="vwr-Nq-toU" secondAttribute="bottom" constant="16" id="io4-sQ-iFq"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="vwr-Nq-toU" secondAttribute="bottom" constant="32" id="io4-sQ-iFq"/>
                             <constraint firstItem="vwr-Nq-toU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="16" id="qYK-rI-dzN"/>
                         </constraints>
                     </view>
@@ -1687,6 +1690,7 @@
                         <outlet property="socialMediaAddictionImageView" destination="V2F-DJ-QTE" id="VHK-wr-rtp"/>
                         <outlet property="socialMediaAddictionScoreLabel" destination="A1P-yg-YjX" id="f1R-8W-fGm"/>
                         <outlet property="socialMediaAddictionTitleLabel" destination="Bb7-78-cDs" id="qpl-tP-80a"/>
+                        <outlet property="stackView" destination="zDo-Yw-Ja4" id="plq-lG-fju"/>
                         <outlet property="stressImageView" destination="4ie-bd-AO3" id="xDT-y5-G9w"/>
                         <outlet property="stressScoreLabel" destination="dBW-Ld-Fby" id="ioo-qH-rg1"/>
                         <outlet property="stressTitleLabel" destination="XkJ-tU-b4Q" id="iTz-JC-osg"/>
@@ -2362,22 +2366,22 @@ the following data</string>
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
