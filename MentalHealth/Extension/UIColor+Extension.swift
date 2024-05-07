@@ -21,7 +21,7 @@ enum Color: String {
     case loginNextDisabled = "#ECECEC"
     
 //  Survey Result Color
-    case chartBackground = "#26CCFF"
+    case chartMyScoreFill = "#26CCFF"
     case chartAverageBorder = "#1271FF"
     case depressionColor = "#5D6CF3"
     case anxietyColor = "#31BC82"
@@ -47,7 +47,7 @@ extension UIColor {
     static let loginNextBackground = UIColor(hex: Color.loginNextBackground.rawValue, alpha: 1)
     static let loginNextDisabled = UIColor(hex: Color.loginNextDisabled.rawValue, alpha: 1)
 //  Survey Result Color
-    static let chartBackground = UIColor(hex: Color.chartBackground.rawValue, alpha: 1)
+    static let chartMyScoreFill = UIColor(hex: Color.chartMyScoreFill.rawValue, alpha: 1)
     static let chartAverageBorder = UIColor(hex: Color.chartAverageBorder.rawValue, alpha: 1)
     static let depressionColor = UIColor(hex: Color.depressionColor.rawValue, alpha:1)
     static let anxietyColor = UIColor(hex: Color.anxietyColor.rawValue, alpha:1)

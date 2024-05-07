@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView! {
         didSet {
             backgroundView.layer.cornerRadius = 12
-            backgroundView.backgroundColor = UIColor.chartBackground
+            backgroundView.backgroundColor = UIColor.chartMyScoreFill
         }
     }
     @IBOutlet weak var wiseLabel: UILabel! {

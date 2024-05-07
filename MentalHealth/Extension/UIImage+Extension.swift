@@ -62,6 +62,8 @@ enum SurveyImage: String {
     case hrqolIcon
     
     case whiteBackButton
+    case myResultLegend
+    case averageLegend
 }
 
 
