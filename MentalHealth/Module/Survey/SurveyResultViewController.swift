@@ -11,8 +11,8 @@ class SurveyResultViewController: UIViewController {
     
     @IBOutlet var chart: TKRadarChart! {
         didSet{
-            chart.configuration.borderWidth = 3
-            chart.configuration.lineWidth = 0.5
+            chart.configuration.borderWidth = 1
+            chart.configuration.lineWidth = 3
             chart.configuration.showBorder = true
             chart.configuration.showBgLine = true
         }
@@ -49,8 +49,7 @@ class SurveyResultViewController: UIViewController {
     var shouldHideData = false
     var scoreResults: [Int: [Double]] = [:]
 
-    
-    
+        
     private func stringForValue(_ index: Int) -> String {
             switch index {
             case 0:
@@ -69,7 +68,7 @@ class SurveyResultViewController: UIViewController {
                 return ""
             }
         }
-    
+
     private func imageSetup() {
         depressionImageView.image = UIImage(assetIdentifier: .depressionIcon)
         anxietyImageView.image = UIImage(assetIdentifier: .anxietyIcon)
@@ -218,7 +217,7 @@ extension SurveyResultViewController: TKRadarChartDataSource, TKRadarChartDelega
         if section == 0 {
             return UIColor.clear
         } else {
-            return .red
+            return .chartAverageBorder
         }
     }
 

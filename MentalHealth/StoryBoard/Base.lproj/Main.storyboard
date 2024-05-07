@@ -1484,7 +1484,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zDo-Yw-Ja4">
-                                <rect key="frame" x="16" y="476" width="361" height="166"/>
+                                <rect key="frame" x="16" y="526" width="361" height="166"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfD-qC-GHr">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="26"/>
@@ -1656,6 +1656,32 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/myResultLegend" translatesAutoresizingMaskIntoConstraints="NO" id="CoN-2T-g2y">
+                                <rect key="frame" x="32" y="476" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="Coj-3U-1FJ"/>
+                                    <constraint firstAttribute="width" constant="18" id="dor-l5-eKG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCl-Jk-52J">
+                                <rect key="frame" x="66" y="476.66666666666669" width="63.666666666666657" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/averageResultLegend" translatesAutoresizingMaskIntoConstraints="NO" id="aLl-qF-vWO">
+                                <rect key="frame" x="145.66666666666666" y="476" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="dhy-k3-vto"/>
+                                    <constraint firstAttribute="width" constant="18" id="wCw-1G-pod"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoF-Wl-Lgh">
+                                <rect key="frame" x="179.66666666666666" y="476.66666666666669" width="52.333333333333343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l2e-ce-1rp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1663,14 +1689,24 @@
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="vwr-Nq-toU" secondAttribute="trailing" constant="16" id="2z4-W1-707"/>
                             <constraint firstItem="vwr-Nq-toU" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="4mq-em-Fb6"/>
                             <constraint firstItem="ZYG-Vm-TR4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" id="AHm-BC-w2P"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MCl-Jk-52J" secondAttribute="trailing" symbolic="YES" id="BTd-je-c5c"/>
+                            <constraint firstItem="MCl-Jk-52J" firstAttribute="centerY" secondItem="CoN-2T-g2y" secondAttribute="centerY" id="G7x-ZN-0Do"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="zDo-Yw-Ja4" secondAttribute="trailing" constant="16" id="GIf-jg-njK"/>
+                            <constraint firstItem="PoF-Wl-Lgh" firstAttribute="leading" secondItem="aLl-qF-vWO" secondAttribute="trailing" constant="16" id="IJa-kJ-gYU"/>
+                            <constraint firstItem="CoN-2T-g2y" firstAttribute="top" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="8" id="Ixu-Xe-Q4j"/>
                             <constraint firstItem="ZYG-Vm-TR4" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" id="Jca-MY-J96"/>
+                            <constraint firstItem="CoN-2T-g2y" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="32" id="Joy-4i-9qx"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PoF-Wl-Lgh" secondAttribute="trailing" symbolic="YES" id="Oad-SW-AuU"/>
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="Otf-79-cuH"/>
-                            <constraint firstItem="zDo-Yw-Ja4" firstAttribute="top" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="8" id="Ryo-LA-iKZ"/>
+                            <constraint firstItem="zDo-Yw-Ja4" firstAttribute="top" secondItem="CoN-2T-g2y" secondAttribute="bottom" constant="32" id="Wnv-Ha-9um"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="ZYG-Vm-TR4" secondAttribute="trailing" id="XjZ-Qo-X84"/>
+                            <constraint firstItem="PoF-Wl-Lgh" firstAttribute="centerY" secondItem="aLl-qF-vWO" secondAttribute="centerY" id="bwS-vJ-mf6"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="350" id="iTy-eZ-U6t"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="vwr-Nq-toU" secondAttribute="bottom" constant="32" id="io4-sQ-iFq"/>
+                            <constraint firstItem="aLl-qF-vWO" firstAttribute="leading" secondItem="MCl-Jk-52J" secondAttribute="trailing" constant="16" id="mpA-MG-Au1"/>
+                            <constraint firstItem="aLl-qF-vWO" firstAttribute="centerY" secondItem="CoN-2T-g2y" secondAttribute="centerY" id="n5G-re-0DZ"/>
                             <constraint firstItem="vwr-Nq-toU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="16" id="qYK-rI-dzN"/>
+                            <constraint firstItem="MCl-Jk-52J" firstAttribute="leading" secondItem="CoN-2T-g2y" secondAttribute="trailing" constant="16" id="vKY-zM-grC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2349,10 +2385,12 @@ the following data</string>
         <image name="Icon/Emotion/sadIcon" width="46" height="46"/>
         <image name="Icon/Emotion/star" width="12" height="11"/>
         <image name="Icon/account" width="32" height="32"/>
+        <image name="Icon/averageResultLegend" width="13" height="13"/>
         <image name="Icon/calendar" width="24" height="24"/>
         <image name="Icon/depressionIcon" width="26" height="26"/>
         <image name="Icon/home" width="32" height="32"/>
         <image name="Icon/myDiary" width="149" height="142"/>
+        <image name="Icon/myResultLegend" width="13" height="13"/>
         <image name="Icon/noButton" width="28" height="28"/>
         <image name="Icon/rightArrow" width="19" height="19"/>
         <image name="Icon/selfTest" width="138" height="134"/>
