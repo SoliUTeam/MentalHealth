@@ -16,6 +16,9 @@
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home-->
@@ -625,7 +628,125 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6585.4961832061063" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="5763" y="-713"/>
+        </scene>
+        <!--Survey Entry View Controller-->
+        <scene sceneID="prO-5z-md2">
+            <objects>
+                <viewController storyboardIdentifier="SurveyEntryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kkz-t0-O9P" customClass="SurveyEntryViewController" customModule="MentalHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="biA-SA-X0z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/surveyEntryBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ztv-U9-IaG">
+                                <rect key="frame" x="55" y="361" width="406" height="491"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="491" id="2LA-cC-SSi"/>
+                                    <constraint firstAttribute="width" constant="406" id="qyM-vb-vzR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjX-RL-WJz">
+                                <rect key="frame" x="32" y="151" width="329" height="75"/>
+                                <string key="text">Before we start,
+know this...</string>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This test is composed of 6 sections:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9H-YY-QhD">
+                                <rect key="frame" x="32" y="290" width="329" height="19"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTP-Jy-C7i">
+                                <rect key="frame" x="32" y="357" width="329" height="112.66666666666669"/>
+                                <string key="text">1. Depression
+2. Anxiety
+3. Stress
+4. Social Media Addiction
+5. Loneliness
+​6. Health-related Quality of Life (HRQOL)</string>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vff-0b-gQA">
+                                <rect key="frame" x="48" y="730" width="297" height="24"/>
+                                <color key="backgroundColor" name="Color/soliuBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="rrv-sB-Dkh"/>
+                                </constraints>
+                                <color key="tintColor" name="Color/soliuBlue"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
+                                    <backgroundConfiguration key="background" cornerRadius="62">
+                                        <color key="backgroundColor" name="Color/soliuBlue"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                    <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openSurveyListViewController" destination="Kkz-t0-O9P" eventType="touchUpInside" id="oJv-Kx-Oja"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By proceeding, you consent to data collection." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-gg-dDh">
+                                <rect key="frame" x="48" y="703.66666666666663" width="297" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5YS-Ct-SuU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QTP-Jy-C7i" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="32" id="DE1-DQ-OPz"/>
+                            <constraint firstItem="U9H-YY-QhD" firstAttribute="top" secondItem="tjX-RL-WJz" secondAttribute="bottom" constant="64" id="F0S-Qe-yBE"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="trailing" secondItem="bjv-gg-dDh" secondAttribute="trailing" constant="48" id="JQw-5C-Lqw"/>
+                            <constraint firstAttribute="bottom" secondItem="Ztv-U9-IaG" secondAttribute="bottom" id="NRb-9u-4ZA"/>
+                            <constraint firstItem="Vff-0b-gQA" firstAttribute="top" secondItem="bjv-gg-dDh" secondAttribute="bottom" constant="12" id="NuT-p3-1zr"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="trailing" secondItem="QTP-Jy-C7i" secondAttribute="trailing" constant="32" id="OCj-6V-7nO"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="trailing" secondItem="U9H-YY-QhD" secondAttribute="trailing" constant="32" id="SKL-8m-sOC"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="trailing" secondItem="tjX-RL-WJz" secondAttribute="trailing" constant="32" id="THs-PS-VCB"/>
+                            <constraint firstItem="QTP-Jy-C7i" firstAttribute="top" secondItem="U9H-YY-QhD" secondAttribute="bottom" constant="48" id="Tdo-PM-D4T"/>
+                            <constraint firstItem="tjX-RL-WJz" firstAttribute="top" secondItem="5YS-Ct-SuU" secondAttribute="top" constant="48" id="YGd-JQ-Sza"/>
+                            <constraint firstItem="Ztv-U9-IaG" firstAttribute="trailing" secondItem="5YS-Ct-SuU" secondAttribute="trailing" constant="68" id="cFL-Gm-pdh"/>
+                            <constraint firstItem="tjX-RL-WJz" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="32" id="cWe-3y-0x5"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="bottom" secondItem="Vff-0b-gQA" secondAttribute="bottom" constant="64" id="hhg-gb-sqa"/>
+                            <constraint firstItem="bjv-gg-dDh" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="48" id="lly-yR-lhN"/>
+                            <constraint firstItem="U9H-YY-QhD" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="32" id="mWC-vz-kKZ"/>
+                            <constraint firstItem="Vff-0b-gQA" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="48" id="qIw-up-cNn"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="trailing" secondItem="Vff-0b-gQA" secondAttribute="trailing" constant="48" id="z6z-vt-dRs"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4f7-fR-Sa8">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Icon/backArrow" id="H0K-Bu-RSg">
+                            <connections>
+                                <segue destination="bkZ-Pd-cAk" kind="unwind" unwindAction="unwind2InterfaceBuilderWithSegue:" id="kJm-xB-naX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="FNN-vH-K7N">
+                    <rect key="frame" x="0.0" y="0.0" width="293" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Send Code">
+                        <backgroundConfiguration key="background" cornerRadius="62">
+                            <color key="backgroundColor" red="0.0" green="0.72156862749999995" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </backgroundConfiguration>
+                        <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocX-6l-fHY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bkZ-Pd-cAk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="7726" y="-713"/>
         </scene>
         <!--Health Test-->
         <scene sceneID="KZi-cR-mPH">
@@ -656,7 +777,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1k-1c-MCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7726" y="-713"/>
+            <point key="canvasLocation" x="8652.6717557251905" y="-713.38028169014092"/>
         </scene>
         <!--My Page-->
         <scene sceneID="F9v-zP-ijq">
@@ -1734,7 +1855,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxn-Rh-BJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8756.4885496183197" y="-713.38028169014092"/>
+            <point key="canvasLocation" x="9683.2061068702278" y="-713.38028169014092"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="KmP-6I-s2W">
@@ -2386,6 +2507,7 @@ the following data</string>
         <image name="Icon/Emotion/star" width="12" height="11"/>
         <image name="Icon/account" width="32" height="32"/>
         <image name="Icon/averageResultLegend" width="13" height="13"/>
+        <image name="Icon/backArrow" width="28" height="28"/>
         <image name="Icon/calendar" width="24" height="24"/>
         <image name="Icon/depressionIcon" width="26" height="26"/>
         <image name="Icon/home" width="32" height="32"/>
@@ -2396,6 +2518,7 @@ the following data</string>
         <image name="Icon/selfTest" width="138" height="134"/>
         <image name="Icon/soliuLogo" width="500" height="197"/>
         <image name="Icon/soliuLogoOnly" width="104" height="144"/>
+        <image name="Icon/surveyEntryBackground" width="328" height="598"/>
         <image name="Icon/yesButton" width="28" height="28"/>
         <namedColor name="Color/soliuBlue">
             <color red="0.0" green="0.72200000286102295" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

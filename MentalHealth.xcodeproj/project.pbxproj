@@ -28,6 +28,7 @@
 		67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */; };
 		67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064942B9D0DE200400013 /* FBNetworkLayer.swift */; };
 		67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */; };
+		67F71C752BEB22310008BFA5 /* SurveyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */; };
 		953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EC2B6EDFA000651684 /* AppDelegate.swift */; };
 		953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EE2B6EDFA000651684 /* SceneDelegate.swift */; };
 		953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* HomeViewController.swift */; };
@@ -91,6 +92,7 @@
 		67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
 		67F064942B9D0DE200400013 /* FBNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkLayer.swift; sourceTree = "<group>"; };
 		67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthQuestion.swift; sourceTree = "<group>"; };
+		67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyEntryViewController.swift; sourceTree = "<group>"; };
 		953A64E92B6EDFA000651684 /* MentalHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953A64EC2B6EDFA000651684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		953A64EE2B6EDFA000651684 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */,
 				67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */,
 				67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */,
+				67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */,
 			);
 			path = Survey;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				95ACE6A92BE0A99100E935EC /* InspiringQuote.swift in Sources */,
 				95433A132BC6558C0003C584 /* SignUpViewController.swift in Sources */,
 				95C72BE52BD63FAA00ED178F /* LoginStatusViewController.swift in Sources */,
+				67F71C752BEB22310008BFA5 /* SurveyEntryViewController.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */,
