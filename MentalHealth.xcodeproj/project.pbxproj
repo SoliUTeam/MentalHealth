@@ -29,6 +29,8 @@
 		67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064942B9D0DE200400013 /* FBNetworkLayer.swift */; };
 		67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */; };
 		67F71C752BEB22310008BFA5 /* SurveyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */; };
+		67F71C792BEC31A90008BFA5 /* DiarcyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F71C772BEC31A90008BFA5 /* DiarcyCell.swift */; };
+		67F71C7A2BEC31A90008BFA5 /* DiarcyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F71C782BEC31A90008BFA5 /* DiarcyCell.xib */; };
 		953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EC2B6EDFA000651684 /* AppDelegate.swift */; };
 		953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EE2B6EDFA000651684 /* SceneDelegate.swift */; };
 		953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* HomeViewController.swift */; };
@@ -93,6 +95,8 @@
 		67F064942B9D0DE200400013 /* FBNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkLayer.swift; sourceTree = "<group>"; };
 		67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthQuestion.swift; sourceTree = "<group>"; };
 		67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyEntryViewController.swift; sourceTree = "<group>"; };
+		67F71C772BEC31A90008BFA5 /* DiarcyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarcyCell.swift; sourceTree = "<group>"; };
+		67F71C782BEC31A90008BFA5 /* DiarcyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiarcyCell.xib; sourceTree = "<group>"; };
 		953A64E92B6EDFA000651684 /* MentalHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		953A64EC2B6EDFA000651684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		953A64EE2B6EDFA000651684 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +198,15 @@
 				679D23852BB52015004CAA61 /* User.swift */,
 			);
 			path = FirebaseInit;
+			sourceTree = "<group>";
+		};
+		67F71C762BEC316E0008BFA5 /* DiaryCell */ = {
+			isa = PBXGroup;
+			children = (
+				67F71C772BEC31A90008BFA5 /* DiarcyCell.swift */,
+				67F71C782BEC31A90008BFA5 /* DiarcyCell.xib */,
+			);
+			path = DiaryCell;
 			sourceTree = "<group>";
 		};
 		953A64E02B6EDFA000651684 = {
@@ -378,6 +391,7 @@
 		95D293AA2BCE369B00017E03 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				67F71C762BEC316E0008BFA5 /* DiaryCell */,
 				95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */,
 			);
 			path = Diary;
@@ -468,6 +482,7 @@
 				95ACE6A22BE0A5E800E935EC /* Roboto-Medium.ttf in Resources */,
 				670087AA2BDF637E000EB39C /* CalendarPopUpView.xib in Resources */,
 				670087AB2BDF637E000EB39C /* SurveyListViewCell.xib in Resources */,
+				67F71C7A2BEC31A90008BFA5 /* DiarcyCell.xib in Resources */,
 				670087AC2BDF637E000EB39C /* SurveyNextButtonCell.xib in Resources */,
 				95ACE6A32BE0A5E800E935EC /* Roboto-Bold.ttf in Resources */,
 				670087AD2BDF637E000EB39C /* RadarMarkerView.xib in Resources */,
@@ -511,6 +526,7 @@
 				95C72BE52BD63FAA00ED178F /* LoginStatusViewController.swift in Sources */,
 				67F71C752BEB22310008BFA5 /* SurveyEntryViewController.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
+				67F71C792BEC31A90008BFA5 /* DiarcyCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */,
 				67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */,

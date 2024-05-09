@@ -53,7 +53,7 @@ enum SurveyImage: String {
     case markedSometimes
     case markedOften
     case markedVOften
-    
+//  Survey Result
     case depressionIcon
     case anxietyIcon
     case stressIcon
@@ -65,7 +65,6 @@ enum SurveyImage: String {
     case myResultLegend
     case averageLegend
 }
-
 
 
 extension UIImage {

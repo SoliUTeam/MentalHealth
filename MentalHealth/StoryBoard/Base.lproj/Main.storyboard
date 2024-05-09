@@ -19,6 +19,9 @@
         <array key="Roboto-Medium.ttf">
             <string>Roboto-Medium</string>
         </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home-->
@@ -2234,9 +2237,42 @@ know this...</string>
                     <view key="view" contentMode="scaleToFill" id="gYw-DZ-gog">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dFm-Gt-bse">
+                                <rect key="frame" x="0.0" y="187.66666666666669" width="393" height="630.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey David!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fk-pg-Na5">
+                                <rect key="frame" x="16" y="107" width="361" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let’s record how your day was." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlE-T4-svB">
+                                <rect key="frame" x="16" y="143.33333333333334" width="361" height="28.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4ux-1v-q9V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4ux-1v-q9V" firstAttribute="trailing" secondItem="5fk-pg-Na5" secondAttribute="trailing" constant="16" id="0aj-Ko-D4f"/>
+                            <constraint firstItem="dFm-Gt-bse" firstAttribute="top" secondItem="QlE-T4-svB" secondAttribute="bottom" constant="16" id="0hs-Q0-TBI"/>
+                            <constraint firstItem="5fk-pg-Na5" firstAttribute="top" secondItem="4ux-1v-q9V" secondAttribute="top" constant="48" id="40y-js-grK"/>
+                            <constraint firstItem="4ux-1v-q9V" firstAttribute="trailing" secondItem="dFm-Gt-bse" secondAttribute="trailing" id="DYp-Dh-LlK"/>
+                            <constraint firstItem="4ux-1v-q9V" firstAttribute="trailing" secondItem="QlE-T4-svB" secondAttribute="trailing" constant="16" id="Did-d3-GdN"/>
+                            <constraint firstItem="QlE-T4-svB" firstAttribute="leading" secondItem="4ux-1v-q9V" secondAttribute="leading" constant="16" id="GL5-7n-KbA"/>
+                            <constraint firstItem="5fk-pg-Na5" firstAttribute="leading" secondItem="4ux-1v-q9V" secondAttribute="leading" constant="16" id="Jxf-VZ-kMT"/>
+                            <constraint firstItem="dFm-Gt-bse" firstAttribute="leading" secondItem="4ux-1v-q9V" secondAttribute="leading" id="RcM-y5-UIQ"/>
+                            <constraint firstItem="4ux-1v-q9V" firstAttribute="bottom" secondItem="dFm-Gt-bse" secondAttribute="bottom" id="Z8A-ee-BcD"/>
+                            <constraint firstItem="QlE-T4-svB" firstAttribute="top" secondItem="5fk-pg-Na5" secondAttribute="bottom" constant="8" id="oMX-05-zoU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="dFm-Gt-bse" id="6cI-lv-nYB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaQ-pt-KT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
