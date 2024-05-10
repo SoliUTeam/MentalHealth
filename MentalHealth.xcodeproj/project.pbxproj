@@ -18,7 +18,6 @@
 		670087B52BDF637E000EB39C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		679D23862BB52015004CAA61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D23852BB52015004CAA61 /* User.swift */; };
 		67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */; };
-		67C2EC5B2BE5770600A72579 /* TKRadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2EC5A2BE5770600A72579 /* TKRadarChart.swift */; };
 		67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */; };
 		67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253F2BBA262B00C27F21 /* TestingInformation.swift */; };
 		67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525412BBA285200C27F21 /* CellReusable+Extension.swift */; };
@@ -61,6 +60,7 @@
 		95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF072B6FE87500101423 /* FeedbackViewController.swift */; };
 		95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF092B71E58B00101423 /* UIImage+Extension.swift */; };
 		95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1CF102B72023200101423 /* AccountHomeViewController.swift */; };
+		95BCED602BEDC8D600E6CAFE /* TKRadarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCED5F2BEDC8D600E6CAFE /* TKRadarChart.swift */; };
 		95C72BE32BD63F0000ED178F /* LoginGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE22BD63F0000ED178F /* LoginGenderViewController.swift */; };
 		95C72BE52BD63FAA00ED178F /* LoginStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE42BD63FAA00ED178F /* LoginStatusViewController.swift */; };
 		95C72BE72BD6400700ED178F /* LoginEthnicityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C72BE62BD6400700ED178F /* LoginEthnicityViewController.swift */; };
@@ -83,7 +83,6 @@
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		679D23852BB52015004CAA61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
-		67C2EC5A2BE5770600A72579 /* TKRadarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TKRadarChart.swift; path = ../../../../../../.Trash/TKRadarChart.swift; sourceTree = "<group>"; };
 		67E5253C2BBA1BFB00C27F21 /* SurveyListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewCell.swift; sourceTree = "<group>"; };
 		67E5253F2BBA262B00C27F21 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
 		67E525412BBA285200C27F21 /* CellReusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
@@ -123,6 +122,7 @@
 		95B1CF072B6FE87500101423 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		95B1CF092B71E58B00101423 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		95B1CF102B72023200101423 /* AccountHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHomeViewController.swift; sourceTree = "<group>"; };
+		95BCED5F2BEDC8D600E6CAFE /* TKRadarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TKRadarChart.swift; sourceTree = "<group>"; };
 		95C72BE22BD63F0000ED178F /* LoginGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGenderViewController.swift; sourceTree = "<group>"; };
 		95C72BE42BD63FAA00ED178F /* LoginStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStatusViewController.swift; sourceTree = "<group>"; };
 		95C72BE62BD6400700ED178F /* LoginEthnicityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEthnicityViewController.swift; sourceTree = "<group>"; };
@@ -163,14 +163,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67C2EC572BE5741B00A72579 /* Charts */ = {
-			isa = PBXGroup;
-			children = (
-				67C2EC5A2BE5770600A72579 /* TKRadarChart.swift */,
-			);
-			path = Charts;
-			sourceTree = "<group>";
-		};
 		67E5253E2BBA260E00C27F21 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,7 +273,7 @@
 		95733CB22BA8292E00FD2215 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				67C2EC572BE5741B00A72579 /* Charts */,
+				95BCED5E2BEDC8C400E6CAFE /* Charts */,
 				95B1CF092B71E58B00101423 /* UIImage+Extension.swift */,
 				95733CB42BA8296300FD2215 /* UILabel+Extension.swift */,
 				9561FE112BAD2EAB00345642 /* UIColor+Extension.swift */,
@@ -359,6 +351,14 @@
 				957C02D02B6F77DD00DE21DE /* Survey */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		95BCED5E2BEDC8C400E6CAFE /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				95BCED5F2BEDC8D600E6CAFE /* TKRadarChart.swift */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		95CEFFD12B6F358D00C527D1 /* Assets */ = {
@@ -511,6 +511,7 @@
 				95B1CF0A2B71E58B00101423 /* UIImage+Extension.swift in Sources */,
 				953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */,
 				95C804372BD9BA0C00743FA5 /* CustomSelectButton.swift in Sources */,
+				95BCED602BEDC8D600E6CAFE /* TKRadarChart.swift in Sources */,
 				957720472BC7AA3C0026DC91 /* HomeTabBar.swift in Sources */,
 				95C72BE32BD63F0000ED178F /* LoginGenderViewController.swift in Sources */,
 				95D293A42BCD0CB800017E03 /* LoginManager.swift in Sources */,
@@ -545,7 +546,6 @@
 				6700875B2BDF4E94000EB39C /* UIFont+Extension.swift in Sources */,
 				95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */,
 				67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */,
-				67C2EC5B2BE5770600A72579 /* TKRadarChart.swift in Sources */,
 				95D293B32BCF976000017E03 /* CalendarPopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
