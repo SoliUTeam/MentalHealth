@@ -198,9 +198,9 @@ class HomeViewController: UIViewController {
 
     @objc
     func displayMyDiaryViewController(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let surveyListVC = storyboard.instantiateViewController(identifier: "MyDiaryViewController") as? MyDiaryViewController {
-            navigationController?.pushViewController(surveyListVC, animated: true)
+        let storyboard = UIStoryboard(name: "MyDiaryFlow", bundle: Bundle.main)
+        if let myDiaryVC = storyboard.instantiateViewController(identifier: "MyDiaryViewController") as? MyDiaryViewController {
+            navigationController?.pushViewController(myDiaryVC, animated: true)
         } else {
             print("Can't find MyDiaryViewController")
         }
