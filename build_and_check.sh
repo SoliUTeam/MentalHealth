@@ -21,6 +21,7 @@ xcodebuild \
     -configuration "$CONFIGURATION" \
     -destination "$DESTINATION" \
     -derivedDataPath "$BUILD_DIR" \
+    -allowProvisioningUpdates \
     clean build
 
 # Check if build succeeded
