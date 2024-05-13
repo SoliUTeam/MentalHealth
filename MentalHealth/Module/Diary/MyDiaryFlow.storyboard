@@ -174,13 +174,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s74-jn-Zz1">
                                 <rect key="frame" x="80" y="712.66666666666663" width="233" height="33.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Start Recording" cornerStyle="fixed">
+                                <buttonConfiguration key="configuration" style="plain" title="Start" cornerStyle="fixed">
                                     <backgroundConfiguration key="background" cornerRadius="72">
                                         <color key="backgroundColor" name="Color/soliuBlue"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="YUm-aM-olk" kind="push" id="FtC-xe-wvI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o7S-E8-4gv"/>
@@ -208,12 +211,75 @@
                         <outlet property="niceLabel" destination="aF5-LE-aWm" id="xHF-pl-Sgt"/>
                         <outlet property="niceView" destination="9Pe-GJ-BE7" id="39C-uo-Y9t"/>
                         <outlet property="quesitonTitleLabel" destination="XZd-hc-hYe" id="cdp-FB-qDk"/>
+                        <outlet property="submitButton" destination="s74-jn-Zz1" id="VlV-Li-Gft"/>
                         <outlet property="subtitleLabel" destination="iRg-Ab-WoX" id="66y-Oi-qyv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHx-1I-7yQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8048" y="400"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QBS-bs-AZ1">
+            <objects>
+                <viewController id="YUm-aM-olk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="63W-BK-dUt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdL-7D-2wk">
+                                <rect key="frame" x="16" y="119" width="361" height="299"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEo-gH-FN1">
+                                        <rect key="frame" x="8" y="8" width="345" height="36.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What felt successful today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0k-EL-mhY">
+                                                <rect key="frame" x="8" y="7.9999999999999982" width="329" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="c0k-EL-mhY" secondAttribute="bottom" constant="8" id="8iV-sn-wCF"/>
+                                            <constraint firstAttribute="trailing" secondItem="c0k-EL-mhY" secondAttribute="trailing" constant="8" id="LtP-QW-xRq"/>
+                                            <constraint firstItem="c0k-EL-mhY" firstAttribute="leading" secondItem="LEo-gH-FN1" secondAttribute="leading" constant="8" id="Meb-OW-CAp"/>
+                                            <constraint firstItem="c0k-EL-mhY" firstAttribute="top" secondItem="LEo-gH-FN1" secondAttribute="top" constant="8" id="nAT-Yu-4lF"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type something in" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b6a-J7-970">
+                                        <rect key="frame" x="8" y="52.333333333333357" width="345" height="238.66666666666663"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstItem="LEo-gH-FN1" firstAttribute="leading" secondItem="FdL-7D-2wk" secondAttribute="leading" constant="8" id="5O8-71-558"/>
+                                    <constraint firstItem="LEo-gH-FN1" firstAttribute="top" secondItem="FdL-7D-2wk" secondAttribute="top" constant="8" id="5WD-Pz-dOR"/>
+                                    <constraint firstAttribute="trailing" secondItem="LEo-gH-FN1" secondAttribute="trailing" constant="8" id="AMw-fx-bkG"/>
+                                    <constraint firstAttribute="bottom" secondItem="b6a-J7-970" secondAttribute="bottom" constant="8" id="TZy-dO-cVP"/>
+                                    <constraint firstItem="b6a-J7-970" firstAttribute="leading" secondItem="FdL-7D-2wk" secondAttribute="leading" constant="8" id="g9S-EC-R6F"/>
+                                    <constraint firstItem="b6a-J7-970" firstAttribute="top" secondItem="LEo-gH-FN1" secondAttribute="bottom" constant="8" id="iQ5-gJ-VNy"/>
+                                    <constraint firstAttribute="trailing" secondItem="b6a-J7-970" secondAttribute="trailing" constant="8" id="scg-TC-Cme"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nzu-uv-Kfk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FdL-7D-2wk" firstAttribute="leading" secondItem="Nzu-uv-Kfk" secondAttribute="leading" constant="16" id="Z2C-Gq-bUV"/>
+                            <constraint firstItem="FdL-7D-2wk" firstAttribute="top" secondItem="Nzu-uv-Kfk" secondAttribute="top" constant="16" id="ar4-wE-JGb"/>
+                            <constraint firstItem="Nzu-uv-Kfk" firstAttribute="bottom" secondItem="FdL-7D-2wk" secondAttribute="bottom" constant="400" id="nNG-QY-a2c"/>
+                            <constraint firstItem="Nzu-uv-Kfk" firstAttribute="trailing" secondItem="FdL-7D-2wk" secondAttribute="trailing" constant="16" id="som-Nk-Au6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sbI-l2-ryK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uto-7n-oFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8783.9694656488555" y="400"/>
         </scene>
     </scenes>
     <resources>
@@ -224,6 +290,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
