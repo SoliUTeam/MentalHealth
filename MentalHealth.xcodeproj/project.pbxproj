@@ -16,6 +16,7 @@
 		670087B32BDF637E000EB39C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
 		670087B42BDF637E000EB39C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F22B6EDFA000651684 /* Main.storyboard */; };
 		670087B52BDF637E000EB39C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
+		674EFBAD2BF4167000107789 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EFBAC2BF4167000107789 /* UIButton+Extension.swift */; };
 		67811DD32BF003EF00BB816F /* MyDiaryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */; };
 		67811DD62BF00AA200BB816F /* MyDiaryRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */; };
 		679D23862BB52015004CAA61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 679D23852BB52015004CAA61 /* User.swift */; };
@@ -27,6 +28,7 @@
 		67ED8A372BCF81B000E37950 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 67ED8A362BCF81B000E37950 /* DGCharts */; };
 		67ED8A3B2BCF886700E37950 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */; };
 		67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */; };
+		67EE78DA2BF3350A00478D44 /* MyDiaryTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE78D92BF3350A00478D44 /* MyDiaryTextViewController.swift */; };
 		67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064942B9D0DE200400013 /* FBNetworkLayer.swift */; };
 		67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */; };
 		67F71C752BEB22310008BFA5 /* SurveyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */; };
@@ -82,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		6700875A2BDF4E94000EB39C /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		674EFBAC2BF4167000107789 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiaryFlow.storyboard; sourceTree = "<group>"; };
 		67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryRecordViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBaseViewController.swift; sourceTree = "<group>"; };
 		67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
 		67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
+		67EE78D92BF3350A00478D44 /* MyDiaryTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryTextViewController.swift; sourceTree = "<group>"; };
 		67F064942B9D0DE200400013 /* FBNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkLayer.swift; sourceTree = "<group>"; };
 		67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthQuestion.swift; sourceTree = "<group>"; };
 		67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyEntryViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		67EE78D82BF334B300478D44 /* MyDiaryTextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				67EE78D92BF3350A00478D44 /* MyDiaryTextViewController.swift */,
+			);
+			path = MyDiaryTextViewController;
+			sourceTree = "<group>";
+		};
 		67F064932B9D0D9000400013 /* FirebaseInit */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +297,7 @@
 		95733CB22BA8292E00FD2215 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				674EFBAC2BF4167000107789 /* UIButton+Extension.swift */,
 				95BCED5E2BEDC8C400E6CAFE /* Charts */,
 				95B1CF092B71E58B00101423 /* UIImage+Extension.swift */,
 				95733CB42BA8296300FD2215 /* UILabel+Extension.swift */,
@@ -403,6 +416,7 @@
 		95D293AA2BCE369B00017E03 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				67EE78D82BF334B300478D44 /* MyDiaryTextViewController */,
 				67811DD42BF00A4A00BB816F /* MyDiaryRecordViewController */,
 				67F71C762BEC316E0008BFA5 /* DiaryCell */,
 				95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */,
@@ -549,6 +563,7 @@
 				67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */,
 				67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */,
 				957720492BC7AC280026DC91 /* HomeTabBarController.swift in Sources */,
+				67EE78DA2BF3350A00478D44 /* MyDiaryTextViewController.swift in Sources */,
 				95D293B92BCF9C8E00017E03 /* UIView+Extention.swift in Sources */,
 				95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */,
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
@@ -559,6 +574,7 @@
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
 				67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */,
 				95D293AC2BCE36B000017E03 /* MyDiaryViewController.swift in Sources */,
+				674EFBAD2BF4167000107789 /* UIButton+Extension.swift in Sources */,
 				6700875B2BDF4E94000EB39C /* UIFont+Extension.swift in Sources */,
 				95D293A22BCD038200017E03 /* LogInViewController.swift in Sources */,
 				67E5253D2BBA1BFB00C27F21 /* SurveyListViewCell.swift in Sources */,

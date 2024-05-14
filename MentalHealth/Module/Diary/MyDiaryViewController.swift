@@ -9,6 +9,8 @@ import UIKit
 
 class MyDiaryViewController: UIViewController {
     
+    @IBOutlet weak var startButton: AllSubmitButton!
+    
     @IBOutlet var tableView: UITableView! {
         didSet {
             self.tableView.delegate = self
@@ -19,6 +21,7 @@ class MyDiaryViewController: UIViewController {
     override func viewDidLoad() {
         self.tableView.register(UINib(nibName: DiarcyCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: DiarcyCell.reuseIdentifier)
         setCustomBackNavigationButton()
+        startButton.isEnabled = true
         super.viewDidLoad()
     }
 

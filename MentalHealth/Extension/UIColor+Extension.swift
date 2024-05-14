@@ -58,7 +58,8 @@ extension UIColor {
     
     static let surveyResultGreen = UIColor(hex: Color.surveyResultGreen.rawValue, alpha: 1)
     static let surveyResultRed = UIColor(hex: Color.surveyResultRed.rawValue, alpha: 1)
-    
+//  Diary Border
+    static let diaryBorder = UIColor(hex: Color.tabBarBorder.rawValue, alpha: 1)
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
 
