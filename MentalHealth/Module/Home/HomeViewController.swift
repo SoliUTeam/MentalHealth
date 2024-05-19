@@ -8,6 +8,7 @@
 import UIKit
 import SwiftEntryKit
 import FSCalendar
+import HealthKit
 
 class HomeViewController: UIViewController {
 
@@ -24,7 +25,6 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var mondayView: UIView!
     @IBOutlet weak var tuesdayView: UIView!
@@ -62,27 +62,38 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var myDiaryView: UIView!
     @IBOutlet weak var testView: UIView!
-    
-    @IBAction func didTapCalendarButton() {
-        showCalendarPopUpView()
-    }
-    
-    /// Swift Entry Kit Declaration
-    var attributes = EKAttributes()
-    
+
     private var dayArry: [UILabel: [UIView : UILabel]] = [:]
+    private var healthStore = HKHealthStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.homepageBackground
+        //progressTrackBar for more clarity
+        self.view.backgroundColor = UIColor.progressTrackBar
         dayArry = [sundayDate: [sundayView: sundayLabel], mondayDate: [mondayView: mondayLabel], tuesdayDate: [tuesdayView: tuesdayLabel], wednesdayDate: [wednesdayView: wednesdayLabel], thursdayDate: [thursdayView: thursdayLabel], fridayDate: [fridayView: fridayLabel], saturdayDate: [saturdayView: saturdayLabel]]
-        applyBoader([testView, myDiaryView, chartContainerView], with: .clear, backgroundColor: .white)
-        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView, questionBannerView], with: UIColor.clear, backgroundColor: UIColor.white)
+        applyBoader([questionBannerView, testView, myDiaryView, chartContainerView], with: UIColor.homepageStroke, backgroundColor: .white)
+        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.clear, backgroundColor: UIColor.white)
         updateTodayView()
 
         // Navigation
         tapAction(testView, selector: #selector(displaySurveyListViewController))
         tapAction(myDiaryView, selector: #selector(displayMyDiaryViewController))
+        
+//        // Access Step Count
+//        let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)! ]
+//        // Check for Authorization
+//        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (bool, error) in
+//            if (bool) {
+//                // Authorization Successful
+//                
+//                self.getSteps { (result) in
+//                    DispatchQueue.main.async {
+//                        let stepCount = String(Int(result))
+//                        self.stepsLabel.text = String(stepCount)
+//                    }
+//                }
+//            } // end if
+//        } // end of checking authorization
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -105,80 +116,6 @@ class HomeViewController: UIViewController {
             }
             index += 1
         }
-    }
-    
-    private func showCalendarPopUpView() {
-        attributes = .bottomNote
-//        attributes.displayMode = displayMode
-        attributes.hapticFeedbackType = .success
-        attributes.displayDuration = 3
-        attributes.screenBackground = .clear
-        attributes.entryBackground = .clear
-        attributes.screenInteraction = .forward
-        attributes.entryInteraction = .absorbTouches
-        attributes.entranceAnimation = .init(
-            translate: .init(
-                duration: 0.5,
-                spring: .init(damping: 0.9, initialVelocity: 0)
-            ),
-            scale: .init(
-                from: 0.8,
-                to: 1,
-                duration: 0.5,
-                spring: .init(damping: 0.8, initialVelocity: 0)
-            ),
-            fade: .init(
-                from: 0.7,
-                to: 1,
-                duration: 0.3
-            )
-        )
-        attributes.exitAnimation = .init(
-            translate: .init(
-                duration: 0.5
-            ),
-            scale: .init(
-                from: 1,
-                to: 0.8,
-                duration: 0.5
-            ),
-            fade: .init(
-                from: 1,
-                to: 0,
-                duration: 0.5
-            )
-        )
-        attributes.popBehavior = .animated(
-            animation: .init(
-                translate: .init(
-                    duration: 0.3
-                ),
-                scale: .init(
-                    from: 1,
-                    to: 0.8,
-                    duration: 0.3
-                )
-            )
-        )
-        attributes.shadow = .active(
-            with: .init(
-                color: .black,
-                opacity: 0.3,
-                radius: 6
-            )
-        )
-        attributes.positionConstraints.verticalOffset = 10
-        attributes.positionConstraints.size = .init(
-            width: .offset(value: 20),
-            height: .intrinsic
-        )
-        attributes.positionConstraints.maxSize = .init(
-            width: .constant(value: UIScreen.main.bounds.width),
-            height: .intrinsic
-        )
-        attributes.statusBar = .ignored
-        let myCustomView: CalendarPopUpView = CalendarPopUpView.fromNib()
-        SwiftEntryKit.display(entry: CalendarPopUpViewController(with: myCustomView), using: attributes)
     }
     
     func getQuestionLabelText() -> String {
@@ -206,4 +143,3 @@ class HomeViewController: UIViewController {
         }
     }
 }
-

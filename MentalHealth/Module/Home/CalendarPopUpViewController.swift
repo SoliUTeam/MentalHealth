@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 import FSCalendar
 
-
 class CalendarPopUpViewController: UIViewController {
-    
     private let injectedView: UIView
     
     init(with view: UIView) {

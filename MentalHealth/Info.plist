@@ -2,12 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Steps needs your permission to access your Health Data</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Steps needs your permission to update and access your Health Data</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontList/Roboto-Black.ttf</string>
-        <string>FontList/Roboto-Bold.ttf</string>
-        <string>FontList/Roboto-Medium.ttf</string>
-        <string>FontList/Roboto-Regular.ttf</string>
+		<string>FontList/Roboto-Bold.ttf</string>
+		<string>FontList/Roboto-Medium.ttf</string>
+		<string>FontList/Roboto-Regular.ttf</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string></string>
