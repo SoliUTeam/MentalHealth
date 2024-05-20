@@ -14,8 +14,8 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var backgroundView: UIView! {
         didSet {
-            backgroundView.layer.cornerRadius = 12
-            backgroundView.backgroundColor = UIColor.chartMyScoreFill
+            backgroundView.backgroundColor = .clear
+            applyGradientBackground(to: backgroundView, startColor: .homepageBackgroundStart, endColor: .homepageBackgroundEnd)
         }
     }
     @IBOutlet weak var wiseLabel: UILabel! {
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController {
         questionConfirmView.isHidden = true
 
         dayArry = [sundayDate: [sundayView: sundayLabel], mondayDate: [mondayView: mondayLabel], tuesdayDate: [tuesdayView: tuesdayLabel], wednesdayDate: [wednesdayView: wednesdayLabel], thursdayDate: [thursdayView: thursdayLabel], fridayDate: [fridayView: fridayLabel], saturdayDate: [saturdayView: saturdayLabel]]
-        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .clear, backgroundColor: .white)
+        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .homepageStroke, backgroundColor: .white)
         applyBoader([questionBannerView, testView, myDiaryView, chartContainerView], with: .homepageStroke, backgroundColor: .white)
         updateTodayView()
 
@@ -121,6 +121,16 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+
+    func applyGradientBackground(to view: UIView, startColor: UIColor, endColor: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.cornerRadius = 25
+        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
     
     func updateTodayView() {
         let today = getCurrentDate()
@@ -129,7 +139,7 @@ class HomeViewController: UIViewController {
             for (dayView, dayLabel) in view {
                 day.text = "\(Int(today)! + index)"
                 if day.text == today {
-                    applyBoader(dayView, with: .white)
+                    applyBoader(dayView, with: .clear, backgroundColor: .chartMyScoreFill)
                     day.textColor = .white
                     dayLabel.textColor = .white
                     loadViewIfNeeded()
