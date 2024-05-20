@@ -1,20 +1,105 @@
 {
-  "quoteData": [
-    {
-        "quote": "It always seems impossible until it's done",
-        "name": "Nelson Mandela"
-    },
-    {
-        "quote": "Good, better, best. Never let it rest. 'Til your good is better and your better is best",
-        "name": "St. Jerome"
-    },
-    {
-        "quote": "Let there be work, bread, water and salt for all",
-        "name": "Nelson Mandela"
-    },
-    {
-        "quote": "Education is the most powerful weapon which you can use to change the world Education is the most powerful",
-        "name": "Nelson Mandela"
-    }
-  ]
+    "quoteData": [
+        {
+            "quote": "It always seems impossible until it's done",
+            "name": "Nelson Mandela"
+        },
+        {
+            "quote": "Good, better, best. Never let it rest. 'Til your good is better and your better is best",
+            "name": "St. Jerome"
+        },
+        {
+            "quote": "Let there be work, bread, water and salt for all",
+            "name": "Nelson Mandela"
+        },
+        {
+            "quote": "Education is the most powerful weapon which you can use to change the world Education is the most powerful",
+            "name": "Nelson Mandela"
+        },
+        {
+            "quote": "You don’t have to control your thoughts. You just have to stop letting them control you",
+            "name" : "Dan Millman"
+        },
+        {
+            "quote": "There is a crack in everything, that’s how the light gets in",
+            "name" : "Leonard Cohen"
+            
+        },
+        {
+            "quote": "It is not the bruises on the body that hurt. It is the wounds of the heart and the scars on the mind",
+            "name": "Aisha Mirza"
+        },
+        {
+            "quote": "Not until we are lost do we begin to understand ourselves",
+            "name": "Henry David Thoreau"
+        },
+        {
+            "quote" : "Happiness can be found even in the darkest of times, if one only remembers to turn on the light",
+            "name" : "Albus Dumbledore"
+        },
+        {
+            "quote" : "Just because you don’t understand it doesn’t mean it isn’t so",
+            "name" : "Lemony Snicket"
+        },
+        {
+            "quote" : "Just because no one else can heal or do your inner work for you doesn’t mean you can, should, or need to do it alone",
+            "name" : "Lisa Olivera"
+        },
+        {
+            "quote" : "There is hope, even when your brain tells you there isn’t",
+            "name" : "John Green"
+        },
+        {
+            "quote" : "Self-care is how you take your power back",
+            "name" : "Lalah Delia"
+        },
+        {
+            "quote": "You, yourself, as much as anybody in the entire universe, deserve your love and affection",
+            "name" : "Buddha"
+        },
+        {
+            "quote": "The best way out is always through",
+            "name" : "Robert Frost"
+        },
+        {
+            "quote": "We are not our trauma. We are not our brain chemistry. That’s part of who we are, but we’re so much more than that",
+            "name" : "Sam J. Miller"
+        },
+        {
+            "quote": "Your mental health is everything – prioritize it. Make the time like your life depends on it, because it does",
+            "name": "Mel Robbins"
+        },
+        {
+            "quote" : "What mental health needs is more sunlight, more candor, and more unashamed conversation",
+            "name" : "Glenn Close"
+        },
+        {
+            "quote": "Being able to be your true self is one of the strongest components of good mental health",
+            "name": "Dr. Lauren Fogel Mersy"
+        },
+        {
+            "quote" : "Don’t judge each day by the harvest you reap but by the seeds that you plant",
+            "name" : "Robert Louis Stevenson"
+        },
+        {
+            "quote" : "Sometimes the people around you won’t understand your journey. They don’t need to, it’s not for them",
+            "name" : "Joubert Botha"
+        },
+        {
+            "quote": "I am not afraid of storms for I am learning how to sail my ship",
+            "name": "Louisa May Alcott"
+        },
+        {
+            "quote": "You are valuable just because you exist. Not because of what you do or what you have done, but simply because you are",
+            "name": "Max Lucado"
+        },
+        {
+            "quote": "Even if we don’t have the power to choose where we come from, we can still choose where we go from there",
+            "name" : "Stephen Chbosky"
+        },
+        {
+            "quote" : "This feeling will pass. The fear is real but the danger is not",
+            "name" : "Cammie McGovern"
+        }
+    ]
 }

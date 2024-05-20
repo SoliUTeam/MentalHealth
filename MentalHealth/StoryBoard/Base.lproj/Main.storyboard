@@ -487,6 +487,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="Icon/yesButton"/>
+                                                <connections>
+                                                    <action selector="clickYesButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cjb-UA-lvU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgW-Hl-c1C">
                                                 <rect key="frame" x="43" y="0.0" width="28" height="28"/>
@@ -494,19 +497,44 @@
                                                     <constraint firstAttribute="height" constant="28" id="Rkm-Bf-PKZ"/>
                                                     <constraint firstAttribute="width" constant="28" id="j1X-lt-RCG"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="Icon/noButton"/>
+                                                <color key="tintColor" red="1" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="Icon/noButton"/>
+                                                <connections>
+                                                    <action selector="clickNoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="pwI-4V-aVw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-2y-9Jg" userLabel="Question Confirm View">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dopamine detox successful!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhy-FF-C8x">
+                                                <rect key="frame" x="20" y="16.666666666666686" width="177.33333333333334" height="16.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <constraints>
+                                            <constraint firstItem="Rhy-FF-C8x" firstAttribute="leading" secondItem="0lb-2y-9Jg" secondAttribute="leading" constant="20" id="6S6-JP-IZ8"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Rhy-FF-C8x" secondAttribute="trailing" constant="20" id="Pul-m7-HWJ"/>
+                                            <constraint firstItem="Rhy-FF-C8x" firstAttribute="centerY" secondItem="0lb-2y-9Jg" secondAttribute="centerY" id="Wed-1f-EuU"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="tv5-lf-Tf1" secondAttribute="trailing" constant="20" id="5wa-Ji-PNC"/>
+                                    <constraint firstAttribute="bottom" secondItem="0lb-2y-9Jg" secondAttribute="bottom" id="RRE-Fk-wFJ"/>
                                     <constraint firstAttribute="height" constant="50" id="TaN-ad-8Uy"/>
                                     <constraint firstItem="htW-rj-0VW" firstAttribute="centerY" secondItem="8oz-rD-trH" secondAttribute="centerY" id="mqv-s4-tpn"/>
+                                    <constraint firstAttribute="trailing" secondItem="0lb-2y-9Jg" secondAttribute="trailing" id="oMU-W8-Zdy"/>
+                                    <constraint firstItem="0lb-2y-9Jg" firstAttribute="top" secondItem="8oz-rD-trH" secondAttribute="top" id="rDu-Xf-uXu"/>
                                     <constraint firstItem="htW-rj-0VW" firstAttribute="leading" secondItem="8oz-rD-trH" secondAttribute="leading" constant="20" id="sOu-kj-M7a"/>
                                     <constraint firstItem="tv5-lf-Tf1" firstAttribute="centerY" secondItem="8oz-rD-trH" secondAttribute="centerY" id="uDv-Rf-bcB"/>
+                                    <constraint firstItem="0lb-2y-9Jg" firstAttribute="leading" secondItem="8oz-rD-trH" secondAttribute="leading" id="v4S-kP-Pyx"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDx-J1-n71" userLabel="ChartContainerView">
@@ -579,7 +607,8 @@
                     <connections>
                         <outlet property="backgroundView" destination="s6h-ip-aNA" id="8Qe-p9-caW"/>
                         <outlet property="chartContainerView" destination="uDx-J1-n71" id="app-6J-WAW"/>
-                        <outlet property="chartView" destination="tl4-Cd-8OA" id="NWt-cJ-5Ad"/>
+                        <outlet property="chartView" destination="0lb-2y-9Jg" id="Sdt-mf-BtO"/>
+                        <outlet property="confirmationView" destination="Rhy-FF-C8x" id="34L-9m-ZZB"/>
                         <outlet property="fridayDate" destination="zeW-MG-4eJ" id="bXo-fi-57b"/>
                         <outlet property="fridayLabel" destination="Hfk-z2-cc3" id="aqC-Os-hln"/>
                         <outlet property="fridayView" destination="Azd-h4-cmN" id="tVf-77-2mc"/>
@@ -589,6 +618,7 @@
                         <outlet property="myDiaryView" destination="6TJ-JC-9cc" id="ffv-Bh-Tjy"/>
                         <outlet property="noButton" destination="xgW-Hl-c1C" id="exE-GH-6s4"/>
                         <outlet property="questionBannerView" destination="8oz-rD-trH" id="EDb-tQ-TBl"/>
+                        <outlet property="questionConfirmView" destination="0lb-2y-9Jg" id="Q8j-s4-FnQ"/>
                         <outlet property="questionLabel" destination="htW-rj-0VW" id="TB0-Rt-Edi"/>
                         <outlet property="saturdayDate" destination="dq2-wK-Nul" id="6Vb-a3-E1P"/>
                         <outlet property="saturdayLabel" destination="GGy-Gt-s35" id="P7A-4e-2Ra"/>
@@ -612,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5763" y="-713"/>
+            <point key="canvasLocation" x="5762.5954198473282" y="-713.38028169014092"/>
         </scene>
         <!--Survey Entry View Controller-->
         <scene sceneID="prO-5z-md2">

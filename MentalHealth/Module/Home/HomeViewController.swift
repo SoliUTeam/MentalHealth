@@ -49,15 +49,32 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var fridayLabel: UILabel!
     @IBOutlet weak var saturdayLabel: UILabel!
     
+    @IBOutlet weak var confirmationView: UILabel!
     @IBOutlet weak var questionLabel: UILabel! {
         didSet {
             self.questionLabel.text = getQuestionLabelText()
         }
     }
     @IBOutlet weak var yesButton: UIButton!
+    @IBAction func clickYesButton() {
+        DispatchQueue.main.async { [self] in
+            self.questionConfirmView.isHidden = false
+            self.confirmationView.text = "Dopamine detox successful!"
+            applyBoader(questionConfirmView, with: .clear, backgroundColor: .surveyResultGreen)
+        }
+    }
+    
     @IBOutlet weak var noButton: UIButton!
+    @IBAction func clickNoButton() {
+        DispatchQueue.main.async { [self] in
+            self.questionConfirmView.isHidden = false
+            self.confirmationView.text = "It’s okay. Let’s do better next time!"
+            applyBoader(questionConfirmView, with: .clear, backgroundColor: .homepageNoBackground)
+        }
+    }
     
     @IBOutlet weak var questionBannerView: UIView!
+    @IBOutlet weak var questionConfirmView: UIView!
     @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var myDiaryView: UIView!
@@ -70,9 +87,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         //progressTrackBar for more clarity
         self.view.backgroundColor = UIColor.progressTrackBar
+        
+        //when user has been already done today, we need to validate this
+        questionConfirmView.isHidden = true
+
         dayArry = [sundayDate: [sundayView: sundayLabel], mondayDate: [mondayView: mondayLabel], tuesdayDate: [tuesdayView: tuesdayLabel], wednesdayDate: [wednesdayView: wednesdayLabel], thursdayDate: [thursdayView: thursdayLabel], fridayDate: [fridayView: fridayLabel], saturdayDate: [saturdayView: saturdayLabel]]
-        applyBoader([questionBannerView, testView, myDiaryView, chartContainerView], with: UIColor.homepageStroke, backgroundColor: .white)
-        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.clear, backgroundColor: UIColor.white)
+        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .clear, backgroundColor: .white)
+        applyBoader([questionBannerView, testView, myDiaryView, chartContainerView], with: .homepageStroke, backgroundColor: .white)
         updateTodayView()
 
         // Navigation
