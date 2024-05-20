@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6h-ip-aNA">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="201"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="211"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote of the Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xy-Y1-xwD">
@@ -39,19 +39,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is place holder" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-N8-eRp">
-                                <rect key="frame" x="20" y="86" width="357" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is place holder" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-N8-eRp">
+                                <rect key="frame" x="20" y="86" width="357" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="JUt-Og-1IG"/>
+                                    <constraint firstAttribute="height" constant="80" id="JUt-Og-1IG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXk-MB-zgm" userLabel="QuoteName">
-                                <rect key="frame" x="20" y="96" width="357" height="14.333333333333329"/>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="20" y="171" width="357" height="14.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3KV-iu-unp">
@@ -127,7 +127,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-P5-J9e">
-                                <rect key="frame" x="20" y="228" width="351" height="70"/>
+                                <rect key="frame" x="20" y="238" width="351" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cLO-8m-f0O">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
@@ -468,13 +468,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Mood Log" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C82-bu-xWk">
-                                <rect key="frame" x="19.999999999999993" y="206" width="117.33333333333331" height="17"/>
+                                <rect key="frame" x="19.999999999999993" y="216" width="117.33333333333331" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oz-rD-trH">
-                                <rect key="frame" x="20" y="318" width="353" height="50"/>
+                                <rect key="frame" x="20" y="328" width="353" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was dopamine detox successful?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htW-rj-0VW">
                                         <rect key="frame" x="20" y="16.666666666666686" width="220" height="17"/>
@@ -544,7 +544,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDx-J1-n71" userLabel="ChartContainerView">
-                                <rect key="frame" x="20" y="378" width="353" height="206"/>
+                                <rect key="frame" x="20" y="388" width="353" height="196"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoK-T7-Wis">
                                         <rect key="frame" x="10" y="10" width="40" height="17"/>
@@ -553,7 +553,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-Cd-8OA" userLabel="ChartView">
-                                        <rect key="frame" x="10" y="37" width="333" height="159"/>
+                                        <rect key="frame" x="10" y="37" width="333" height="149"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/6000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-y4-aBH">
@@ -595,8 +595,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8oz-rD-trH" secondAttribute="trailing" constant="20" id="RyB-Y5-Acl"/>
                             <constraint firstItem="leJ-P5-J9e" firstAttribute="top" secondItem="C82-bu-xWk" secondAttribute="bottom" constant="5" id="Skd-zq-kBF"/>
                             <constraint firstItem="C82-bu-xWk" firstAttribute="top" secondItem="s6h-ip-aNA" secondAttribute="bottom" constant="5" id="T2l-nd-QwE"/>
+                            <constraint firstItem="RXk-MB-zgm" firstAttribute="top" secondItem="gHr-N8-eRp" secondAttribute="bottom" constant="5" id="TVE-4f-Gr1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6TJ-JC-9cc" secondAttribute="trailing" constant="20" id="VCE-QD-avt"/>
-                            <constraint firstItem="RXk-MB-zgm" firstAttribute="top" secondItem="gHr-N8-eRp" secondAttribute="top" constant="10" id="VZU-Gl-S4v"/>
                             <constraint firstItem="8oz-rD-trH" firstAttribute="top" secondItem="leJ-P5-J9e" secondAttribute="bottom" constant="20" id="VmI-Y8-RuJ"/>
                             <constraint firstItem="C82-bu-xWk" firstAttribute="top" secondItem="gHr-N8-eRp" secondAttribute="bottom" constant="50" id="ZDs-AQ-xh2"/>
                             <constraint firstItem="gHr-N8-eRp" firstAttribute="leading" secondItem="3xy-Y1-xwD" secondAttribute="leading" id="dvm-0u-FHJ"/>
@@ -629,6 +629,7 @@
                         <outlet property="questionBannerView" destination="8oz-rD-trH" id="EDb-tQ-TBl"/>
                         <outlet property="questionConfirmView" destination="0lb-2y-9Jg" id="Q8j-s4-FnQ"/>
                         <outlet property="questionLabel" destination="htW-rj-0VW" id="TB0-Rt-Edi"/>
+                        <outlet property="quoteName" destination="RXk-MB-zgm" id="8qY-Vs-nQd"/>
                         <outlet property="saturdayDate" destination="dq2-wK-Nul" id="6Vb-a3-E1P"/>
                         <outlet property="saturdayLabel" destination="GGy-Gt-s35" id="P7A-4e-2Ra"/>
                         <outlet property="saturdayView" destination="Z3j-hF-ACw" id="shm-om-Z0b"/>

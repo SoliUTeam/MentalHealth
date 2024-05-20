@@ -16,7 +16,7 @@ struct Quote: Codable {
     let name: String
 }
 
-func getRandomQuote() -> String? {
+func getRandomQuote() -> [String: String]? {
     guard let fileURL = Bundle.main.url(forResource: "InspiringQuote", withExtension: "json") else {
         print("JSON file not found")
         return nil
@@ -33,7 +33,8 @@ func getRandomQuote() -> String? {
         }
         let randomIndex = Int.random(in: 0..<quoteData.quoteData.count)
         let randomQuote = quoteData.quoteData[randomIndex].quote
-        return randomQuote
+        let randomQuoteName = quoteData.quoteData[randomIndex].name
+        return [randomQuote: randomQuoteName]
     } catch {
         print("Error decoding JSON: \(error)")
         return nil

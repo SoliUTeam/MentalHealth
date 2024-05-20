@@ -21,10 +21,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var wiseLabel: UILabel! {
         didSet {
             if let quote = getRandomQuote() {
-                wiseLabel.animate(newTexts: quote)
+                wiseLabel.animate(newTexts: "\"\(quote.first?.key ?? "")\"")
+                quoteName.text =  quote.first?.value
             }
         }
     }
+    @IBOutlet weak var quoteName: UILabel!
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var mondayView: UIView!
     @IBOutlet weak var tuesdayView: UIView!
