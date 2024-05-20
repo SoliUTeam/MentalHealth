@@ -36,6 +36,8 @@ enum Ethnicity: String {
 public class LoginManager {
     static let shared = LoginManager()
     
+    static let defualtTestUser = UserInformation(email: "test1234@gmail.com", password: "testingUser1234!", nickName: "testuser1", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian")
+    
     // Continue as Guest option will be false as default
     private var logInState: Bool = false
     private var nickName: String = "Default"

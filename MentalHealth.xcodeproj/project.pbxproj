@@ -11,11 +11,12 @@
 		670087AA2BDF637E000EB39C /* CalendarPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95D293B42BCF9C0A00017E03 /* CalendarPopUpView.xib */; };
 		670087AB2BDF637E000EB39C /* SurveyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */; };
 		670087AC2BDF637E000EB39C /* SurveyNextButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */; };
-		670087AD2BDF637E000EB39C /* RadarMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */; };
 		670087B22BDF637E000EB39C /* LaunchAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 95CEFFD32B6F365600C527D1 /* LaunchAnimation.json */; };
 		670087B32BDF637E000EB39C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F52B6EDFA200651684 /* Assets.xcassets */; };
 		670087B42BDF637E000EB39C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F22B6EDFA000651684 /* Main.storyboard */; };
 		670087B52BDF637E000EB39C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
+		670400E32BF56B9B00BC65CA /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670400E22BF56B9B00BC65CA /* UserInformation.swift */; };
+		670400E52BF7240D00BC65CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 670400E42BF7240C00BC65CA /* GoogleService-Info.plist */; };
 		674EFBAD2BF4167000107789 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EFBAC2BF4167000107789 /* UIButton+Extension.swift */; };
 		67811DD32BF003EF00BB816F /* MyDiaryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */; };
 		67811DD62BF00AA200BB816F /* MyDiaryRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */; };
@@ -25,9 +26,6 @@
 		67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E5253F2BBA262B00C27F21 /* TestingInformation.swift */; };
 		67E525422BBA285200C27F21 /* CellReusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525412BBA285200C27F21 /* CellReusable+Extension.swift */; };
 		67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */; };
-		67ED8A372BCF81B000E37950 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 67ED8A362BCF81B000E37950 /* DGCharts */; };
-		67ED8A3B2BCF886700E37950 /* DemoBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */; };
-		67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */; };
 		67EE78DA2BF3350A00478D44 /* MyDiaryTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EE78D92BF3350A00478D44 /* MyDiaryTextViewController.swift */; };
 		67F064952B9D0DE200400013 /* FBNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064942B9D0DE200400013 /* FBNetworkLayer.swift */; };
 		67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */; };
@@ -39,7 +37,6 @@
 		953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* HomeViewController.swift */; };
 		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 		95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A072BBE69810003C584 /* UIViewController+Extension.swift */; };
-		95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 95433A0A2BBF77C40003C584 /* DGCharts */; };
 		95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A0D2BBF98C10003C584 /* DayViewController.swift */; };
 		95433A102BC63A860003C584 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A0F2BC63A860003C584 /* String+Extension.swift */; };
 		95433A132BC6558C0003C584 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A122BC6558C0003C584 /* SignUpViewController.swift */; };
@@ -84,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		6700875A2BDF4E94000EB39C /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		670400E22BF56B9B00BC65CA /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		670400E42BF7240C00BC65CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		674EFBAC2BF4167000107789 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiaryFlow.storyboard; sourceTree = "<group>"; };
@@ -95,9 +94,6 @@
 		67E525412BBA285200C27F21 /* CellReusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellReusable+Extension.swift"; sourceTree = "<group>"; };
 		67E525442BBA28C000C27F21 /* SurveyNextButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyNextButtonCell.swift; sourceTree = "<group>"; };
 		67E525462BBA29BD00C27F21 /* SurveyListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyListViewCell.xib; sourceTree = "<group>"; };
-		67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBaseViewController.swift; sourceTree = "<group>"; };
-		67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarMarkerView.swift; sourceTree = "<group>"; };
-		67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadarMarkerView.xib; sourceTree = "<group>"; };
 		67EE78D92BF3350A00478D44 /* MyDiaryTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryTextViewController.swift; sourceTree = "<group>"; };
 		67F064942B9D0DE200400013 /* FBNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNetworkLayer.swift; sourceTree = "<group>"; };
 		67F064982B9D1D5C00400013 /* MentalHealthQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalHealthQuestion.swift; sourceTree = "<group>"; };
@@ -155,7 +151,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95433A0B2BBF77C40003C584 /* DGCharts in Frameworks */,
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
 				95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */,
 				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
@@ -164,7 +159,6 @@
 				95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */,
 				95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */,
 				95B1CEFD2B6FD87600101423 /* FirebaseAuth in Frameworks */,
-				67ED8A372BCF81B000E37950 /* DGCharts in Frameworks */,
 				95B1CF012B6FD87600101423 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +247,7 @@
 				95B1CEF62B6FD57D00101423 /* Common */,
 				953A64FA2B6EDFA200651684 /* Info.plist */,
 				95D293A32BCD0CB800017E03 /* LoginManager.swift */,
+				670400E42BF7240C00BC65CA /* GoogleService-Info.plist */,
 			);
 			path = MentalHealth;
 			sourceTree = "<group>";
@@ -292,6 +287,7 @@
 				95C804382BD9C8F400743FA5 /* LoginNickNameViewController.swift */,
 				95C72BE82BD6404E00ED178F /* LoginConfirmViewController.swift */,
 				95C804362BD9BA0C00743FA5 /* CustomSelectButton.swift */,
+				670400E22BF56B9B00BC65CA /* UserInformation.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -309,8 +305,6 @@
 				95433A0F2BC63A860003C584 /* String+Extension.swift */,
 				95D293B62BCF9C6600017E03 /* NSObject+Extension.swift */,
 				95D293B82BCF9C8E00017E03 /* UIView+Extention.swift */,
-				67ED8A3A2BCF886700E37950 /* DemoBaseViewController.swift */,
-				67ED8A3C2BCF892600E37950 /* RadarMarkerView.swift */,
 				6700875A2BDF4E94000EB39C /* UIFont+Extension.swift */,
 			);
 			path = Extension;
@@ -322,7 +316,6 @@
 				67E525432BBA286900C27F21 /* Cell */,
 				957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */,
 				67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */,
-				67ED8A3E2BCF8ACC00E37950 /* RadarMarkerView.xib */,
 				67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */,
 			);
 			path = Survey;
@@ -451,10 +444,8 @@
 				95B1CEFE2B6FD87600101423 /* FirebaseDatabase */,
 				95B1CF002B6FD87600101423 /* FirebaseFirestore */,
 				95B1CF022B6FD87700101423 /* FirebaseStorage */,
-				95433A0A2BBF77C40003C584 /* DGCharts */,
 				9577204B2BC8CB4B0026DC91 /* FSCalendar */,
 				95D293A62BCE347100017E03 /* SwiftEntryKit */,
-				67ED8A362BCF81B000E37950 /* DGCharts */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -491,7 +482,6 @@
 				953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */,
 				9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				95D293A52BCE347100017E03 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
 			);
@@ -515,7 +505,6 @@
 				67F71C7A2BEC31A90008BFA5 /* DiarcyCell.xib in Resources */,
 				670087AC2BDF637E000EB39C /* SurveyNextButtonCell.xib in Resources */,
 				95ACE6A32BE0A5E800E935EC /* Roboto-Bold.ttf in Resources */,
-				670087AD2BDF637E000EB39C /* RadarMarkerView.xib in Resources */,
 				670087B22BDF637E000EB39C /* LaunchAnimation.json in Resources */,
 				670087B32BDF637E000EB39C /* Assets.xcassets in Resources */,
 				95ACE6A12BE0A5E800E935EC /* Roboto-Regular.ttf in Resources */,
@@ -524,6 +513,7 @@
 				95ACE6A72BE0A82000E935EC /* InspiringQuote.json in Resources */,
 				95ACE6A42BE0A5E800E935EC /* Roboto-Black.ttf in Resources */,
 				67811DD32BF003EF00BB816F /* MyDiaryFlow.storyboard in Resources */,
+				670400E52BF7240D00BC65CA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +540,6 @@
 				95B1CF082B6FE87500101423 /* FeedbackViewController.swift in Sources */,
 				95B1CF112B72023200101423 /* AccountHomeViewController.swift in Sources */,
 				957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */,
-				67ED8A3B2BCF886700E37950 /* DemoBaseViewController.swift in Sources */,
 				67E525402BBA262B00C27F21 /* TestingInformation.swift in Sources */,
 				953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */,
 				95C72BEB2BD753B900ED178F /* LoginAgeViewController.swift in Sources */,
@@ -562,7 +551,6 @@
 				67F71C792BEC31A90008BFA5 /* DiarcyCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */,
-				67ED8A3D2BCF892600E37950 /* RadarMarkerView.swift in Sources */,
 				67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */,
 				957720492BC7AC280026DC91 /* HomeTabBarController.swift in Sources */,
 				67EE78DA2BF3350A00478D44 /* MyDiaryTextViewController.swift in Sources */,
@@ -571,6 +559,7 @@
 				9561FE122BAD2EAB00345642 /* UIColor+Extension.swift in Sources */,
 				95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */,
 				95C72BE72BD6400700ED178F /* LoginEthnicityViewController.swift in Sources */,
+				670400E32BF56B9B00BC65CA /* UserInformation.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
 				95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */,
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
@@ -828,14 +817,6 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ChartsOrg/Charts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -871,19 +852,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		67ED8A362BCF81B000E37950 /* DGCharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DGCharts;
-		};
 		953A65012B6EE67B00651684 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		95433A0A2BBF77C40003C584 /* DGCharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 95433A092BBF77C40003C584 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = DGCharts;
 		};
 		9577204B2BC8CB4B0026DC91 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;

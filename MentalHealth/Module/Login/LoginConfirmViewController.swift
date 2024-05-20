@@ -51,14 +51,18 @@ class LoginConfirmViewController: UIViewController {
     
     @objc
     func navigateToHomeScreen() {
-        showAlert(title: "Success", description: "Welcome \(loginManager.getNickName())!")
-        loginManager.setLoggedIn(true)
-        sendUserInfo()
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        if let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
-            navigationController?.pushViewController(homeTabBarController, animated: true)
-        } else {
-            print("Can't find homeTabBarController")
+        self.clickedConfirmation()
+        if loginManager.isLoggedIn() == false {
+            print("Login Failed")
+        }
+        else {
+            showAlert(title: "Success", description: "Welcome \(loginManager.getNickName())!")
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            if let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
+                navigationController?.pushViewController(homeTabBarController, animated: true)
+            } else {
+                print("Can't find homeTabBarController")
+            }
         }
     }
     
@@ -96,7 +100,24 @@ class LoginConfirmViewController: UIViewController {
         return userInfo
     }
     
-    func sendUserInfo() {
-        createUserData()
+    func clickedConfirmation() {
+        let userInfo = LoginManager.defualtTestUser
+        FBNetworkLayer.shared.createAccount(email: userInfo.email, password: userInfo.password) { error in
+                if let error = error {
+                    print("Failed to create account: \(error)")
+                } else {
+                    FBNetworkLayer.shared.fetchUserInformation(userInfo: userInfo) { error in
+                        if let error = error {
+                            print("Failed to fetch user information: \(error)")
+                        } else {
+                            self.loginManager.setLoggedIn(true)
+                            print("User information successfully updated")
+                        }
+                    }
+                }
+            }
+        
     }
+    
+
 }

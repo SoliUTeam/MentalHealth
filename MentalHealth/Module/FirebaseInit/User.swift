@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct User: Codable {
-    var demographicInformation: DemographicInfo
-    var surveyResult: [SurveyResult]
-}
-
-struct DemographicInfo: Codable {
-    var gender: String
-    var firstName: String
-    var lastName: String
-    
-}
+//struct User: Codable {
+//    var demographicInformation: DemographicInfo
+//    var email: String
+//    var surveyResult: [SurveyResult]
+//}
+//
+//struct DemographicInfo: Codable {
+//    var email: String
+//    var gender: String
+//    var statu: String
+//}
 
 struct SurveyResult: Codable {
     var surveyDate: String
