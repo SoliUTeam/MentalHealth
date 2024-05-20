@@ -23,7 +23,6 @@ class SurveyListViewController: UIViewController {
     var selectedQuestionId: Int = 0
     var readyToSubmit = false
     var surveyResultRecord: [Int: Int] = [:]
-    lazy var fbLayer = FBNetworkLayer()
     
     
     override func viewDidLoad() {
