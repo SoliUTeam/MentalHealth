@@ -81,7 +81,7 @@ class SurveyResultViewController: UIViewController {
     private func setupScoreResult() {
         scoreResults[0] = []
         scoreResults[1] = []
-        for (startKey, category) in categories {
+        for (startKey, _) in categories {
             let range = startKey..<startKey + 5
             let sum1 = range.reduce(0) { $0 + (myTestScore[$1] ?? 0) }
             let sum2 = range.reduce(0) { $0 + (allUsersAverageResult[$1] ?? 0) }
@@ -112,7 +112,7 @@ class SurveyResultViewController: UIViewController {
     
     private func labelResultSetup() {
         var resultTable: [String: NSAttributedString] = [:]
-        var blackResultString: [NSAttributedString.Key: Any] = [
+        let blackResultString: [NSAttributedString.Key: Any] = [
             .font: UIFont.boldSystemFont(ofSize: 14),
             .foregroundColor: UIColor.black
         ]
@@ -124,7 +124,7 @@ class SurveyResultViewController: UIViewController {
             let avg1 = Double(sum1) / 5.0
             let avg2 = Double(sum2) / 5.0
             
-            var combinedString = NSMutableAttributedString()
+            let combinedString = NSMutableAttributedString()
             let colorResultString: [NSAttributedString.Key: Any] = [
                 .font: UIFont.boldSystemFont(ofSize: 14),
                 .foregroundColor: self.colorMapping(myScore: avg1, averageScore: avg2)
