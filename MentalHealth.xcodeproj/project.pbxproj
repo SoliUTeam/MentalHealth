@@ -46,6 +46,7 @@
 		957720492BC7AC280026DC91 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957720482BC7AC280026DC91 /* HomeTabBarController.swift */; };
 		9577204C2BC8CB4B0026DC91 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 9577204B2BC8CB4B0026DC91 /* FSCalendar */; };
 		957C02D22B6F77F900DE21DE /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */; };
+		9593C2782BFC36A0000FF790 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593C2772BFC36A0000FF790 /* Optional+Extensions.swift */; };
 		95ACE6A12BE0A5E800E935EC /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95ACE69D2BE0A5E800E935EC /* Roboto-Regular.ttf */; };
 		95ACE6A22BE0A5E800E935EC /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95ACE69E2BE0A5E800E935EC /* Roboto-Medium.ttf */; };
 		95ACE6A32BE0A5E800E935EC /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95ACE69F2BE0A5E800E935EC /* Roboto-Bold.ttf */; };
@@ -118,6 +119,7 @@
 		957720462BC7AA3C0026DC91 /* HomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBar.swift; sourceTree = "<group>"; };
 		957720482BC7AC280026DC91 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
+		9593C2772BFC36A0000FF790 /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		95ACE69D2BE0A5E800E935EC /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		95ACE69E2BE0A5E800E935EC /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		95ACE69F2BE0A5E800E935EC /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				95D293B62BCF9C6600017E03 /* NSObject+Extension.swift */,
 				95D293B82BCF9C8E00017E03 /* UIView+Extention.swift */,
 				6700875A2BDF4E94000EB39C /* UIFont+Extension.swift */,
+				9593C2772BFC36A0000FF790 /* Optional+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				95C72BE52BD63FAA00ED178F /* LoginStatusViewController.swift in Sources */,
 				67F71C752BEB22310008BFA5 /* SurveyEntryViewController.swift in Sources */,
 				67E525452BBA28C000C27F21 /* SurveyNextButtonCell.swift in Sources */,
+				9593C2782BFC36A0000FF790 /* Optional+Extensions.swift in Sources */,
 				67F71C792BEC31A90008BFA5 /* DiarcyCell.swift in Sources */,
 				679D23862BB52015004CAA61 /* User.swift in Sources */,
 				95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */,
