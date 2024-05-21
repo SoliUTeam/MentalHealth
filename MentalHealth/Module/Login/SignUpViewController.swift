@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var continueAsGuestButton: UIButton!
+    
     @IBAction func tapAsGuest(_ sender: Any) {
         showAlert(title: "Success", description: "Continue as guest")
         LoginManager.shared.setLoggedIn(false)
@@ -32,7 +33,37 @@ class SignUpViewController: UIViewController {
             print("Can't find LogInViewController")
         }
     }
-
+    
+    @IBAction func checkEmailAndPassword() {
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            nextButton.isEnabled = false
+            passwordTextField.textColor = .black
+            return
+        }
+        setIDAndPassword(email, password)
+        
+        nextButton.isEnabled = true
+        if checkPassword(password) {
+            passwordTextField.textColor = .black
+            nextButton.isEnabled = true
+        } else {
+            passwordTextField.textColor = .red
+            nextButton.isEnabled = false
+        }
+    }
+    
+    private func checkPassword(_ password: String) -> Bool {
+        let passwordRegex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*()_+\\-=[\\]{};':\"\\\\|,.<>\\/?]).{8,}$"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passwordTest.evaluate(with: password)
+    }
+    
+    private func setIDAndPassword(_ email: String, _ password: String) {
+        LoginManager.shared.setEmail(email)
+        LoginManager.shared.setPassword(password)
+    }
+    
     @IBAction func navigateToGenderScreen(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let loginGenderViewController = storyboard.instantiateViewController(identifier: "LoginGenderViewController") as? LoginGenderViewController {
@@ -41,11 +72,23 @@ class SignUpViewController: UIViewController {
             print("Can't find loginGenderViewController")
         }
     }
-
+    
+    @objc func textFieldsDidChange(_ textField: UITextField) {
+        checkEmailAndPassword()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.isEnabled = false
+        // Set the delegates
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        // Add target for editingChanged event
+        emailTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textFieldsDidChange), for: .editingChanged)
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)

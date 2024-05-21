@@ -101,7 +101,7 @@ class LoginConfirmViewController: UIViewController {
     }
     
     func clickedConfirmation() {
-        let userInfo = LoginManager.defualtTestUser
+        let userInfo = LoginManager.shared.getUserInfo()
         FBNetworkLayer.shared.createAccount(email: userInfo.email, password: userInfo.password) { error in
                 if let error = error {
                     print("Failed to create account: \(error)")
@@ -110,13 +110,20 @@ class LoginConfirmViewController: UIViewController {
                         if let error = error {
                             print("Failed to fetch user information: \(error)")
                         } else {
-                            self.loginManager.setLoggedIn(true)
-                            print("User information successfully updated")
+                            FBNetworkLayer.shared.addEmailToList(email: userInfo.email) { error in
+                                if let error = error {
+                                    print("Failed to add email lists: \(error)")
+                                }
+                                else {
+                                    self.loginManager.setLoggedIn(true)
+                                    print("User information successfully updated")
+                                }
+                            }
+                           
                         }
                     }
                 }
             }
-        
     }
     
 

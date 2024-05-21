@@ -45,9 +45,29 @@ public class LoginManager {
     private var age: Int = 0
     private var workStatus: WorkStatus = .other
     private var ethnicity: Ethnicity = .other
+    private var email: String = ""
+    private var password: String = ""
+    
+    func getUserInfo() -> UserInformation {
+        return UserInformation(email: email,
+                               password: password, 
+                               nickName: nickName,
+                               gender: getGender(),
+                               age: getAge(),
+                               workStatus: getWorkStatus(),
+                               ethnicity: getEthnicity())
+    }
 
     func setLoggedIn(_ loggedIn: Bool) {
         logInState = loggedIn
+    }
+    
+    func setEmail(_ email: String) {
+        self.email = email
+    }
+    
+    func setPassword(_ password: String) {
+        self.password = password
     }
 
     func isLoggedIn() -> Bool {

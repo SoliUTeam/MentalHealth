@@ -36,6 +36,28 @@ class FBNetworkLayer {
         }
     }
     
+    func checkEmailExists(email: String, completion: @escaping (Bool, Error?) -> Void) {
+            db.collection("EmailList").whereField("email", isEqualTo: email).getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    completion(false, error)
+                } else {
+                    if let documents = querySnapshot?.documents, documents.count > 0 {
+                        completion(true, nil)
+                    } else {
+                        completion(false, nil)
+                    }
+                }
+            }
+        }
+    
+    func addEmailToList(email: String, completion: @escaping (Error?) -> Void) {
+         let emailData: [String: Any] = ["email": email]
+         db.collection("EmailList").addDocument(data: emailData) { error in
+             completion(error)
+         }
+     }
+    
+    
     func fetchUserInformation(userInfo: UserInformation, completion: @escaping (Error?) -> Void) {
         let userData: [String: Any] = [
             "demographicInformation": [
@@ -48,6 +70,8 @@ class FBNetworkLayer {
                 "nickname": userInfo.nickName
             ]
         ]
+        
+        
         
         db.collection("Users").addDocument(data: userData) { error in
             if let error = error {
