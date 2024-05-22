@@ -36,7 +36,9 @@ enum Ethnicity: String {
 public class LoginManager {
     static let shared = LoginManager()
     
-    static let defualtTestUser = UserInformation(email: "test1234@gmail.com", password: "testingUser1234!", nickName: "testuser1", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian")
+    static let defualtTestUser = UserInformation(email: "test1234@gmail.com", password: "testingUser1234!", nickName: "testuser1", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian", surveyResult: [])
+    
+    static let guestUser = UserInformation(email: "guest@gmail.com", password: "guest!", nickName: "Guest", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian", surveyResult: [])
     
     // Continue as Guest option will be false as default
     private var logInState: Bool = false
@@ -47,6 +49,10 @@ public class LoginManager {
     private var ethnicity: Ethnicity = .other
     private var email: String = ""
     private var password: String = ""
+    private var surveyResult: [SurveyResult] = []
+    private var currentUser: UserInformation = guestUser
+    
+    
     
     func getUserInfo() -> UserInformation {
         return UserInformation(email: email,
@@ -55,12 +61,29 @@ public class LoginManager {
                                gender: getGender(),
                                age: getAge(),
                                workStatus: getWorkStatus(),
-                               ethnicity: getEthnicity())
+                               ethnicity: getEthnicity(),
+                               surveyResult: surveyResult)
+    }
+    
+    func setMyUserInformation(_ userInfo: UserInformation) {
+        self.currentUser = userInfo
+    }
+    
+    func getUserInformation() -> UserInformation { 
+        print("Print current user Information \(currentUser)")
+        return currentUser
+    }
+    
+    
+    func setSurveyResult(_ surveyResult: [SurveyResult]) {
+        self.surveyResult = surveyResult
     }
 
     func setLoggedIn(_ loggedIn: Bool) {
         logInState = loggedIn
     }
+    
+    
     
     func setEmail(_ email: String) {
         self.email = email

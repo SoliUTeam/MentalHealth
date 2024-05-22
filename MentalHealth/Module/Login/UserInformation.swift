@@ -26,4 +26,10 @@ struct UserInformation {
     var age: String
     var workStatus: String
     var ethnicity: String
+    var surveyResult: [SurveyResult]
+}
+
+struct SurveyResult: Codable {
+    var surveyDate: String
+    var surveyAnswer: [Int]
 }

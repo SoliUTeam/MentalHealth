@@ -51,19 +51,20 @@ class LoginConfirmViewController: UIViewController {
     
     @objc
     func navigateToHomeScreen() {
-        self.clickedConfirmation()
-        if loginManager.isLoggedIn() == false {
-            print("Login Failed")
-        }
-        else {
-            showAlert(title: "Success", description: "Welcome \(loginManager.getNickName())!")
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            if let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
-                navigationController?.pushViewController(homeTabBarController, animated: true)
-            } else {
-                print("Can't find homeTabBarController")
+        self.clickedConfirmation { [weak self] success in
+            guard let self = self else { return }
+            if !success {
+                print("Login Failed")
             }
-        }
+            else {
+                showAlert(title: "Success", description: "Welcome \(loginManager.getNickName())!")
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                if let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
+                    navigationController?.pushViewController(homeTabBarController, animated: true)
+                } else {
+                    print("Can't find homeTabBarController")
+                }
+            }}
     }
     
     private var loginManager = LoginManager.shared
@@ -100,21 +101,29 @@ class LoginConfirmViewController: UIViewController {
         return userInfo
     }
     
-    func clickedConfirmation() {
+    func clickedConfirmation(completion: @escaping (Bool) -> Void) {
         let userInfo = LoginManager.shared.getUserInfo()
         FBNetworkLayer.shared.createAccount(email: userInfo.email, password: userInfo.password) { error in
-                if let error = error {
+                if let error = error as? SignInError {
+                    self.showAlert(error: error)
                     print("Failed to create account: \(error)")
+                    completion(false)
                 } else {
                     FBNetworkLayer.shared.fetchUserInformation(userInfo: userInfo) { error in
-                        if let error = error {
+                        if let error = error as? SignInError {
+                            self.showAlert(error: error)
+                            print("Failed to create account: \(error)")
                             print("Failed to fetch user information: \(error)")
+                            completion(false)
                         } else {
                             FBNetworkLayer.shared.addEmailToList(email: userInfo.email) { error in
-                                if let error = error {
+                                if let error = error as? SignInError {
+                                    self.showAlert(error: error)
                                     print("Failed to add email lists: \(error)")
+                                    completion(false)
                                 }
                                 else {
+                                    completion(true)
                                     self.loginManager.setLoggedIn(true)
                                     print("User information successfully updated")
                                 }
@@ -125,6 +134,4 @@ class LoginConfirmViewController: UIViewController {
                 }
             }
     }
-    
-
 }

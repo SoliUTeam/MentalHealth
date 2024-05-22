@@ -19,14 +19,14 @@ extension UIViewController {
         let day = calendar.component(.day, from: currentDate)
         return "\(monthName) \(day)"
     }
-
+    
     func getCurrentDate() -> String {
         let currentDate = Date()
         let calendar = Calendar.current
         let day = calendar.component(.day, from: currentDate)
         return "\(day)"
     }
-
+    
     func getCurrentWeekday() -> String {
         let index = Calendar.current.component(.weekday, from: Date())
         return String(Calendar.current.weekdaySymbols[index].first!)
@@ -53,18 +53,26 @@ extension UIViewController {
             view.backgroundColor = backgroundColor
         }
     }
-
+    
+    func showAlert(title: String = "Error", error: SignInError) {
+        let alertController = UIAlertController(title: title, message: error.localizedDescription,
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func applyBoader(_ view: UIView, with color: UIColor = UIColor.viewBorder, backgroundColor: UIColor = .clear) {
         view.layer.borderColor = color.cgColor
         view.layer.cornerRadius = 12
         view.layer.borderWidth = 1
         view.backgroundColor = backgroundColor
     }
-
+    
     func makeCircleShape(_ view: UIView) {
         view.layer.cornerRadius = view.layer.frame.size.width/2
     }
-
+    
     func showAlert(title: String, description: String) {
         var attributes = EKAttributes.topFloat
         attributes.entryBackground = .color(color: .white)
@@ -87,7 +95,7 @@ extension UIViewController {
         var buttons: [UIButton] = []
         var userClicked = false
         var index = 0
-
+        
         for count in 0...label.count - 1 {
             let customButton = CustomSelectButton(titleString: label[count], index: count) { buttonIndex, isEnabled in
                 index = buttonIndex
@@ -133,9 +141,9 @@ extension UIViewController {
 extension UIViewController {
     func setCustomBackNavigationButton(_ selector: Selector = #selector(UINavigationController.popViewController(animated:))) {
         let backButton = UIBarButtonItem(image: UIImage(assetIdentifier: .backArrow),
-                                      style: .plain,
-                                      target: navigationController,
-                                      action: selector)
+                                         style: .plain,
+                                         target: navigationController,
+                                         action: selector)
         navigationItem.leftBarButtonItem = backButton
     }
 }

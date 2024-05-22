@@ -24,6 +24,106 @@ class FBNetworkLayer {
         db = Firestore.firestore()
     }
     
+    func signIn(email: String, password: String, completion: @escaping (Result<UserInformation?, Error>) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+            if let error = error {
+                print("Sign-In Error: \(error.localizedDescription)")
+                completion(.failure(error))
+            } else {
+                print(authResult?.user.uid ?? "No User ID")
+                strongSelf.getUserInformation(email: email) { result in
+                    switch result {
+                    case .success(let userInfo):
+                        print("My User Info \(userInfo)" )
+                        completion(.success(nil))
+                        LoginManager.shared.setMyUserInformation(userInfo)
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+            }
+        }
+    }
+    
+    func getUserInformation(email: String, completion: @escaping (Result<UserInformation, Error>) -> Void) {
+        let userRef = db.collection("Users").whereField("demographicInformation.email", isEqualTo: email)
+        
+        userRef.getDocuments { querySnapshot, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let documents = querySnapshot?.documents, let document = documents.first else {
+                completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "User not found"])))
+                return
+            }
+            
+            do {
+                let data = document.data()
+                let demographicInfo = data["demographicInformation"] as? [String: Any]
+                let surveyResultsData = data["surveyResult"] as? [[String: Any]] ?? []
+                
+                let surveyResults = try surveyResultsData.map { try JSONDecoder().decode(SurveyResult.self, from: JSONSerialization.data(withJSONObject: $0)) }
+                
+                let userInfo = UserInformation(
+                    email: demographicInfo?["email"] as? String ?? "",
+                    password: demographicInfo?["password"] as? String ?? "",
+                    nickName: demographicInfo?["nickname"] as? String ?? "",
+                    gender: demographicInfo?["gender"] as? String ?? "",
+                    age: demographicInfo?["age"] as? String ?? "",
+                    workStatus: demographicInfo?["workStatus"] as? String ?? "",
+                    ethnicity: demographicInfo?["ethnicity"] as? String ?? "",
+                    surveyResult: surveyResults
+                )
+                
+                completion(.success(userInfo))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    
+    func addSurvey(userInfomration: UserInformation, newSurveyResult: SurveyResult, completion: @escaping (Error?)-> Void) {
+        let email = userInfomration.email
+        let userRef = db.collection("Users").whereField("demographicInformation.email", isEqualTo: email)
+        
+        userRef.getDocuments { querySnapshot, error in
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            guard let documents = querySnapshot?.documents,
+                  let document = documents.first else {
+                    completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "User Not founc"]))
+                return
+            }
+            
+            
+            var userData = document.data()
+            var surveyResults = userData["surveyResult"] as? [[String: Any]] ?? []
+            
+            let newSurveyResultData: [String: Any] = [
+                        "surveyDate": newSurveyResult.surveyDate,
+                        "surveyAnswer": newSurveyResult.surveyAnswer
+            ]
+
+            surveyResults.append(newSurveyResultData)
+            userData["surveyResult"] = surveyResults
+
+            document.reference.updateData(userData) { error in
+                if let error = error {
+                    completion(error)
+                    return
+                }
+                completion(nil)
+            }
+        }
+    }
+    
     func createAccount(email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
@@ -58,6 +158,7 @@ class FBNetworkLayer {
      }
     
     
+    
     func fetchUserInformation(userInfo: UserInformation, completion: @escaping (Error?) -> Void) {
         let userData: [String: Any] = [
             "demographicInformation": [
@@ -68,10 +169,9 @@ class FBNetworkLayer {
                 "age": userInfo.age,
                 "passwrod": userInfo.password,
                 "nickname": userInfo.nickName
-            ]
+            ],
+               "surveyResult": []  // Initialize as an empty array
         ]
-        
-        
         
         db.collection("Users").addDocument(data: userData) { error in
             if let error = error {
