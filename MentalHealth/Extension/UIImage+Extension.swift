@@ -18,6 +18,7 @@ enum Image: String {
     case home
     case account
     case dayButton
+    case dayClick
     case calendar
     case backArrow
     case buttonCheck

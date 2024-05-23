@@ -88,7 +88,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //progressTrackBar for more clarity
-        self.view.backgroundColor = UIColor.progressTrackBar
+        self.view.backgroundColor = UIColor.homepageBackground
         
         //when user has been already done today, we need to validate this
         questionConfirmView.isHidden = true

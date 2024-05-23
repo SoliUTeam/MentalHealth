@@ -26,8 +26,6 @@ enum SignInError: Error {
             return "User ID does not exist."
         case .signInFailed(let message):
             return "Sign-In Error: \(message)"
-        default:
-            return "Unknown Error"
         }
     }
 }

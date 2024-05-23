@@ -11,6 +11,7 @@ import UIKit
 class AccountHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.homepageBackground
     }
 
     override func viewWillAppear(_ animated: Bool) {

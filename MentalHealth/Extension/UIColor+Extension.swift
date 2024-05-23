@@ -17,7 +17,7 @@ enum Color: String {
     case progressBarBorder = "#E4E4E4"
     case homepageBackgroundStart = "#0043F1"
     case homepageBackgroundEnd = "#0094FF"
-    case homepageBackground = "#E5E5E5"
+    case homepageBackground = "#FAFAFA"
     case homepageStroke = "#EEEEEE"
     case homepageNoBackground = "#FF6B6B"
     case submitButtonBackground = "#232323"
