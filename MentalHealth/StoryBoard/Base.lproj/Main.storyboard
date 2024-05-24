@@ -1488,16 +1488,23 @@ know this...</string>
                         <outlet property="currentDate" destination="Q2P-dp-dpS" id="3Mm-gO-Aty"/>
                         <outlet property="decentButton" destination="AzH-tA-MXp" id="zlF-Ve-l1N"/>
                         <outlet property="feelingOptionView" destination="UOt-7w-Yqg" id="801-6y-S8D"/>
+                        <outlet property="fridayDate" destination="1ed-Ch-Oud" id="hq5-UQ-R7j"/>
                         <outlet property="fridayView" destination="7f8-uW-fap" id="bHW-uA-8Jn"/>
                         <outlet property="goodButton" destination="m3M-9G-83U" id="FjT-I0-kPd"/>
+                        <outlet property="mondayDate" destination="7Wv-dM-ZCK" id="Lms-ZV-W1o"/>
                         <outlet property="mondayView" destination="Zdr-eY-HOb" id="XDB-0n-KVg"/>
                         <outlet property="nameLabel" destination="aKH-iR-D2r" id="z92-rA-FFW"/>
                         <outlet property="niceButton" destination="fRL-mc-Xb5" id="XdL-jC-kWy"/>
                         <outlet property="sadButton" destination="hZz-oA-hee" id="RMj-OE-eHG"/>
+                        <outlet property="saturdayDate" destination="tCg-FC-JvZ" id="zFm-xo-H6r"/>
                         <outlet property="saturdayView" destination="PFx-rC-5R8" id="Fam-av-RE1"/>
+                        <outlet property="sundayDate" destination="RGq-sP-Qm7" id="wcu-vm-bcq"/>
                         <outlet property="sundayView" destination="bgh-fn-gKD" id="tih-QY-u5d"/>
+                        <outlet property="thursdayDate" destination="t9g-9T-luo" id="AqU-ap-cnR"/>
                         <outlet property="thursdayView" destination="oOG-xd-k4e" id="B4a-5v-e3h"/>
+                        <outlet property="tuesdayDate" destination="cSh-SG-Sdg" id="xek-a7-N9C"/>
                         <outlet property="tuesdayView" destination="PtR-cF-SQJ" id="qgC-yV-INT"/>
+                        <outlet property="wednesdayDate" destination="UoQ-gj-lV5" id="Vze-Gt-eSj"/>
                         <outlet property="wednesdayView" destination="kye-8b-RaI" id="5Ll-NA-IaE"/>
                         <outlet property="welcomeView" destination="7Yk-Yq-8R7" id="bBf-ab-RRr"/>
                     </connections>
@@ -2504,11 +2511,6 @@ the following data</string>
             <point key="canvasLocation" x="173" y="4"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="kah-le-cOT">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <resources>
         <image name="Icon/Emotion/badIcon" width="46" height="46"/>
         <image name="Icon/Emotion/decentIcon" width="46" height="46"/>

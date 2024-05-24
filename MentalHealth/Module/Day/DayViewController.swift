@@ -189,6 +189,7 @@ class DayViewController: UIViewController {
         makeCircleShape(welcomeView)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.tabBarBorder)
         applyStyle(feelingOptionView)
+        dateSettingForWeekday([sundayDate, mondayDate, tuesdayDate, wednesdayDate, thursdayDate, fridayDate, saturdayDate])
     }
 
     override func viewWillAppear(_ animated: Bool) {
