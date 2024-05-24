@@ -93,12 +93,13 @@ class HomeViewController: UIViewController {
         //when user has been already done today, we need to validate this
         questionConfirmView.isHidden = true
         LoginManager.shared.getUserInformation()
-
+        
         dayArry = [sundayDate: [sundayView: sundayLabel], mondayDate: [mondayView: mondayLabel], tuesdayDate: [tuesdayView: tuesdayLabel], wednesdayDate: [wednesdayView: wednesdayLabel], thursdayDate: [thursdayView: thursdayLabel], fridayDate: [fridayView: fridayLabel], saturdayDate: [saturdayView: saturdayLabel]]
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .homepageStroke, backgroundColor: .white)
         applyBoader([questionBannerView, testView, myDiaryView, chartContainerView], with: .homepageStroke, backgroundColor: .white)
+        
+        dateSettingForWeekday([sundayDate, mondayDate, tuesdayDate, wednesdayDate, thursdayDate, fridayDate, saturdayDate])
         updateTodayView()
-
         // Navigation
         tapAction(testView, selector: #selector(displaySurveyListViewController))
         tapAction(myDiaryView, selector: #selector(displayMyDiaryViewController))
@@ -134,21 +135,16 @@ class HomeViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
-    
+
     func updateTodayView() {
-        let today = getCurrentDate()
-        var index = -1
-        for (day, view) in dayArry {
-            for (dayView, dayLabel) in view {
-                day.text = "\(Int(today)! + index)"
-                if day.text == today {
+        for (dateLabel, viewDict) in dayArry {
+            for (dayView, dayLabel) in viewDict {
+                if dateLabel.text == getCurrentDate() {
                     applyBoader(dayView, with: .clear, backgroundColor: .chartMyScoreFill)
-                    day.textColor = .white
-                    dayLabel.textColor = .white
-                    loadViewIfNeeded()
+                    dateLabel.textColor = .progressTrackBar
+                    dayLabel.textColor = .progressTrackBar
                 }
             }
-            index += 1
         }
     }
     

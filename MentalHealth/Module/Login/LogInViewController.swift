@@ -48,8 +48,6 @@ class LogInViewController: UIViewController {
         }
     }
     
-    
-    
     @IBAction func navigateToSignUp(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeViewController = storyboard.instantiateViewController(identifier: "SignUpViewController") as? SignUpViewController {

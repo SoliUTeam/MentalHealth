@@ -31,6 +31,24 @@ extension UIViewController {
         let index = Calendar.current.component(.weekday, from: Date())
         return String(Calendar.current.weekdaySymbols[index].first!)
     }
+    
+    func dateSettingForWeekday(_ date: [UILabel]) {
+        var calendar = Calendar.current
+        calendar.firstWeekday = 1
+        let today = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d"
+        
+        guard let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today)) else { return }
+        var count = 0
+        for eachDate in date {
+            if let day = calendar.date(byAdding: .day, value: count, to: startOfWeek) {
+                let dayString = dateFormatter.string(from: day)
+                eachDate.text = dayString
+                count += 1
+            }
+        }
+    }
 }
 
 /// Navigation Extension

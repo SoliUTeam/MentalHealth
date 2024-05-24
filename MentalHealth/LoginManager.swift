@@ -74,7 +74,6 @@ public class LoginManager {
         return currentUser
     }
     
-    
     func setSurveyResult(_ surveyResult: [SurveyResult]) {
         self.surveyResult = surveyResult
     }
@@ -82,8 +81,6 @@ public class LoginManager {
     func setLoggedIn(_ loggedIn: Bool) {
         logInState = loggedIn
     }
-    
-    
     
     func setEmail(_ email: String) {
         self.email = email
