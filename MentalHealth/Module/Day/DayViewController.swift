@@ -160,13 +160,10 @@ class DayViewController: UIViewController {
         super.viewDidLoad()
         self.tabBarController?.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = UIColor.homepageBackground
-        // Need to revisit and place it in correct place
-        if let tabBarItem = self.tabBarItem {
-            tabBarItem.image = UIImage(assetIdentifier: .dayClick)?.withRenderingMode(.alwaysOriginal)
-            tabBarItem.selectedImage = UIImage(assetIdentifier: .dayClick)?.withRenderingMode(.alwaysOriginal)
-        }
+
         addSubView([progressBar, starIcon, starCountLabel, submitButton])
         
+        //Set View Constraint
         progressBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15).isActive = true
         progressBar.centerYAnchor.constraint(equalTo: welcomeView.centerYAnchor).isActive = true
         progressBar.widthAnchor.constraint(equalToConstant: 12).isActive = true
