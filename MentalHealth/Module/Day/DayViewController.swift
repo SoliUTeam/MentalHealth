@@ -184,7 +184,7 @@ class DayViewController: UIViewController {
         submitButton.isHidden = true
 
         makeCircleShape(welcomeView)
-        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: UIColor.tabBarBorder)
+        applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .homepageStroke, backgroundColor: .white)
         applyStyle(feelingOptionView)
         dateSettingForWeekday([sundayDate, mondayDate, tuesdayDate, wednesdayDate, thursdayDate, fridayDate, saturdayDate])
     }
