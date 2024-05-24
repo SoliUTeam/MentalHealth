@@ -696,15 +696,15 @@ know this...</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vff-0b-gQA">
-                                <rect key="frame" x="48" y="730" width="297" height="24"/>
+                                <rect key="frame" x="50" y="728" width="293" height="40"/>
                                 <color key="backgroundColor" name="Color/soliuBlue"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="rrv-sB-Dkh"/>
+                                    <constraint firstAttribute="height" constant="40" id="k3s-HG-S5u"/>
                                 </constraints>
                                 <color key="tintColor" name="Color/soliuBlue"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Start">
-                                    <backgroundConfiguration key="background" cornerRadius="62">
+                                    <backgroundConfiguration key="background">
                                         <color key="backgroundColor" name="Color/soliuBlue"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
@@ -716,7 +716,7 @@ know this...</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By proceeding, you consent to data collection." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjv-gg-dDh">
-                                <rect key="frame" x="48" y="704" width="297" height="14"/>
+                                <rect key="frame" x="48" y="702" width="297" height="14"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -737,16 +737,20 @@ know this...</string>
                             <constraint firstItem="tjX-RL-WJz" firstAttribute="top" secondItem="5YS-Ct-SuU" secondAttribute="top" constant="48" id="YGd-JQ-Sza"/>
                             <constraint firstItem="Ztv-U9-IaG" firstAttribute="trailing" secondItem="5YS-Ct-SuU" secondAttribute="trailing" constant="68" id="cFL-Gm-pdh"/>
                             <constraint firstItem="tjX-RL-WJz" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="32" id="cWe-3y-0x5"/>
-                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="bottom" secondItem="Vff-0b-gQA" secondAttribute="bottom" constant="64" id="hhg-gb-sqa"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="bottom" secondItem="Vff-0b-gQA" secondAttribute="bottom" constant="50" id="hhg-gb-sqa"/>
                             <constraint firstItem="bjv-gg-dDh" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="48" id="lly-yR-lhN"/>
                             <constraint firstItem="U9H-YY-QhD" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="32" id="mWC-vz-kKZ"/>
-                            <constraint firstItem="Vff-0b-gQA" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="48" id="qIw-up-cNn"/>
-                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="trailing" secondItem="Vff-0b-gQA" secondAttribute="trailing" constant="48" id="z6z-vt-dRs"/>
+                            <constraint firstItem="Vff-0b-gQA" firstAttribute="centerX" secondItem="biA-SA-X0z" secondAttribute="centerX" id="mjM-Lw-YV7"/>
+                            <constraint firstItem="Vff-0b-gQA" firstAttribute="leading" secondItem="5YS-Ct-SuU" secondAttribute="leading" constant="50" id="qIw-up-cNn"/>
+                            <constraint firstItem="5YS-Ct-SuU" firstAttribute="trailing" secondItem="Vff-0b-gQA" secondAttribute="trailing" constant="50" id="z6z-vt-dRs"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="startButton" destination="Vff-0b-gQA" id="9WJ-Zj-1az"/>
+                    </connections>
                 </viewController>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="FNN-vH-K7N">
                     <rect key="frame" x="0.0" y="0.0" width="293" height="45"/>

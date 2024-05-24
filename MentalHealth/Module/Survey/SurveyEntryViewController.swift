@@ -8,10 +8,12 @@
 import UIKit
 
 class SurveyEntryViewController: UIViewController {
-    
+    @IBOutlet weak var startButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setCustomBackNavigationButton()
+        startButton.layer.cornerRadius = startButton.bounds.height / 2
     }
 
     override func viewWillAppear(_ animated: Bool) {

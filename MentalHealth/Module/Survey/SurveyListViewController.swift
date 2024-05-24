@@ -24,7 +24,6 @@ class SurveyListViewController: UIViewController {
     var readyToSubmit = false
     var surveyResultRecord: [Int: Int] = [:]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchQuestions()
@@ -40,6 +39,7 @@ class SurveyListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    // Need to fix
     private func customizeNavigationBar() {
         navigationController?.navigationBar.barTintColor = .soliuBlue
         navigationController?.navigationBar.tintColor = .white
@@ -54,7 +54,6 @@ class SurveyListViewController: UIViewController {
         let maskLayer = CAShapeLayer()
            maskLayer.path = UIBezierPath(roundedRect: navigationController!.navigationBar.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10.0, height: 10.0)).cgPath
            navigationController?.navigationBar.layer.mask = maskLayer
-
     }
     
     private func updateTitle() {
