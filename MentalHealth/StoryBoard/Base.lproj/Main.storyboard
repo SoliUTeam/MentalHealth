@@ -611,7 +611,7 @@
                             <constraint firstItem="6TJ-JC-9cc" firstAttribute="leading" relation="lessThanOrEqual" secondItem="3KV-iu-unp" secondAttribute="trailing" constant="23" id="xWf-jO-Vl1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="Icon/home" id="6fP-am-g1x"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Icon/homeUnSelected" selectedImage="Icon/homeSelected" id="6fP-am-g1x"/>
                     <navigationItem key="navigationItem" id="SSY-I9-4TY"/>
                     <connections>
                         <outlet property="backgroundView" destination="s6h-ip-aNA" id="8Qe-p9-caW"/>
@@ -902,7 +902,7 @@ know this...</string>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="9NZ-3b-uI2" secondAttribute="trailing" constant="20" id="zn2-dI-9Yn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Page" image="Icon/account" id="v8k-iP-qgD"/>
+                    <tabBarItem key="tabBarItem" title="My Page" image="Icon/accountUnSelected" selectedImage="Icon/accountSelected" id="v8k-iP-qgD"/>
                     <navigationItem key="navigationItem" id="5JC-v4-CH9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmG-dm-XlB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -915,7 +915,7 @@ know this...</string>
                 <tabBarController storyboardIdentifier="HomeTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="4Bd-R2-YYp" customClass="HomeTabBarController" customModule="MentalHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="UII-rd-CBP"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kah-le-cOT">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kah-le-cOT" customClass="HomeTabBar" customModule="MentalHealth" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2511,6 +2511,11 @@ the following data</string>
             <point key="canvasLocation" x="173" y="4"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="kah-le-cOT">
+            <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Icon/Emotion/badIcon" width="46" height="46"/>
         <image name="Icon/Emotion/decentIcon" width="46" height="46"/>
@@ -2519,10 +2524,12 @@ the following data</string>
         <image name="Icon/Emotion/noIcon" width="22" height="22"/>
         <image name="Icon/Emotion/sadIcon" width="46" height="46"/>
         <image name="Icon/Emotion/star" width="12" height="11"/>
-        <image name="Icon/account" width="32" height="32"/>
+        <image name="Icon/accountSelected" width="28" height="28"/>
+        <image name="Icon/accountUnSelected" width="28" height="28"/>
         <image name="Icon/averageResultLegend" width="13" height="13"/>
         <image name="Icon/depressionIcon" width="26" height="26"/>
-        <image name="Icon/home" width="32" height="32"/>
+        <image name="Icon/homeSelected" width="28" height="28"/>
+        <image name="Icon/homeUnSelected" width="28" height="28"/>
         <image name="Icon/myDiary" width="149" height="142"/>
         <image name="Icon/myResultLegend" width="13" height="13"/>
         <image name="Icon/noButton" width="28" height="28"/>

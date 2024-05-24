@@ -19,6 +19,7 @@ enum Color: String {
     case homepageBackgroundEnd = "#0094FF"
     case homepageBackground = "#FAFAFA"
     case homepageStroke = "#EEEEEE"
+    case tabBarStroke = "#EEECEC"
     case homepageNoBackground = "#FF6B6B"
     case submitButtonBackground = "#232323"
     case loginNextBackground = "#1CBDEF"
@@ -50,6 +51,7 @@ extension UIColor {
     static let homepageBackgroundEnd = UIColor(hex: Color.homepageBackgroundEnd.rawValue, alpha: 1)
     static let homepageBackground = UIColor(hex: Color.homepageBackground.rawValue, alpha: 1)
     static let homepageStroke = UIColor(hex: Color.homepageStroke.rawValue, alpha: 1)
+    static let tabBarStroke = UIColor(hex: Color.tabBarStroke.rawValue, alpha: 1)
     static let homepageNoBackground = UIColor(hex: Color.homepageNoBackground.rawValue, alpha: 1)
     static let submitButtonBackground = UIColor(hex: Color.submitButtonBackground.rawValue, alpha: 1)
     static let loginNextBackground = UIColor(hex: Color.loginNextBackground.rawValue, alpha: 1)

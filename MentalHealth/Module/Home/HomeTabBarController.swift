@@ -17,7 +17,7 @@ class HomeTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     func setupMiddleButton() {
         
-        let middleBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-25, y: -20, width: 50, height: 50))
+        let middleBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-29, y: -15, width: 58, height: 58))
         
         middleBtn.setImage(UIImage(assetIdentifier: .dayUnClick), for: .normal)
         middleBtn.setImage(UIImage(assetIdentifier: .dayClick), for: .selected)
