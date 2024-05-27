@@ -27,9 +27,12 @@ extension UIViewController {
         return "\(day)"
     }
     
-    func getCurrentWeekday() -> String {
-        let index = Calendar.current.component(.weekday, from: Date())
-        return String(Calendar.current.weekdaySymbols[index].first!)
+    func getTodayWeekday() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let weekday = dateFormatter.string(from: date)
+        return weekday
     }
     
     func dateSettingForWeekday(_ date: [UILabel]) {
@@ -152,6 +155,12 @@ extension UIViewController {
     func addSubView(_ view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(view)
+    }
+    
+    func hideWithAlpha(_ views:[UIView]) {
+        views.forEach { view in
+            view.alpha = 0.0
+        }
     }
 }
 

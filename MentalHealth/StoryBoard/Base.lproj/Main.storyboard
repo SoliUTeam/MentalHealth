@@ -1493,22 +1493,29 @@ know this...</string>
                         <outlet property="decentButton" destination="AzH-tA-MXp" id="zlF-Ve-l1N"/>
                         <outlet property="feelingOptionView" destination="UOt-7w-Yqg" id="801-6y-S8D"/>
                         <outlet property="fridayDate" destination="1ed-Ch-Oud" id="hq5-UQ-R7j"/>
+                        <outlet property="fridayStar" destination="AIU-Wq-f9N" id="oRy-SW-BmA"/>
                         <outlet property="fridayView" destination="7f8-uW-fap" id="bHW-uA-8Jn"/>
                         <outlet property="goodButton" destination="m3M-9G-83U" id="FjT-I0-kPd"/>
                         <outlet property="mondayDate" destination="7Wv-dM-ZCK" id="Lms-ZV-W1o"/>
+                        <outlet property="mondayStar" destination="6yP-Eb-XJJ" id="1qu-qb-pAz"/>
                         <outlet property="mondayView" destination="Zdr-eY-HOb" id="XDB-0n-KVg"/>
                         <outlet property="nameLabel" destination="aKH-iR-D2r" id="z92-rA-FFW"/>
                         <outlet property="niceButton" destination="fRL-mc-Xb5" id="XdL-jC-kWy"/>
                         <outlet property="sadButton" destination="hZz-oA-hee" id="RMj-OE-eHG"/>
                         <outlet property="saturdayDate" destination="tCg-FC-JvZ" id="zFm-xo-H6r"/>
+                        <outlet property="saturdayStar" destination="67n-Lr-V5e" id="WvK-a4-Jc8"/>
                         <outlet property="saturdayView" destination="PFx-rC-5R8" id="Fam-av-RE1"/>
                         <outlet property="sundayDate" destination="RGq-sP-Qm7" id="wcu-vm-bcq"/>
+                        <outlet property="sundayStar" destination="1uw-I9-ldI" id="Hy3-ZV-Pyq"/>
                         <outlet property="sundayView" destination="bgh-fn-gKD" id="tih-QY-u5d"/>
                         <outlet property="thursdayDate" destination="t9g-9T-luo" id="AqU-ap-cnR"/>
+                        <outlet property="thursdayStar" destination="UKO-Wu-2hx" id="ju7-6v-8Vn"/>
                         <outlet property="thursdayView" destination="oOG-xd-k4e" id="B4a-5v-e3h"/>
                         <outlet property="tuesdayDate" destination="cSh-SG-Sdg" id="xek-a7-N9C"/>
+                        <outlet property="tuesdayStar" destination="mQr-bv-WVJ" id="70q-n6-7EC"/>
                         <outlet property="tuesdayView" destination="PtR-cF-SQJ" id="qgC-yV-INT"/>
                         <outlet property="wednesdayDate" destination="UoQ-gj-lV5" id="Vze-Gt-eSj"/>
+                        <outlet property="wednesdayStar" destination="ezO-Ee-jns" id="3pE-hl-9A3"/>
                         <outlet property="wednesdayView" destination="kye-8b-RaI" id="5Ll-NA-IaE"/>
                         <outlet property="welcomeView" destination="7Yk-Yq-8R7" id="bBf-ab-RRr"/>
                     </connections>

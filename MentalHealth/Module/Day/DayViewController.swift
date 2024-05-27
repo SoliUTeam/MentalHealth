@@ -22,7 +22,14 @@ class DayViewController: UIViewController {
     @IBOutlet weak var fridayView: UIView!
     @IBOutlet weak var saturdayView: UIView!
     
-    // Need to discuss how to display date
+    @IBOutlet weak var sundayStar: UIImageView!
+    @IBOutlet weak var mondayStar: UIImageView!
+    @IBOutlet weak var tuesdayStar: UIImageView!
+    @IBOutlet weak var wednesdayStar: UIImageView!
+    @IBOutlet weak var thursdayStar: UIImageView!
+    @IBOutlet weak var fridayStar: UIImageView!
+    @IBOutlet weak var saturdayStar: UIImageView!
+    
     @IBOutlet weak var sundayDate: UILabel!
     @IBOutlet weak var mondayDate: UILabel!
     @IBOutlet weak var tuesdayDate: UILabel!
@@ -183,6 +190,7 @@ class DayViewController: UIViewController {
         submitButton.topAnchor.constraint(equalTo: feelingOptionView.bottomAnchor, constant: 5).isActive = true
         submitButton.isHidden = true
 
+        hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
         makeCircleShape(welcomeView)
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .homepageStroke, backgroundColor: .white)
         applyStyle(feelingOptionView)
@@ -224,6 +232,23 @@ class DayViewController: UIViewController {
     @objc
     func submitButtonTapped() {
         //send backend that user finished for today
+        let weekday = getTodayWeekday()
+        switch weekday {
+        case "Sunday":
+            sundayStar.alpha = 1
+        case "Monday":
+            mondayStar.alpha = 1
+        case "Tuesday":
+            tuesdayStar.alpha = 1
+        case "Wednesday":
+            wednesdayStar.alpha = 1
+        case "Thursday":
+            thursdayStar.alpha = 1
+        case "Saturday":
+            saturdayStar.alpha = 1
+        default :
+            hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
+        }
     }
 
     func isUserFinishedAction()  -> Bool {
