@@ -38,6 +38,22 @@ class DayViewController: UIViewController {
     @IBOutlet weak var fridayDate: UILabel!
     @IBOutlet weak var saturdayDate: UILabel!
     
+    @IBOutlet weak var sundayLabel: UILabel!
+    @IBOutlet weak var mondayLabel: UILabel!
+    @IBOutlet weak var tuesdayLabel: UILabel!
+    @IBOutlet weak var wednesdayLabel: UILabel!
+    @IBOutlet weak var thursdayLabel: UILabel!
+    @IBOutlet weak var fridayLabel: UILabel!
+    @IBOutlet weak var saturdayLabel: UILabel!
+    
+    @IBOutlet weak var sundayEmoji: UIImageView!
+    @IBOutlet weak var mondayEmoji: UIImageView!
+    @IBOutlet weak var tuesdayEmoji: UIImageView!
+    @IBOutlet weak var wednesdayEmoji: UIImageView!
+    @IBOutlet weak var thursdayEmoji: UIImageView!
+    @IBOutlet weak var fridayEmoji: UIImageView!
+    @IBOutlet weak var saturdayEmoji: UIImageView!
+    
     @IBOutlet weak var welcomeView: UIView!
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
@@ -162,6 +178,7 @@ class DayViewController: UIViewController {
     }
     
     private var loginManager = LoginManager()
+    private var dayArry: [UILabel: [UIView : UILabel]] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -189,12 +206,17 @@ class DayViewController: UIViewController {
         submitButton.trailingAnchor.constraint(equalTo: feelingOptionView.trailingAnchor).isActive = true
         submitButton.topAnchor.constraint(equalTo: feelingOptionView.bottomAnchor, constant: 5).isActive = true
         submitButton.isHidden = true
-
+        
+        dayArry = [sundayDate: [sundayView: sundayLabel], mondayDate: [mondayView: mondayLabel], tuesdayDate: [tuesdayView: tuesdayLabel], wednesdayDate: [wednesdayView: wednesdayLabel], thursdayDate: [thursdayView: thursdayLabel], fridayDate: [fridayView: fridayLabel], saturdayDate: [saturdayView: saturdayLabel]]
+        //set alpha to 0 hide all at very first time or  we can fetch data brom backend
         hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
         makeCircleShape(welcomeView)
+        
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .homepageStroke, backgroundColor: .white)
         applyStyle(feelingOptionView)
+        
         dateSettingForWeekday([sundayDate, mondayDate, tuesdayDate, wednesdayDate, thursdayDate, fridayDate, saturdayDate])
+        updateTodayView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -232,22 +254,51 @@ class DayViewController: UIViewController {
     @objc
     func submitButtonTapped() {
         //send backend that user finished for today
-        let weekday = getTodayWeekday()
-        switch weekday {
-        case "Sunday":
-            sundayStar.alpha = 1
-        case "Monday":
-            mondayStar.alpha = 1
-        case "Tuesday":
-            tuesdayStar.alpha = 1
-        case "Wednesday":
-            wednesdayStar.alpha = 1
-        case "Thursday":
-            thursdayStar.alpha = 1
-        case "Saturday":
-            saturdayStar.alpha = 1
-        default :
-            hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
+        for button in [badButton, sadButton, decentButton, goodButton, niceButton] {
+            if button?.isSelected == true {
+                let weekday = getTodayWeekday()
+                switch weekday {
+                case "Sunday":
+                    sundayStar.alpha = 1
+                    sundayEmoji.image = iconEmojiMap(button: button)
+                case "Monday":
+                    mondayStar.alpha = 1
+                    mondayEmoji.image = iconEmojiMap(button: button)
+                case "Tuesday":
+                    tuesdayStar.alpha = 1
+                    tuesdayEmoji.image = iconEmojiMap(button: button)
+                case "Wednesday":
+                    wednesdayStar.alpha = 1
+                    wednesdayEmoji.image = iconEmojiMap(button: button)
+                case "Thursday":
+                    thursdayStar.alpha = 1
+                    thursdayEmoji.image = iconEmojiMap(button: button)
+                case "Saturday":
+                    saturdayStar.alpha = 1
+                    saturdayEmoji.image = iconEmojiMap(button: button)
+                default :
+                    hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
+                }
+            }
+        }
+        
+        func iconEmojiMap(button: UIButton?) -> UIImage? {
+            guard let currentImage = button?.currentImage else { return nil }
+            
+            switch currentImage {
+            case UIImage(emotionAssetIdentifier: .badIconSelected):
+                return UIImage(emotionAssetIdentifier: .badIconBig)
+            case UIImage(emotionAssetIdentifier: .sadIconSelected):
+                return UIImage(emotionAssetIdentifier: .sadIconBig)
+            case UIImage(emotionAssetIdentifier: .decentIconSelected):
+                return UIImage(emotionAssetIdentifier: .decentIconBig)
+            case UIImage(emotionAssetIdentifier: .goodIconSelected):
+                return UIImage(emotionAssetIdentifier: .goodIconBig)
+            case UIImage(emotionAssetIdentifier: .niceIconSelected):
+                return UIImage(emotionAssetIdentifier: .niceIconBig)
+            default:
+                return nil
+            }
         }
     }
 
@@ -256,6 +307,18 @@ class DayViewController: UIViewController {
         // true -> if user already finished for today
         // false -> user didnt finish for today
         return false
+    }
+
+    func updateTodayView() {
+        for (dateLabel, viewDict) in dayArry {
+            for (dayView, dayLabel) in viewDict {
+                if dateLabel.text == getCurrentDate() {
+                    applyBoader(dayView, with: .clear, backgroundColor: .chartMyScoreFill)
+                    dateLabel.textColor = .progressTrackBar
+                    dayLabel.textColor = .progressTrackBar
+                }
+            }
+        }
     }
 
     func applyStyle(_ view: UIView) {
