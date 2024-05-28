@@ -90,3 +90,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 MentalHealth/GoogleService-Info.plist
+MentalHealth.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+MentalHealth.xcodeproj/project.pbxproj

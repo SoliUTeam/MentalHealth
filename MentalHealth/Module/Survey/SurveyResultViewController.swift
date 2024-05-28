@@ -43,7 +43,7 @@ class SurveyResultViewController: UIViewController {
     @IBOutlet var lonelinessScoreLabel: UILabel!
     @IBOutlet var hrqolScoreLabel: UILabel!
     
-    var myTestScore: [Int:Int] = TestingInformation().exampleSurveyList()
+    var myTestScore: [Int:Int] = [:]
     var allUsersAverageResult: [Int: Int] = TestingInformation().exampleAllSurveyDict()
     let categories = [0: "Depression", 5: "Anxiety", 10: "Stress", 15: "Loneliness", 20: "Social Media Addiction", 25: "HRQOL"]
     var shouldHideData = false

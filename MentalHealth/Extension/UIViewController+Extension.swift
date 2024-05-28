@@ -20,6 +20,13 @@ extension UIViewController {
         return "\(monthName) \(day)"
     }
     
+    func getTestDate() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY"
+        return dateFormatter.string(from: currentDate)
+    }
+    
     func getCurrentDate() -> String {
         let currentDate = Date()
         let calendar = Calendar.current

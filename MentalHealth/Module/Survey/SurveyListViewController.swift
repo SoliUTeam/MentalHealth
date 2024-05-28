@@ -16,23 +16,24 @@ class SurveyListViewController: UIViewController {
             tableView.dataSource = self
         }
     }
-
+    
     var allSurveyQuestion: [TestQuestion] = []
     var selectedSurveyQuestion: [TestQuestion] = []
-    var testAnswers: [Int] = []
+    var surveyResultArray: [Int] = []
     var selectedQuestionId: Int = 0
     var readyToSubmit = false
     var surveyResultRecord: [Int: Int] = [:]
+    var userInfomration: UserInformation = LoginManager.shared.getUserInformation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchQuestions()
         setCustomBackNavigationButton()
         customizeNavigationBar()
+        tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
         self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
         updateTitle()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +44,7 @@ class SurveyListViewController: UIViewController {
     private func customizeNavigationBar() {
         navigationController?.navigationBar.barTintColor = .soliuBlue
         navigationController?.navigationBar.tintColor = .white
-            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.backgroundColor = .soliuBlue
         let backButtonImage = UIImage(assetIdentifier: .whiteBackButton)
         navigationController?.navigationBar.backIndicatorImage = backButtonImage
@@ -52,12 +53,16 @@ class SurveyListViewController: UIViewController {
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let maskLayer = CAShapeLayer()
-           maskLayer.path = UIBezierPath(roundedRect: navigationController!.navigationBar.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10.0, height: 10.0)).cgPath
-           navigationController?.navigationBar.layer.mask = maskLayer
+        maskLayer.path = UIBezierPath(roundedRect: navigationController!.navigationBar.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10.0, height: 10.0)).cgPath
+        navigationController?.navigationBar.layer.mask = maskLayer
+    }
+    
+    private func fetchQuestions() {
+        allSurveyQuestion = TestingInformation().createTestingSurveyQuestion()
+        reorderQuestion()
     }
     
     private func updateTitle() {
-
         var title = ""
         switch selectedQuestionId {
         case 0:
@@ -80,44 +85,81 @@ class SurveyListViewController: UIViewController {
     }
     
     private func nextButtonPressed() {
-        if selectedQuestionId == 5 {
-            return
-        }
-        selectedQuestionId = selectedQuestionId + 1
-        if selectedQuestionId == 5 {
+        if selectedQuestionId == 4 {
             readyToSubmit = true
         }
-        reorderQuestion()
-        updateTitle()
-        tableView.reloadData()
-        resetAllCellImages()
-    }
-    
-
-    
-    @IBAction func submitResult() {
-        print("Submit")
-    }
-    
-    
-    private func reorderQuestion() {
-        selectedSurveyQuestion = allSurveyQuestion.filter { testQuestion in
-             selectedQuestionId == testQuestion.id
+        
+        if selectedQuestionId < 5 {
+            reorderQuestion()
         }
         
+        if selectedQuestionId == 5 {
+            let surveyAnswersArray = getSurveyResultArray()
+            FBNetworkLayer.shared.addSurvey(userInfomration: userInfomration,
+                                            newSurveyResult: SurveyResult(surveyDate: getTestDate(),
+                                                                          surveyAnswer: surveyAnswersArray)) { error in
+                if let error = error {
+                    print("Fetching Survey Result Fails \(error.localizedDescription)")
+                }
+                else {
+                    print("Fetching Survey Result Success")
+                }
+            }
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            
+            if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+                surveyResultVC.myTestScore = surveyResultRecord
+                navigationController?.pushViewController(surveyResultVC, animated: true)
+                
+            } else {
+                print("Can't find storyboard")
+            }
+        }
+        
+        selectedQuestionId = selectedQuestionId + 1
+        
+    }
+    
+    private func reorderQuestion() {
+        updateTitle()
+        resetAllCellImages()
+        selectedSurveyQuestion = allSurveyQuestion.filter { testQuestion in
+            selectedQuestionId == testQuestion.id
+        }
+        reloadDataAndScrollToTop()
         tableView.reloadData()
     }
+    
+    func reloadDataAndScrollToTop() {
+        tableView.reloadData()
+        DispatchQueue.main.async {
+            if self.tableView.numberOfSections > 0 {
+                let topIndexPath = IndexPath(row: 0, section: 0)
+                self.tableView.scrollToRow(at: topIndexPath, at: .top, animated: true)
+            }
+        }
+    }
+    
+    private func getSurveyResultArray() -> [Int] {
+        for i in 0..<30 {
+            if let value = surveyResultRecord[i] {
+                surveyResultArray.append(value)
+            } else {
+                surveyResultArray.append(3)
+            }
+        }
+        return surveyResultArray
+    }
+    
     
     private func resetAllCellImages() {
         for i in 0..<tableView.numberOfRows(inSection: 0) {
             if let cell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? SurveyListViewCell {
-                cell.resetImagesToUnmarked()
+                DispatchQueue.main.async {
+                    cell.resetImagesToUnmarked(row: i)
+                }
             }
         }
-    }
-    private func fetchQuestions() {
-        allSurveyQuestion = TestingInformation().createTestingSurveyQuestion()
-        reorderQuestion()
     }
 }
 extension SurveyListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -145,7 +187,7 @@ extension SurveyListViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-
+    
 }
 extension SurveyListViewController: SurveyListViewCellDelegate {
     func mappingSelectedValue(id: Int, questionNumber: Int , value: Int) {
@@ -157,33 +199,5 @@ extension SurveyListViewController: SurveyListViewCellDelegate {
 extension SurveyListViewController: SurveyNextButtonCellDelegate {
     func nextButtonClicked() {
         self.nextButtonPressed()
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
-            navigationController?.pushViewController(surveyResultVC, animated: true)
-            
-        } else {
-            print("Can't find storyboard")
-        }
     }
 }
-
-
-
-
-//  Later work on.
-//            fbLayer.fetchMentalHealthQuestions { [weak self] healthQuestion, error in
-//                guard let self = self else { return }
-//                DispatchQueue.main.async {
-//                    if let error = error {
-//                        print("Error fetching questions: \(error)")
-//                        self.questionsLabel.text = "Error fetching questions"
-//                        return
-//                    }
-//                    self.testInfoArray = healthQuestion?.testQuestions ?? []
-//                    self.displayQuestion()
-//                }
-//            }
-//        }
-        
-//        }

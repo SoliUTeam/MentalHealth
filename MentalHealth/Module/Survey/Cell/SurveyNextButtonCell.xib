@@ -13,18 +13,22 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SurveyNextButtonCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SurveyNextButtonCell" rowHeight="100" id="L7l-X3-pk9" customClass="SurveyNextButtonCell" customModule="MentalHealth" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="54"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L7l-X3-pk9" id="Kon-qz-Btx">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L7l-X3-pk9" id="Kon-qz-Btx">
                 <rect key="frame" x="0.0" y="0.0" width="393" height="54"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vg-ct-8Tk">
-                        <rect key="frame" x="130" y="10" width="133" height="34"/>
+                        <rect key="frame" x="80" y="0.0" width="233" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="wfw-Zq-rcv"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Next">
-                            <backgroundConfiguration key="background" cornerRadius="62">
+                            <backgroundConfiguration key="background" cornerRadius="16">
                                 <color key="backgroundColor" name="Color/soliuBlue"/>
                                 <color key="strokeColor" name="Color/soliuBlue"/>
                             </backgroundConfiguration>
+                            <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
                         <connections>
@@ -33,10 +37,10 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3vg-ct-8Tk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Kon-qz-Btx" secondAttribute="top" constant="10" id="N8C-8Y-99w"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3vg-ct-8Tk" secondAttribute="bottom" constant="10" id="Qn3-HL-b3d"/>
-                    <constraint firstAttribute="trailing" secondItem="3vg-ct-8Tk" secondAttribute="trailing" constant="130" id="S4m-Dy-6PT"/>
-                    <constraint firstItem="3vg-ct-8Tk" firstAttribute="leading" secondItem="Kon-qz-Btx" secondAttribute="leading" constant="130" id="gif-QC-3Rg"/>
+                    <constraint firstItem="3vg-ct-8Tk" firstAttribute="top" secondItem="Kon-qz-Btx" secondAttribute="top" id="N8C-8Y-99w"/>
+                    <constraint firstAttribute="bottom" secondItem="3vg-ct-8Tk" secondAttribute="bottom" id="Qn3-HL-b3d"/>
+                    <constraint firstAttribute="trailing" secondItem="3vg-ct-8Tk" secondAttribute="trailing" constant="80" id="S4m-Dy-6PT"/>
+                    <constraint firstItem="3vg-ct-8Tk" firstAttribute="leading" secondItem="Kon-qz-Btx" secondAttribute="leading" constant="80" id="gif-QC-3Rg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

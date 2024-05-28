@@ -48,17 +48,17 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
     @IBOutlet var surveyAnswerImage4: UIImageView!
     @IBOutlet var surveyAnswerImage5: UIImageView!
     
+    
     private var imageMappings: [UIImageView: (unmarked: UIImage?, marked: UIImage?)] = [:]
     private var testQuestion: TestQuestion?
     private var selectedValue: Int?
     weak var delegate: SurveyListViewCellDelegate?
-
+    
     
     func populate(testQuestion: TestQuestion) {
         self.testQuestion = testQuestion
         surveyQuestionLabel.text = testQuestion.question
         setupSureyAnswer(testQuestion.questionNumber)
-        
     }
     
     private func setupSureyAnswer(_ testquestionNumber: Int) {
@@ -89,7 +89,7 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
         imageMappings[surveyAnswerImage1] = (UIImage(assetIdentifier: .unmarkedVRare), UIImage(assetIdentifier: .markedVRare))
         imageMappings[surveyAnswerImage2] = (UIImage(assetIdentifier: .unmarkedRare), UIImage(assetIdentifier: .markedRare))
         imageMappings[surveyAnswerImage3] = (UIImage(assetIdentifier: .unmarkedSometimes), UIImage(assetIdentifier: .markedSometimes))
-        imageMappings[surveyAnswerImage4] = (UIImage(assetIdentifier: .unmarkedOften), UIImage(assetIdentifier: .markedVOften)) // Assuming you meant 'markedVOften' for the marked state of 'unmarkedOften'
+        imageMappings[surveyAnswerImage4] = (UIImage(assetIdentifier: .unmarkedOften), UIImage(assetIdentifier: .markedOften))
         imageMappings[surveyAnswerImage5] = (UIImage(assetIdentifier: .unmarkedVOften), UIImage(assetIdentifier: .markedVOften))
     }
     
@@ -114,7 +114,7 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
         surveyAnswerImage5.image = UIImage(assetIdentifier:.unmarkedVOften)
     }
     
-    func resetImagesToUnmarked() {
+    func resetImagesToUnmarked(row: Int) {
         surveyImageView.forEach { imageView in
             if let unmarkedImage = imageMappings[imageView]?.unmarked {
                 imageView.image = unmarkedImage
@@ -135,8 +135,9 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
         guard let testQuestion = testQuestion else { return }
         if let selectedIndex = surveyImageView.firstIndex(of: selectedImageView) {
                 selectedValue = selectedIndex
-                delegate?.mappingSelectedValue(id: testQuestion.id, questionNumber: testQuestion.questionNumber, value:selectedIndex)
-                print("Selected Image \(selectedValue)")
+                delegate?.mappingSelectedValue(id: testQuestion.id,
+                                               questionNumber: testQuestion.questionNumber,
+                                               value: (selectedIndex + 1))
                 resetImages(except: selectedImageView)
            }
     }

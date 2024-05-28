@@ -26,7 +26,7 @@ class FBNetworkLayer {
     
     func signIn(email: String, password: String, completion: @escaping (Result<UserInformation?, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
+            guard let strongSelf = self else { return }
             if let error = error {
                 print("Sign-In Error: \(error.localizedDescription)")
                 completion(.failure(error))
@@ -35,7 +35,6 @@ class FBNetworkLayer {
                 strongSelf.getUserInformation(email: email) { result in
                     switch result {
                     case .success(let userInfo):
-                        print("My User Info \(userInfo)" )
                         completion(.success(nil))
                         LoginManager.shared.setMyUserInformation(userInfo)
                     case .failure(let error):
@@ -89,6 +88,7 @@ class FBNetworkLayer {
     func addSurvey(userInfomration: UserInformation, newSurveyResult: SurveyResult, completion: @escaping (Error?)-> Void) {
         let email = userInfomration.email
         let userRef = db.collection("Users").whereField("demographicInformation.email", isEqualTo: email)
+        let allTestRef = db.collection("All_Test_Results")
         
         userRef.getDocuments { querySnapshot, error in
             if let error = error {
@@ -98,7 +98,7 @@ class FBNetworkLayer {
             
             guard let documents = querySnapshot?.documents,
                   let document = documents.first else {
-                    completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "User Not founc"]))
+                completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "User Not founc"]))
                 return
             }
             
@@ -107,19 +107,43 @@ class FBNetworkLayer {
             var surveyResults = userData["surveyResult"] as? [[String: Any]] ?? []
             
             let newSurveyResultData: [String: Any] = [
-                        "surveyDate": newSurveyResult.surveyDate,
-                        "surveyAnswer": newSurveyResult.surveyAnswer
+                "surveyDate": newSurveyResult.surveyDate,
+                "surveyAnswer": newSurveyResult.surveyAnswer
             ]
-
+            
             surveyResults.append(newSurveyResultData)
             userData["surveyResult"] = surveyResults
-
+            
+            // Start a batch to handle multiple writes atomically
+            let batch = self.db.batch()
+            
             document.reference.updateData(userData) { error in
                 if let error = error {
                     completion(error)
                     return
                 }
                 completion(nil)
+            }
+            
+            let userDocumentRef = document.reference
+            batch.updateData(userData, forDocument: userDocumentRef)
+            
+            // Add new survey result to All_Test_Results collection
+            let allTestResultData: [String: Any] = [
+                "surveyDate": newSurveyResult.surveyDate,
+                "surveyAnswer": newSurveyResult.surveyAnswer
+            ]
+            
+            let newTestResultRef = allTestRef.document()
+            batch.setData(allTestResultData, forDocument: newTestResultRef)
+            
+            // Commit the batch
+            batch.commit { error in
+                if let error = error {
+                    completion(error)
+                } else {
+                    completion(nil)
+                }
             }
         }
     }
@@ -137,25 +161,25 @@ class FBNetworkLayer {
     }
     
     func checkEmailExists(email: String, completion: @escaping (Bool, Error?) -> Void) {
-            db.collection("EmailList").whereField("email", isEqualTo: email).getDocuments { (querySnapshot, error) in
-                if let error = error {
-                    completion(false, error)
+        db.collection("EmailList").whereField("email", isEqualTo: email).getDocuments { (querySnapshot, error) in
+            if let error = error {
+                completion(false, error)
+            } else {
+                if let documents = querySnapshot?.documents, documents.count > 0 {
+                    completion(true, nil)
                 } else {
-                    if let documents = querySnapshot?.documents, documents.count > 0 {
-                        completion(true, nil)
-                    } else {
-                        completion(false, nil)
-                    }
+                    completion(false, nil)
                 }
             }
         }
+    }
     
     func addEmailToList(email: String, completion: @escaping (Error?) -> Void) {
-         let emailData: [String: Any] = ["email": email]
-         db.collection("EmailList").addDocument(data: emailData) { error in
-             completion(error)
-         }
-     }
+        let emailData: [String: Any] = ["email": email]
+        db.collection("EmailList").addDocument(data: emailData) { error in
+            completion(error)
+        }
+    }
     
     
     
@@ -170,7 +194,7 @@ class FBNetworkLayer {
                 "passwrod": userInfo.password,
                 "nickname": userInfo.nickName
             ],
-               "surveyResult": []  // Initialize as an empty array
+            "surveyResult": []  // Initialize as an empty array
         ]
         
         db.collection("Users").addDocument(data: userData) { error in
@@ -203,54 +227,3 @@ class FBNetworkLayer {
         }
     }
 }
-
-//    func addSurvey(surveyData: SurveyData, completion: @escaping (Error?) -> Void) {
-//        var user
-//        let db = Firestore.firestore()
-//        let userSurveyRef = db.collection("Users").document(userId).collection("Surveys")
-//        // Once Login, I need to add user id
-//        var surveyDict: [String: Any] = [
-//            "answers": surveyData.resultScore
-//        ]
-//
-//        // Add a timestamp if needed
-//        surveyDict["timestamp"] = FieldValue.serverTimestamp()
-//
-//        userSurveyRef.addDocument(data: surveyDict) { error in
-//            completion(error)
-//        }
-//    }
-
-//}
-
-//            let testUser1 = User(
-//                demographicInformation: DemographicInfo(gender: "Female", firstName: "Jane", lastName: "Doe"),
-//                surveyResult: [
-//                    SurveyResult(surveyDate: "2024-03-27", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
-//                    SurveyResult(surveyDate: "2024-03-28", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
-//                    SurveyResult(surveyDate: "2024-03-29", surveyAnswer: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
-//                ]
-//            )
-//            fbLayer.fetchUserInformation(userInfo: testUser1) { [weak self] error in
-//                guard let self = self else { return }
-//                DispatchQueue.main.async {
-//                    if let error = error {
-//                        print("Error submit getting error: \(error)")
-//                        return
-//                    }
-//                }
-//                print("Fetch")
-//            }
-//
-//            fbLayer.fetchMentalHealthQuestions { [weak self] healthQuestion, error in
-//                guard let self = self else { return }
-//                DispatchQueue.main.async {
-//                    if let error = error {
-//                        print("Error fetching questions: \(error)")
-//                        self.questionsLabel.text = "Error fetching questions"
-//                        return
-//                    }
-//                    self.testInfoArray = healthQuestion?.testQuestions ?? []
-//                    self.displayQuestion()
-//                }
-//            }

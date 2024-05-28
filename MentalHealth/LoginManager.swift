@@ -70,7 +70,6 @@ public class LoginManager {
     }
     
     func getUserInformation() -> UserInformation { 
-        print("Print current user Information \(currentUser)")
         return currentUser
     }
     

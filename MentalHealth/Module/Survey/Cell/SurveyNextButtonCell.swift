@@ -21,7 +21,6 @@ class SurveyNextButtonCell: UITableViewCell, CellReusable {
     
     @IBAction func nextButtonClicked() {
         delegate?.nextButtonClicked()
-        print("Button Cliced")
     }
 }
 
