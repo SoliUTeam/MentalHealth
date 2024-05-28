@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class SurveyListViewController: UIViewController {
-    
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -29,7 +28,7 @@ class SurveyListViewController: UIViewController {
         super.viewDidLoad()
         fetchQuestions()
         setCustomBackNavigationButton()
-        customizeNavigationBar()
+       
         tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
         self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
@@ -37,10 +36,16 @@ class SurveyListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        customizeNavigationBar()
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    // Need to fix
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetNavigationBar()
+    }
+
     private func customizeNavigationBar() {
         navigationController?.navigationBar.barTintColor = .soliuBlue
         navigationController?.navigationBar.tintColor = .white
@@ -55,6 +60,19 @@ class SurveyListViewController: UIViewController {
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: navigationController!.navigationBar.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10.0, height: 10.0)).cgPath
         navigationController?.navigationBar.layer.mask = maskLayer
+    }
+    
+    private func resetNavigationBar() {
+        guard let navigationBar = navigationController?.navigationBar else { return }
+
+        navigationBar.barTintColor = nil
+        navigationBar.tintColor = .soliuBlack
+        navigationBar.titleTextAttributes = nil
+        navigationBar.backgroundColor = nil
+        navigationBar.backIndicatorImage = nil
+        navigationBar.backIndicatorTransitionMaskImage = nil
+        navigationBar.layer.mask = nil
+        navigationBar.topItem?.backBarButtonItem = nil
     }
     
     private func fetchQuestions() {
