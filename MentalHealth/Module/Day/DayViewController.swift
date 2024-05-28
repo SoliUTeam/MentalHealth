@@ -7,8 +7,10 @@
 
 import UIKit
 import Foundation
+import Combine
 
 class DayViewController: UIViewController {
+    var imageUpdatePublisher = PassthroughSubject<UIImage, Never>()
     @IBOutlet weak var currentDate: UILabel! {
         didSet {
             self.currentDate.text = getCurrentMonthAndDate()
@@ -261,21 +263,27 @@ class DayViewController: UIViewController {
                 case "Sunday":
                     sundayStar.alpha = 1
                     sundayEmoji.image = iconEmojiMap(button: button)
+                    imageUpdatePublisher.send(sundayEmoji.image.orEmptyImage)
                 case "Monday":
                     mondayStar.alpha = 1
                     mondayEmoji.image = iconEmojiMap(button: button)
+                    imageUpdatePublisher.send(mondayEmoji.image.orEmptyImage)
                 case "Tuesday":
                     tuesdayStar.alpha = 1
                     tuesdayEmoji.image = iconEmojiMap(button: button)
+                    imageUpdatePublisher.send(tuesdayEmoji.image.orEmptyImage)
                 case "Wednesday":
                     wednesdayStar.alpha = 1
                     wednesdayEmoji.image = iconEmojiMap(button: button)
+                    imageUpdatePublisher.send(wednesdayEmoji.image.orEmptyImage)
                 case "Thursday":
                     thursdayStar.alpha = 1
                     thursdayEmoji.image = iconEmojiMap(button: button)
+                    imageUpdatePublisher.send(thursdayEmoji.image.orEmptyImage)
                 case "Saturday":
                     saturdayStar.alpha = 1
                     saturdayEmoji.image = iconEmojiMap(button: button)
+                    imageUpdatePublisher.send(saturdayEmoji.image.orEmptyImage)
                 default :
                     hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
                 }

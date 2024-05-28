@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56i-1v-EJv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="56i-1v-EJv">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -619,9 +619,11 @@
                         <outlet property="chartView" destination="0lb-2y-9Jg" id="Sdt-mf-BtO"/>
                         <outlet property="confirmationView" destination="Rhy-FF-C8x" id="34L-9m-ZZB"/>
                         <outlet property="fridayDate" destination="zeW-MG-4eJ" id="bXo-fi-57b"/>
+                        <outlet property="fridayEmoji" destination="C6Z-hQ-JXq" id="mxn-Kr-pJD"/>
                         <outlet property="fridayLabel" destination="Hfk-z2-cc3" id="aqC-Os-hln"/>
                         <outlet property="fridayView" destination="Azd-h4-cmN" id="tVf-77-2mc"/>
                         <outlet property="mondayDate" destination="5rS-do-LfS" id="eQR-Pf-D4f"/>
+                        <outlet property="mondayEmoji" destination="UI3-ew-Fa2" id="MLW-pB-dIZ"/>
                         <outlet property="mondayLabel" destination="M61-BR-JEX" id="N1z-1T-l7s"/>
                         <outlet property="mondayView" destination="Dq1-bm-S3V" id="2Gl-rV-vRG"/>
                         <outlet property="myDiaryView" destination="6TJ-JC-9cc" id="ffv-Bh-Tjy"/>
@@ -631,19 +633,24 @@
                         <outlet property="questionLabel" destination="htW-rj-0VW" id="TB0-Rt-Edi"/>
                         <outlet property="quoteName" destination="RXk-MB-zgm" id="8qY-Vs-nQd"/>
                         <outlet property="saturdayDate" destination="dq2-wK-Nul" id="6Vb-a3-E1P"/>
+                        <outlet property="saturdayEmoji" destination="Xxg-H9-Sal" id="2s3-zW-3NT"/>
                         <outlet property="saturdayLabel" destination="GGy-Gt-s35" id="P7A-4e-2Ra"/>
                         <outlet property="saturdayView" destination="Z3j-hF-ACw" id="shm-om-Z0b"/>
                         <outlet property="sundayDate" destination="bit-MJ-1ci" id="4XK-nY-G6V"/>
+                        <outlet property="sundayEmoji" destination="lnz-EW-vlZ" id="kZ2-nN-Lwx"/>
                         <outlet property="sundayLabel" destination="UBO-5q-Kpz" id="sgi-Pc-PDL"/>
                         <outlet property="sundayView" destination="LCe-bJ-FF6" id="0h9-dw-8pO"/>
                         <outlet property="testView" destination="3KV-iu-unp" id="lSx-jO-uTT"/>
                         <outlet property="thursdayDate" destination="xck-g4-9cD" id="atZ-5y-x72"/>
+                        <outlet property="thursdayEmoji" destination="uSs-tL-88v" id="Y7B-ts-ClK"/>
                         <outlet property="thursdayLabel" destination="zuD-qd-ZXD" id="Fmt-kc-vQd"/>
                         <outlet property="thursdayView" destination="0D5-d9-Sjf" id="dMQ-zY-1qS"/>
                         <outlet property="tuesdayDate" destination="CEC-Er-8cd" id="7hT-KG-Uyn"/>
+                        <outlet property="tuesdayEmoji" destination="JGI-Rg-WVP" id="kPM-Yt-8Is"/>
                         <outlet property="tuesdayLabel" destination="Lpg-mE-ERc" id="laf-z0-phR"/>
                         <outlet property="tuesdayView" destination="ivZ-dU-A6u" id="pub-5r-paD"/>
                         <outlet property="wednesdayDate" destination="ztm-BN-SFu" id="Who-Dk-K2X"/>
+                        <outlet property="wednesdayEmoji" destination="xsL-zg-aup" id="9Kc-jp-i4j"/>
                         <outlet property="wednesdayLabel" destination="130-Uz-pqI" id="4hz-gr-T3b"/>
                         <outlet property="wednesdayView" destination="Bsv-b5-FOK" id="FZt-7p-PHl"/>
                         <outlet property="wiseLabel" destination="gHr-N8-eRp" id="uSl-Zg-qL4"/>

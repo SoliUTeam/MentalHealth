@@ -9,10 +9,16 @@ import Foundation
 import UIKit
 
 class HomeTabBarController: UITabBarController, UITabBarControllerDelegate {
+    var homeViewController: HomeViewController!
+    var dayViewController: DayViewController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         setupMiddleButton()
+        homeViewController = viewControllers?[0] as? HomeViewController
+        dayViewController = viewControllers?[1] as? DayViewController
+        homeViewController.setupImageSubscriber(publisher: dayViewController.imageUpdatePublisher)
    }
 
     func setupMiddleButton() {

@@ -5,12 +5,14 @@
 //  Created by JungpyoHong on 2/3/24.
 //
 
+import Combine
 import UIKit
 import SwiftEntryKit
 import FSCalendar
 import HealthKit
 
 class HomeViewController: UIViewController {
+    private var cancellables = Set<AnyCancellable>()
 
     @IBOutlet weak var backgroundView: UIView! {
         didSet {
@@ -27,6 +29,7 @@ class HomeViewController: UIViewController {
         }
     }
     @IBOutlet weak var quoteName: UILabel!
+    
     @IBOutlet weak var sundayView: UIView!
     @IBOutlet weak var mondayView: UIView!
     @IBOutlet weak var tuesdayView: UIView!
@@ -34,6 +37,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var thursdayView: UIView!
     @IBOutlet weak var fridayView: UIView!
     @IBOutlet weak var saturdayView: UIView!
+    
+    @IBOutlet weak var sundayEmoji: UIImageView!
+    @IBOutlet weak var mondayEmoji: UIImageView!
+    @IBOutlet weak var tuesdayEmoji: UIImageView!
+    @IBOutlet weak var wednesdayEmoji: UIImageView!
+    @IBOutlet weak var thursdayEmoji: UIImageView!
+    @IBOutlet weak var fridayEmoji: UIImageView!
+    @IBOutlet weak var saturdayEmoji: UIImageView!
     
     @IBOutlet weak var sundayDate: UILabel!
     @IBOutlet weak var mondayDate: UILabel!
@@ -152,7 +163,17 @@ class HomeViewController: UIViewController {
         // can be fetch data from backend
         return "Was dopamine detox successful?"
     }
-    
+
+    func setupImageSubscriber(publisher: PassthroughSubject<UIImage, Never>) {
+        publisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newImage in
+                //TODO: Need to do proper mapping
+                self?.tuesdayEmoji.image = newImage
+            }
+            .store(in: &cancellables)
+    }
+
     @objc
     func displaySurveyListViewController(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension Optional where Wrapped == Bool {
     var orFalse: Bool {
@@ -25,9 +26,17 @@ extension Optional where Wrapped == String {
         return self
     }
 }
+
 extension Optional where Wrapped == Int {
     var orZeroValue: Int {
         guard let self else { return 0 }
+        return self
+    }
+}
+
+extension Optional where Wrapped == UIImage {
+    var orEmptyImage: UIImage {
+        guard let self else { return UIImage() }
         return self
     }
 }
