@@ -33,7 +33,6 @@
 		953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EC2B6EDFA000651684 /* AppDelegate.swift */; };
 		953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EE2B6EDFA000651684 /* SceneDelegate.swift */; };
 		953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* HomeViewController.swift */; };
-		953A65022B6EE67B00651684 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 953A65012B6EE67B00651684 /* Lottie */; };
 		95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A072BBE69810003C584 /* UIViewController+Extension.swift */; };
 		95433A0E2BBF98C10003C584 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A0D2BBF98C10003C584 /* DayViewController.swift */; };
 		95433A102BC63A860003C584 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95433A0F2BC63A860003C584 /* String+Extension.swift */; };
@@ -52,7 +51,6 @@
 		95ACE6A72BE0A82000E935EC /* InspiringQuote.json in Resources */ = {isa = PBXBuildFile; fileRef = 95ACE6A62BE0A82000E935EC /* InspiringQuote.json */; };
 		95ACE6A92BE0A99100E935EC /* InspiringQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ACE6A82BE0A99100E935EC /* InspiringQuote.swift */; };
 		95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */; };
-		95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEFA2B6FD87600101423 /* FirebaseAnalytics */; };
 		95B1CEFD2B6FD87600101423 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEFC2B6FD87600101423 /* FirebaseAuth */; };
 		95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CEFE2B6FD87600101423 /* FirebaseDatabase */; };
 		95B1CF012B6FD87600101423 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 95B1CF002B6FD87600101423 /* FirebaseFirestore */; };
@@ -151,10 +149,8 @@
 			files = (
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
 				95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */,
-				953A65022B6EE67B00651684 /* Lottie in Frameworks */,
 				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
 				9577204C2BC8CB4B0026DC91 /* FSCalendar in Frameworks */,
-				95B1CEFB2B6FD87600101423 /* FirebaseAnalytics in Frameworks */,
 				95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */,
 				95B1CEFD2B6FD87600101423 /* FirebaseAuth in Frameworks */,
 				95B1CF012B6FD87600101423 /* FirebaseFirestore in Frameworks */,
@@ -426,9 +422,7 @@
 			);
 			name = MentalHealth;
 			packageProductDependencies = (
-				953A65012B6EE67B00651684 /* Lottie */,
 				95B1CEF42B6F97DB00101423 /* IQKeyboardManagerSwift */,
-				95B1CEFA2B6FD87600101423 /* FirebaseAnalytics */,
 				95B1CEFC2B6FD87600101423 /* FirebaseAuth */,
 				95B1CEFE2B6FD87600101423 /* FirebaseDatabase */,
 				95B1CF002B6FD87600101423 /* FirebaseFirestore */,
@@ -468,7 +462,6 @@
 			);
 			mainGroup = 953A64E02B6EDFA000651684;
 			packageReferences = (
-				953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */,
@@ -799,54 +792,41 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
 		9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.4;
+				kind = exactVersion;
+				version = 2.8.4;
 			};
 		};
 		95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				kind = exactVersion;
+				version = 7.0.0;
 			};
 		};
 		95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
+				kind = exactVersion;
+				version = 10.0.0;
 			};
 		};
 		95D293A52BCE347100017E03 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				kind = exactVersion;
+				version = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		953A65012B6EE67B00651684 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 953A65002B6EE67B00651684 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
 		9577204B2BC8CB4B0026DC91 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */;
@@ -856,11 +836,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 95B1CEF32B6F97DB00101423 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
-		};
-		95B1CEFA2B6FD87600101423 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
 		};
 		95B1CEFC2B6FD87600101423 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
