@@ -28,7 +28,7 @@ class SurveyListViewController: UIViewController {
         super.viewDidLoad()
         fetchQuestions()
         setCustomBackNavigationButton()
-       
+        _ = LoginManager.shared.getUserInfo()
         tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
         self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)

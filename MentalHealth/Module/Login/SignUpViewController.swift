@@ -44,13 +44,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         setIDAndPassword(email, password)
         
         nextButton.isEnabled = true
-//        if checkPassword(password) {
-//            passwordTextField.textColor = .black
-//            nextButton.isEnabled = true
-//        } else {
-//            passwordTextField.textColor = .red
-//            nextButton.isEnabled = false
-//        }
     }
     
     private func checkPassword(_ password: String) -> Bool {

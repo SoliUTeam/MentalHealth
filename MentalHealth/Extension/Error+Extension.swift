@@ -13,6 +13,7 @@ enum SignInError: Error {
     case userIDCheckFailed(String)
     case userIDDoesNotExist
     case signInFailed(String)
+    case fetchingUserInfoError
     
     var localizedDescription: String {
         switch self {
@@ -26,6 +27,9 @@ enum SignInError: Error {
             return "User ID does not exist."
         case .signInFailed(let message):
             return "Sign-In Error: \(message)"
+        case .fetchingUserInfoError:
+            return "Fail to Fatching Information"
         }
     }
 }
+

@@ -24,12 +24,12 @@ class FBNetworkLayer {
         db = Firestore.firestore()
     }
     
-    func signIn(email: String, password: String, completion: @escaping (Result<UserInformation?, Error>) -> Void) {
+    func signIn(email: String, password: String, completion: @escaping (Result<UserInformation?, SignInError>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             guard let strongSelf = self else { return }
             if let error = error {
                 print("Sign-In Error: \(error.localizedDescription)")
-                completion(.failure(error))
+                completion(.failure(.signInFailed("Sign In Failed")))
             } else {
                 print(authResult?.user.uid ?? "No User ID")
                 strongSelf.getUserInformation(email: email) { result in
@@ -38,7 +38,7 @@ class FBNetworkLayer {
                         completion(.success(nil))
                         LoginManager.shared.setMyUserInformation(userInfo)
                     case .failure(let error):
-                        completion(.failure(error))
+                        completion(.failure(.signInFailed("Fetching Fails")))
                     }
                 }
             }
@@ -207,23 +207,23 @@ class FBNetworkLayer {
         }
     }
     
-    func fetchMentalHealthQuestions(completion: @escaping (MentalHealthQuestion?, Error?) -> Void) {
-        db.collection("MentalHealthQuestion").getDocuments { (querySnapshot, err) in
-            if let err = err {
-                completion(nil, err)
-                return
-            } else {
-                guard let document = querySnapshot?.documents.first else {
-                    completion(nil, NSError(domain: "FBNetworkLayer", code: 0, userInfo: [NSLocalizedDescriptionKey: "No documents found in MentalHealthQuestion collection"]))
-                    return
-                }
-                do {
-                    let question = try document.data(as: MentalHealthQuestion.self)
-                    completion(question, nil)
-                } catch let error {
-                    completion(nil, error)
-                }
-            }
-        }
-    }
+//    func fetchMentalHealthQuestions(completion: @escaping (MentalHealthQuestion?, Error?) -> Void) {
+//        db.collection("MentalHealthQuestion").getDocuments { (querySnapshot, err) in
+//            if let err = err {
+//                completion(nil, err)
+//                return
+//            } else {
+//                guard let document = querySnapshot?.documents.first else {
+//                    completion(nil, NSError(domain: "FBNetworkLayer", code: 0, userInfo: [NSLocalizedDescriptionKey: "No documents found in MentalHealthQuestion collection"]))
+//                    return
+//                }
+//                do {
+//                    let question = try document.data(as: MentalHealthQuestion.self)
+//                    completion(question, nil)
+//                } catch let error {
+//                    completion(nil, error)
+//                }
+//            }
+//        }
+//    }
 }

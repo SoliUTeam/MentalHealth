@@ -30,13 +30,14 @@ class LogInViewController: UIViewController {
             return
         }
         
-        FBNetworkLayer.shared.signIn(email: email, password: password) { error in
-            if let error = error as? SignInError {
-                self.showAlert(error: error)
-            } else {
-                self.nagivateToHomeViewController()
+        FBNetworkLayer.shared.signIn(email: email, password: password) { result in
+                switch result {
+                case .success:
+                    self.nagivateToHomeViewController()
+                case .failure(let error):
+                    self.showAlert(error: error)
+                }
             }
-        }
     }
     
     private func nagivateToHomeViewController() {
