@@ -37,7 +37,7 @@ class FBNetworkLayer {
                     case .success(let userInfo):
                         completion(.success(nil))
                         LoginManager.shared.setMyUserInformation(userInfo)
-                    case .failure(let error):
+                    case .failure( _):
                         completion(.failure(.signInFailed("Fetching Fails")))
                     }
                 }
@@ -81,6 +81,34 @@ class FBNetworkLayer {
             } catch {
                 completion(.failure(error))
             }
+        }
+    }
+    
+    func getAllSurveyResult(completion: @escaping (Result<[SurveyResult], Error>) -> Void) {
+        let allTestRef = db.collection("All_Test_Results")
+        
+        allTestRef.getDocuments { query, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let documents = query?.documents else {
+                        completion(.failure(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "No survey results found"])))
+                        return
+            }
+            var surveyResults: [SurveyResult] = []
+            
+            for document in documents {
+                let data = document.data()
+                            if let surveyDate = data["surveyDate"] as? String,
+                               let surveyAnswer = data["surveyAnswer"] as? [Int] {
+                                    let surveyResult = SurveyResult(surveyDate: surveyDate, surveyAnswer: surveyAnswer)
+                                        surveyResults.append(surveyResult)
+                    }
+            }
+            completion(.success(surveyResults))
+
         }
     }
     

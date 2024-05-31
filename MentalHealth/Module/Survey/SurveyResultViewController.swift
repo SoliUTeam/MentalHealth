@@ -44,11 +44,57 @@ class SurveyResultViewController: UIViewController {
     @IBOutlet var hrqolScoreLabel: UILabel!
     
     var myTestScore: [Int:Int] = [:]
-    var allUsersAverageResult: [Int: Int] = TestingInformation().exampleAllSurveyDict()
+    var allUsersAverageResult: [Int: Int] = [ : ]
     let categories = [0: "Depression", 5: "Anxiety", 10: "Stress", 15: "Loneliness", 20: "Social Media Addiction", 25: "HRQOL"]
     var shouldHideData = false
     var scoreResults: [Int: [Double]] = [:]
-
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        setupScoreResult()
+        self.title = "Test Result"
+        self.imageSetup()
+        self.labelSetup()
+        fetchUsersAverageResult()
+    }
+    
+    private func fetchUsersAverageResult() {
+        FBNetworkLayer.shared.getAllSurveyResult { result in
+            guard self == self else { return }
+            switch result {
+            case .success(let testResults):
+                self.remappingTestAverageScore(allTestResults: testResults)
+                self.setupScoreResult()
+                self.chartSetup()
+                self.labelResultSetup()
+            case .failure(let error):
+                self.showAlert(error: .fetchingTestScoreFails)
+                
+            }
+        }
+        
+    }
+    
+    private func remappingTestAverageScore(allTestResults: [SurveyResult]) {
+        var scoreSums: [Int: Int] = [:]
+        var scoreCounts: [Int: Int] = [:]
+            
+        for result in allTestResults {
+            for (index, score) in result.surveyAnswer.enumerated() {
+                scoreSums[index, default: 0] += score
+                scoreCounts[index, default: 0] += 1
+            }
+        }
+        
+        var allUsersAverageResult: [Int: Int] = [:]
+        for (index, totalScore) in scoreSums {
+            let count = scoreCounts[index] ?? 1
+            allUsersAverageResult[index] = totalScore / count
+        }
+        print(allUsersAverageResult)
+    }
         
     private func stringForValue(_ index: Int) -> String {
             switch index {
@@ -79,6 +125,7 @@ class SurveyResultViewController: UIViewController {
     }
     
     private func setupScoreResult() {
+        
         scoreResults[0] = []
         scoreResults[1] = []
         for (startKey, _) in categories {
@@ -157,16 +204,7 @@ class SurveyResultViewController: UIViewController {
         view.addSubview(chart)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setupScoreResult()
-        self.title = "Test Result"
-        self.imageSetup()
-        self.labelSetup()
-        labelResultSetup()
-        chartSetup()
-    }
+    
 }
 
 extension SurveyResultViewController: TKRadarChartDataSource, TKRadarChartDelegate, UITableViewDelegate {

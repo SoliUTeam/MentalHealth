@@ -16,6 +16,7 @@
 		670087B52BDF637E000EB39C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 953A64F72B6EDFA200651684 /* LaunchScreen.storyboard */; };
 		670400E32BF56B9B00BC65CA /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 670400E22BF56B9B00BC65CA /* UserInformation.swift */; };
 		674EFBAD2BF4167000107789 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EFBAC2BF4167000107789 /* UIButton+Extension.swift */; };
+		6761061D2C097AEC00B66BE8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6761061C2C097AEB00B66BE8 /* GoogleService-Info.plist */; };
 		67811DD32BF003EF00BB816F /* MyDiaryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */; };
 		67811DD62BF00AA200BB816F /* MyDiaryRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */; };
 		67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */; };
@@ -81,6 +82,7 @@
 		670400E22BF56B9B00BC65CA /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		674EFBAC2BF4167000107789 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
+		6761061C2C097AEB00B66BE8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiaryFlow.storyboard; sourceTree = "<group>"; };
 		67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryRecordViewController.swift; sourceTree = "<group>"; };
 		67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				95B1CEF62B6FD57D00101423 /* Common */,
 				953A64FA2B6EDFA200651684 /* Info.plist */,
 				95D293A32BCD0CB800017E03 /* LoginManager.swift */,
+				6761061C2C097AEB00B66BE8 /* GoogleService-Info.plist */,
 			);
 			path = MentalHealth;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				95ACE6A72BE0A82000E935EC /* InspiringQuote.json in Resources */,
 				95ACE6A42BE0A5E800E935EC /* Roboto-Black.ttf in Resources */,
 				67811DD32BF003EF00BB816F /* MyDiaryFlow.storyboard in Resources */,
+				6761061D2C097AEC00B66BE8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

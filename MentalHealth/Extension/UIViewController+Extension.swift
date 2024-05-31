@@ -23,7 +23,7 @@ extension UIViewController {
     func getTestDate() -> String {
         let currentDate = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/YYYY"
+        dateFormatter.dateFormat = "MM/dd/YYYY"
         return dateFormatter.string(from: currentDate)
     }
     

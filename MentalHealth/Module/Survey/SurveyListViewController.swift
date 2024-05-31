@@ -102,40 +102,44 @@ class SurveyListViewController: UIViewController {
         self.title = title
     }
     
-    private func nextButtonPressed() {
-        if selectedQuestionId == 4 {
-            readyToSubmit = true
-        }
-        
-        if selectedQuestionId < 5 {
-            reorderQuestion()
-        }
-        
-        if selectedQuestionId == 5 {
-            let surveyAnswersArray = getSurveyResultArray()
-            FBNetworkLayer.shared.addSurvey(userInfomration: userInfomration,
-                                            newSurveyResult: SurveyResult(surveyDate: getTestDate(),
-                                                                          surveyAnswer: surveyAnswersArray)) { error in
-                if let error = error {
-                    print("Fetching Survey Result Fails \(error.localizedDescription)")
-                }
-                else {
-                    print("Fetching Survey Result Success")
-                }
+    private func navigateToResultScreen() {
+        let surveyAnswersArray = getSurveyResultArray()
+        FBNetworkLayer.shared.addSurvey(userInfomration: userInfomration,
+                                        newSurveyResult: SurveyResult(surveyDate: getTestDate(),
+                                                                      surveyAnswer: surveyAnswersArray)) { error in
+            if let error = error {
+                print("Fetching Survey Result Fails \(error.localizedDescription)")
             }
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            else {
+                print("Fetching Survey Result Success")
+            }
+        }
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
+            surveyResultVC.myTestScore = surveyResultRecord
+            navigationController?.pushViewController(surveyResultVC, animated: true)
             
-            if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {
-                surveyResultVC.myTestScore = surveyResultRecord
-                navigationController?.pushViewController(surveyResultVC, animated: true)
-                
-            } else {
-                print("Can't find storyboard")
-            }
+        } else {
+            print("Can't find storyboard")
         }
-        
+    }
+    
+    private func nextButtonPressed() {
         selectedQuestionId = selectedQuestionId + 1
         
+        if selectedQuestionId < 6 {
+            reorderQuestion()
+            if selectedQuestionId == 5 {
+                readyToSubmit = true
+            }
+            return
+        }
+        
+        
+        if selectedQuestionId == 6 {
+            navigateToResultScreen()
+        }
     }
     
     private func reorderQuestion() {

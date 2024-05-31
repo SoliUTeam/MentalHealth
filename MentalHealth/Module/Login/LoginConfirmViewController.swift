@@ -124,6 +124,7 @@ class LoginConfirmViewController: UIViewController {
                                 }
                                 else {
                                     completion(true)
+                                    LoginManager.shared.setMyUserInformation(userInfo)
                                     self.loginManager.setLoggedIn(true)
                                     print("User information successfully updated")
                                 }
