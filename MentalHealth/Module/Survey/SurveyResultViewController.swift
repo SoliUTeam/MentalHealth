@@ -18,7 +18,11 @@ class SurveyResultViewController: UIViewController {
         }
     }
     @IBOutlet var stackView: UIStackView!
-    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            self.activityIndicator.hidesWhenStopped = true
+        }
+    }
     // Image Views
     @IBOutlet var depressionImageView: UIImageView!
     @IBOutlet var anxietyImageView: UIImageView!
@@ -53,28 +57,29 @@ class SurveyResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        setupScoreResult()
         self.title = "Test Result"
         self.imageSetup()
         self.labelSetup()
-        fetchUsersAverageResult()
+        self.fetchUsersAverageResult()
     }
     
     private func fetchUsersAverageResult() {
+        self.activityIndicator.startAnimating()
         FBNetworkLayer.shared.getAllSurveyResult { result in
             guard self == self else { return }
-            switch result {
-            case .success(let testResults):
-                self.remappingTestAverageScore(allTestResults: testResults)
-                self.setupScoreResult()
-                self.chartSetup()
-                self.labelResultSetup()
-            case .failure(let error):
-                self.showAlert(error: .fetchingTestScoreFails)
-                
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let testResults):
+                    self.remappingTestAverageScore(allTestResults: testResults)
+                    self.setupScoreResult()
+                    self.chartSetup()
+                    self.labelResultSetup()
+                    self.activityIndicator.stopAnimating()
+                case .failure( _):
+                    self.showAlert(error: .fetchingTestScoreFails)
+                }
             }
         }
-        
     }
     
     private func remappingTestAverageScore(allTestResults: [SurveyResult]) {
@@ -93,7 +98,9 @@ class SurveyResultViewController: UIViewController {
             let count = scoreCounts[index] ?? 1
             allUsersAverageResult[index] = totalScore / count
         }
-        print(allUsersAverageResult)
+        
+        self.allUsersAverageResult = allUsersAverageResult
+        print("allUsersAverageResult \(self.allUsersAverageResult)")
     }
         
     private func stringForValue(_ index: Int) -> String {
@@ -203,7 +210,6 @@ class SurveyResultViewController: UIViewController {
         chart.reloadData()
         view.addSubview(chart)
     }
-    
     
 }
 

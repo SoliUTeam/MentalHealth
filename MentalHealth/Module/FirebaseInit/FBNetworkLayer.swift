@@ -108,7 +108,6 @@ class FBNetworkLayer {
                     }
             }
             completion(.success(surveyResults))
-
         }
     }
     
@@ -142,7 +141,6 @@ class FBNetworkLayer {
             surveyResults.append(newSurveyResultData)
             userData["surveyResult"] = surveyResults
             
-            // Start a batch to handle multiple writes atomically
             let batch = self.db.batch()
             
             document.reference.updateData(userData) { error in

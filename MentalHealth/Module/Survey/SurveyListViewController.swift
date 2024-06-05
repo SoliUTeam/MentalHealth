@@ -28,7 +28,6 @@ class SurveyListViewController: UIViewController {
         super.viewDidLoad()
         fetchQuestions()
         setCustomBackNavigationButton()
-        _ = LoginManager.shared.getUserInfo()
         tableView.separatorStyle = .none
         self.tableView.register(UINib(nibName: SurveyListViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyListViewCell.reuseIdentifier)
         self.tableView.register(UINib(nibName: SurveyNextButtonCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: SurveyNextButtonCell.reuseIdentifier)
@@ -114,6 +113,7 @@ class SurveyListViewController: UIViewController {
                 print("Fetching Survey Result Success")
             }
         }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         if let surveyResultVC = storyboard.instantiateViewController(identifier: "SurveyResultViewController") as? SurveyResultViewController {

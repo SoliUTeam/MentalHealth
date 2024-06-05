@@ -50,9 +50,9 @@ public class LoginManager {
     private var email: String = ""
     private var password: String = ""
     private var surveyResult: [SurveyResult] = []
+    
+//  Initialize starts with guest
     private var currentUser: UserInformation = guestUser
-    
-    
     
     func getUserInfo() -> UserInformation {
         return UserInformation(email: email,
