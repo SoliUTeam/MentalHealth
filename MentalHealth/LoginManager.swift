@@ -55,22 +55,15 @@ public class LoginManager {
     private var currentUser: UserInformation = guestUser
     
     func getUserInfo() -> UserInformation {
-        return UserInformation(email: email,
-                               password: password, 
-                               nickName: nickName,
-                               gender: getGender(),
-                               age: getAge(),
-                               workStatus: getWorkStatus(),
-                               ethnicity: getEthnicity(),
-                               surveyResult: surveyResult)
+        return self.currentUser
     }
     
     func setMyUserInformation(_ userInfo: UserInformation) {
         self.currentUser = userInfo
     }
     
-    func getUserInformation() -> UserInformation { 
-        return currentUser
+    func getUserInformation() -> UserInformation {
+        return self.currentUser
     }
     
     func setSurveyResult(_ surveyResult: [SurveyResult]) {

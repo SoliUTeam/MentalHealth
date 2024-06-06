@@ -37,6 +37,7 @@ class FBNetworkLayer {
                     case .success(let userInfo):
                         completion(.success(nil))
                         LoginManager.shared.setMyUserInformation(userInfo)
+                        print("Sign Sucessful \(userInfo)")
                     case .failure( _):
                         completion(.failure(.signInFailed("Fetching Fails")))
                     }
@@ -80,6 +81,40 @@ class FBNetworkLayer {
                 completion(.success(userInfo))
             } catch {
                 completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchMyDay(userInfomration: UserInformation, myDay: MyDay, completion: @escaping (Error?) -> Void) {
+        let email = userInfomration.email
+        let userRef = db.collection("Users").whereField("demographicInformation.email", isEqualTo: email)
+        
+        userRef.getDocuments { query, error in
+            if let error = error {
+                completion(error)
+                print("Error getting documents: \(error)")
+            } else {
+                guard let document = query?.documents.first else {
+                                completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "User not found"]))
+                                return
+                }
+                
+                let userDocID = document.documentID
+                let userDocRef = self.db.collection("Users").document(userDocID)
+                
+                userDocRef.updateData([
+                                "userMoodList": FieldValue.arrayUnion([[
+                                    "date": myDay.date.toString(),
+                                    "myMood": myDay.myMood.rawValue
+                                ]])
+                            ]) { error in
+                                if let error = error {
+                                    completion(error)
+                                    print("Error updating document: \(error)")
+                                } else {
+                                    completion(nil)
+                                }
+                }
             }
         }
     }
@@ -220,7 +255,8 @@ class FBNetworkLayer {
                 "passwrod": userInfo.password,
                 "nickname": userInfo.nickName
             ],
-            "surveyResult": []  // Initialize as an empty array
+            "surveyResult": [],
+            "myDayMood" : []// Initialize as an empty array
         ]
         
         db.collection("Users").addDocument(data: userData) { error in

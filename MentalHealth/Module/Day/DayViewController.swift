@@ -252,42 +252,85 @@ class DayViewController: UIViewController {
         welcomeView.isHidden = true
         submitButton.isHidden = false
     }
+    
+    private func submitMoodInformation(myMood: MyMood) {
+        let myDay = MyDay(date: Date(), myMood: myMood)
+        print("SelectedMood \(myMood)")
+        FBNetworkLayer.shared.fetchMyDay(userInfomration: LoginManager.shared.getUserInfo(),
+                                         myDay: myDay) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    
+    }
 
     @objc
     func submitButtonTapped() {
         //send backend that user finished for today
+        var selectedButton: UIButton?
+        var mood: MyMood?
         for button in [badButton, sadButton, decentButton, goodButton, niceButton] {
             if button?.isSelected == true {
-                let weekday = getTodayWeekday()
-                switch weekday {
-                case "Sunday":
-                    sundayStar.alpha = 1
-                    sundayEmoji.image = iconEmojiMap(button: button)
-                    imageUpdatePublisher.send(sundayEmoji.image.orEmptyImage)
-                case "Monday":
-                    mondayStar.alpha = 1
-                    mondayEmoji.image = iconEmojiMap(button: button)
-                    imageUpdatePublisher.send(mondayEmoji.image.orEmptyImage)
-                case "Tuesday":
-                    tuesdayStar.alpha = 1
-                    tuesdayEmoji.image = iconEmojiMap(button: button)
-                    imageUpdatePublisher.send(tuesdayEmoji.image.orEmptyImage)
-                case "Wednesday":
-                    wednesdayStar.alpha = 1
-                    wednesdayEmoji.image = iconEmojiMap(button: button)
-                    imageUpdatePublisher.send(wednesdayEmoji.image.orEmptyImage)
-                case "Thursday":
-                    thursdayStar.alpha = 1
-                    thursdayEmoji.image = iconEmojiMap(button: button)
-                    imageUpdatePublisher.send(thursdayEmoji.image.orEmptyImage)
-                case "Saturday":
-                    saturdayStar.alpha = 1
-                    saturdayEmoji.image = iconEmojiMap(button: button)
-                    imageUpdatePublisher.send(saturdayEmoji.image.orEmptyImage)
-                default :
-                    hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
+                selectedButton = button
+                switch button {
+                case badButton:
+                    mood = .bad
+                case sadButton:
+                    mood = .sad
+                case decentButton:
+                    mood = .decent
+                case goodButton:
+                    mood = .good
+                case niceButton:
+                    mood = .nice
+                default:
+                    break
                 }
+                break
             }
+        }
+    
+        if let selectedMood = mood {
+               submitMoodInformation(myMood: selectedMood)
+           } else {
+               print("No mood selected")
+               // Handle the case where no button was selected (e.g., show an alert to the user)
+        }
+        guard let selectedButton = selectedButton else {
+                print("No button selected")
+                return
+        }
+        let weekday = getTodayWeekday()
+        switch weekday {
+        case "Sunday":
+            sundayStar.alpha = 1
+            sundayEmoji.image = iconEmojiMap(button: selectedButton)
+            imageUpdatePublisher.send(sundayEmoji.image.orEmptyImage)
+        case "Monday":
+            mondayStar.alpha = 1
+            mondayEmoji.image = iconEmojiMap(button: selectedButton)
+            imageUpdatePublisher.send(mondayEmoji.image.orEmptyImage)
+        case "Tuesday":
+            tuesdayStar.alpha = 1
+            tuesdayEmoji.image = iconEmojiMap(button: selectedButton)
+            imageUpdatePublisher.send(tuesdayEmoji.image.orEmptyImage)
+        case "Wednesday":
+            wednesdayStar.alpha = 1
+            wednesdayEmoji.image = iconEmojiMap(button: selectedButton)
+            imageUpdatePublisher.send(wednesdayEmoji.image.orEmptyImage)
+        case "Thursday":
+            thursdayStar.alpha = 1
+            thursdayEmoji.image = iconEmojiMap(button: selectedButton)
+            imageUpdatePublisher.send(thursdayEmoji.image.orEmptyImage)
+        case "Saturday":
+            saturdayStar.alpha = 1
+            saturdayEmoji.image = iconEmojiMap(button: selectedButton)
+            imageUpdatePublisher.send(saturdayEmoji.image.orEmptyImage)
+        default :
+            hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
+                
+            
         }
         
         func iconEmojiMap(button: UIButton?) -> UIImage? {
