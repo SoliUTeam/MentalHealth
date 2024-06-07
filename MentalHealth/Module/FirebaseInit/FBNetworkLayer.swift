@@ -37,8 +37,10 @@ class FBNetworkLayer {
                     case .success(let userInfo):
                         completion(.success(nil))
                         LoginManager.shared.setMyUserInformation(userInfo)
+                        LoginManager.shared.setLoggedIn(true)
                         print("Sign Sucessful \(userInfo)")
                     case .failure( _):
+                        LoginManager.shared.setLoggedIn(false)
                         completion(.failure(.signInFailed("Fetching Fails")))
                     }
                 }
@@ -64,8 +66,18 @@ class FBNetworkLayer {
                 let data = document.data()
                 let demographicInfo = data["demographicInformation"] as? [String: Any]
                 let surveyResultsData = data["surveyResult"] as? [[String: Any]] ?? []
+                let userMoodResultsData = data["userMoodList"] as? [[String: Any]] ?? []
                 
+                // Debugging prints
+                print("Demographic Info: \(demographicInfo ?? [:])")
+                print("Survey Results Data: \(surveyResultsData)")
+                print("User Mood Results Data: \(userMoodResultsData)")
+                
+                let userMoodResults = try userMoodResultsData.map { try JSONDecoder().decode(MyDay.self, from: JSONSerialization.data(withJSONObject: $0)) 
+                }
                 let surveyResults = try surveyResultsData.map { try JSONDecoder().decode(SurveyResult.self, from: JSONSerialization.data(withJSONObject: $0)) }
+                
+                
                 
                 let userInfo = UserInformation(
                     email: demographicInfo?["email"] as? String ?? "",
@@ -75,7 +87,8 @@ class FBNetworkLayer {
                     age: demographicInfo?["age"] as? String ?? "",
                     workStatus: demographicInfo?["workStatus"] as? String ?? "",
                     ethnicity: demographicInfo?["ethnicity"] as? String ?? "",
-                    surveyResult: surveyResults
+                    surveyResult: surveyResults,
+                    userMoodList: userMoodResults
                 )
                 
                 completion(.success(userInfo))
@@ -104,7 +117,7 @@ class FBNetworkLayer {
                 
                 userDocRef.updateData([
                                 "userMoodList": FieldValue.arrayUnion([[
-                                    "date": myDay.date.toString(),
+                                    "date":  myDay.date,
                                     "myMood": myDay.myMood.rawValue
                                 ]])
                             ]) { error in
@@ -118,6 +131,7 @@ class FBNetworkLayer {
             }
         }
     }
+    
     
     func getAllSurveyResult(completion: @escaping (Result<[SurveyResult], Error>) -> Void) {
         let allTestRef = db.collection("All_Test_Results")
@@ -145,6 +159,8 @@ class FBNetworkLayer {
             completion(.success(surveyResults))
         }
     }
+    
+    
     
     
     func addSurvey(userInfomration: UserInformation, newSurveyResult: SurveyResult, completion: @escaping (Error?)-> Void) {

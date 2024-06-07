@@ -36,9 +36,7 @@ enum Ethnicity: String {
 public class LoginManager {
     static let shared = LoginManager()
     
-    static let defualtTestUser = UserInformation(email: "test1234@gmail.com", password: "testingUser1234!", nickName: "testuser1", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian", surveyResult: [])
-    
-    static let guestUser = UserInformation(email: "guest@gmail.com", password: "guest!", nickName: "Guest", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian", surveyResult: [])
+    static let guestUser = UserInformation(email: "guest@gmail.com", password: "guest!", nickName: "Guest", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian", surveyResult: [], userMoodList: [])
     
     // Continue as Guest option will be false as default
     private var logInState: Bool = false
@@ -62,6 +60,10 @@ public class LoginManager {
         self.currentUser = userInfo
     }
     
+    func getUserMoodList() -> [MyDay] {
+        return self.currentUser.userMoodList
+    }
+    
     func getUserInformation() -> UserInformation {
         return self.currentUser
     }
@@ -71,7 +73,7 @@ public class LoginManager {
     }
 
     func setLoggedIn(_ loggedIn: Bool) {
-        logInState = loggedIn
+        self.logInState = loggedIn
     }
     
     func setEmail(_ email: String) {
@@ -83,7 +85,7 @@ public class LoginManager {
     }
 
     func isLoggedIn() -> Bool {
-        return logInState
+        return self.logInState
     }
     
     func setNickName(_ nickName: String) {
@@ -91,7 +93,7 @@ public class LoginManager {
     }
     
     func getNickName() -> String {
-        return nickName
+        return self.currentUser.nickName
     }
     
     func setGender(_ gender: Gender) {

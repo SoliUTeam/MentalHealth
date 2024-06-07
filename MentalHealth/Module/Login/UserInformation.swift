@@ -7,17 +7,6 @@
 
 import Foundation
 
-//func createUserData() -> [String] {
-//    var userInfo: [String] = []
-//    userInfo.append(loginManager.getNickName())
-//    userInfo.append(loginManager.getGender())
-//    userInfo.append(loginManager.getAge())
-//    userInfo.append(loginManager.getWorkStatus())
-//    userInfo.append(loginManager.getEthnicity())
-//    return userInfo
-//}
-
-
 struct UserInformation {
     var email: String
     var password: String
@@ -27,6 +16,7 @@ struct UserInformation {
     var workStatus: String
     var ethnicity: String
     var surveyResult: [SurveyResult]
+    var userMoodList: [MyDay]
 }
 
 struct SurveyResult: Codable {

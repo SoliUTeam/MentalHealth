@@ -179,7 +179,6 @@ class DayViewController: UIViewController {
         }
     }
     
-    private var loginManager = LoginManager()
     private var dayArry: [UILabel: [UIView : UILabel]] = [:]
 
     override func viewDidLoad() {
@@ -219,11 +218,76 @@ class DayViewController: UIViewController {
         
         dateSettingForWeekday([sundayDate, mondayDate, tuesdayDate, wednesdayDate, thursdayDate, fridayDate, saturdayDate])
         updateTodayView()
+        setUpMyRecentMood()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    func setUpMyRecentMood() {
+        if !LoginManager.shared.isLoggedIn() {
+            print("User Not Logged In")
+            return
+        }
+        print(LoginManager.shared.getUserMoodList())
+        var userMoodList = LoginManager.shared.getUserMoodList()
+        var uniqueMoods: [String: MyMood] = [:]
+        for mood in userMoodList {
+            uniqueMoods[mood.date] = mood.myMood
+        }
+        
+        userMoodList = uniqueMoods.map { MyDay(date: $0.key, myMood: $0.value) }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let weekday = getTodayWeekday()
+        let startOfWeek = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
+        let endOfWeek = Calendar.current.date(byAdding: .day, value: 6, to: startOfWeek)!
+           
+        let filteredMoods = userMoodList.filter { mood in
+                if let moodDate = dateFormatter.date(from: mood.date) {
+                    return moodDate >= startOfWeek && moodDate <= endOfWeek
+                }
+                return false
+        }
+        
+        for targetMood in filteredMoods {
+            if let moodDate = dateFormatter.date(from: targetMood.date) {
+                        let weekday = Calendar.current.component(.weekday, from: moodDate)
+                updateRecentMood(for: weekday, mood: targetMood.myMood)
+            }
+        }
+    }
+    
+    private func updateRecentMood(for weekday: Int, mood: MyMood) {
+        
+        switch weekday {
+        case 1:
+            sundayStar.alpha = 1
+            sundayEmoji.image = mood.moodImage
+        case 2:
+            mondayStar.alpha = 1
+            mondayEmoji.image = mood.moodImage
+        case 3:
+            tuesdayStar.alpha = 1
+            tuesdayEmoji.image = mood.moodImage
+        case 4:
+            wednesdayStar.alpha = 1
+            wednesdayEmoji.image = mood.moodImage
+        case 5:
+            thursdayStar.alpha = 1
+            thursdayEmoji.image = mood.moodImage
+        case 6:
+            fridayStar.alpha = 1
+            fridayEmoji.image = mood.moodImage
+        case 7:
+            saturdayStar.alpha = 1
+            saturdayEmoji.image = mood.moodImage
+        default :
+            hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -235,7 +299,7 @@ class DayViewController: UIViewController {
     }
     
     func getStarCount() -> String {
-        if loginManager.isLoggedIn() {
+        if LoginManager.shared.isLoggedIn() {
             return "10"
         } else {
             return "0"
@@ -254,7 +318,7 @@ class DayViewController: UIViewController {
     }
     
     private func submitMoodInformation(myMood: MyMood) {
-        let myDay = MyDay(date: Date(), myMood: myMood)
+        let myDay = MyDay(date: Date().toString(), myMood: myMood)
         print("SelectedMood \(myMood)")
         FBNetworkLayer.shared.fetchMyDay(userInfomration: LoginManager.shared.getUserInfo(),
                                          myDay: myDay) { error in
@@ -262,8 +326,8 @@ class DayViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-    
     }
+    
 
     @objc
     func submitButtonTapped() {
@@ -323,35 +387,39 @@ class DayViewController: UIViewController {
             thursdayStar.alpha = 1
             thursdayEmoji.image = iconEmojiMap(button: selectedButton)
             imageUpdatePublisher.send(thursdayEmoji.image.orEmptyImage)
+        case "Friday":
+            fridayStar.alpha = 1
+            fridayEmoji.image = iconEmojiMap(button: selectedButton)
+            imageUpdatePublisher.send(fridayEmoji.image.orEmptyImage)
         case "Saturday":
             saturdayStar.alpha = 1
             saturdayEmoji.image = iconEmojiMap(button: selectedButton)
             imageUpdatePublisher.send(saturdayEmoji.image.orEmptyImage)
         default :
             hideWithAlpha([sundayStar, mondayStar, tuesdayStar, wednesdayStar, thursdayStar, fridayStar, saturdayStar])
-                
             
-        }
-        
-        func iconEmojiMap(button: UIButton?) -> UIImage? {
-            guard let currentImage = button?.currentImage else { return nil }
-            
-            switch currentImage {
-            case UIImage(emotionAssetIdentifier: .badIconSelected):
-                return UIImage(emotionAssetIdentifier: .badIconBig)
-            case UIImage(emotionAssetIdentifier: .sadIconSelected):
-                return UIImage(emotionAssetIdentifier: .sadIconBig)
-            case UIImage(emotionAssetIdentifier: .decentIconSelected):
-                return UIImage(emotionAssetIdentifier: .decentIconBig)
-            case UIImage(emotionAssetIdentifier: .goodIconSelected):
-                return UIImage(emotionAssetIdentifier: .goodIconBig)
-            case UIImage(emotionAssetIdentifier: .niceIconSelected):
-                return UIImage(emotionAssetIdentifier: .niceIconBig)
-            default:
-                return nil
-            }
         }
     }
+        
+    func iconEmojiMap(button: UIButton?) -> UIImage? {
+        guard let currentImage = button?.currentImage else { return nil }
+        
+        switch currentImage {
+        case UIImage(emotionAssetIdentifier: .badIconSelected):
+            return UIImage(emotionAssetIdentifier: .badIconBig)
+        case UIImage(emotionAssetIdentifier: .sadIconSelected):
+            return UIImage(emotionAssetIdentifier: .sadIconBig)
+        case UIImage(emotionAssetIdentifier: .decentIconSelected):
+            return UIImage(emotionAssetIdentifier: .decentIconBig)
+        case UIImage(emotionAssetIdentifier: .goodIconSelected):
+            return UIImage(emotionAssetIdentifier: .goodIconBig)
+        case UIImage(emotionAssetIdentifier: .niceIconSelected):
+            return UIImage(emotionAssetIdentifier: .niceIconBig)
+        default:
+            return nil
+        }
+    }
+    
 
     func isUserFinishedAction()  -> Bool {
         // need a function that if user already did for today or not

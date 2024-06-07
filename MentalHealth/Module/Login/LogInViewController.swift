@@ -60,10 +60,16 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tempIDPassword()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    private func tempIDPassword() {
+        emailTextField.text = "testsurvey1@gmail.com"
+        passwordTextField.text = "1211asdF!"
     }
 }
