@@ -227,33 +227,10 @@ class DayViewController: UIViewController {
     }
     
     func setUpMyRecentMood() {
-        if !LoginManager.shared.isLoggedIn() {
-            print("User Not Logged In")
-            return
-        }
-        print(LoginManager.shared.getUserMoodList())
-        var userMoodList = LoginManager.shared.getUserMoodList()
-        var uniqueMoods: [String: MyMood] = [:]
-        for mood in userMoodList {
-            uniqueMoods[mood.date] = mood.myMood
-        }
+        let moodList = WeekViewHelper.createfilteredMood()
+        let dateFormatter = WeekViewHelper.getMoodDateFormat()
         
-        userMoodList = uniqueMoods.map { MyDay(date: $0.key, myMood: $0.value) }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        let weekday = getTodayWeekday()
-        let startOfWeek = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
-        let endOfWeek = Calendar.current.date(byAdding: .day, value: 6, to: startOfWeek)!
-           
-        let filteredMoods = userMoodList.filter { mood in
-                if let moodDate = dateFormatter.date(from: mood.date) {
-                    return moodDate >= startOfWeek && moodDate <= endOfWeek
-                }
-                return false
-        }
-        
-        for targetMood in filteredMoods {
+        for targetMood in moodList {
             if let moodDate = dateFormatter.date(from: targetMood.date) {
                         let weekday = Calendar.current.component(.weekday, from: moodDate)
                 updateRecentMood(for: weekday, mood: targetMood.myMood)

@@ -35,3 +35,49 @@ enum MyMood: String, Codable {
         }
     }
 }
+
+class WeekViewHelper {
+    static func createfilteredMood() -> [MyDay] {
+        if !LoginManager.shared.isLoggedIn() {
+            print("User Not Logged In")
+            return []
+        }
+        var userMoodList = LoginManager.shared.getUserMoodList()
+        var uniqueMoods: [String: MyMood] = [:]
+        for mood in userMoodList {
+            uniqueMoods[mood.date] = mood.myMood
+        }
+        
+        userMoodList = uniqueMoods.map { MyDay(date: $0.key, myMood: $0.value) }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let startOfWeek = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
+        let endOfWeek = Calendar.current.date(byAdding: .day, value: 6, to: startOfWeek)!
+        
+        let filteredMoods = userMoodList.filter { mood in
+            if let moodDate = dateFormatter.date(from: mood.date) {
+                return moodDate >= startOfWeek && moodDate <= endOfWeek
+            }
+            return false
+        }
+        
+        return filteredMoods
+        
+        
+    }
+    
+    static func getTodayWeekday() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let weekday = dateFormatter.string(from: date)
+        return weekday
+    }
+    
+    static func getMoodDateFormat() -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }
+}

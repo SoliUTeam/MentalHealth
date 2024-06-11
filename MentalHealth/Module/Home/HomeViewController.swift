@@ -103,7 +103,6 @@ class HomeViewController: UIViewController {
         
         //when user has been already done today, we need to validate this
         questionConfirmView.isHidden = true
-        LoginManager.shared.getUserInformation()
         
         dayArry = [sundayDate: [sundayView: sundayLabel], mondayDate: [mondayView: mondayLabel], tuesdayDate: [tuesdayView: tuesdayLabel], wednesdayDate: [wednesdayView: wednesdayLabel], thursdayDate: [thursdayView: thursdayLabel], fridayDate: [fridayView: fridayLabel], saturdayDate: [saturdayView: saturdayLabel]]
         applyBoader([sundayView, mondayView, tuesdayView, wednesdayView, thursdayView, fridayView, saturdayView], with: .homepageStroke, backgroundColor: .white)
@@ -114,6 +113,7 @@ class HomeViewController: UIViewController {
         // Navigation
         tapAction(testView, selector: #selector(displaySurveyListViewController))
         tapAction(myDiaryView, selector: #selector(displayMyDiaryViewController))
+        setUpMyRecentMood()
         
 //        // Access Step Count
 //        let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)! ]
@@ -135,6 +135,39 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    func setUpMyRecentMood() {
+        let moodList = WeekViewHelper.createfilteredMood()
+        let dateFormatter = WeekViewHelper.getMoodDateFormat()
+        
+        for targetMood in moodList {
+            if let moodDate = dateFormatter.date(from: targetMood.date) {
+                        let weekday = Calendar.current.component(.weekday, from: moodDate)
+                updateRecentMood(for: weekday, mood: targetMood.myMood)
+            }
+        }
+    }
+        
+    private func updateRecentMood(for weekday: Int, mood: MyMood) {
+        switch weekday {
+        case 1:
+            sundayEmoji.image = mood.moodImage
+        case 2:
+            mondayEmoji.image = mood.moodImage
+        case 3:
+            tuesdayEmoji.image = mood.moodImage
+        case 4:
+            wednesdayEmoji.image = mood.moodImage
+        case 5:
+            thursdayEmoji.image = mood.moodImage
+        case 6:
+            fridayEmoji.image = mood.moodImage
+        case 7:
+            saturdayEmoji.image = mood.moodImage
+        default :
+            break
+        }
     }
 
     func applyGradientBackground(to view: UIView, startColor: UIColor, endColor: UIColor) {
