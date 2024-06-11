@@ -13,6 +13,9 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var rememberMeCheckMark: UIImageView!
+    
+    var rememberMeSelected: Bool = false
     
     @IBAction func tapAsGuest(_ sender: Any) {
         showAlert(title: "Success", description: "Continue as guest")
@@ -24,6 +27,7 @@ class LogInViewController: UIViewController {
         }
     }
     
+    
     @IBAction func clickedSignInButton() {
         guard let email = emailTextField.text, !email.isEmpty,
               let password = passwordTextField.text, !password.isEmpty else {
@@ -31,13 +35,18 @@ class LogInViewController: UIViewController {
         }
         
         FBNetworkLayer.shared.signIn(email: email, password: password) { result in
-                switch result {
-                case .success:
-                    self.nagivateToHomeViewController()
-                case .failure(let error):
-                    self.showAlert(error: error)
+            switch result {
+            case .success:
+                self.nagivateToHomeViewController()
+                if self.rememberMeSelected {
+                    self.saveCredentials(email: email, password: password)
+                } else {
+                    self.clearCredentials()
                 }
+            case .failure(let error):
+                self.showAlert(error: error)
             }
+        }
     }
     
     private func nagivateToHomeViewController() {
@@ -60,7 +69,16 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tempIDPassword()
+        loadCredentials()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleRememberMe))
+        rememberMeCheckMark.addGestureRecognizer(tapGesture)
+        rememberMeCheckMark.isUserInteractionEnabled = true
+    }
+    
+    @objc private func toggleRememberMe() {
+        rememberMeSelected.toggle()
+        let imageName = rememberMeSelected ? "checkmark.square" : "square"
+        rememberMeCheckMark.image = UIImage(systemName: imageName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,8 +86,26 @@ class LogInViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    private func tempIDPassword() {
-        emailTextField.text = "testsurvey1@gmail.com"
-        passwordTextField.text = "1211asdF!"
+    
+    private func saveCredentials(email: String, password: String) {
+        UserDefaults.standard.set(email, forKey: "savedEmail")
+        UserDefaults.standard.set(password, forKey: "savedPassword")
+    }
+    
+    private func loadCredentials() {
+        let savedEmail = UserDefaults.standard.string(forKey: "savedEmail")
+        let savedPassword = UserDefaults.standard.string(forKey: "savedPassword")
+        
+        if let email = savedEmail, let password = savedPassword {
+            emailTextField.text = email
+            passwordTextField.text = password
+            rememberMeSelected = true
+            rememberMeCheckMark.image = UIImage(systemName: "checkmark.square")
+        }
+    }
+    
+    private func clearCredentials() {
+        UserDefaults.standard.removeObject(forKey: "savedEmail")
+        UserDefaults.standard.removeObject(forKey: "savedPassword")
     }
 }
