@@ -22,6 +22,9 @@ enum Image: String {
     case calendar
     case backArrow
     case buttonCheck
+    case bioMetrics
+    case notification
+    case writeReview
 }
 
 enum Emotion: String {
