@@ -33,6 +33,8 @@
 		67F71C752BEB22310008BFA5 /* SurveyEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */; };
 		67F71C792BEC31A90008BFA5 /* DiarcyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F71C772BEC31A90008BFA5 /* DiarcyCell.swift */; };
 		67F71C7A2BEC31A90008BFA5 /* DiarcyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F71C782BEC31A90008BFA5 /* DiarcyCell.xib */; };
+		952DD53F2C1E224B005318CA /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 952DD53E2C1E224B005318CA /* DGCharts */; };
+		952DD5412C1E224B005318CA /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 952DD5402C1E224B005318CA /* DGChartsDynamic */; };
 		953A64ED2B6EDFA000651684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EC2B6EDFA000651684 /* AppDelegate.swift */; };
 		953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64EE2B6EDFA000651684 /* SceneDelegate.swift */; };
 		953A64F12B6EDFA000651684 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A64F02B6EDFA000651684 /* HomeViewController.swift */; };
@@ -153,12 +155,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952DD53F2C1E224B005318CA /* DGCharts in Frameworks */,
 				95B1CEFF2B6FD87600101423 /* FirebaseDatabase in Frameworks */,
 				95D293A72BCE347100017E03 /* SwiftEntryKit in Frameworks */,
 				95B1CEF52B6F97DB00101423 /* IQKeyboardManagerSwift in Frameworks */,
 				9577204C2BC8CB4B0026DC91 /* FSCalendar in Frameworks */,
 				95B1CF032B6FD87700101423 /* FirebaseStorage in Frameworks */,
 				95B1CEFD2B6FD87600101423 /* FirebaseAuth in Frameworks */,
+				952DD5412C1E224B005318CA /* DGChartsDynamic in Frameworks */,
 				95B1CF012B6FD87600101423 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +442,8 @@
 				95B1CF022B6FD87700101423 /* FirebaseStorage */,
 				9577204B2BC8CB4B0026DC91 /* FSCalendar */,
 				95D293A62BCE347100017E03 /* SwiftEntryKit */,
+				952DD53E2C1E224B005318CA /* DGCharts */,
+				952DD5402C1E224B005318CA /* DGChartsDynamic */,
 			);
 			productName = MentalHealth;
 			productReference = 953A64E92B6EDFA000651684 /* MentalHealth.app */;
@@ -475,6 +481,7 @@
 				95B1CEF92B6FD87600101423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				95D293A52BCE347100017E03 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
+				952DD53D2C1E224B005318CA /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 953A64EA2B6EDFA000651684 /* Products */;
 			projectDirPath = "";
@@ -804,6 +811,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		952DD53D2C1E224B005318CA /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -839,6 +854,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		952DD53E2C1E224B005318CA /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 952DD53D2C1E224B005318CA /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		952DD5402C1E224B005318CA /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 952DD53D2C1E224B005318CA /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
 		9577204B2BC8CB4B0026DC91 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9577204A2BC8CB4B0026DC91 /* XCRemoteSwiftPackageReference "FSCalendar" */;

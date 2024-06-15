@@ -552,14 +552,23 @@
                                         <color key="textColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-Cd-8OA" userLabel="ChartView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-Cd-8OA" userLabel="ChartView" customClass="BarChartView" customModule="DGCharts">
                                         <rect key="frame" x="10" y="37" width="333" height="149"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/6000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-y4-aBH">
-                                        <rect key="frame" x="309.66666666666669" y="10" width="33.333333333333314" height="14.333333333333336"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/8,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-y4-aBH">
+                                        <rect key="frame" x="307.33333333333331" y="15" width="35.666666666666686" height="14.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                         <color key="textColor" red="0.1803921568627451" green="0.1803921568627451" blue="0.1803921568627451" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7I-5j-J2u">
+                                        <rect key="frame" x="252.66666666666666" y="9.3333333333333144" width="52.666666666666657" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="5t9-ES-SGM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -567,9 +576,11 @@
                                 <constraints>
                                     <constraint firstItem="CoK-T7-Wis" firstAttribute="top" secondItem="uDx-J1-n71" secondAttribute="top" constant="10" id="4Ag-cr-APh"/>
                                     <constraint firstAttribute="bottom" secondItem="tl4-Cd-8OA" secondAttribute="bottom" constant="10" id="9md-ym-voK"/>
-                                    <constraint firstItem="b3Y-y4-aBH" firstAttribute="top" secondItem="uDx-J1-n71" secondAttribute="top" constant="10" id="EzT-db-ypL"/>
+                                    <constraint firstItem="b3Y-y4-aBH" firstAttribute="leading" secondItem="X7I-5j-J2u" secondAttribute="trailing" constant="2" id="CkR-4E-ycQ"/>
+                                    <constraint firstItem="b3Y-y4-aBH" firstAttribute="top" secondItem="uDx-J1-n71" secondAttribute="top" constant="15" id="EzT-db-ypL"/>
                                     <constraint firstItem="tl4-Cd-8OA" firstAttribute="leading" secondItem="CoK-T7-Wis" secondAttribute="leading" id="HEc-lh-QUL"/>
                                     <constraint firstAttribute="trailing" secondItem="b3Y-y4-aBH" secondAttribute="trailing" constant="10" id="HeE-lc-fKG"/>
+                                    <constraint firstItem="X7I-5j-J2u" firstAttribute="bottom" secondItem="b3Y-y4-aBH" secondAttribute="bottom" id="aFM-g4-dgD"/>
                                     <constraint firstItem="tl4-Cd-8OA" firstAttribute="trailing" secondItem="b3Y-y4-aBH" secondAttribute="trailing" id="bLZ-UL-6VG"/>
                                     <constraint firstItem="tl4-Cd-8OA" firstAttribute="top" secondItem="CoK-T7-Wis" secondAttribute="bottom" constant="10" id="jz9-5Z-dtR"/>
                                     <constraint firstItem="CoK-T7-Wis" firstAttribute="leading" secondItem="uDx-J1-n71" secondAttribute="leading" constant="10" id="s4G-S9-zl6"/>
@@ -615,6 +626,7 @@
                     <navigationItem key="navigationItem" id="SSY-I9-4TY"/>
                     <connections>
                         <outlet property="backgroundView" destination="s6h-ip-aNA" id="8Qe-p9-caW"/>
+                        <outlet property="barChartView" destination="tl4-Cd-8OA" id="KUO-BM-MmN"/>
                         <outlet property="chartContainerView" destination="uDx-J1-n71" id="app-6J-WAW"/>
                         <outlet property="chartView" destination="0lb-2y-9Jg" id="Sdt-mf-BtO"/>
                         <outlet property="confirmationView" destination="Rhy-FF-C8x" id="34L-9m-ZZB"/>
@@ -636,6 +648,7 @@
                         <outlet property="saturdayEmoji" destination="Xxg-H9-Sal" id="2s3-zW-3NT"/>
                         <outlet property="saturdayLabel" destination="GGy-Gt-s35" id="P7A-4e-2Ra"/>
                         <outlet property="saturdayView" destination="Z3j-hF-ACw" id="shm-om-Z0b"/>
+                        <outlet property="setCountLabel" destination="X7I-5j-J2u" id="aZz-PS-Wvo"/>
                         <outlet property="sundayDate" destination="bit-MJ-1ci" id="4XK-nY-G6V"/>
                         <outlet property="sundayEmoji" destination="lnz-EW-vlZ" id="kZ2-nN-Lwx"/>
                         <outlet property="sundayLabel" destination="UBO-5q-Kpz" id="sgi-Pc-PDL"/>

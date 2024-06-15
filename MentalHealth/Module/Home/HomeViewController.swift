@@ -6,6 +6,7 @@
 //
 
 import Combine
+import DGCharts
 import UIKit
 import SwiftEntryKit
 import FSCalendar
@@ -13,7 +14,7 @@ import HealthKit
 
 class HomeViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
-
+    
     @IBOutlet weak var backgroundView: UIView! {
         didSet {
             backgroundView.backgroundColor = .clear
@@ -90,16 +91,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var questionConfirmView: UIView!
     @IBOutlet weak var chartContainerView: UIView!
     @IBOutlet weak var chartView: UIView!
+    @IBOutlet weak var setCountLabel: UILabel!
     @IBOutlet weak var myDiaryView: UIView!
     @IBOutlet weak var testView: UIView!
-
+    @IBOutlet weak var barChartView: BarChartView!
+    
     private var dayArry: [UILabel: [UIView : UILabel]] = [:]
     private var healthStore = HKHealthStore()
+    var stepCounts: [Int] = []
+    var days: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //progressTrackBar for more clarity
         self.view.backgroundColor = .homepageBackground
+        requestAuthorization()
         
         //when user has been already done today, we need to validate this
         questionConfirmView.isHidden = true
@@ -114,24 +120,9 @@ class HomeViewController: UIViewController {
         tapAction(testView, selector: #selector(displaySurveyListViewController))
         tapAction(myDiaryView, selector: #selector(displayMyDiaryViewController))
         setUpMyRecentMood()
-        
-//        // Access Step Count
-//        let healthKitTypes: Set = [ HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)! ]
-//        // Check for Authorization
-//        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (bool, error) in
-//            if (bool) {
-//                // Authorization Successful
-//                
-//                self.getSteps { (result) in
-//                    DispatchQueue.main.async {
-//                        let stepCount = String(Int(result))
-//                        self.stepsLabel.text = String(stepCount)
-//                    }
-//                }
-//            } // end if
-//        } // end of checking authorization
+        setupChart()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -143,12 +134,12 @@ class HomeViewController: UIViewController {
         
         for targetMood in moodList {
             if let moodDate = dateFormatter.date(from: targetMood.date) {
-                        let weekday = Calendar.current.component(.weekday, from: moodDate)
+                let weekday = Calendar.current.component(.weekday, from: moodDate)
                 updateRecentMood(for: weekday, mood: targetMood.myMood)
             }
         }
     }
-        
+    
     private func updateRecentMood(for weekday: Int, mood: MyMood) {
         switch weekday {
         case 1:
@@ -169,7 +160,7 @@ class HomeViewController: UIViewController {
             break
         }
     }
-
+    
     func applyGradientBackground(to view: UIView, startColor: UIColor, endColor: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
@@ -179,7 +170,7 @@ class HomeViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
-
+    
     func updateTodayView() {
         for (dateLabel, viewDict) in dayArry {
             for (dayView, dayLabel) in viewDict {
@@ -196,7 +187,7 @@ class HomeViewController: UIViewController {
         // can be fetch data from backend
         return "Was dopamine detox successful?"
     }
-
+    
     func setupImageSubscriber(publisher: PassthroughSubject<UIImage, Never>) {
         publisher
             .receive(on: DispatchQueue.main)
@@ -206,7 +197,7 @@ class HomeViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
-
+    
     @objc
     func displaySurveyListViewController(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -216,7 +207,7 @@ class HomeViewController: UIViewController {
             print("Can't find storyboard")
         }
     }
-
+    
     @objc
     func displayMyDiaryViewController(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MyDiaryFlow", bundle: Bundle.main)
@@ -225,5 +216,142 @@ class HomeViewController: UIViewController {
         } else {
             print("Can't find MyDiaryViewController")
         }
+    }
+}
+
+extension HomeViewController {
+    func requestAuthorization() {
+        let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        let healthKitTypes: Set = [stepType]
+
+        healthStore.requestAuthorization(toShare: nil, read: healthKitTypes) { (success, error) in
+            if success {
+                self.fetchStepCounts()
+            } else {
+                print("Authorization failed")
+            }
+        }
+    }
+    
+    private func setupChart() {
+        // Customize x-axis
+        let xAxis = barChartView.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.drawGridLinesEnabled = false
+        xAxis.labelCount = 14
+        //xAxis.valueFormatter = DateValueFormatter() // Custom x-axis labels (dates)
+
+        // Customize y-axis (left)
+        let leftAxis = barChartView.leftAxis
+        leftAxis.axisMinimum = 0
+        leftAxis.drawGridLinesEnabled = true
+        leftAxis.drawLabelsEnabled = false
+        leftAxis.drawAxisLineEnabled = false
+
+        // Customize y-axis (right)
+        let rightAxis = barChartView.rightAxis
+        rightAxis.enabled = false
+
+        // Customize chart description
+        barChartView.chartDescription.enabled = false
+        barChartView.legend.enabled = true
+        
+        // Customize additional chart settings
+        barChartView.setScaleEnabled(false)
+        barChartView.pinchZoomEnabled = false
+        barChartView.doubleTapToZoomEnabled = false
+        
+        class DateValueFormatter: NSObject, AxisValueFormatter {
+            
+            let dates: [String] = ["6/1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+            
+            func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+                return dates[Int(value)]
+            }
+        }
+    }
+    
+    func updateChart() {
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<stepCounts.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(stepCounts[i]))
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Steps")
+        let chartData = BarChartData(dataSet: chartDataSet)
+        
+        barChartView.data = chartData
+        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: days)
+        barChartView.xAxis.granularity = 1
+    }
+    
+    func processStepCounts(statsCollection: HKStatisticsCollection) {
+        let calendar = Calendar.current
+        let now = Date()
+        let endDate = calendar.startOfDay(for: now)
+        
+        var dateComponents = DateComponents()
+        dateComponents.day = -13
+        let startDate = calendar.date(byAdding: dateComponents, to: endDate)!
+        
+        statsCollection.enumerateStatistics(from: startDate, to: endDate) { statistics, stop in
+            let stepCount = statistics.sumQuantity()?.doubleValue(for: .count()) ?? 0
+            let date = statistics.startDate
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "d"
+            let dateString = dateFormatter.string(from: date)
+            
+            self.stepCounts.append(Int(stepCount))
+            self.days.append(dateString)
+        }
+        
+        DispatchQueue.main.async {
+            self.updateChart()
+        }
+    }
+
+    func fetchStepCounts() {
+        let calendar = Calendar.current
+        let now = Date()
+        var dateComponents = DateComponents()
+        dateComponents.calendar = calendar
+        
+        let endDate = calendar.startOfDay(for: now)
+        dateComponents.day = -13
+        let startDate = calendar.date(byAdding: dateComponents, to: endDate)!
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictStartDate)
+        
+        let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        let query = HKStatisticsCollectionQuery(
+            quantityType: stepType,
+            quantitySamplePredicate: predicate,
+            options: [.cumulativeSum],
+            anchorDate: startDate,
+            intervalComponents: DateComponents(day: 1)
+        )
+        
+        query.initialResultsHandler = { query, results, error in
+            if let statsCollection = results {
+                self.processStepCounts(statsCollection: statsCollection)
+            }
+        }
+        
+        let queryForToday = HKStatisticsQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (query, result, error) in
+             if let result = result, let sum = result.sumQuantity() {
+                 let steps = Int(sum.doubleValue(for: HKUnit.count()))
+                 DispatchQueue.main.async {
+                     self.setCountLabel.text = "\(steps)"
+                 }
+             } else {
+                 print("Error while fetching step count: \(error?.localizedDescription ?? "Unknown error")")
+             }
+         }
+        //TODO: Need to re-visit
+        healthStore.execute(queryForToday)
+        
+        healthStore.execute(query)
     }
 }
