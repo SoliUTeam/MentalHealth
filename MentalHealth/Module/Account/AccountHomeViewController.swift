@@ -9,11 +9,33 @@ import Foundation
 import UIKit
 
 class AccountHomeViewController: UIViewController {
+    @IBOutlet weak var guestNameLabel: UILabel! {
+        didSet {
+            self.guestNameLabel.text = LoginManager.shared.getNickName()
+        }
+    }
+    @IBOutlet weak var guestEmailLabel: UILabel! {
+        didSet {
+            self.guestEmailLabel.text = LoginManager.shared.getEmail()
+        }
+    }
+    @IBOutlet weak var demographicsButton: UIButton!
+    @IBOutlet weak var deleteAccountButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
+    
     private static let currentVersion = "1.0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.homepageBackground
+        createUnderLineText(button: logoutButton, text: "Log out")
+        if LoginManager.shared.isLoggedIn() {
+            deleteAccountButton.isHidden = false
+            logoutButton.isHidden = false
+        } else {
+            deleteAccountButton.isHidden = true
+            logoutButton.isHidden = true
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

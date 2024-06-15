@@ -149,6 +149,13 @@ extension UIViewController {
             CGFloat((count * height) + (10 * (count - 1)))
         }
     }
+    
+    func createUnderLineText(button: UIButton, text: String) {
+        let buttonTitle = text
+        let attributedString = NSMutableAttributedString(string: buttonTitle)
+        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: buttonTitle.count))
+        button.setAttributedTitle(attributedString, for: .normal)
+    }
 }
 
 extension UIViewController {

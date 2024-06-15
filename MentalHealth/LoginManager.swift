@@ -80,6 +80,11 @@ public class LoginManager {
         self.email = email
     }
     
+    func getEmail() -> String {
+        let email = logInState ? self.currentUser.email : "Guest@gmail.com"
+        return email
+    }
+
     func setPassword(_ password: String) {
         self.password = password
     }
@@ -93,7 +98,8 @@ public class LoginManager {
     }
     
     func getNickName() -> String {
-        return self.currentUser.nickName
+        let nickName = logInState ? self.currentUser.nickName : "Guest"
+        return nickName
     }
     
     func setGender(_ gender: Gender) {
