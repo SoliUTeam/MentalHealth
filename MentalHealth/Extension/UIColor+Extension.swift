@@ -37,6 +37,8 @@ enum Color: String {
     
     case surveyResultGreen = "#00D67C"
     case surveyResultRed = "#FF003D"
+// Diary Result Color
+    case diaryRedBorder = "#E64F4F"
 }
 
 extension UIColor {
@@ -70,6 +72,8 @@ extension UIColor {
     static let surveyResultRed = UIColor(hex: Color.surveyResultRed.rawValue, alpha: 1)
 //  Diary Border
     static let diaryBorder = UIColor(hex: Color.tabBarBorder.rawValue, alpha: 1)
+    static let diaryRedBorder = UIColor(hex: Color.diaryRedBorder.rawValue, alpha: 1)
+    
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
 

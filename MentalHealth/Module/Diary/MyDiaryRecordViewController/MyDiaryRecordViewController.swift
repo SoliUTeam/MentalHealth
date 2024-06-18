@@ -18,6 +18,7 @@ class MyDiaryRecordViewController: UIViewController {
     @IBOutlet weak var submitButton: AllSubmitButton!
     
     var selected = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitalUI()
@@ -35,8 +36,8 @@ class MyDiaryRecordViewController: UIViewController {
         badLabel.font = .customFont(fontType: .bold, size: 24)
         niceLabel.textColor = .soliuBlue
         badLabel.textColor = .red
-        niceView.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 2)
-        badView.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 2)
+        niceView.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 8)
+        badView.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 8)
         submitButton.isEnabled = false
     }
     
@@ -46,12 +47,12 @@ class MyDiaryRecordViewController: UIViewController {
             submitButton.isEnabled = true
             switch view.tag {
                     case 1:
-                        niceView.addBorderAndColor(color: .soliuBlue, width: 2, corner_radius: 2)
-                        badView.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 2)
+                        niceView.addBorderAndColor(color: .soliuBlue, width: 2, corner_radius: 8)
+                        badView.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 8)
                     
                     case 2:
-                        niceView.addBorderAndColor(color: .diaryBorder, width: 2.0, corner_radius: 2)
-                        badView.addBorderAndColor(color: .red, width: 2.0, corner_radius: 2)
+                        niceView.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 8)
+                        badView.addBorderAndColor(color: .red, width: 2, corner_radius: 8)
                        
                     default:
                         print("Unknown view selected")

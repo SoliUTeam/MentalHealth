@@ -17,14 +17,15 @@ class DiarcyCell: UITableViewCell, CellReusable {
         super.awakeFromNib()
     }
     
-    func populate() {
-        self.dateLabel.text = "March 12"
-        self.emotionImageView.image = UIImage(emotionAssetIdentifier: .badIcon)
+    func populate(myDiary: MyDiaryItem) {
+        self.dateLabel.text = .convertDateString(myDiary.date)
+        self.emotionImageView.image = myDiary.myDiaryMood.moodImage
+        switch myDiary.myDiaryMood {
+        case .good:
+            self.borderView.addBorderAndColor(color: .soliuBlue, width: 1, corner_radius: 8)
+        case .bad:
+            self.borderView.addBorderAndColor(color: .diaryRedBorder, width: 1, corner_radius: 8)
+        }
+       
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-    
 }

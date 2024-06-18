@@ -18,6 +18,7 @@
 		674EFBAD2BF4167000107789 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EFBAC2BF4167000107789 /* UIButton+Extension.swift */; };
 		67811DD32BF003EF00BB816F /* MyDiaryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */; };
 		67811DD62BF00AA200BB816F /* MyDiaryRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */; };
+		67A1C7C12C212C8C008F9FDA /* MyDiaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A1C7C02C212C8C008F9FDA /* MyDiaryItem.swift */; };
 		67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */; };
 		67A883AE2C100AD600B970C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67A883AD2C100AD500B970C2 /* GoogleService-Info.plist */; };
 		67A883B02C116E4900B970C2 /* MyDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A883AF2C116E4900B970C2 /* MyDay.swift */; };
@@ -88,6 +89,7 @@
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiaryFlow.storyboard; sourceTree = "<group>"; };
 		67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryRecordViewController.swift; sourceTree = "<group>"; };
+		67A1C7C02C212C8C008F9FDA /* MyDiaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryItem.swift; sourceTree = "<group>"; };
 		67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
 		67A883AD2C100AD500B970C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		67A883AF2C116E4900B970C2 /* MyDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDay.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				67F71C762BEC316E0008BFA5 /* DiaryCell */,
 				95D293AB2BCE36B000017E03 /* MyDiaryViewController.swift */,
 				67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */,
+				67A1C7C02C212C8C008F9FDA /* MyDiaryItem.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				95C804392BD9C8F500743FA5 /* LoginNickNameViewController.swift in Sources */,
 				67A883B02C116E4900B970C2 /* MyDay.swift in Sources */,
 				67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */,
+				67A1C7C12C212C8C008F9FDA /* MyDiaryItem.swift in Sources */,
 				957720492BC7AC280026DC91 /* HomeTabBarController.swift in Sources */,
 				67EE78DA2BF3350A00478D44 /* MyDiaryTextViewController.swift in Sources */,
 				95D293B92BCF9C8E00017E03 /* UIView+Extention.swift in Sources */,

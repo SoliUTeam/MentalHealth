@@ -44,6 +44,8 @@ enum Emotion: String {
     case niceIcon
     case niceIconBig
     case niceIconSelected
+    case goodBlur
+    case badBlur
 }
 
 enum SurveyImage: String {
@@ -95,6 +97,7 @@ extension UIImage {
         let imagePath = "Icon/Emotion/\(emotionAssetIdentifier.rawValue)"
         self.init(named: imagePath)
     }
+    
 
     func resized(toScale scale: CGFloat) -> UIImage {
            let newSize = CGSize(width: self.size.width * scale, height: self.size.height * scale)

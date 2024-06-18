@@ -24,4 +24,14 @@ extension String {
             return capitalizedWords.joined(separator: " ")
         }
     }
+    
+    static func convertDateString(_ dateString: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M/dd/yyyy" // Input date format
+        guard let date = dateFormatter.date(from: dateString) else { return nil }
+        
+        dateFormatter.dateFormat = "MMMM dd" // Output date format
+        let formattedDateString = dateFormatter.string(from: date)
+        return formattedDateString
+    }
 }

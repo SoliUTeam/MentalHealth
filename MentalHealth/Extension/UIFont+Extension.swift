@@ -22,7 +22,6 @@ extension UIFont {
     static let surveyQuestionTitle = customFont(fontType: .bold, size: 16)
     static let commonSubmitButtonTitle = customFont(fontType: .bold, size: 16)
     
-    
     static func customFont(fontType: RobotoFont, size: CGFloat, fallbackFont: UIFont = .systemFont(ofSize: 10)) -> UIFont {
         guard let font = UIFont(name: fontType.rawValue, size: size) else {
             print("Failed to load font: \(fontType.rawValue). Reverting to system font.")
