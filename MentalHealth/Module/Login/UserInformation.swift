@@ -15,8 +15,9 @@ struct UserInformation {
     var age: String
     var workStatus: String
     var ethnicity: String
-    var surveyResult: [SurveyResult]
-    var userMoodList: [MyDay]
+    var surveyResultsList: [SurveyResult]
+    var dailyMoodList: [MyDay]
+    var diaryEntriesList: [MyDiaryItem]
 }
 
 struct SurveyResult: Codable {

@@ -16,27 +16,27 @@ class LoginConfirmViewController: UIViewController {
     }
     @IBOutlet weak var nickNameLabel: UILabel! {
         didSet {
-            self.nickNameLabel.text = "Nickname: \(loginManager.getNickName())"
+            self.nickNameLabel.text = "Nickname: \(LoginManager.shared.getNickName())"
         }
     }
     @IBOutlet weak var genderLabel: UILabel! {
         didSet {
-            self.genderLabel.text = "Gender: \(loginManager.getGender())"
+            self.genderLabel.text = "Gender: \(LoginManager.shared.getGender())"
         }
     }
     @IBOutlet weak var ageLabel: UILabel! {
         didSet {
-            self.ageLabel.text = "Age: \(loginManager.getAge())"
+            self.ageLabel.text = "Age: \(LoginManager.shared.getAge())"
         }
     }
     @IBOutlet weak var statusLabel: UILabel! {
         didSet {
-            self.statusLabel.text = "Status: \(loginManager.getWorkStatus())"
+            self.statusLabel.text = "Status: \(LoginManager.shared.getWorkStatus())"
         }
     }
     @IBOutlet weak var ethnicityLabel: UILabel! {
         didSet {
-            self.ethnicityLabel.text = "Ethnicity: \(loginManager.getEthnicity())"
+            self.ethnicityLabel.text = "Ethnicity: \(LoginManager.shared.getEthnicity())"
         }
     }
 
@@ -57,7 +57,7 @@ class LoginConfirmViewController: UIViewController {
                 print("Login Failed")
             }
             else {
-                showAlert(title: "Success", description: "Welcome \(loginManager.getNickName())!")
+                showAlert(title: "Success", description: "Welcome \(LoginManager.shared.getNickName())!")
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 if let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
                     navigationController?.pushViewController(homeTabBarController, animated: true)
@@ -66,9 +66,7 @@ class LoginConfirmViewController: UIViewController {
                 }
             }}
     }
-    
-    private var loginManager = LoginManager.shared
-    
+        
     override func viewDidLoad() {
         addSubView(button)
         setCustomBackNavigationButton()
@@ -90,19 +88,9 @@ class LoginConfirmViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    // Format: ["Dennis", "male", "29", "employed", "Asian"]
-    func createUserData() -> [String] {
-        var userInfo: [String] = []
-        userInfo.append(loginManager.getNickName())
-        userInfo.append(loginManager.getGender())
-        userInfo.append(loginManager.getAge())
-        userInfo.append(loginManager.getWorkStatus())
-        userInfo.append(loginManager.getEthnicity())
-        return userInfo
-    }
-    
     func clickedConfirmation(completion: @escaping (Bool) -> Void) {
         let userInfo = LoginManager.shared.getUserInfo()
+        print("Sign Up Flow \(userInfo)")
         FBNetworkLayer.shared.createAccount(email: userInfo.email, password: userInfo.password) { error in
                 if let error = error as? SignInError {
                     self.showAlert(error: error)
@@ -125,7 +113,7 @@ class LoginConfirmViewController: UIViewController {
                                 else {
                                     completion(true)
                                     LoginManager.shared.setMyUserInformation(userInfo)
-                                    self.loginManager.setLoggedIn(true)
+                                    LoginManager.shared.setLoggedIn(true)
                                     print("User information successfully updated")
                                 }
                             }

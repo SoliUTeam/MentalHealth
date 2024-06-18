@@ -42,7 +42,7 @@ class LoginNickNameViewController: UIViewController {
     func navigateToConfirmScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let loginConfirmViewController = storyboard.instantiateViewController(identifier: "LoginConfirmViewController") as? LoginConfirmViewController {
-            LoginManager.shared.setNickName(nicknameTextField.text ?? "Login Guest")
+            LoginManager.shared.setNickName(nicknameTextField.text ?? "Guest")
             navigationController?.pushViewController(loginConfirmViewController, animated: true)
         } else {
             print("Can't find LoginConfirmViewController")

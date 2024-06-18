@@ -18,6 +18,7 @@ class LogInViewController: UIViewController {
     var rememberMeSelected: Bool = false
     
     @IBAction func tapAsGuest(_ sender: Any) {
+        LoginManager.shared.continueAsGuest()
         showAlert(title: "Success", description: "Continue as guest")
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let homeViewController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {

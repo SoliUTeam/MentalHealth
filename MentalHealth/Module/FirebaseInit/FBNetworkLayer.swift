@@ -36,12 +36,50 @@ class FBNetworkLayer {
                     switch result {
                     case .success(let userInfo):
                         completion(.success(nil))
-                        LoginManager.shared.setMyUserInformation(userInfo)
-                        LoginManager.shared.setLoggedIn(true)
+                        LoginManager.shared.loginSucessFetchInformation(userInformation: userInfo)
                         print("Sign Sucessful \(userInfo)")
                     case .failure( _):
                         LoginManager.shared.setLoggedIn(false)
                         completion(.failure(.signInFailed("Fetching Fails")))
+                    }
+                }
+            }
+        }
+    }
+    
+    func fetchMyDiary(userInformation: UserInformation, myDiaryItem: MyDiaryItem, completion: @escaping (Error?) -> Void) {
+        let email = userInformation.email
+        let userRef = db.collection("Users").whereField("demographicInformation.email", isEqualTo: email)
+        
+        userRef.getDocuments { query, error in
+            if let error = error {
+                completion(error)
+                print("Error getting documents: \(error)")
+            } else {
+                guard let document = query?.documents.first else {
+                    completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "User not found"]))
+                    return
+                }
+                
+                let userDocID = document.documentID
+                let userDocRef = self.db.collection("Users").document(userDocID)
+                
+                let diaryEntryData: [String: Any] = [
+                    "date": myDiaryItem.date,
+                    "myDiaryMood": myDiaryItem.myDiaryMood.rawValue,
+                    "answerOne": myDiaryItem.answerOne,
+                    "answerTwo": myDiaryItem.answerTwo,
+                    "answerThree": myDiaryItem.answerThree
+                ]
+                
+                userDocRef.updateData([
+                    "diaryEntriesList": FieldValue.arrayUnion([diaryEntryData])
+                ]) { error in
+                    if let error = error {
+                        completion(error)
+                        print("Error updating document: \(error)")
+                    } else {
+                        completion(nil)
                     }
                 }
             }
@@ -65,18 +103,22 @@ class FBNetworkLayer {
             do {
                 let data = document.data()
                 let demographicInfo = data["demographicInformation"] as? [String: Any]
-                let surveyResultsData = data["surveyResult"] as? [[String: Any]] ?? []
-                let userMoodResultsData = data["userMoodList"] as? [[String: Any]] ?? []
+                let surveyResultsData = data["surveyResultsList"] as? [[String: Any]] ?? []
+                let userMoodResultsData = data["dailyMoodList"] as? [[String: Any]] ?? []
+                let userDiaryEntriesData = data["diaryEntriesList"] as? [[String: Any]] ?? []
                 
                 // Debugging prints
                 print("Demographic Info: \(demographicInfo ?? [:])")
                 print("Survey Results Data: \(surveyResultsData)")
                 print("User Mood Results Data: \(userMoodResultsData)")
                 
-                let userMoodResults = try userMoodResultsData.map { try JSONDecoder().decode(MyDay.self, from: JSONSerialization.data(withJSONObject: $0)) 
-                }
-                let surveyResults = try surveyResultsData.map { try JSONDecoder().decode(SurveyResult.self, from: JSONSerialization.data(withJSONObject: $0)) }
+                let surveyResultsList = try surveyResultsData.map { try JSONDecoder().decode(SurveyResult.self, from: JSONSerialization.data(withJSONObject: $0)) }
                 
+                let dailyMoodList = try userMoodResultsData.map { try JSONDecoder().decode(MyDay.self, 
+                                                                                           from: JSONSerialization.data(withJSONObject: $0))
+                }
+               
+                let diaryEntriesList = try userDiaryEntriesData.map { try JSONDecoder().decode(MyDiaryItem.self, from: JSONSerialization.data(withJSONObject: $0))}
                 
                 
                 let userInfo = UserInformation(
@@ -87,8 +129,9 @@ class FBNetworkLayer {
                     age: demographicInfo?["age"] as? String ?? "",
                     workStatus: demographicInfo?["workStatus"] as? String ?? "",
                     ethnicity: demographicInfo?["ethnicity"] as? String ?? "",
-                    surveyResult: surveyResults,
-                    userMoodList: userMoodResults
+                    surveyResultsList: surveyResultsList,
+                    dailyMoodList: dailyMoodList,
+                    diaryEntriesList: diaryEntriesList
                 )
                 
                 completion(.success(userInfo))
@@ -116,7 +159,7 @@ class FBNetworkLayer {
                 let userDocRef = self.db.collection("Users").document(userDocID)
                 
                 userDocRef.updateData([
-                                "userMoodList": FieldValue.arrayUnion([[
+                                "dailyMoodList": FieldValue.arrayUnion([[
                                     "date":  myDay.date,
                                     "myMood": myDay.myMood.rawValue
                                 ]])
@@ -182,7 +225,7 @@ class FBNetworkLayer {
             
             
             var userData = document.data()
-            var surveyResults = userData["surveyResult"] as? [[String: Any]] ?? []
+            var surveyResults = userData["surveyResultsList"] as? [[String: Any]] ?? []
             
             let newSurveyResultData: [String: Any] = [
                 "surveyDate": newSurveyResult.surveyDate,
@@ -190,7 +233,7 @@ class FBNetworkLayer {
             ]
             
             surveyResults.append(newSurveyResultData)
-            userData["surveyResult"] = surveyResults
+            userData["surveyResultsList"] = surveyResults
             
             let batch = self.db.batch()
             
@@ -271,8 +314,9 @@ class FBNetworkLayer {
                 "passwrod": userInfo.password,
                 "nickname": userInfo.nickName
             ],
-            "surveyResult": [],
-            "myDayMood" : []// Initialize as an empty array
+            "surveyResultsList": [],
+            "dailyMoodList" : [],
+            "diaryEntriesList" : [],
         ]
         
         db.collection("Users").addDocument(data: userData) { error in
@@ -284,24 +328,4 @@ class FBNetworkLayer {
             }
         }
     }
-    
-//    func fetchMentalHealthQuestions(completion: @escaping (MentalHealthQuestion?, Error?) -> Void) {
-//        db.collection("MentalHealthQuestion").getDocuments { (querySnapshot, err) in
-//            if let err = err {
-//                completion(nil, err)
-//                return
-//            } else {
-//                guard let document = querySnapshot?.documents.first else {
-//                    completion(nil, NSError(domain: "FBNetworkLayer", code: 0, userInfo: [NSLocalizedDescriptionKey: "No documents found in MentalHealthQuestion collection"]))
-//                    return
-//                }
-//                do {
-//                    let question = try document.data(as: MentalHealthQuestion.self)
-//                    completion(question, nil)
-//                } catch let error {
-//                    completion(nil, error)
-//                }
-//            }
-//        }
-//    }
 }

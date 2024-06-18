@@ -27,17 +27,16 @@ class MyDiaryTextViewController: UIViewController {
     
     @IBOutlet weak var submitButton: AllSubmitButton!
     
-
+    
+    var selectedMood:MyDiaryMood = .good
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-        
-        // Do any additional setup after loading the view.
     }
     
     private func setupUI() {
         self.setCustomBackNavigationButton()
-        submitButton.isEnabled = true
         let wholeViews = [wholeView1, wholeView2, wholeView3]
         for view in wholeViews {
             view?.addBorderAndColor(color: .diaryBorder, width: 2, corner_radius: 8)
@@ -47,9 +46,28 @@ class MyDiaryTextViewController: UIViewController {
             view?.addBorder(toSide: .Bottom, withColor: .diaryBorder, andThickness: 2)
         }
         self.title = getCurrentMonthAndDate()
+        self.submitButton.isEnabled = true
     }
     
-    @IBAction func handleTextField() {
+    @IBAction func submitResult() {
+        let answerOne = answerTextField1.text ?? ""
+        let answerTwo = answerTextField2.text ?? ""
+        let answerThree = answerTextField3.text ?? ""
+        let userInformation = LoginManager.shared.getUserInfo()
         
+        let myDiaryItem = MyDiaryItem(date: "", 
+                                      myDiaryMood: selectedMood,
+                                       answerOne: answerOne,
+                                       answerTwo: answerTwo,
+                                       answerThree: answerThree)
+        
+        FBNetworkLayer.shared.fetchMyDiary(userInformation: userInformation,
+                                           myDiaryItem: myDiaryItem) { error in
+            if let error = error {
+                print(error)
+            } else {
+                print("Success")
+            }
+        }
     }
 }

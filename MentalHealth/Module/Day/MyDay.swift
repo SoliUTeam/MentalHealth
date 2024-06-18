@@ -42,7 +42,7 @@ class WeekViewHelper {
             print("User Not Logged In")
             return []
         }
-        var userMoodList = LoginManager.shared.getUserMoodList()
+        var userMoodList = LoginManager.shared.getDailyMoodList()
         var uniqueMoods: [String: MyMood] = [:]
         for mood in userMoodList {
             uniqueMoods[mood.date] = mood.myMood

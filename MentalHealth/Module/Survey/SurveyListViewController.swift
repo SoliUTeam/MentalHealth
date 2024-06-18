@@ -22,7 +22,7 @@ class SurveyListViewController: UIViewController {
     var selectedQuestionId: Int = 0
     var readyToSubmit = false
     var surveyResultRecord: [Int: Int] = [:]
-    var userInfomration: UserInformation = LoginManager.shared.getUserInformation()
+    var userInfomration: UserInformation = LoginManager.shared.getUserInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()

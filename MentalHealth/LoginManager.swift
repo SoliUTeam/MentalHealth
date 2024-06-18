@@ -36,101 +36,131 @@ enum Ethnicity: String {
 public class LoginManager {
     static let shared = LoginManager()
     
-    static let guestUser = UserInformation(email: "guest@gmail.com", password: "guest!", nickName: "Guest", gender: "Male", age: "25", workStatus: "Other", ethnicity: "Asian", surveyResult: [], userMoodList: [])
+    static let guestUser = UserInformation(
+        email: "guest@gmail.com",
+        password: "guest!",
+        nickName: "Guest",
+        gender: "Male",
+        age: "25",
+        workStatus: "Other",
+        ethnicity: "Asian",
+        surveyResultsList: [],
+        dailyMoodList: [],
+        diaryEntriesList: []
+    )
     
     // Continue as Guest option will be false as default
     private var logInState: Bool = false
-    private var nickName: String = "Default"
-    private var gender: Gender = .other
-    private var age: Int = 0
-    private var workStatus: WorkStatus = .other
-    private var ethnicity: Ethnicity = .other
-    private var email: String = ""
-    private var password: String = ""
-    private var surveyResult: [SurveyResult] = []
-    
-//  Initialize starts with guest
     private var currentUser: UserInformation = guestUser
-    
+
+    private init() {}
+
+    // MARK: - User Information
+
     func getUserInfo() -> UserInformation {
         return self.currentUser
     }
-    
+
     func setMyUserInformation(_ userInfo: UserInformation) {
         self.currentUser = userInfo
     }
-    
-    func getUserMoodList() -> [MyDay] {
-        return self.currentUser.userMoodList
+
+    func getDailyMoodList() -> [MyDay] {
+        return self.currentUser.dailyMoodList
     }
-    
-    func getUserInformation() -> UserInformation {
-        return self.currentUser
-    }
-    
+
     func setSurveyResult(_ surveyResult: [SurveyResult]) {
-        self.surveyResult = surveyResult
+        self.currentUser.surveyResultsList = surveyResult
+    }
+
+    // MARK: - Login State
+
+    func isLoggedIn() -> Bool {
+        return self.logInState
     }
 
     func setLoggedIn(_ loggedIn: Bool) {
         self.logInState = loggedIn
     }
-    
+
+    // MARK: - Guest Flow
+
+    func continueAsGuest() {
+        self.currentUser = LoginManager.guestUser
+        self.logInState = false
+    }
+
+    // MARK: - Login Flow
+
+    func loginSucessFetchInformation(userInformation: UserInformation) {
+        // Implement actual login logic here
+        // Simulating successful login
+        let fetchedUser = userInformation
+        self.currentUser = fetchedUser
+        self.logInState = true
+    }
+
+    // MARK: - Signup Flow
+
+    func signUpUser(userInfo: UserInformation, completion: (Bool) -> Void) {
+        // Implement actual signup logic here
+        // Simulating successful signup
+        self.currentUser = userInfo
+        self.logInState = true
+        completion(true)
+    }
+
+    // MARK: - Helper Methods
+
     func setEmail(_ email: String) {
-        self.email = email
+        self.currentUser.email = email
     }
     
     func getEmail() -> String {
-        let email = logInState ? self.currentUser.email : "Guest@gmail.com"
-        return email
+        return logInState ? self.currentUser.email : "guest@gmail.com"
     }
 
     func setPassword(_ password: String) {
-        self.password = password
+        self.currentUser.password = password
     }
 
-    func isLoggedIn() -> Bool {
-        return self.logInState
-    }
-    
     func setNickName(_ nickName: String) {
-        self.nickName = nickName
+        self.currentUser.nickName = nickName
     }
     
     func getNickName() -> String {
-        let nickName = logInState ? self.currentUser.nickName : "Guest"
-        return nickName
+        return currentUser.nickName
     }
-    
+
     func setGender(_ gender: Gender) {
-        self.gender = gender
+        self.currentUser.gender = gender.rawValue
     }
     
     func getGender() -> String {
-        return gender.rawValue.capitalizedEachWord()
+        return currentUser.gender
     }
-    
+
     func setAge(_ age: Int) {
-        self.age = age
+        self.currentUser.age = "\(age)"
     }
     
     func getAge() -> String {
-        return "\(age)"
+        return currentUser.age
     }
-    
+
     func setWorkStatus(_ workStatus: WorkStatus) {
-        self.workStatus = workStatus
+        self.currentUser.workStatus = workStatus.rawValue
     }
     
     func getWorkStatus() -> String {
-        return workStatus.rawValue.capitalizedEachWord()
+        return currentUser.workStatus
     }
 
     func setEthnicity(_ ethnicity: Ethnicity) {
-        self.ethnicity = ethnicity
+        self.currentUser.ethnicity = ethnicity.rawValue
     }
     
     func getEthnicity() -> String {
-        return ethnicity.rawValue.capitalizedEachWord()
+        return currentUser.ethnicity
     }
 }

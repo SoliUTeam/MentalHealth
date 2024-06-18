@@ -228,11 +228,14 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Submit" cornerStyle="fixed">
                                     <backgroundConfiguration key="background" cornerRadius="12">
-                                        <color key="backgroundColor" name="DEDEDE"/>
+                                        <color key="backgroundColor" name="Color/soliuBlue"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitResult" destination="YUm-aM-olk" eventType="touchUpInside" id="jXf-5J-zd8"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xbq-ZT-9J6">
                                 <rect key="frame" x="16" y="107" width="358" height="539"/>
@@ -383,7 +386,7 @@
                         <outlet property="questionView1" destination="LEo-gH-FN1" id="sCh-MO-6Nx"/>
                         <outlet property="questionView2" destination="ef4-ni-bmu" id="g52-ZH-LVL"/>
                         <outlet property="questionView3" destination="nKN-ew-zu7" id="dH3-Qd-kKp"/>
-                        <outlet property="submitButton" destination="Sqc-cS-WP2" id="K5B-sv-URV"/>
+                        <outlet property="submitButton" destination="Sqc-cS-WP2" id="q6D-Sp-vIu"/>
                         <outlet property="wholeView1" destination="FdL-7D-2wk" id="On1-IC-lgc"/>
                         <outlet property="wholeView2" destination="EFS-b5-4Ax" id="5dF-Pa-hvi"/>
                         <outlet property="wholeView3" destination="fzK-wi-mIK" id="SgZ-dQ-9gl"/>

@@ -10,7 +10,11 @@ import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            self.passwordTextField.isSecureTextEntry = true
+        }
+    }
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var continueAsGuestButton: UIButton!
     
@@ -41,8 +45,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             passwordTextField.textColor = .black
             return
         }
-        setIDAndPassword(email, password)
-        
         nextButton.isEnabled = true
     }
     
@@ -52,12 +54,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return passwordTest.evaluate(with: password)
     }
     
-    private func setIDAndPassword(_ email: String, _ password: String) {
+    private func setIDAndPassword() {
+        guard let email = emailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            nextButton.isEnabled = false
+            passwordTextField.textColor = .black
+            return
+        }
         LoginManager.shared.setEmail(email)
         LoginManager.shared.setPassword(password)
     }
     
     @IBAction func navigateToGenderScreen(_ sender: Any) {
+        setIDAndPassword()
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         if let loginGenderViewController = storyboard.instantiateViewController(identifier: "LoginGenderViewController") as? LoginGenderViewController {
             navigationController?.pushViewController(loginGenderViewController, animated: true)
