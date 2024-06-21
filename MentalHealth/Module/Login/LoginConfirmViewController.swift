@@ -49,6 +49,7 @@ class LoginConfirmViewController: UIViewController {
         return button
     }()
     
+    /// Navigate to Hom View
     @objc
     func navigateToHomeScreen() {
         self.clickedConfirmation { [weak self] success in
@@ -58,6 +59,8 @@ class LoginConfirmViewController: UIViewController {
             }
             else {
                 showAlert(title: "Success", description: "Welcome \(LoginManager.shared.getNickName())!")
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 if let homeTabBarController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
                     navigationController?.pushViewController(homeTabBarController, animated: true)

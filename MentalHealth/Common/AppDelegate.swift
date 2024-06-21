@@ -14,11 +14,36 @@ import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.resignOnTouchOutside = true
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let isLogin = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        print("Dennis\(isLogin)")
+        
+        if isLogin {
+            if let homeViewController = storyboard.instantiateViewController(identifier: "HomeTabBarController") as? HomeTabBarController {
+                let navigationController = UINavigationController(rootViewController: homeViewController)
+                window?.rootViewController = navigationController
+            } else {
+                print("Can't find HomeViewController")
+            }
+        } else {
+            if let logInViewController = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController {
+                let navigationController = UINavigationController(rootViewController: logInViewController)
+                window?.rootViewController = navigationController
+            } else {
+                print("Can't find LogInViewController")
+            }
+        }
+        window?.makeKeyAndVisible()
         return true
     }
 

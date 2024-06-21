@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class LogInViewController: UIViewController {
-    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -38,6 +37,7 @@ class LogInViewController: UIViewController {
         FBNetworkLayer.shared.signIn(email: email, password: password) { result in
             switch result {
             case .success:
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 self.nagivateToHomeViewController()
                 if self.rememberMeSelected {
                     self.saveCredentials(email: email, password: password)
