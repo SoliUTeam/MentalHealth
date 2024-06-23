@@ -12,33 +12,33 @@ class SurveyListViewCell: UITableViewCell, CellReusable {
     
     @IBOutlet var surveyQuestionLabel: UILabel! {
         didSet {
-            surveyQuestionLabel.font = .surveyQuestionTitle
+            surveyQuestionLabel.font = .boldFont16
         }
     }
     
     @IBOutlet var surveyAnswerLabel1: UILabel! {
         didSet{
-            surveyAnswerLabel1.font = .surveyAnswerFont
+            surveyAnswerLabel1.font = .regularFont10
         }
     }
     @IBOutlet var surveyAnswerLabel2: UILabel! {
         didSet{
-            surveyAnswerLabel2.font = .surveyAnswerFont
+            surveyAnswerLabel2.font = .regularFont10
         }
     }
     @IBOutlet var surveyAnswerLabel3: UILabel! {
         didSet{
-            surveyAnswerLabel3.font = .surveyAnswerFont
+            surveyAnswerLabel3.font = .regularFont10
         }
     }
     @IBOutlet var surveyAnswerLabel4: UILabel! {
         didSet{
-            surveyAnswerLabel4.font = .surveyAnswerFont
+            surveyAnswerLabel4.font = .regularFont10
         }
     }
     @IBOutlet var surveyAnswerLabel5: UILabel! {
         didSet{
-            surveyAnswerLabel5.font = .surveyAnswerFont
+            surveyAnswerLabel5.font = .regularFont10
         }
     }
     

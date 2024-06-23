@@ -41,7 +41,7 @@ class AllSubmitButton: UIButton {
     
     private func setAttributedTitle() {
         let title = self.titleLabel?.text ?? ""
-         let font = UIFont.commonSubmitButtonTitle
+         let font = UIFont.boldFont16
          let attributes: [NSAttributedString.Key: Any] = [
              .font: font,
              .foregroundColor: UIColor.white
