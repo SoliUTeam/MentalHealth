@@ -21,6 +21,7 @@ class AccountHomeViewController: UIViewController {
     }
     @IBOutlet weak var demographicsButton: UIButton!
     @IBOutlet weak var deleteAccountButton: UIButton!
+    @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     @IBAction func didClickLogoutButton(_ sender: UIButton) {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
