@@ -24,6 +24,7 @@ enum Color: String {
     case submitButtonBackground = "#232323"
     case loginNextBackground = "#1CBDEF"
     case loginNextDisabled = "#ECECEC"
+    case testNavigationBar = "#F1F1F1"
     
 //  Survey Result Color
     case chartMyScoreFill = "#26CCFF"
@@ -58,6 +59,7 @@ extension UIColor {
     static let submitButtonBackground = UIColor(hex: Color.submitButtonBackground.rawValue, alpha: 1)
     static let loginNextBackground = UIColor(hex: Color.loginNextBackground.rawValue, alpha: 1)
     static let loginNextDisabled = UIColor(hex: Color.loginNextDisabled.rawValue, alpha: 1)
+    static let testNavigationBar = UIColor(hex: Color.testNavigationBar.rawValue, alpha: 1)
 //  Survey Result Color
     static let chartMyScoreFill = UIColor(hex: Color.chartMyScoreFill.rawValue, alpha: 1)
     static let chartAverageBorder = UIColor(hex: Color.chartAverageBorder.rawValue, alpha: 1)

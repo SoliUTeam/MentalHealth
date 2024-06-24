@@ -46,10 +46,10 @@ class SurveyListViewController: UIViewController {
     }
 
     private func customizeNavigationBar() {
-        navigationController?.navigationBar.barTintColor = .soliuBlue
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.backgroundColor = .soliuBlue
+        navigationController?.navigationBar.barTintColor = .testNavigationBar
+        navigationController?.navigationBar.tintColor = .soliuBlack
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.soliuBlack]
+        navigationController?.navigationBar.backgroundColor = .testNavigationBar
         let backButtonImage = UIImage(assetIdentifier: .whiteBackButton)
         navigationController?.navigationBar.backIndicatorImage = backButtonImage
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
