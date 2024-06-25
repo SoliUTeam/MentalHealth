@@ -89,9 +89,9 @@ class SurveyListViewController: UIViewController {
         case 2:
             title = "Test \(selectedQuestionId + 1): Stress"
         case 3:
-            title = "Test \(selectedQuestionId + 1): Loneliness"
-        case 4:
             title = "Test \(selectedQuestionId + 1): Social Media Addiction"
+        case 4:
+            title = "Test \(selectedQuestionId + 1): Loneliness"
         case 5:
             title = "Test \(selectedQuestionId + 1): HRQOL"
         default:

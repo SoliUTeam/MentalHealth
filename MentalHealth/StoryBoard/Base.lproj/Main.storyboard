@@ -40,12 +40,12 @@
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xy-Y1-xwD">
-                                <rect key="frame" x="20.000000000000007" y="69" width="89.666666666666686" height="14.333333333333329"/>
+                                <rect key="frame" x="20" y="69" width="96" height="14.333333333333329"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Quote of the Day">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="12" name="Roboto-Medium"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -61,7 +61,7 @@
                                     <fragment content="This">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" size="15" name="Raanana"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -69,14 +69,14 @@
                                     <fragment content=" ">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="is">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" size="15" name="Raanana"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -84,14 +84,14 @@
                                     <fragment content=" ">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="place">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" size="15" name="Raanana"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -99,14 +99,14 @@
                                     <fragment content=" ">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="holder">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="16"/>
                                             <font key="NSOriginalFont" size="15" name="Raanana"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -120,7 +120,7 @@
                                     <fragment content="Label">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="cellTitle"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -200,7 +200,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-P5-J9e">
-                                <rect key="frame" x="20" y="235" width="351" height="70"/>
+                                <rect key="frame" x="20" y="235.33333333333337" width="351" height="70"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cLO-8m-f0O">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
@@ -216,7 +216,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bit-MJ-1ci">
-                                                        <rect key="frame" x="13.666666666666664" y="32" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666664" y="31.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="lW3-R7-Jve"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="lcj-z8-4Mk"/>
@@ -224,7 +224,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="88">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="10" name="Roboto-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -232,7 +232,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBO-5q-Kpz">
-                                                        <rect key="frame" x="13.666666666666664" y="49" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666664" y="48.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18" id="fsk-Z2-Oem"/>
                                                             <constraint firstAttribute="height" constant="12" id="nT3-st-cBG"/>
@@ -241,7 +241,7 @@
                                                             <fragment content="S">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.93333333330000001" green="0.10980392160000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -270,7 +270,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rS-do-LfS">
-                                                        <rect key="frame" x="13.666666666666671" y="32" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666671" y="31.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="5Tp-Uu-klm"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="ydt-jC-EnB"/>
@@ -278,7 +278,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="88">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="10" name="Roboto-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -293,7 +293,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M61-BR-JEX">
-                                                        <rect key="frame" x="13.666666666666671" y="49" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666671" y="48.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18" id="Cze-fW-qRs"/>
                                                             <constraint firstAttribute="height" constant="12" id="bvM-ji-WCL"/>
@@ -302,7 +302,7 @@
                                                             <fragment content="M">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -331,7 +331,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEC-Er-8cd">
-                                                        <rect key="frame" x="13.666666666666657" y="32" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666657" y="31.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="SJx-s4-ebK"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="a8N-nC-wpS"/>
@@ -339,7 +339,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="88">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="10" name="Roboto-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -354,7 +354,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpg-mE-ERc">
-                                                        <rect key="frame" x="13.666666666666657" y="49" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666657" y="48.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18" id="B3R-Kh-iS9"/>
                                                             <constraint firstAttribute="height" constant="12" id="LqJ-hY-C5i"/>
@@ -363,7 +363,7 @@
                                                             <fragment content="T">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -392,7 +392,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztm-BN-SFu">
-                                                        <rect key="frame" x="13.666666666666657" y="32" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666657" y="31.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="Srs-9b-LTT"/>
                                                             <constraint firstAttribute="height" constant="12" id="TmL-aV-XKI"/>
@@ -400,7 +400,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="88">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="10" name="Roboto-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -415,7 +415,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="130-Uz-pqI">
-                                                        <rect key="frame" x="13.666666666666657" y="49" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666657" y="48.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="Gfv-3a-5Vn"/>
                                                             <constraint firstAttribute="width" constant="18" id="ooI-gr-Fi8"/>
@@ -424,7 +424,7 @@
                                                             <fragment content="W">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -453,7 +453,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xck-g4-9cD">
-                                                        <rect key="frame" x="13.666666666666657" y="32" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666657" y="31.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="9Lh-wx-ll1"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="Cne-Sn-ghm"/>
@@ -461,7 +461,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="88">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="10" name="Roboto-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -476,7 +476,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuD-qd-ZXD">
-                                                        <rect key="frame" x="13.666666666666657" y="49" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666657" y="48.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="57q-rq-SmC"/>
                                                             <constraint firstAttribute="height" constant="12" id="I3r-ks-RRD"/>
@@ -485,7 +485,7 @@
                                                             <fragment content="TH">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -514,7 +514,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeW-MG-4eJ">
-                                                        <rect key="frame" x="13.666666666666686" y="32" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666686" y="31.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="2Yj-V1-HMP"/>
                                                             <constraint firstAttribute="height" constant="12" id="CQ9-1G-tlb"/>
@@ -522,7 +522,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="88">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="10" name="Roboto-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -537,7 +537,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfk-z2-cc3">
-                                                        <rect key="frame" x="13.666666666666686" y="49" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666686" y="48.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="Br0-D7-jdv"/>
                                                             <constraint firstAttribute="width" constant="18" id="G0O-Mb-txq"/>
@@ -546,7 +546,7 @@
                                                             <fragment content="F">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -575,7 +575,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGy-Gt-s35">
-                                                        <rect key="frame" x="13.666666666666686" y="49" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666686" y="48.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18" id="8gm-E0-Skb"/>
                                                             <constraint firstAttribute="height" constant="12" id="RMQ-9O-yy9"/>
@@ -584,7 +584,7 @@
                                                             <fragment content="S">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                    <font key="NSFont" metaFont="cellTitle"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -599,7 +599,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq2-wK-Nul">
-                                                        <rect key="frame" x="13.666666666666686" y="32" width="18" height="12"/>
+                                                        <rect key="frame" x="13.666666666666686" y="31.999999999999972" width="18" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="7GT-Wp-CTq"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18" id="Ku1-xB-4Rj"/>
@@ -607,7 +607,7 @@
                                                         <attributedString key="attributedText">
                                                             <fragment content="88">
                                                                 <attributes>
-                                                                    <font key="NSFont" size="10" name="Roboto-Regular"/>
+                                                                    <font key="NSFont" metaFont="system" size="10"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -632,12 +632,12 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C82-bu-xWk">
-                                <rect key="frame" x="20" y="213.33333333333334" width="112" height="16.666666666666657"/>
+                                <rect key="frame" x="19.999999999999993" y="213.33333333333334" width="115.33333333333331" height="17"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Weekly Mood Log">
                                         <attributes>
                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="14" name="Roboto-Bold"/>
+                                            <font key="NSFont" metaFont="system" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -645,7 +645,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oz-rD-trH">
-                                <rect key="frame" x="20" y="325" width="353" height="50"/>
+                                <rect key="frame" x="20" y="325.33333333333331" width="353" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was dopamine detox successful?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htW-rj-0VW">
                                         <rect key="frame" x="20" y="16.666666666666686" width="220" height="17"/>
@@ -715,7 +715,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDx-J1-n71" userLabel="ChartContainerView">
-                                <rect key="frame" x="20" y="385" width="353" height="199"/>
+                                <rect key="frame" x="20" y="385.33333333333331" width="353" height="198.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoK-T7-Wis">
                                         <rect key="frame" x="10" y="10.000000000000002" width="36" height="16.666666666666671"/>
@@ -724,7 +724,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-Cd-8OA" userLabel="ChartView" customClass="BarChartView" customModule="DGCharts">
-                                        <rect key="frame" x="10" y="36.666666666666686" width="333" height="152.33333333333334"/>
+                                        <rect key="frame" x="10" y="36.666666666666686" width="333" height="152"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/8,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-y4-aBH">
@@ -734,7 +734,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7I-5j-J2u">
-                                        <rect key="frame" x="259.33333333333331" y="9.3333333333333144" width="46" height="20"/>
+                                        <rect key="frame" x="259.33333333333331" y="9.3333333333333712" width="46" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="5t9-ES-SGM"/>
                                         </constraints>
@@ -1983,13 +1983,6 @@ know this...</string>
                                 <rect key="frame" x="0.0" y="59" width="393" height="409"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwr-Nq-toU">
-                                <rect key="frame" x="16" y="736.66666666666663" width="361" height="49.333333333333371"/>
-                                <string key="text">If your score exceeds the average score in each category, it’s important to examine your weaker areas across the six indicators.</string>
-                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
-                                <color key="textColor" name="Color/soliuBlue"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zDo-Yw-Ja4">
                                 <rect key="frame" x="16" y="526" width="361" height="166"/>
                                 <subviews>
@@ -2189,12 +2182,43 @@ know this...</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQF-Ks-2C2">
+                                <rect key="frame" x="24" y="708" width="345" height="120"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="H8r-eK-7ym">
+                                        <rect key="frame" x="16" y="18.333333333333329" width="24" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="Hic-UG-E6x"/>
+                                            <constraint firstAttribute="height" constant="24" id="uBW-xU-DUo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYl-Vt-XJR">
+                                        <rect key="frame" x="56" y="16" width="265" height="56"/>
+                                        <string key="text">If your score exceeds the average score in each category, it’s important to examine your weaker areas across the six indicators.
+</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="H8r-eK-7ym" secondAttribute="bottom" constant="16" id="I0R-IE-COO"/>
+                                    <constraint firstItem="dYl-Vt-XJR" firstAttribute="top" secondItem="H8r-eK-7ym" secondAttribute="top" id="LvE-KW-ONJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dYl-Vt-XJR" secondAttribute="trailing" constant="24" id="deE-To-cC0"/>
+                                    <constraint firstItem="H8r-eK-7ym" firstAttribute="top" secondItem="kQF-Ks-2C2" secondAttribute="top" constant="16" id="eDk-wm-kjc"/>
+                                    <constraint firstItem="H8r-eK-7ym" firstAttribute="leading" secondItem="kQF-Ks-2C2" secondAttribute="leading" constant="16" id="nOr-fO-Huy"/>
+                                    <constraint firstItem="dYl-Vt-XJR" firstAttribute="leading" secondItem="H8r-eK-7ym" secondAttribute="trailing" constant="16" id="vDl-jI-1of"/>
+                                    <constraint firstAttribute="bottom" secondItem="dYl-Vt-XJR" secondAttribute="bottom" constant="48" id="x2O-sc-4GK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l2e-ce-1rp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="vwr-Nq-toU" secondAttribute="trailing" constant="16" id="2z4-W1-707"/>
-                            <constraint firstItem="vwr-Nq-toU" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="4mq-em-Fb6"/>
+                            <constraint firstItem="kQF-Ks-2C2" firstAttribute="top" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="16" id="4HJ-hQ-Vxo"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="kQF-Ks-2C2" secondAttribute="trailing" constant="24" id="6QZ-oT-abv"/>
+                            <constraint firstAttribute="bottom" secondItem="kQF-Ks-2C2" secondAttribute="bottom" constant="24" id="8gC-ir-HAL"/>
                             <constraint firstItem="ZYG-Vm-TR4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" id="AHm-BC-w2P"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MCl-Jk-52J" secondAttribute="trailing" symbolic="YES" id="BTd-je-c5c"/>
                             <constraint firstItem="MCl-Jk-52J" firstAttribute="centerY" secondItem="CoN-2T-g2y" secondAttribute="centerY" id="G7x-ZN-0Do"/>
@@ -2205,6 +2229,7 @@ know this...</string>
                             <constraint firstItem="CoN-2T-g2y" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="32" id="Joy-4i-9qx"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PoF-Wl-Lgh" secondAttribute="trailing" symbolic="YES" id="Oad-SW-AuU"/>
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="Otf-79-cuH"/>
+                            <constraint firstItem="kQF-Ks-2C2" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="24" id="PyJ-Bp-TI4"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="v0W-ec-LPA" secondAttribute="trailing" constant="187" id="Q8q-IE-nDv"/>
                             <constraint firstItem="v0W-ec-LPA" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="186" id="SD0-p2-4hY"/>
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="top" secondItem="CoN-2T-g2y" secondAttribute="bottom" constant="32" id="Wnv-Ha-9um"/>
@@ -2213,10 +2238,8 @@ know this...</string>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="v0W-ec-LPA" secondAttribute="bottom" constant="382" id="fbc-qh-Rx7"/>
                             <constraint firstItem="v0W-ec-LPA" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" constant="357" id="iHH-fO-YjT"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="350" id="iTy-eZ-U6t"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="vwr-Nq-toU" secondAttribute="bottom" constant="32" id="io4-sQ-iFq"/>
                             <constraint firstItem="aLl-qF-vWO" firstAttribute="leading" secondItem="MCl-Jk-52J" secondAttribute="trailing" constant="16" id="mpA-MG-Au1"/>
                             <constraint firstItem="aLl-qF-vWO" firstAttribute="centerY" secondItem="CoN-2T-g2y" secondAttribute="centerY" id="n5G-re-0DZ"/>
-                            <constraint firstItem="vwr-Nq-toU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="16" id="qYK-rI-dzN"/>
                             <constraint firstItem="MCl-Jk-52J" firstAttribute="leading" secondItem="CoN-2T-g2y" secondAttribute="trailing" constant="16" id="vKY-zM-grC"/>
                         </constraints>
                     </view>
@@ -2232,6 +2255,8 @@ know this...</string>
                         <outlet property="hrqolImageView" destination="TJy-is-a3j" id="XET-oA-iTK"/>
                         <outlet property="hrqolScoreLabel" destination="8cn-WB-AHY" id="lwf-DG-eZL"/>
                         <outlet property="hrqolTitleLabel" destination="0SX-f7-8WD" id="w5A-ma-9lY"/>
+                        <outlet property="info" destination="kQF-Ks-2C2" id="3Lm-EA-43K"/>
+                        <outlet property="infoLabel" destination="dYl-Vt-XJR" id="ULT-md-oPf"/>
                         <outlet property="lonelinessImageView" destination="qEK-kO-vTB" id="RGY-yi-ypB"/>
                         <outlet property="lonelinessScoreLabel" destination="9oH-sz-Eeh" id="mQv-Ib-YOU"/>
                         <outlet property="lonelinessTitleLabel" destination="Op8-m2-yKo" id="19N-ee-7pv"/>
@@ -2246,7 +2271,7 @@ know this...</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxn-Rh-BJT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9683.2061068702278" y="-713.38028169014092"/>
+            <point key="canvasLocation" x="9681.6793893129761" y="-713.38028169014092"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="KmP-6I-s2W">
@@ -2337,14 +2362,14 @@ know this...</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzU-mN-pHb">
-                                <rect key="frame" x="135" y="779.66666666666663" width="123" height="28.333333333333371"/>
+                                <rect key="frame" x="132" y="779.66666666666663" width="129.33333333333337" height="28.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedSubtitle">
                                         <fragment content="Continue As Guest">
                                             <attributes>
                                                 <color key="NSColor" red="0.18038999999999999" green="0.18038999999999999" blue="0.18038999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                <font key="NSFont" metaFont="cellTitle"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 <integer key="NSUnderline" value="1"/>
                                                 <color key="NSUnderlineColor" red="0.18038999999999999" green="0.18038999999999999" blue="0.18038999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2577,14 +2602,14 @@ know this...</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECl-4w-Lz6">
-                                <rect key="frame" x="135" y="779.66666666666663" width="123" height="28.333333333333371"/>
+                                <rect key="frame" x="132" y="779.66666666666663" width="129.33333333333337" height="28.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedSubtitle">
                                         <fragment content="Continue As Guest">
                                             <attributes>
                                                 <color key="NSColor" red="0.18038999999999999" green="0.18038999999999999" blue="0.18038999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                <font key="NSFont" metaFont="cellTitle"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 <integer key="NSUnderline" value="1"/>
                                                 <color key="NSUnderlineColor" red="0.18038999999999999" green="0.18038999999999999" blue="0.18038999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2942,6 +2967,7 @@ the following data</string>
         <image name="Icon/writeReview" width="20" height="20"/>
         <image name="Icon/yesButton" width="28" height="28"/>
         <image name="cross.case" catalog="system" width="128" height="100"/>
+        <image name="info" catalog="system" width="93" height="128"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="Color/soliuBlue">
             <color red="0.0" green="0.72200000286102295" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

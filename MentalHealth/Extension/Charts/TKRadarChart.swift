@@ -32,7 +32,7 @@ public protocol TKRadarChartDelegate: AnyObject {
     func colorOfSectionBorderForRadarChart(_ radarChart: TKRadarChart, section: Int) -> UIColor
     
     func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont
-    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIColor
+    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart, row: Int) -> UIColor
 
 }
 
@@ -41,7 +41,7 @@ extension TKRadarChartDelegate {
     public func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont {
         return UIFont.boldSystemFont(ofSize: 12)
     }
-    public func colorOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIColor {
+    public func colorOfTitleForRadarChart(_ radarChart: TKRadarChart, row: Int) -> UIColor {
         return UIColor.gray
     }
     
@@ -202,9 +202,10 @@ public class TKRadarChart: UIView, TKRadarChartDelegate {
         let lineColor = delegate.colorOfLineForRadarChart(self)
         
         /// Create  titles
-        let titleColor = delegate.colorOfTitleForRadarChart(self)
+        
         for index in 0..<numOfRow {
             let i = CGFloat(index)
+            let titleColor = delegate.colorOfTitleForRadarChart(self, row: index)
             let title = dataSource.titleOfRowForRadarChart(self, row: index)
             let pointOnEdge = CGPoint(x: centerPoint.x - radius * sin(i * perAngle),
                                       y: centerPoint.y - radius * cos(i * perAngle))

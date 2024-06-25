@@ -47,9 +47,17 @@ class SurveyResultViewController: UIViewController {
     @IBOutlet var lonelinessScoreLabel: UILabel!
     @IBOutlet var hrqolScoreLabel: UILabel!
     
+    @IBOutlet var info: UIView!
+    @IBOutlet var infoLabel: UILabel!
+    
     var myTestScore: [Int:Int] = [:]
     var allUsersAverageResult: [Int: Int] = [ : ]
-    let categories = [0: "Depression", 5: "Anxiety", 10: "Stress", 15: "Loneliness", 20: "Social Media Addiction", 25: "HRQOL"]
+    let categories = [0: "Depression", 
+                      5: "Anxiety",
+                      10: "Stress",
+                      15: "Social Media Addiction",
+                      20: "Loneliness",
+                      25: "HRQOL"]
     var shouldHideData = false
     var scoreResults: [Int: [Double]] = [:]
     
@@ -61,6 +69,9 @@ class SurveyResultViewController: UIViewController {
         self.imageSetup()
         self.labelSetup()
         self.fetchUsersAverageResult()
+        info.addBorderAndColor(color: .homepageNoBackground, width: 1, corner_radius: 16)
+        infoLabel.font = .customFont(fontType: .bold, size: 12)
+        infoLabel.textColor = .homepageNoBackground
     }
     
     private func fetchUsersAverageResult() {
@@ -112,9 +123,9 @@ class SurveyResultViewController: UIViewController {
             case 2:
                 return "Stress"
             case 3:
-                return "Loneliness"
+                return "Social Media Addiction \n (SMA)"
             case 4:
-                return "Addiction"
+                return "Loneliness"
             case 5:
                 return "HRQOL"
             default:
@@ -265,7 +276,20 @@ extension SurveyResultViewController: TKRadarChartDataSource, TKRadarChartDelega
         }
     }
 
-    func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont {
-        return UIFont.boldSystemFont(ofSize: 12)
+    func colorOfTitleForRadarChart(_ radarChart: TKRadarChart, row: Int) -> UIColor {
+        switch row {
+        case 0:
+            return .depressionColor
+        case 1:
+            return .anxietyColor
+        case 2:
+            return .stressColor
+        case 3:
+            return .socialMediaColor
+        case 4:
+            return .lonelinessColor
+        default:
+            return .hrqolColor
+        }
     }
 }
