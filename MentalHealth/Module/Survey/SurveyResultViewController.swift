@@ -47,8 +47,9 @@ class SurveyResultViewController: UIViewController {
     @IBOutlet var lonelinessScoreLabel: UILabel!
     @IBOutlet var hrqolScoreLabel: UILabel!
     
-    @IBOutlet var info: UIView!
-    @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var warningView: UIView!
+    @IBOutlet var warningTextView: UITextView!
+    @IBOutlet var dangerView: DangerView!
     
     var myTestScore: [Int:Int] = [:]
     var allUsersAverageResult: [Int: Int] = [ : ]
@@ -69,9 +70,16 @@ class SurveyResultViewController: UIViewController {
         self.imageSetup()
         self.labelSetup()
         self.fetchUsersAverageResult()
-        info.addBorderAndColor(color: .homepageNoBackground, width: 1, corner_radius: 16)
-        infoLabel.font = .customFont(fontType: .bold, size: 12)
-        infoLabel.textColor = .homepageNoBackground
+        self.setupWarningView()
+    }
+    
+    private func setupWarningView() {
+        warningView.backgroundColor = .surveyWarningBackgroundColor
+        warningView.addBorderAndColor(color: .surveyWarningBackgroundColor, width: 1, corner_radius: 12)
+        warningTextView.font = .boldFont12
+        warningTextView.textColor = .surveyWaningLabelColor
+        warningTextView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
     }
     
     private func fetchUsersAverageResult() {
@@ -157,12 +165,19 @@ class SurveyResultViewController: UIViewController {
         }
     }
     private func labelSetup() {
-        LabelStyle.surveyResultTitle(color: .depressionColor).apply(to: depressionTitleLabel)
-        LabelStyle.surveyResultTitle(color: .anxietyColor).apply(to: anxietyTitleLabel)
-        LabelStyle.surveyResultTitle(color: .stressColor).apply(to: stressTitleLabel)
-        LabelStyle.surveyResultTitle(color: .socialMediaColor).apply(to: socialMediaAddictionTitleLabel)
-        LabelStyle.surveyResultTitle(color: .lonelinessColor).apply(to: lonelinessTitleLabel)
-        LabelStyle.surveyResultTitle(color: .hrqolColor).apply(to: hrqolTitleLabel)
+        
+        depressionTitleLabel.font = .boldFont16
+        anxietyTitleLabel.font = .boldFont16
+        stressTitleLabel.font = .boldFont16
+        socialMediaAddictionTitleLabel.font = .boldFont16
+        lonelinessTitleLabel.font = .boldFont16
+        hrqolTitleLabel.font = .boldFont16
+//        LabelStyle.surveyResultTitle(color: .depressionColor).apply(to: depressionTitleLabel)
+//        LabelStyle.surveyResultTitle(color: .anxietyColor).apply(to: anxietyTitleLabel)
+//        LabelStyle.surveyResultTitle(color: .stressColor).apply(to: stressTitleLabel)
+//        LabelStyle.surveyResultTitle(color: .socialMediaColor).apply(to: socialMediaAddictionTitleLabel)
+//        LabelStyle.surveyResultTitle(color: .lonelinessColor).apply(to: lonelinessTitleLabel)
+//        LabelStyle.surveyResultTitle(color: .hrqolColor).apply(to: hrqolTitleLabel)
     }
     
     private func colorMapping(myScore: Double, averageScore: Double) -> UIColor {
@@ -291,5 +306,9 @@ extension SurveyResultViewController: TKRadarChartDataSource, TKRadarChartDelega
         default:
             return .hrqolColor
         }
+    }
+    
+    func fontOfTitleForRadarChart(_ radarChart: TKRadarChart) -> UIFont {
+        return .boldFont12
     }
 }

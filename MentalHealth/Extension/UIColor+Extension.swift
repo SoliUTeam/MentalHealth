@@ -35,7 +35,8 @@ enum Color: String {
     case socialMediaColor = "#783BFA"
     case lonelinessColor = "#EC9B3C"
     case hrqolColor = "#EC1C4E"
-    
+    case surveyWarningBackgroundColor = "#FFEAEA"
+    case surveyWaningLabelColor = "#FF123D"
     case surveyResultGreen = "#00D67C"
     case surveyResultRed = "#FF003D"
 // Diary Result Color
@@ -70,6 +71,8 @@ extension UIColor {
     static let lonelinessColor = UIColor(hex: Color.lonelinessColor.rawValue, alpha:1)
     static let hrqolColor = UIColor(hex: Color.hrqolColor.rawValue, alpha:1)
     
+    static let surveyWarningBackgroundColor = UIColor(hex: Color.surveyWarningBackgroundColor.rawValue, alpha: 1)
+    static let surveyWaningLabelColor = UIColor(hex: Color.surveyWaningLabelColor.rawValue, alpha: 1)
     static let surveyResultGreen = UIColor(hex: Color.surveyResultGreen.rawValue, alpha: 1)
     static let surveyResultRed = UIColor(hex: Color.surveyResultRed.rawValue, alpha: 1)
 //  Diary Border

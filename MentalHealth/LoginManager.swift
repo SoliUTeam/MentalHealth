@@ -68,6 +68,10 @@ public class LoginManager {
     func getDailyMoodList() -> [MyDay] {
         return self.currentUser.dailyMoodList
     }
+    
+    func getSurveyResult() -> [SurveyResult] {
+        return self.currentUser.surveyResultsList
+    }
 
     func setSurveyResult(_ surveyResult: [SurveyResult]) {
         self.currentUser.surveyResultsList = surveyResult

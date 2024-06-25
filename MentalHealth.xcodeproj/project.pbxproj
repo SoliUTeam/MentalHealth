@@ -18,6 +18,7 @@
 		674EFBAD2BF4167000107789 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 674EFBAC2BF4167000107789 /* UIButton+Extension.swift */; };
 		67811DD32BF003EF00BB816F /* MyDiaryFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */; };
 		67811DD62BF00AA200BB816F /* MyDiaryRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */; };
+		6786E2FC2C2B8015002A23FB /* DangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6786E2FB2C2B8015002A23FB /* DangerView.swift */; };
 		67A1C7C12C212C8C008F9FDA /* MyDiaryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A1C7C02C212C8C008F9FDA /* MyDiaryItem.swift */; };
 		67A55E192BC7990500E579D4 /* SurveyResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */; };
 		67A883AE2C100AD600B970C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67A883AD2C100AD500B970C2 /* GoogleService-Info.plist */; };
@@ -89,6 +90,7 @@
 		675D54402BC5A59B00756AD4 /* SurveyNextButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurveyNextButtonCell.xib; sourceTree = "<group>"; };
 		67811DD22BF003EF00BB816F /* MyDiaryFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyDiaryFlow.storyboard; sourceTree = "<group>"; };
 		67811DD52BF00AA200BB816F /* MyDiaryRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryRecordViewController.swift; sourceTree = "<group>"; };
+		6786E2FB2C2B8015002A23FB /* DangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerView.swift; sourceTree = "<group>"; };
 		67A1C7C02C212C8C008F9FDA /* MyDiaryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDiaryItem.swift; sourceTree = "<group>"; };
 		67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyResultViewController.swift; sourceTree = "<group>"; };
 		67A883AD2C100AD500B970C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				957C02D12B6F77F900DE21DE /* SurveyListViewController.swift */,
 				67A55E182BC7990500E579D4 /* SurveyResultViewController.swift */,
 				67F71C742BEB22310008BFA5 /* SurveyEntryViewController.swift */,
+				6786E2FB2C2B8015002A23FB /* DangerView.swift */,
 			);
 			path = Survey;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				95433A082BBE69810003C584 /* UIViewController+Extension.swift in Sources */,
 				95C72BE72BD6400700ED178F /* LoginEthnicityViewController.swift in Sources */,
 				670400E32BF56B9B00BC65CA /* UserInformation.swift in Sources */,
+				6786E2FC2C2B8015002A23FB /* DangerView.swift in Sources */,
 				953A64EF2B6EDFA000651684 /* SceneDelegate.swift in Sources */,
 				95733CB52BA8296300FD2215 /* UILabel+Extension.swift in Sources */,
 				67F064992B9D1D5C00400013 /* MentalHealthQuestion.swift in Sources */,
