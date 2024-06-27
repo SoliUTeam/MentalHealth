@@ -2002,39 +2002,20 @@ know this...</string>
                                 <color key="color" name="Color/soliuBlue"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYG-Vm-TR4" customClass="TKRadarChart" customModule="MentalHealth" customModuleProvider="target">
-                                <rect key="frame" x="16" y="91" width="361" height="377"/>
+                                <rect key="frame" x="16" y="91" width="361" height="347"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-L8-vpI" customClass="DangerView" customModule="MentalHealth" customModuleProvider="target">
-                                <rect key="frame" x="32" y="444" width="329" height="24"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="FXn-68-lqQ"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zDo-Yw-Ja4">
-                                <rect key="frame" x="16" y="500" width="361" height="194"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danger Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJQ-Ts-izD">
+                                <rect key="frame" x="24" y="454" width="369" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zDo-Yw-Ja4">
+                                <rect key="frame" x="16" y="516.33333333333337" width="361" height="156"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="lastBaseline" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8O-P2-bgG">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="26"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Me : Avg" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRu-tc-ZL8">
-                                                <rect key="frame" x="0.0" y="0.0" width="361" height="26"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="tRu-tc-ZL8" firstAttribute="top" secondItem="a8O-P2-bgG" secondAttribute="top" id="E7K-7p-ndC"/>
-                                            <constraint firstItem="tRu-tc-ZL8" firstAttribute="leading" secondItem="a8O-P2-bgG" secondAttribute="leading" id="Kie-be-eZn"/>
-                                            <constraint firstItem="tRu-tc-ZL8" firstAttribute="leading" secondItem="a8O-P2-bgG" secondAttribute="leading" id="NWa-nb-tCn"/>
-                                            <constraint firstAttribute="trailing" secondItem="tRu-tc-ZL8" secondAttribute="trailing" id="Nc4-QJ-yCT"/>
-                                            <constraint firstAttribute="bottom" secondItem="tRu-tc-ZL8" secondAttribute="bottom" id="dBm-Tc-pwi"/>
-                                        </constraints>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfD-qC-GHr">
-                                        <rect key="frame" x="0.0" y="28" width="361" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="26"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/depressionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NpY-yy-aNk">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="26"/>
@@ -2062,7 +2043,7 @@ know this...</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oan-ip-f8B">
-                                        <rect key="frame" x="0.0" y="56" width="361" height="26"/>
+                                        <rect key="frame" x="0.0" y="26" width="361" height="26"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/depressionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ky3-8L-0I1">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="26"/>
@@ -2090,7 +2071,7 @@ know this...</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZI-En-8jO">
-                                        <rect key="frame" x="0.0" y="84" width="361" height="26"/>
+                                        <rect key="frame" x="0.0" y="52" width="361" height="26"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/depressionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4ie-bd-AO3">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="26"/>
@@ -2118,7 +2099,7 @@ know this...</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29x-Er-6HN">
-                                        <rect key="frame" x="0.0" y="112" width="361" height="26"/>
+                                        <rect key="frame" x="0.0" y="78" width="361" height="26"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/depressionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="V2F-DJ-QTE">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="26"/>
@@ -2146,7 +2127,7 @@ know this...</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdp-eR-jhS">
-                                        <rect key="frame" x="0.0" y="140" width="361" height="26"/>
+                                        <rect key="frame" x="0.0" y="104" width="361" height="26"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/depressionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qEK-kO-vTB">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="26"/>
@@ -2174,7 +2155,7 @@ know this...</string>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCA-DL-ASk">
-                                        <rect key="frame" x="0.0" y="168" width="361" height="26"/>
+                                        <rect key="frame" x="0.0" y="130" width="361" height="26"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon/depressionIcon" translatesAutoresizingMaskIntoConstraints="NO" id="TJy-is-a3j">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="26"/>
@@ -2204,18 +2185,18 @@ know this...</string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQF-Ks-2C2">
-                                <rect key="frame" x="24" y="724" width="345" height="96"/>
+                                <rect key="frame" x="24" y="688.33333333333337" width="345" height="121.66666666666663"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="H8r-eK-7ym">
-                                        <rect key="frame" x="16" y="12.999999999999998" width="24" height="22.666666666666664"/>
+                                        <rect key="frame" x="16" y="8.9999999999999982" width="24" height="22.666666666666664"/>
                                         <color key="tintColor" red="1" green="0.070588235294117646" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="Hic-UG-E6x"/>
                                             <constraint firstAttribute="height" constant="24" id="uBW-xU-DUo"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uar-WG-1Oh">
-                                        <rect key="frame" x="52" y="12" width="241" height="80"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uar-WG-1Oh">
+                                        <rect key="frame" x="48" y="8" width="289" height="105.66666666666667"/>
                                         <string key="text">If your score exceeds the average score in each category, it’s important to examine your weaker areas across the six indicators.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2223,13 +2204,13 @@ know this...</string>
                                     </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="H8r-eK-7ym" firstAttribute="top" secondItem="uar-WG-1Oh" secondAttribute="top" id="254-5Q-wof"/>
-                                    <constraint firstItem="uar-WG-1Oh" firstAttribute="leading" secondItem="H8r-eK-7ym" secondAttribute="trailing" constant="12" id="4ee-Jz-0yN"/>
-                                    <constraint firstItem="H8r-eK-7ym" firstAttribute="top" secondItem="kQF-Ks-2C2" secondAttribute="top" constant="12.000000000000002" id="ZEh-xi-32Q"/>
-                                    <constraint firstAttribute="height" secondItem="uar-WG-1Oh" secondAttribute="height" priority="1" id="blZ-hW-Vvd"/>
-                                    <constraint firstItem="uar-WG-1Oh" firstAttribute="centerX" secondItem="kQF-Ks-2C2" secondAttribute="centerX" id="jKX-1T-SiK"/>
-                                    <constraint firstAttribute="bottom" secondItem="uar-WG-1Oh" secondAttribute="bottom" constant="4" id="qLn-PQ-Ir3"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="uar-WG-1Oh" secondAttribute="bottom" priority="999" constant="8" id="65B-al-0Fd"/>
+                                    <constraint firstItem="H8r-eK-7ym" firstAttribute="top" secondItem="uar-WG-1Oh" secondAttribute="top" id="BtT-Rr-m3G"/>
+                                    <constraint firstAttribute="trailing" secondItem="uar-WG-1Oh" secondAttribute="trailing" constant="8" id="Fjq-nw-Wxc"/>
+                                    <constraint firstItem="uar-WG-1Oh" firstAttribute="top" secondItem="kQF-Ks-2C2" secondAttribute="top" constant="8" id="biN-ND-4zI"/>
+                                    <constraint firstItem="uar-WG-1Oh" firstAttribute="leading" secondItem="H8r-eK-7ym" secondAttribute="trailing" constant="8" id="qMY-uE-tV7"/>
                                     <constraint firstItem="H8r-eK-7ym" firstAttribute="leading" secondItem="kQF-Ks-2C2" secondAttribute="leading" constant="16" id="tgq-cP-3Ey"/>
+                                    <constraint firstAttribute="bottom" secondItem="uar-WG-1Oh" secondAttribute="bottom" constant="8" id="xOA-r0-W45"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcC-No-k0t">
@@ -2279,31 +2260,40 @@ know this...</string>
                                     <constraint firstItem="PoF-Wl-Lgh" firstAttribute="centerY" secondItem="aLl-qF-vWO" secondAttribute="centerY" id="xIN-D9-VEL"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-L8-vpI" customClass="DangerView" customModule="MentalHealth" customModuleProvider="target">
+                                <rect key="frame" x="16" y="476.33333333333331" width="361" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="FXn-68-lqQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l2e-ce-1rp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="ZYG-Vm-TR4" secondAttribute="trailing" constant="16" id="2sg-rO-lq6"/>
-                            <constraint firstItem="qzy-L8-vpI" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" id="3Xa-lJ-9Bg"/>
-                            <constraint firstItem="kQF-Ks-2C2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="16" id="4HJ-hQ-Vxo"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="kQF-Ks-2C2" secondAttribute="trailing" constant="24" id="6QZ-oT-abv"/>
-                            <constraint firstAttribute="bottom" secondItem="kQF-Ks-2C2" secondAttribute="bottom" constant="32" id="8gC-ir-HAL"/>
+                            <constraint firstItem="kQF-Ks-2C2" firstAttribute="top" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="16" id="6eA-1l-AEb"/>
                             <constraint firstItem="XcC-No-k0t" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="12" id="8oA-Ml-zfK"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="350" id="BEi-iW-fVB"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="380" id="BEi-iW-fVB"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="zDo-Yw-Ja4" secondAttribute="trailing" constant="16" id="GIf-jg-njK"/>
-                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="qzy-L8-vpI" secondAttribute="trailing" constant="32" id="MW5-xf-kcL"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="qzy-L8-vpI" secondAttribute="trailing" constant="16" id="MW5-xf-kcL"/>
                             <constraint firstItem="zDo-Yw-Ja4" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="Otf-79-cuH"/>
+                            <constraint firstItem="qJQ-Ts-izD" firstAttribute="top" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="16" id="PE7-UN-oCw"/>
                             <constraint firstItem="kQF-Ks-2C2" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="24" id="PyJ-Bp-TI4"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="v0W-ec-LPA" secondAttribute="trailing" constant="187" id="Q8q-IE-nDv"/>
                             <constraint firstItem="v0W-ec-LPA" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="186" id="SD0-p2-4hY"/>
                             <constraint firstItem="XcC-No-k0t" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" constant="16" id="ZKC-WL-Ah8"/>
+                            <constraint firstItem="zDo-Yw-Ja4" firstAttribute="top" secondItem="qzy-L8-vpI" secondAttribute="bottom" constant="16" id="bQP-Ps-GLf"/>
                             <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="v0W-ec-LPA" secondAttribute="bottom" constant="382" id="fbc-qh-Rx7"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="bottom" secondItem="kQF-Ks-2C2" secondAttribute="bottom" constant="8" id="goK-Zz-DNk"/>
                             <constraint firstItem="v0W-ec-LPA" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" constant="357" id="iHH-fO-YjT"/>
+                            <constraint firstItem="l2e-ce-1rp" firstAttribute="trailing" secondItem="qJQ-Ts-izD" secondAttribute="trailing" symbolic="YES" id="la0-8u-PpR"/>
                             <constraint firstItem="ZYG-Vm-TR4" firstAttribute="top" secondItem="l2e-ce-1rp" secondAttribute="top" constant="32" id="lzX-UC-nXn"/>
-                            <constraint firstItem="qzy-L8-vpI" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="32" id="oSC-qY-VsL"/>
-                            <constraint firstItem="zDo-Yw-Ja4" firstAttribute="top" secondItem="ZYG-Vm-TR4" secondAttribute="bottom" constant="32" id="ohE-RD-Zur"/>
-                            <constraint firstItem="kQF-Ks-2C2" firstAttribute="top" secondItem="zDo-Yw-Ja4" secondAttribute="bottom" constant="30" id="v6H-gV-csT"/>
+                            <constraint firstItem="qJQ-Ts-izD" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="24" id="mZj-OV-oDW"/>
+                            <constraint firstItem="qzy-L8-vpI" firstAttribute="leading" secondItem="l2e-ce-1rp" secondAttribute="leading" constant="16" id="oSC-qY-VsL"/>
+                            <constraint firstItem="qzy-L8-vpI" firstAttribute="top" secondItem="qJQ-Ts-izD" secondAttribute="bottom" constant="8" id="sJR-Na-XaW"/>
                             <constraint firstItem="ZYG-Vm-TR4" firstAttribute="leading" secondItem="cJT-Xf-fsP" secondAttribute="leading" constant="16" id="wn2-lV-e8Z"/>
+                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="kQF-Ks-2C2" secondAttribute="bottom" constant="8" id="z5B-OQ-UaX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2312,6 +2302,7 @@ know this...</string>
                         <outlet property="anxietyScoreLabel" destination="l0v-xK-tcs" id="hsl-l3-D6P"/>
                         <outlet property="anxietyTitleLabel" destination="dvV-y2-Yss" id="DEh-yo-bQn"/>
                         <outlet property="chart" destination="ZYG-Vm-TR4" id="vyq-St-Hy3"/>
+                        <outlet property="dangerLabel" destination="qJQ-Ts-izD" id="Xjp-OT-SbO"/>
                         <outlet property="dangerView" destination="qzy-L8-vpI" id="QQj-tk-eRs"/>
                         <outlet property="depressionImageView" destination="NpY-yy-aNk" id="5sH-ef-lQ3"/>
                         <outlet property="depressionScoreLabel" destination="foy-p8-oWS" id="r06-99-6Zc"/>

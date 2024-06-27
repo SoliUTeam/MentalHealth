@@ -47,6 +47,7 @@ class SurveyResultViewController: UIViewController {
     @IBOutlet var lonelinessScoreLabel: UILabel!
     @IBOutlet var hrqolScoreLabel: UILabel!
     
+    @IBOutlet var dangerLabel: UILabel!
     @IBOutlet var warningView: UIView!
     @IBOutlet var warningTextView: UITextView!
     @IBOutlet var dangerView: DangerView!
@@ -172,6 +173,7 @@ class SurveyResultViewController: UIViewController {
         socialMediaAddictionTitleLabel.font = .boldFont16
         lonelinessTitleLabel.font = .boldFont16
         hrqolTitleLabel.font = .boldFont16
+        dangerLabel.font = .boldFont12
 //        LabelStyle.surveyResultTitle(color: .depressionColor).apply(to: depressionTitleLabel)
 //        LabelStyle.surveyResultTitle(color: .anxietyColor).apply(to: anxietyTitleLabel)
 //        LabelStyle.surveyResultTitle(color: .stressColor).apply(to: stressTitleLabel)

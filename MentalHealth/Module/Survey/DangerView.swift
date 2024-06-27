@@ -14,7 +14,8 @@ class DangerView: UIView {
         label.text = "Low"
         label.textColor = .white
         label.textAlignment = .center
-        label.backgroundColor = .green
+        label.font = .boldFont12
+        label.backgroundColor = .surveyResultLow
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -24,7 +25,8 @@ class DangerView: UIView {
         label.text = "Moderate"
         label.textColor = .white
         label.textAlignment = .center
-        label.backgroundColor = .orange
+        label.font = .boldFont12
+        label.backgroundColor = .surveyResultModerate
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -33,8 +35,9 @@ class DangerView: UIView {
         let label = UILabel()
         label.text = "High"
         label.textColor = .white
+        label.font = .boldFont12
         label.textAlignment = .center
-        label.backgroundColor = .red
+        label.backgroundColor = .surveyResultHigh
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -73,13 +76,11 @@ class DangerView: UIView {
         ])
 
         // Set corner radius
-        layer.cornerRadius = 20
+        layer.cornerRadius = 12
         layer.masksToBounds = true
 
-        lowLabel.layer.cornerRadius = 20
         lowLabel.layer.masksToBounds = true
         moderateLabel.layer.masksToBounds = true
-        highLabel.layer.cornerRadius = 20
         highLabel.layer.masksToBounds = true
     }
 }

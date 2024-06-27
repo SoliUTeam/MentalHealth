@@ -39,6 +39,9 @@ enum Color: String {
     case surveyWaningLabelColor = "#FF123D"
     case surveyResultGreen = "#00D67C"
     case surveyResultRed = "#FF003D"
+    case surveyResultLow = "#0FD274"
+    case surveyResultModerate = "#FF8A00"
+    case surveyResultHigh = "#FF4242"
 // Diary Result Color
     case diaryRedBorder = "#E64F4F"
 }
@@ -75,6 +78,10 @@ extension UIColor {
     static let surveyWaningLabelColor = UIColor(hex: Color.surveyWaningLabelColor.rawValue, alpha: 1)
     static let surveyResultGreen = UIColor(hex: Color.surveyResultGreen.rawValue, alpha: 1)
     static let surveyResultRed = UIColor(hex: Color.surveyResultRed.rawValue, alpha: 1)
+    
+    static let surveyResultLow = UIColor(hex: Color.surveyResultLow.rawValue, alpha: 1)
+    static let surveyResultModerate = UIColor(hex: Color.surveyResultModerate.rawValue, alpha: 1)
+    static let surveyResultHigh = UIColor(hex: Color.surveyResultHigh.rawValue, alpha: 1)
 //  Diary Border
     static let diaryBorder = UIColor(hex: Color.tabBarBorder.rawValue, alpha: 1)
     static let diaryRedBorder = UIColor(hex: Color.diaryRedBorder.rawValue, alpha: 1)
