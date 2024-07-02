@@ -9,10 +9,7 @@ import Foundation
 import UIKit
 
 enum ViewSide {
-    case Left,
-         Right,
-         Top,
-         Bottom
+    case left, right, top, bottom
 }
 
 extension UIView {
@@ -24,18 +21,21 @@ extension UIView {
     }
     
     func addBorder(toSide side: ViewSide, withColor color: UIColor, andThickness thickness: CGFloat) {
-        let border = CALayer()
-        border.backgroundColor = color.cgColor
-        
-        switch side {
-        case .Left: border.frame = CGRect(x: frame.minX, y: frame.minY, width: thickness, height: frame.height); break
-        case .Right: border.frame = CGRect(x: frame.maxX, y: frame.minY, width: thickness, height: frame.height); break
-        case .Top: border.frame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: thickness); break
-        case .Bottom: border.frame = CGRect(x: frame.minX, y: frame.maxY, width: frame.width, height: thickness); break
-        }
-        
-        layer.addSublayer(border)
-    }
+           let border = CALayer()
+           border.backgroundColor = color.cgColor
+           switch side {
+           case .left:
+               border.frame = CGRect(x: 0, y: 0, width: thickness, height: bounds.height)
+           case .right:
+               border.frame = CGRect(x: bounds.width - thickness, y: 0, width: thickness, height: bounds.height)
+           case .top:
+               border.frame = CGRect(x: 0, y: 0, width: bounds.width, height: thickness)
+           case .bottom:
+               border.frame = CGRect(x: 0, y: bounds.height - thickness, width: bounds.width, height: thickness)
+           }
+           
+           layer.addSublayer(border)
+       }
 }
 
 extension UIView {

@@ -42,6 +42,8 @@ enum Color: String {
     case surveyResultLow = "#0FD274"
     case surveyResultModerate = "#FF8A00"
     case surveyResultHigh = "#FF4242"
+    case surveyStackBorder = "#DDDDDD"
+    case surveyAvgTitle = "#838383"
 // Diary Result Color
     case diaryRedBorder = "#E64F4F"
 }
@@ -73,6 +75,8 @@ extension UIColor {
     static let socialMediaColor = UIColor(hex: Color.socialMediaColor.rawValue, alpha:1)
     static let lonelinessColor = UIColor(hex: Color.lonelinessColor.rawValue, alpha:1)
     static let hrqolColor = UIColor(hex: Color.hrqolColor.rawValue, alpha:1)
+    static let surveyStackBorder = UIColor(hex: Color.surveyStackBorder.rawValue, alpha:1)
+    static let surveyAvgTitle = UIColor(hex: Color.surveyAvgTitle.rawValue, alpha: 1)
     
     static let surveyWarningBackgroundColor = UIColor(hex: Color.surveyWarningBackgroundColor.rawValue, alpha: 1)
     static let surveyWaningLabelColor = UIColor(hex: Color.surveyWaningLabelColor.rawValue, alpha: 1)
@@ -86,6 +90,7 @@ extension UIColor {
     static let diaryBorder = UIColor(hex: Color.tabBarBorder.rawValue, alpha: 1)
     static let diaryRedBorder = UIColor(hex: Color.diaryRedBorder.rawValue, alpha: 1)
     
+//
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexValue = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
 

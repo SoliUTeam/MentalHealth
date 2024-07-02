@@ -43,7 +43,7 @@ class MyDiaryTextViewController: UIViewController {
         }
         let questionViews = [questionView1, questionView2, questionView3]
         for view in questionViews {
-            view?.addBorder(toSide: .Bottom, withColor: .diaryBorder, andThickness: 2)
+            view?.addBorder(toSide: .bottom, withColor: .diaryBorder, andThickness: 2)
         }
         self.title = getCurrentMonthAndDate()
         self.submitButton.isEnabled = true

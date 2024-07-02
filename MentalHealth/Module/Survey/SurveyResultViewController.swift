@@ -39,18 +39,31 @@ class SurveyResultViewController: UIViewController {
     @IBOutlet var lonelinessTitleLabel: UILabel!
     @IBOutlet var hrqolTitleLabel: UILabel!
 
-    // Score Labels
-    @IBOutlet var depressionScoreLabel: UILabel!
-    @IBOutlet var anxietyScoreLabel: UILabel!
-    @IBOutlet var stressScoreLabel: UILabel!
-    @IBOutlet var socialMediaAddictionScoreLabel: UILabel!
-    @IBOutlet var lonelinessScoreLabel: UILabel!
-    @IBOutlet var hrqolScoreLabel: UILabel!
+    // Personal Score Labels
+    @IBOutlet var depressionMyScoreLabel: UILabel!
+    @IBOutlet var anxietyMyScoreLabel: UILabel!
+    @IBOutlet var stressMyScoreLabel: UILabel!
+    @IBOutlet var socialMediaAddictionMyScoreLabel: UILabel!
+    @IBOutlet var lonelinessMyScoreLabel: UILabel!
+    @IBOutlet var hrqolMyScoreLabel: UILabel!
+        
+    // Average Score Labels
+    @IBOutlet var depressionAverageScoreLabel: UILabel!
+    @IBOutlet var anxietyAverageScoreLabel: UILabel!
+    @IBOutlet var stressAverageScoreLabel: UILabel!
+    @IBOutlet var socialMediaAddictionAverageScoreLabel: UILabel!
+    @IBOutlet var lonelinessAverageScoreLabel: UILabel!
+    @IBOutlet var hrqolAverageScoreLabel: UILabel!
     
+    
+// DangerView
     @IBOutlet var dangerLabel: UILabel!
     @IBOutlet var warningView: UIView!
     @IBOutlet var warningTextView: UITextView!
     @IBOutlet var dangerView: DangerView!
+    
+    @IBOutlet var meLabel: UILabel!
+    @IBOutlet var avgLabel: UILabel!
     
     var myTestScore: [Int:Int] = [:]
     var allUsersAverageResult: [Int: Int] = [ : ]
@@ -166,7 +179,7 @@ class SurveyResultViewController: UIViewController {
         }
     }
     private func labelSetup() {
-        
+        stackView.addBorder(toSide: .top, withColor: .surveyStackBorder, andThickness: 1)
         depressionTitleLabel.font = .boldFont16
         anxietyTitleLabel.font = .boldFont16
         stressTitleLabel.font = .boldFont16
@@ -174,12 +187,9 @@ class SurveyResultViewController: UIViewController {
         lonelinessTitleLabel.font = .boldFont16
         hrqolTitleLabel.font = .boldFont16
         dangerLabel.font = .boldFont12
-//        LabelStyle.surveyResultTitle(color: .depressionColor).apply(to: depressionTitleLabel)
-//        LabelStyle.surveyResultTitle(color: .anxietyColor).apply(to: anxietyTitleLabel)
-//        LabelStyle.surveyResultTitle(color: .stressColor).apply(to: stressTitleLabel)
-//        LabelStyle.surveyResultTitle(color: .socialMediaColor).apply(to: socialMediaAddictionTitleLabel)
-//        LabelStyle.surveyResultTitle(color: .lonelinessColor).apply(to: lonelinessTitleLabel)
-//        LabelStyle.surveyResultTitle(color: .hrqolColor).apply(to: hrqolTitleLabel)
+        meLabel.font = .boldFont12
+        avgLabel.font = .boldFont12
+        avgLabel.textColor = .surveyAvgTitle
     }
     
     private func colorMapping(myScore: Double, averageScore: Double) -> UIColor {
@@ -193,11 +203,6 @@ class SurveyResultViewController: UIViewController {
     }
     
     private func labelResultSetup() {
-        var resultTable: [String: NSAttributedString] = [:]
-        let blackResultString: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 14),
-            .foregroundColor: UIColor.black
-        ]
         
         for (startKey, category) in categories {
             let range = startKey..<startKey + 5
@@ -205,28 +210,46 @@ class SurveyResultViewController: UIViewController {
             let sum2 = range.reduce(0) { $0 + (allUsersAverageResult[$1] ?? 0) }
             let avg1 = Double(sum1) / 5.0
             let avg2 = Double(sum2) / 5.0
-            
-            let combinedString = NSMutableAttributedString()
-            let colorResultString: [NSAttributedString.Key: Any] = [
-                .font: UIFont.boldSystemFont(ofSize: 14),
-                .foregroundColor: self.colorMapping(myScore: avg1, averageScore: avg2)
-            ]
-            let partOne = NSAttributedString(string: "\(avg1) : ", attributes: colorResultString)
-            let partTwo = NSAttributedString(string: "\(avg2)", attributes: blackResultString)
-            
-            combinedString.append(partOne)
-            combinedString.append(partTwo)
 
-            resultTable[category] = combinedString
+            let myScoreString = NSAttributedString(
+                string: "\(avg1)",
+                attributes: [
+                    .font: UIFont.boldSystemFont(ofSize: 16),
+                    .foregroundColor: self.colorMapping(myScore: avg1, averageScore: avg2)
+                ]
+            )
+
+            let averageScoreString = NSAttributedString(
+                string: "\(avg2)",
+                attributes: [
+                    .font: UIFont.boldSystemFont(ofSize: 16),
+                    .foregroundColor: UIColor.black
+                ]
+            )
+            
+            switch category {
+            case "Depression":
+                depressionMyScoreLabel.attributedText = myScoreString
+                depressionAverageScoreLabel.attributedText = averageScoreString
+            case "Anxiety":
+                anxietyMyScoreLabel.attributedText = myScoreString
+                anxietyAverageScoreLabel.attributedText = averageScoreString
+            case "Stress":
+                stressMyScoreLabel.attributedText = myScoreString
+                stressAverageScoreLabel.attributedText = averageScoreString
+            case "Social Media Addiction":
+                socialMediaAddictionMyScoreLabel.attributedText = myScoreString
+                socialMediaAddictionAverageScoreLabel.attributedText = averageScoreString
+            case "Loneliness":
+                lonelinessMyScoreLabel.attributedText = myScoreString
+                lonelinessAverageScoreLabel.attributedText = averageScoreString
+            case "HRQOL":
+                hrqolMyScoreLabel.attributedText = myScoreString
+                hrqolAverageScoreLabel.attributedText = averageScoreString
+            default:
+                break
+            }
         }
-        
-        
-        depressionScoreLabel.attributedText = resultTable["Depression"]
-        anxietyScoreLabel.attributedText = resultTable["Anxiety"]
-        stressScoreLabel.attributedText = resultTable["Stress"]
-        socialMediaAddictionScoreLabel.attributedText = resultTable["Social Media Addiction"]
-        lonelinessScoreLabel.attributedText = resultTable["Loneliness"]
-        hrqolScoreLabel.attributedText = resultTable["HRQOL"]
     }
     
     private func chartSetup() {
